@@ -1,0 +1,1022 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.akounto.accountingsoftware"
+4    android:versionCode="5"
+5    android:versionName="1.0.4" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+8-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+11-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:6:5-79
+11-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:6:22-76
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:7:5-67
+12-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:7:22-64
+13    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+13-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:8:5-9:40
+13-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:8:22-78
+14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+14-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:10:5-80
+14-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:10:22-77
+15    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+15-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:11:5-76
+15-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:11:22-73
+16    <uses-permission android:name="android.permission.WAKE_LOCK" />
+16-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:12:5-68
+16-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:12:22-65
+17    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+17-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:13:5-110
+17-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:13:22-107
+18
+19    <uses-feature
+19-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:12:5-14:36
+20        android:name="android.hardware.screen.portrait"
+20-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:13:9-56
+21        android:required="false" />
+21-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:14:9-33
+22    <uses-feature
+22-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:15:5-17:36
+23        android:name="android.hardware.screen.landscape"
+23-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:16:9-57
+24        android:required="false" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+24-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:17:9-33
+25    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+25-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cf550f6b03854fe505ffea1e739f6726\jetified-firebase-iid-21.0.1\AndroidManifest.xml:26:5-82
+25-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cf550f6b03854fe505ffea1e739f6726\jetified-firebase-iid-21.0.1\AndroidManifest.xml:26:22-79
+26    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+26-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:27:5-81
+26-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:27:22-78
+27    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+27-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:28:5-77
+27-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:28:22-74
+28
+29    <application
+29-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:15:5-193:19
+30        android:name="com.akounto.accountingsoftware.util.AppSingle"
+30-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:16:9-69
+31        android:allowBackup="true"
+31-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:17:9-35
+32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+32-->[androidx.core:core:1.5.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\747ec7a516896d45b57d2976c82210c1\core-1.5.0\AndroidManifest.xml:24:18-86
+33        android:debuggable="true"
+34        android:extractNativeLibs="false"
+35        android:icon="@mipmap/ic_launcher"
+35-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:18:9-43
+36        android:label="@string/app_name"
+36-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:19:9-41
+37        android:launchMode="singleTop"
+37-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:20:9-39
+38        android:requestLegacyExternalStorage="true"
+38-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:21:9-52
+39        android:supportsRtl="true"
+39-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:22:9-35
+40        android:testOnly="true"
+41        android:theme="@style/AppTheme"
+41-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:23:9-40
+42        android:usesCleartextTraffic="true" >
+42-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:24:9-44
+43        <activity android:name="com.akounto.accountingsoftware.Activity.SalesInvoiceActivity" />
+43-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:25:9-97
+43-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:25:19-94
+44        <activity android:name="com.akounto.accountingsoftware.Activity.Invoice.CreateInvoice" />
+44-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:26:9-98
+44-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:26:19-95
+45        <activity android:name="com.akounto.accountingsoftware.Activity.Invoice.CustomerList" />
+45-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:27:9-97
+45-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:27:19-94
+46        <activity android:name="com.akounto.accountingsoftware.Activity.Invoice.AddCustomers" />
+46-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:28:9-97
+46-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:28:19-94
+47        <activity android:name="com.akounto.accountingsoftware.Activity.Invoice.ItemList" />
+47-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:29:9-93
+47-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:29:19-90
+48        <activity android:name="com.akounto.accountingsoftware.Activity.Invoice.InvoiceList" />
+48-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:30:9-96
+48-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:30:19-93
+49        <activity android:name="com.akounto.accountingsoftware.Activity.Invoice.AddItem" />
+49-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:31:9-92
+49-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:31:19-89
+50        <activity android:name="com.akounto.accountingsoftware.Activity.Invoice.EditItem" />
+50-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:32:9-93
+50-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:32:19-90
+51        <activity android:name="com.akounto.accountingsoftware.Activity.Bill.CreateBill" />
+51-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:33:9-92
+51-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:33:19-89
+52        <activity android:name="com.akounto.accountingsoftware.Activity.Bill.BillList" />
+52-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:34:9-90
+52-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:34:19-87
+53        <activity android:name="com.akounto.accountingsoftware.Activity.Bill.ListVendor" />
+53-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:35:9-92
+53-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:35:19-89
+54        <activity android:name="com.akounto.accountingsoftware.Activity.Bill.ListPurchaseItem" />
+54-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:36:9-98
+54-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:36:19-95
+55        <activity android:name="com.akounto.accountingsoftware.Activity.Bill.AddBillItem" />
+55-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:37:9-93
+55-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:37:19-90
+56        <activity android:name="com.akounto.accountingsoftware.Activity.Bill.EditBillItem" />
+56-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:38:9-94
+56-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:38:19-91
+57        <activity android:name="com.akounto.accountingsoftware.Activity.Bank.BankListActivity" />
+57-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:39:9-98
+57-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:39:19-95
+58        <activity android:name="com.akounto.accountingsoftware.Activity.Bill.ViewBill" />
+58-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:40:9-90
+58-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:40:19-87
+59        <activity android:name="com.akounto.accountingsoftware.Activity.SettingActivity" />
+59-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:41:9-92
+59-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:41:19-89
+60        <activity android:name="com.akounto.accountingsoftware.Activity.AddJournalTransactionActivity" />
+60-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:42:9-106
+60-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:42:19-103
+61        <activity android:name="com.akounto.accountingsoftware.Activity.SendEstimateActivity" />
+61-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:43:9-97
+61-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:43:19-94
+62        <activity android:name="com.akounto.accountingsoftware.Activity.ViewRecurringInvoiceActivity" />
+62-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:44:9-105
+62-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:44:19-102
+63        <activity android:name="com.akounto.accountingsoftware.Activity.EditChatOfAccount" />
+63-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:45:9-94
+63-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:45:19-91
+64        <activity android:name="com.akounto.accountingsoftware.Activity.CommonInvoiceActivity" />
+64-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:46:9-98
+64-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:46:19-95
+65        <activity android:name="com.akounto.accountingsoftware.Activity.CreateInvoiceActivity" />
+65-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:47:9-98
+65-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:47:19-95
+66        <activity android:name="com.akounto.accountingsoftware.Activity.CreateEstimateActivity" />
+66-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:48:9-99
+66-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:48:19-96
+67        <activity android:name="com.akounto.accountingsoftware.Activity.AddCustomersActivity" />
+67-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:49:9-97
+67-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:49:19-94
+68        <activity android:name="com.akounto.accountingsoftware.Activity.AddVendorActivity" />
+68-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:50:9-94
+68-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:50:19-91
+69        <activity android:name="com.akounto.accountingsoftware.Activity.CreatingProductsAndServices" />
+69-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:51:9-104
+69-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:51:19-101
+70        <activity android:name="com.akounto.accountingsoftware.Activity.NotifcationActivity" />
+70-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:52:9-96
+70-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:52:19-93
+71        <activity android:name="com.akounto.accountingsoftware.Activity.CompanyProfileActivity" />
+71-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:53:9-99
+71-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:53:19-96
+72        <activity android:name="com.akounto.accountingsoftware.Activity.HangTightActivity" />
+72-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:54:9-94
+72-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:54:19-91
+73        <activity android:name="com.akounto.accountingsoftware.Activity.GetStartedActivity" />
+73-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:55:9-95
+73-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:55:19-92
+74        <activity android:name="com.akounto.accountingsoftware.Activity.SignUpActivity" />
+74-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:56:9-91
+74-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:56:19-88
+75        <activity android:name="com.akounto.accountingsoftware.Activity.ForgotPassword" />
+75-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:57:9-91
+75-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:57:19-88
+76        <activity android:name="com.akounto.accountingsoftware.Activity.AddTransactionActivity" />
+76-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:58:9-99
+76-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:58:19-96
+77        <activity android:name="com.akounto.accountingsoftware.Activity.SIgnUpStep0" />
+77-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:59:9-88
+77-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:59:19-85
+78        <activity android:name="com.akounto.accountingsoftware.Activity.SignUpStep1" />
+78-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:60:9-88
+78-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:60:19-85
+79        <activity android:name="com.akounto.accountingsoftware.Activity.SignUpStep2" />
+79-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:61:9-88
+79-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:61:19-85
+80        <activity android:name="com.akounto.accountingsoftware.Activity.SignUpStep3" />
+80-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:62:9-88
+80-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:62:19-85
+81        <activity android:name="com.akounto.accountingsoftware.Activity.Invoice.EditInvoice" />
+81-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:63:9-96
+81-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:63:19-93
+82        <activity android:name="com.akounto.accountingsoftware.Activity.UploadBankStatementActivity" />
+82-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:64:9-104
+82-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:64:19-101
+83        <activity android:name="com.akounto.accountingsoftware.Activity.Invoice.ViewInvoice" />
+83-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:65:9-96
+83-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:65:19-93
+84        <activity android:name="com.akounto.accountingsoftware.Activity.Bill.EditBill" />
+84-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:66:9-90
+84-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:66:19-87
+85        <activity
+85-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:67:9-69:55
+86            android:name="com.akounto.accountingsoftware.Activity.ProductAndCreateActivity"
+86-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:68:13-92
+87            android:theme="@style/AppTheme.NoTitle" />
+87-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:69:13-52
+88        <activity
+88-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:70:9-72:55
+89            android:name="com.akounto.accountingsoftware.Activity.CreateProductsAndServicesPurchase"
+89-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:71:13-101
+90            android:theme="@style/AppTheme.NoTitle" />
+90-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:72:13-52
+91        <activity android:name="com.akounto.accountingsoftware.Activity.AddChatOfAccountActivity" />
+91-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:73:9-101
+91-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:73:19-98
+92        <activity
+92-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:74:9-76:55
+93            android:name="com.akounto.accountingsoftware.Activity.EstimateDetailsActivity"
+93-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:75:13-91
+94            android:theme="@style/AppTheme.NoTitle" />
+94-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:76:13-52
+95        <activity
+95-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:77:9-79:55
+96            android:name="com.akounto.accountingsoftware.Activity.InvoiceDetailsActivity"
+96-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:78:13-90
+97            android:theme="@style/AppTheme.NoTitle" />
+97-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:79:13-52
+98        <activity
+98-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:80:9-82:55
+99            android:name="com.akounto.accountingsoftware.Activity.ViewPdfActivity"
+99-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:81:13-83
+100            android:theme="@style/AppTheme.NoTitle" />
+100-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:82:13-52
+101        <activity
+101-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:83:9-85:55
+102            android:name="com.akounto.accountingsoftware.Activity.BillDetailsActivity"
+102-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:84:13-87
+103            android:theme="@style/AppTheme.NoTitle" />
+103-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:85:13-52
+104        <activity
+104-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:86:9-88:55
+105            android:name="com.akounto.accountingsoftware.Activity.EditBillActivity"
+105-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:87:13-84
+106            android:theme="@style/AppTheme.NoTitle" />
+106-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:88:13-52
+107        <activity
+107-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:89:9-91:55
+108            android:name="com.akounto.accountingsoftware.Activity.UploadSecondActivity"
+108-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:90:13-88
+109            android:theme="@style/AppTheme.NoTitle" />
+109-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:91:13-52
+110        <activity android:name="com.akounto.accountingsoftware.Activity.AdvancedFilterActivity" />
+110-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:92:9-99
+110-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:92:19-96
+111        <activity android:name="com.akounto.accountingsoftware.Activity.UploadReceipt" />
+111-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:93:9-90
+111-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:93:19-87
+112        <activity
+112-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:94:9-96:55
+113            android:name="com.akounto.accountingsoftware.Activity.CreateBillActivity"
+113-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:95:13-86
+114            android:theme="@style/AppTheme.NoTitle" />
+114-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:96:13-52
+115        <activity
+115-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:97:9-99:50
+116            android:name="com.akounto.accountingsoftware.Activity.DashboardActivity"
+116-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:98:13-85
+117            android:launchMode="singleInstance" />
+117-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:99:13-48
+118        <activity
+118-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:100:9-102:39
+119            android:name="com.akounto.accountingsoftware.Activity.ExternalSignUp"
+119-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:100:19-88
+120            android:launchMode="singleInstance"
+120-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:101:13-48
+121            android:noHistory="true" />
+121-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:102:13-37
+122        <activity
+122-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:103:9-105:39
+123            android:name="com.akounto.accountingsoftware.util.ActivityImagePicker"
+123-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:103:19-89
+124            android:launchMode="singleInstance"
+124-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:104:13-48
+125            android:noHistory="true" />
+125-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:105:13-37
+126        <activity
+126-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:106:9-107:50
+127            android:name="com.akounto.accountingsoftware.Activity.SignInActivity"
+127-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:106:19-88
+128            android:launchMode="singleInstance" />
+128-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:107:13-48
+129        <activity android:name="com.akounto.accountingsoftware.Activity.VideoAfterSplashActivity" >
+129-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:109:9-114:20
+129-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:109:19-98
+130            <intent-filter>
+130-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:110:13-113:29
+131                <action android:name="android.intent.action.MAIN" />
+131-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:111:17-69
+131-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:111:25-66
+132
+133                <category android:name="android.intent.category.DEFAULT" />
+133-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:112:17-76
+133-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:112:27-73
+134            </intent-filter>
+135        </activity>
+136        <activity android:name="com.akounto.accountingsoftware.Activity.SplashScreenActivity" >
+136-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:115:9-120:20
+136-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:115:19-94
+137            <intent-filter>
+137-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:116:13-119:29
+138                <action android:name="android.intent.action.MAIN" />
+138-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:111:17-69
+138-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:111:25-66
+139
+140                <category android:name="android.intent.category.LAUNCHER" />
+140-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:118:17-77
+140-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:118:27-74
+141            </intent-filter>
+142        </activity>
+143        <activity android:name="com.akounto.accountingsoftware.Activity.MainActivity" >
+143-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:121:9-126:20
+143-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:121:19-86
+144            <intent-filter>
+144-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:110:13-113:29
+145                <action android:name="android.intent.action.MAIN" />
+145-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:111:17-69
+145-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:111:25-66
+146
+147                <category android:name="android.intent.category.DEFAULT" />
+147-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:112:17-76
+147-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:112:27-73
+148            </intent-filter>
+149        </activity>
+150
+151        <provider
+151-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:127:9-135:20
+152            android:name="androidx.core.content.FileProvider"
+152-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:128:13-62
+153            android:authorities="com.akounto.accountingsoftware.provider"
+153-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:129:13-74
+154            android:exported="false"
+154-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:130:13-37
+155            android:grantUriPermissions="true" >
+155-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:131:13-47
+156            <meta-data
+156-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:132:13-134:58
+157                android:name="android.support.FILE_PROVIDER_PATHS"
+157-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:133:17-67
+158                android:resource="@xml/provider_paths" />
+158-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:134:17-55
+159        </provider>
+160
+161        <activity
+161-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:136:9-138:72
+162            android:name="com.karumi.dexter.DexterActivity"
+162-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:137:13-60
+163            android:theme="@style/Dexter.Internal.Theme.Transparent" />
+163-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:138:13-69
+164
+165        <meta-data
+165-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:139:9-141:36
+166            android:name="firebase_performance_logcat_enabled"
+166-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:140:13-63
+167            android:value="true" />
+167-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:141:13-33
+168
+169        <service
+169-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:142:9-158:19
+170            android:name="com.google.firebase.components.ComponentDiscoveryService"
+170-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:143:13-84
+171            android:directBootAware="true"
+171-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:144:13-43
+172            android:exported="false" >
+172-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:145:13-37
+173            <meta-data
+173-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:146:13-148:85
+174                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
+174-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:147:17-115
+175                android:value="com.google.firebase.components.ComponentRegistrar" />
+175-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:148:17-82
+176            <meta-data
+176-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:149:13-151:85
+177                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+177-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:150:17-139
+178                android:value="com.google.firebase.components.ComponentRegistrar" />
+178-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:151:17-82
+179            <meta-data
+179-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:152:13-154:85
+180                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+180-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:153:17-127
+181                android:value="com.google.firebase.components.ComponentRegistrar" />
+181-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:154:17-82
+182            <meta-data
+182-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:155:13-157:85
+183                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
+183-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:156:17-121
+184                android:value="com.google.firebase.components.ComponentRegistrar" />
+184-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:157:17-82
+185            <meta-data
+185-->[com.google.firebase:firebase-perf:19.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\4de4b83276e90b034f3c043738b83040\jetified-firebase-perf-19.1.1\AndroidManifest.xml:23:13-25:85
+186                android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfRegistrar"
+186-->[com.google.firebase:firebase-perf:19.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\4de4b83276e90b034f3c043738b83040\jetified-firebase-perf-19.1.1\AndroidManifest.xml:24:17-109
+187                android:value="com.google.firebase.components.ComponentRegistrar" />
+187-->[com.google.firebase:firebase-perf:19.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\4de4b83276e90b034f3c043738b83040\jetified-firebase-perf-19.1.1\AndroidManifest.xml:25:17-82
+188            <meta-data
+188-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:77:13-79:85
+189                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+189-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:78:17-109
+190                android:value="com.google.firebase.components.ComponentRegistrar" />
+190-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:79:17-82
+191            <meta-data
+191-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\75a2aef13cc0a0f7b5f4d386f93ba76c\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:39:13-41:85
+192                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+192-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\75a2aef13cc0a0f7b5f4d386f93ba76c\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:40:17-119
+193                android:value="com.google.firebase.components.ComponentRegistrar" />
+193-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\75a2aef13cc0a0f7b5f4d386f93ba76c\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:41:17-82
+194            <meta-data
+194-->[com.google.firebase:firebase-datatransport:17.0.11] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\5b1a8d95c0e411ec5013813ea6dd00be\jetified-firebase-datatransport-17.0.11\AndroidManifest.xml:28:13-30:85
+195                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+195-->[com.google.firebase:firebase-datatransport:17.0.11] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\5b1a8d95c0e411ec5013813ea6dd00be\jetified-firebase-datatransport-17.0.11\AndroidManifest.xml:29:17-115
+196                android:value="com.google.firebase.components.ComponentRegistrar" />
+196-->[com.google.firebase:firebase-datatransport:17.0.11] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\5b1a8d95c0e411ec5013813ea6dd00be\jetified-firebase-datatransport-17.0.11\AndroidManifest.xml:30:17-82
+197            <meta-data
+197-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cf550f6b03854fe505ffea1e739f6726\jetified-firebase-iid-21.0.1\AndroidManifest.xml:32:13-34:85
+198                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+198-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cf550f6b03854fe505ffea1e739f6726\jetified-firebase-iid-21.0.1\AndroidManifest.xml:33:17-96
+199                android:value="com.google.firebase.components.ComponentRegistrar" />
+199-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cf550f6b03854fe505ffea1e739f6726\jetified-firebase-iid-21.0.1\AndroidManifest.xml:34:17-82
+200            <meta-data
+200-->[com.google.firebase:firebase-config:20.0.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\c64c2455a95c426d5d4d089956182fa4\jetified-firebase-config-20.0.4\AndroidManifest.xml:32:13-34:85
+201                android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar"
+201-->[com.google.firebase:firebase-config:20.0.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\c64c2455a95c426d5d4d089956182fa4\jetified-firebase-config-20.0.4\AndroidManifest.xml:33:17-117
+202                android:value="com.google.firebase.components.ComponentRegistrar" />
+202-->[com.google.firebase:firebase-config:20.0.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\c64c2455a95c426d5d4d089956182fa4\jetified-firebase-config-20.0.4\AndroidManifest.xml:34:17-82
+203            <meta-data
+203-->[com.google.firebase:firebase-abt:20.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\8b855b56aa284a5b6c36910334d05002\jetified-firebase-abt-20.0.0\AndroidManifest.xml:13:13-15:85
+204                android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar"
+204-->[com.google.firebase:firebase-abt:20.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\8b855b56aa284a5b6c36910334d05002\jetified-firebase-abt-20.0.0\AndroidManifest.xml:14:17-109
+205                android:value="com.google.firebase.components.ComponentRegistrar" />
+205-->[com.google.firebase:firebase-abt:20.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\8b855b56aa284a5b6c36910334d05002\jetified-firebase-abt-20.0.0\AndroidManifest.xml:15:17-82
+206        </service>
+207        <service
+207-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:159:9-165:19
+208            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+208-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:160:13-103
+209            android:exported="false" >
+209-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:161:13-37
+210            <meta-data
+210-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:162:13-164:39
+211                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+211-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:163:17-94
+212                android:value="cct" />
+212-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:164:17-36
+213        </service>
+214        <service
+214-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:166:9-169:72
+215            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+215-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:167:13-117
+216            android:exported="false"
+216-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:168:13-37
+217            android:permission="android.permission.BIND_JOB_SERVICE" />
+217-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:169:13-69
+218
+219        <receiver
+219-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:171:9-173:40
+220            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+220-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:172:13-132
+221            android:exported="false" />
+221-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:173:13-37
+222        <receiver
+222-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:174:9-177:40
+223            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+223-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:175:13-85
+224            android:enabled="true"
+224-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:176:13-35
+225            android:exported="false" />
+225-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:177:13-37
+226
+227        <service
+227-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:179:9-182:40
+228            android:name="com.google.android.gms.measurement.AppMeasurementService"
+228-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:180:13-84
+229            android:enabled="true"
+229-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:181:13-35
+230            android:exported="false" />
+230-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:182:13-37
+231        <service
+231-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:183:9-187:72
+232            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+232-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:184:13-87
+233            android:enabled="true"
+233-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:185:13-35
+234            android:exported="false"
+234-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:186:13-37
+235            android:permission="android.permission.BIND_JOB_SERVICE" />
+235-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:187:13-69
+236
+237        <meta-data
+237-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:189:9-191:69
+238            android:name="com.google.android.gms.version"
+238-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:190:13-58
+239            android:value="@integer/google_play_services_version" />
+239-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:191:13-66
+240
+241        <activity
+241-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:20:9-22:49
+242            android:name="com.plaid.internal.loading.LoadingActivity"
+242-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:21:13-70
+243            android:theme="@style/PlaidTheme" />
+243-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:22:13-46
+244        <activity android:name="com.plaid.internal.LinkRedirectActivity" >
+244-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:23:9-34:20
+244-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:23:19-73
+245            <intent-filter>
+245-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:24:13-33:29
+246                <action android:name="android.intent.action.VIEW" />
+246-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:25:17-69
+246-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:25:25-66
+247
+248                <category android:name="android.intent.category.DEFAULT" />
+248-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:112:17-76
+248-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:112:27-73
+249                <category android:name="android.intent.category.BROWSABLE" />
+249-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:28:17-78
+249-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:28:27-75
+250
+251                <data
+251-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:30:17-32:46
+252                    android:host="redirect"
+252-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:31:21-44
+253                    android:scheme="plaid" />
+253-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:32:21-43
+254            </intent-filter>
+255        </activity>
+256        <activity
+256-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:35:9-38:50
+257            android:name="com.plaid.internal.link.LinkWebViewActivity"
+257-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:36:13-71
+258            android:screenOrientation="portrait"
+258-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:37:13-49
+259            android:theme="@style/NoActionBar" />
+259-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:38:13-47
+260        <activity
+260-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:39:9-41:49
+261            android:name="com.plaid.link.LinkActivity"
+261-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:40:13-55
+262            android:theme="@style/PlaidTheme" />
+262-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:41:13-46
+263        <activity
+263-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e4e9d91c5c82f4d39c73e5091df2626e\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:15:9-18:68
+264            android:name="com.github.dhaval2404.imagepicker.ImagePickerActivity"
+264-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e4e9d91c5c82f4d39c73e5091df2626e\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:16:13-81
+265            android:screenOrientation="unspecified"
+265-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e4e9d91c5c82f4d39c73e5091df2626e\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:17:13-52
+266            android:theme="@style/Theme.Transparent.ImagePicker" />
+266-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e4e9d91c5c82f4d39c73e5091df2626e\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:18:13-65
+267        <activity
+267-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e4e9d91c5c82f4d39c73e5091df2626e\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:19:9-22:72
+268            android:name="com.yalantis.ucrop.UCropActivity"
+268-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e4e9d91c5c82f4d39c73e5091df2626e\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:20:13-60
+269            android:screenOrientation="portrait"
+269-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e4e9d91c5c82f4d39c73e5091df2626e\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:21:13-49
+270            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+270-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e4e9d91c5c82f4d39c73e5091df2626e\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:22:13-69
+271
+272        <provider
+272-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e4e9d91c5c82f4d39c73e5091df2626e\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:24:9-32:20
+273            android:name="com.github.dhaval2404.imagepicker.ImagePickerFileProvider"
+273-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e4e9d91c5c82f4d39c73e5091df2626e\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:25:13-85
+274            android:authorities="com.akounto.accountingsoftware.imagepicker.provider"
+274-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e4e9d91c5c82f4d39c73e5091df2626e\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:26:13-72
+275            android:exported="false"
+275-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e4e9d91c5c82f4d39c73e5091df2626e\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:27:13-37
+276            android:grantUriPermissions="true" >
+276-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e4e9d91c5c82f4d39c73e5091df2626e\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:28:13-47
+277            <meta-data
+277-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:132:13-134:58
+278                android:name="android.support.FILE_PROVIDER_PATHS"
+278-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:133:17-67
+279                android:resource="@xml/image_picker_provider_paths" />
+279-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:134:17-55
+280        </provider>
+281        <provider
+281-->[com.google.firebase:firebase-perf:19.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\4de4b83276e90b034f3c043738b83040\jetified-firebase-perf-19.1.1\AndroidManifest.xml:14:9-18:39
+282            android:name="com.google.firebase.perf.provider.FirebasePerfProvider"
+282-->[com.google.firebase:firebase-perf:19.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\4de4b83276e90b034f3c043738b83040\jetified-firebase-perf-19.1.1\AndroidManifest.xml:15:13-82
+283            android:authorities="com.akounto.accountingsoftware.firebaseperfprovider"
+283-->[com.google.firebase:firebase-perf:19.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\4de4b83276e90b034f3c043738b83040\jetified-firebase-perf-19.1.1\AndroidManifest.xml:16:13-72
+284            android:exported="false"
+284-->[com.google.firebase:firebase-perf:19.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\4de4b83276e90b034f3c043738b83040\jetified-firebase-perf-19.1.1\AndroidManifest.xml:17:13-37
+285            android:initOrder="101" />
+285-->[com.google.firebase:firebase-perf:19.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\4de4b83276e90b034f3c043738b83040\jetified-firebase-perf-19.1.1\AndroidManifest.xml:18:13-36
+286
+287        <service
+287-->[com.google.android.gms:play-services-tagmanager-api:17.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\1cdf0facaee8e9f1ca4ba32a4957db2d\jetified-play-services-tagmanager-api-17.0.0\AndroidManifest.xml:27:9-30:40
+288            android:name="com.google.android.gms.tagmanager.TagManagerService"
+288-->[com.google.android.gms:play-services-tagmanager-api:17.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\1cdf0facaee8e9f1ca4ba32a4957db2d\jetified-play-services-tagmanager-api-17.0.0\AndroidManifest.xml:28:13-79
+289            android:enabled="true"
+289-->[com.google.android.gms:play-services-tagmanager-api:17.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\1cdf0facaee8e9f1ca4ba32a4957db2d\jetified-play-services-tagmanager-api-17.0.0\AndroidManifest.xml:29:13-35
+290            android:exported="false" />
+290-->[com.google.android.gms:play-services-tagmanager-api:17.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\1cdf0facaee8e9f1ca4ba32a4957db2d\jetified-play-services-tagmanager-api-17.0.0\AndroidManifest.xml:30:13-37
+291
+292        <activity
+292-->[com.google.android.gms:play-services-tagmanager-api:17.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\1cdf0facaee8e9f1ca4ba32a4957db2d\jetified-play-services-tagmanager-api-17.0.0\AndroidManifest.xml:32:9-44:20
+293            android:name="com.google.android.gms.tagmanager.TagManagerPreviewActivity"
+293-->[com.google.android.gms:play-services-tagmanager-api:17.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\1cdf0facaee8e9f1ca4ba32a4957db2d\jetified-play-services-tagmanager-api-17.0.0\AndroidManifest.xml:33:13-87
+294            android:exported="true"
+294-->[com.google.android.gms:play-services-tagmanager-api:17.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\1cdf0facaee8e9f1ca4ba32a4957db2d\jetified-play-services-tagmanager-api-17.0.0\AndroidManifest.xml:34:13-36
+295            android:noHistory="true" > <!-- optional, removes the previewActivity from the activity stack. -->
+295-->[com.google.android.gms:play-services-tagmanager-api:17.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\1cdf0facaee8e9f1ca4ba32a4957db2d\jetified-play-services-tagmanager-api-17.0.0\AndroidManifest.xml:35:13-37
+296            <intent-filter>
+296-->[com.google.android.gms:play-services-tagmanager-api:17.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\1cdf0facaee8e9f1ca4ba32a4957db2d\jetified-play-services-tagmanager-api-17.0.0\AndroidManifest.xml:36:13-43:29
+297                <data android:scheme="tagmanager.c.com.akounto.accountingsoftware" />
+297-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:30:17-32:46
+297-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:32:21-43
+298
+299                <action android:name="android.intent.action.VIEW" />
+299-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:25:17-69
+299-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:25:25-66
+300
+301                <category android:name="android.intent.category.DEFAULT" />
+301-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:112:17-76
+301-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:112:27-73
+302                <category android:name="android.intent.category.BROWSABLE" />
+302-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:28:17-78
+302-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:28:27-75
+303            </intent-filter>
+304        </activity>
+305        <activity
+305-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:27:9-44:20
+306            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+306-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:28:13-80
+307            android:excludeFromRecents="true"
+307-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:29:13-46
+308            android:exported="true"
+308-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:30:13-36
+309            android:launchMode="singleTask"
+309-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:31:13-44
+310            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+310-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:32:13-72
+311            <intent-filter>
+311-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:33:13-43:29
+312                <action android:name="android.intent.action.VIEW" />
+312-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:25:17-69
+312-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:25:25-66
+313
+314                <category android:name="android.intent.category.DEFAULT" />
+314-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:112:17-76
+314-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:112:27-73
+315                <category android:name="android.intent.category.BROWSABLE" />
+315-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:28:17-78
+315-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:28:27-75
+316
+317                <data
+317-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:30:17-32:46
+318                    android:host="firebase.auth"
+318-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:31:21-44
+319                    android:path="/"
+320                    android:scheme="genericidp" />
+320-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:32:21-43
+321            </intent-filter>
+322        </activity>
+323        <activity
+323-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:45:9-62:20
+324            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+324-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:46:13-79
+325            android:excludeFromRecents="true"
+325-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:47:13-46
+326            android:exported="true"
+326-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:48:13-36
+327            android:launchMode="singleTask"
+327-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:49:13-44
+328            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+328-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:50:13-72
+329            <intent-filter>
+329-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:51:13-61:29
+330                <action android:name="android.intent.action.VIEW" />
+330-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:25:17-69
+330-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:25:25-66
+331
+332                <category android:name="android.intent.category.DEFAULT" />
+332-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:112:17-76
+332-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:112:27-73
+333                <category android:name="android.intent.category.BROWSABLE" />
+333-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:28:17-78
+333-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:28:27-75
+334
+335                <data
+335-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:30:17-32:46
+336                    android:host="firebase.auth"
+336-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:31:21-44
+337                    android:path="/"
+338                    android:scheme="recaptcha" />
+338-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cc85c19a39ede05bd81340023a360a67\jetified-sdk-core-3.2.4\AndroidManifest.xml:32:21-43
+339            </intent-filter>
+340        </activity>
+341
+342        <service
+342-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:64:9-73:19
+343            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
+343-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:65:13-101
+344            android:enabled="true"
+344-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:66:13-35
+345            android:exported="false" >
+345-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:67:13-37
+346            <intent-filter>
+346-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:68:13-72:29
+347                <action android:name="com.google.firebase.auth.api.gms.service.START" />
+347-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:69:17-89
+347-->[com.google.firebase:firebase-auth:20.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da553cffd74cc5c818b7a0efe2a891ef\jetified-firebase-auth-20.0.3\AndroidManifest.xml:69:25-86
+348
+349                <category android:name="android.intent.category.DEFAULT" />
+349-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:112:17-76
+349-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:112:27-73
+350            </intent-filter>
+351        </service>
+352        <!--
+353             FirebaseMessagingService performs security checks at runtime,
+354             but set to not exported to explicitly avoid allowing another app to call it.
+355        -->
+356        <service
+356-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\75a2aef13cc0a0f7b5f4d386f93ba76c\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:28:9-35:19
+357            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+357-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\75a2aef13cc0a0f7b5f4d386f93ba76c\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:29:13-82
+358            android:directBootAware="true"
+358-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\75a2aef13cc0a0f7b5f4d386f93ba76c\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:30:13-43
+359            android:exported="false" >
+359-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\75a2aef13cc0a0f7b5f4d386f93ba76c\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:31:13-37
+360            <intent-filter android:priority="-500" >
+360-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\75a2aef13cc0a0f7b5f4d386f93ba76c\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:32:13-34:29
+360-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\75a2aef13cc0a0f7b5f4d386f93ba76c\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:32:28-51
+361                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+361-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\75a2aef13cc0a0f7b5f4d386f93ba76c\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:33:17-78
+361-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\75a2aef13cc0a0f7b5f4d386f93ba76c\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:33:25-75
+362            </intent-filter>
+363        </service>
+364
+365        <activity
+365-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\33b7a10be443c437b84779bb3219ab13\jetified-play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75
+366            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+366-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\33b7a10be443c437b84779bb3219ab13\jetified-play-services-auth-19.0.0\AndroidManifest.xml:24:13-93
+367            android:excludeFromRecents="true"
+367-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\33b7a10be443c437b84779bb3219ab13\jetified-play-services-auth-19.0.0\AndroidManifest.xml:25:13-46
+368            android:exported="false"
+368-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\33b7a10be443c437b84779bb3219ab13\jetified-play-services-auth-19.0.0\AndroidManifest.xml:26:13-37
+369            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+369-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\33b7a10be443c437b84779bb3219ab13\jetified-play-services-auth-19.0.0\AndroidManifest.xml:27:13-72
+370        <!--
+371            Service handling Google Sign-In user revocation. For apps that do not integrate with
+372            Google Sign-In, this service will never be started.
+373        -->
+374        <service
+374-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\33b7a10be443c437b84779bb3219ab13\jetified-play-services-auth-19.0.0\AndroidManifest.xml:33:9-37:51
+375            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+375-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\33b7a10be443c437b84779bb3219ab13\jetified-play-services-auth-19.0.0\AndroidManifest.xml:34:13-89
+376            android:exported="true"
+376-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\33b7a10be443c437b84779bb3219ab13\jetified-play-services-auth-19.0.0\AndroidManifest.xml:35:13-36
+377            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+377-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\33b7a10be443c437b84779bb3219ab13\jetified-play-services-auth-19.0.0\AndroidManifest.xml:36:13-107
+378            android:visibleToInstantApps="true" />
+378-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\33b7a10be443c437b84779bb3219ab13\jetified-play-services-auth-19.0.0\AndroidManifest.xml:37:13-48
+379
+380        <receiver
+380-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cf550f6b03854fe505ffea1e739f6726\jetified-firebase-iid-21.0.1\AndroidManifest.xml:37:9-44:20
+381            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+381-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cf550f6b03854fe505ffea1e739f6726\jetified-firebase-iid-21.0.1\AndroidManifest.xml:38:13-78
+382            android:exported="true"
+382-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cf550f6b03854fe505ffea1e739f6726\jetified-firebase-iid-21.0.1\AndroidManifest.xml:39:13-36
+383            android:permission="com.google.android.c2dm.permission.SEND" >
+383-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cf550f6b03854fe505ffea1e739f6726\jetified-firebase-iid-21.0.1\AndroidManifest.xml:40:13-73
+384            <intent-filter>
+384-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cf550f6b03854fe505ffea1e739f6726\jetified-firebase-iid-21.0.1\AndroidManifest.xml:41:13-43:29
+385                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+385-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cf550f6b03854fe505ffea1e739f6726\jetified-firebase-iid-21.0.1\AndroidManifest.xml:42:17-81
+385-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cf550f6b03854fe505ffea1e739f6726\jetified-firebase-iid-21.0.1\AndroidManifest.xml:42:25-78
+386            </intent-filter>
+387        </receiver>
+388
+389        <provider
+389-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e2624e9efdee5b8cc6028aca4aca2b9c\jetified-firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
+390            android:name="com.google.firebase.provider.FirebaseInitProvider"
+390-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e2624e9efdee5b8cc6028aca4aca2b9c\jetified-firebase-common-19.5.0\AndroidManifest.xml:27:13-77
+391            android:authorities="com.akounto.accountingsoftware.firebaseinitprovider"
+391-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e2624e9efdee5b8cc6028aca4aca2b9c\jetified-firebase-common-19.5.0\AndroidManifest.xml:28:13-72
+392            android:directBootAware="true"
+392-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e2624e9efdee5b8cc6028aca4aca2b9c\jetified-firebase-common-19.5.0\AndroidManifest.xml:29:13-43
+393            android:exported="false"
+393-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e2624e9efdee5b8cc6028aca4aca2b9c\jetified-firebase-common-19.5.0\AndroidManifest.xml:30:13-37
+394            android:initOrder="100" />
+394-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e2624e9efdee5b8cc6028aca4aca2b9c\jetified-firebase-common-19.5.0\AndroidManifest.xml:31:13-36
+395
+396        <activity
+396-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\9bb53fd490331b260eb602ddec3d9856\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+397            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+397-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\9bb53fd490331b260eb602ddec3d9856\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+398            android:exported="false"
+398-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\9bb53fd490331b260eb602ddec3d9856\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+399            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+399-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\9bb53fd490331b260eb602ddec3d9856\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+400
+401        <provider
+401-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:31:9-37:35
+402            android:name="androidx.work.impl.WorkManagerInitializer"
+402-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:32:13-69
+403            android:authorities="com.akounto.accountingsoftware.workmanager-init"
+403-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:33:13-68
+404            android:directBootAware="false"
+404-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:34:13-44
+405            android:exported="false"
+405-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:35:13-37
+406            android:multiprocess="true" />
+406-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:36:13-40
+407
+408        <service
+408-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:39:9-44:35
+409            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+409-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:40:13-88
+410            android:directBootAware="false"
+410-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:41:13-44
+411            android:enabled="@bool/enable_system_alarm_service_default"
+411-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:42:13-72
+412            android:exported="false" />
+412-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:43:13-37
+413        <service
+413-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:45:9-51:35
+414            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+414-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:46:13-84
+415            android:directBootAware="false"
+415-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:47:13-44
+416            android:enabled="@bool/enable_system_job_service_default"
+416-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:48:13-70
+417            android:exported="true"
+417-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:49:13-36
+418            android:permission="android.permission.BIND_JOB_SERVICE" />
+418-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:50:13-69
+419        <service
+419-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:52:9-57:35
+420            android:name="androidx.work.impl.foreground.SystemForegroundService"
+420-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:53:13-81
+421            android:directBootAware="false"
+421-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:54:13-44
+422            android:enabled="@bool/enable_system_foreground_service_default"
+422-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:55:13-77
+423            android:exported="false" />
+423-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:56:13-37
+424
+425        <receiver
+425-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:59:9-64:35
+426            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+426-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:60:13-88
+427            android:directBootAware="false"
+427-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:61:13-44
+428            android:enabled="true"
+428-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:62:13-35
+429            android:exported="false" />
+429-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:63:13-37
+430        <receiver
+430-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:65:9-75:20
+431            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+431-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:66:13-106
+432            android:directBootAware="false"
+432-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:67:13-44
+433            android:enabled="false"
+433-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:68:13-36
+434            android:exported="false" >
+434-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:69:13-37
+435            <intent-filter>
+435-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:71:13-74:29
+436                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+436-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:72:17-87
+436-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:72:25-84
+437                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+437-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:73:17-90
+437-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:73:25-87
+438            </intent-filter>
+439        </receiver>
+440        <receiver
+440-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:76:9-86:20
+441            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+441-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:77:13-104
+442            android:directBootAware="false"
+442-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:78:13-44
+443            android:enabled="false"
+443-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:79:13-36
+444            android:exported="false" >
+444-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:80:13-37
+445            <intent-filter>
+445-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:82:13-85:29
+446                <action android:name="android.intent.action.BATTERY_OKAY" />
+446-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:83:17-77
+446-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:83:25-74
+447                <action android:name="android.intent.action.BATTERY_LOW" />
+447-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:84:17-76
+447-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:84:25-73
+448            </intent-filter>
+449        </receiver>
+450        <receiver
+450-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:87:9-97:20
+451            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+451-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:88:13-104
+452            android:directBootAware="false"
+452-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:89:13-44
+453            android:enabled="false"
+453-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:90:13-36
+454            android:exported="false" >
+454-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:91:13-37
+455            <intent-filter>
+455-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:93:13-96:29
+456                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+456-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:94:17-83
+456-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:94:25-80
+457                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+457-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:95:17-82
+457-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:95:25-79
+458            </intent-filter>
+459        </receiver>
+460        <receiver
+460-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:98:9-107:20
+461            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+461-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:99:13-103
+462            android:directBootAware="false"
+462-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:100:13-44
+463            android:enabled="false"
+463-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:101:13-36
+464            android:exported="false" >
+464-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:102:13-37
+465            <intent-filter>
+465-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:104:13-106:29
+466                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+466-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:105:17-79
+466-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:105:25-76
+467            </intent-filter>
+468        </receiver>
+469        <receiver
+469-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:108:9-119:20
+470            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+470-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:109:13-88
+471            android:directBootAware="false"
+471-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:110:13-44
+472            android:enabled="false"
+472-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:111:13-36
+473            android:exported="false" >
+473-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:112:13-37
+474            <intent-filter>
+474-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:114:13-118:29
+475                <action android:name="android.intent.action.BOOT_COMPLETED" />
+475-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:115:17-79
+475-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:115:25-76
+476                <action android:name="android.intent.action.TIME_SET" />
+476-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:116:17-73
+476-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:116:25-70
+477                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+477-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:117:17-81
+477-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:117:25-78
+478            </intent-filter>
+479        </receiver>
+480        <receiver
+480-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:120:9-129:20
+481            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+481-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:121:13-99
+482            android:directBootAware="false"
+482-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:122:13-44
+483            android:enabled="@bool/enable_system_alarm_service_default"
+483-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:123:13-72
+484            android:exported="false" >
+484-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:124:13-37
+485            <intent-filter>
+485-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:126:13-128:29
+486                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+486-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:127:17-98
+486-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:127:25-95
+487            </intent-filter>
+488        </receiver>
+489        <receiver
+489-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:130:9-140:20
+490            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+490-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:131:13-78
+491            android:directBootAware="false"
+491-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:132:13-44
+492            android:enabled="true"
+492-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:133:13-35
+493            android:exported="true"
+493-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:134:13-36
+494            android:permission="android.permission.DUMP" >
+494-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:135:13-57
+495            <intent-filter>
+495-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:137:13-139:29
+496                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+496-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:138:17-88
+496-->[androidx.work:work-runtime:2.4.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\255134607d335a824e1b967a1af92563\work-runtime-2.4.0\AndroidManifest.xml:138:25-85
+497            </intent-filter>
+498        </receiver>
+499
+500        <provider
+500-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6f90349d7e210df5135b81e475d4d10a\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+501            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+501-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6f90349d7e210df5135b81e475d4d10a\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+502            android:authorities="com.akounto.accountingsoftware.lifecycle-process"
+502-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6f90349d7e210df5135b81e475d4d10a\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+503            android:exported="false"
+503-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6f90349d7e210df5135b81e475d4d10a\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+504            android:multiprocess="true" />
+504-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6f90349d7e210df5135b81e475d4d10a\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+505
+506        <service
+506-->[androidx.room:room-runtime:2.2.5] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\0524e91697e86a1f49c896e775b5dffa\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
+507            android:name="androidx.room.MultiInstanceInvalidationService"
+507-->[androidx.room:room-runtime:2.2.5] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\0524e91697e86a1f49c896e775b5dffa\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
+508            android:directBootAware="true"
+508-->[androidx.room:room-runtime:2.2.5] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\0524e91697e86a1f49c896e775b5dffa\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
+509            android:exported="false" />
+509-->[androidx.room:room-runtime:2.2.5] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\0524e91697e86a1f49c896e775b5dffa\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
+510    </application>
+511
+512</manifest>

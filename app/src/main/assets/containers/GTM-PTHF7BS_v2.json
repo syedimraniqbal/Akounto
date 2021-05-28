@@ -1,0 +1,56 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2021-05-24 15:21:03",
+    "containerVersion": {
+        "path": "accounts/6003994319/containers/45812457/versions/2",
+        "accountId": "6003994319",
+        "containerId": "45812457",
+        "containerVersionId": "2",
+        "container": {
+            "path": "accounts/6003994319/containers/45812457",
+            "accountId": "6003994319",
+            "containerId": "45812457",
+            "name": "akounto.android",
+            "publicId": "GTM-PTHF7BS",
+            "usageContext": [
+                "ANDROID_SDK_5"
+            ],
+            "fingerprint": "1621859359324",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6003994319/containers/45812457/workspaces?apiLink=container"
+        },
+        "builtInVariable": [
+            {
+                "accountId": "6003994319",
+                "containerId": "45812457",
+                "type": "APP_ID",
+                "name": "App ID"
+            },
+            {
+                "accountId": "6003994319",
+                "containerId": "45812457",
+                "type": "APP_NAME",
+                "name": "App Name"
+            },
+            {
+                "accountId": "6003994319",
+                "containerId": "45812457",
+                "type": "APP_VERSION_CODE",
+                "name": "App Version Code"
+            },
+            {
+                "accountId": "6003994319",
+                "containerId": "45812457",
+                "type": "APP_VERSION_NAME",
+                "name": "App Version Name"
+            },
+            {
+                "accountId": "6003994319",
+                "containerId": "45812457",
+                "type": "EVENT_NAME",
+                "name": "Event Name"
+            }
+        ],
+        "fingerprint": "1621856414017",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6003994319/containers/45812457/versions/2?apiLink=version"
+    }
+}
