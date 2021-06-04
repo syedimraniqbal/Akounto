@@ -570,15 +570,19 @@ public class TransactionsFragment extends Fragment implements View.OnClickListen
     /* access modifiers changed from: private */
     public void setAccountSpinner(List<BanksItem> bankResponse) {
         ArrayList<String> accounts = new ArrayList<>();
+
         if (bankResponse != null) {
             for (BanksItem innerBanksItem : bankResponse) {
                 accounts.add(innerBanksItem.getInstitutionName());
                 this.balance += innerBanksItem.getBankAccounts().getAvailableBalance();
             }
-            this.priceTotal.setText(this.balance + " USD");
-            ArrayAdapter dataAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, accounts);
-            dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            accountSpinner.setAdapter(dataAdapter);
+            try {
+                this.priceTotal.setText(this.balance + " USD");
+                ArrayAdapter dataAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, accounts);
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                accountSpinner.setAdapter(dataAdapter);
+            } catch (Exception e) {
+            }
             accountSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -680,8 +684,8 @@ public class TransactionsFragment extends Fragment implements View.OnClickListen
                     if (response.body() != null) {
                         //TransactionsFragment transactionsFragment = TransactionsFragment.this;
                         //transactionsFragment.startActivity(AddTransactionActivity.buildIntent(transactionsFragment.getContext(), response.body().getData()));
-                        TransactionAddFragment fragment=new TransactionAddFragment();
-                        TransactionAddFragment.receivedData=response.body().getData();
+                        TransactionAddFragment fragment = new TransactionAddFragment();
+                        TransactionAddFragment.receivedData = response.body().getData();
                         fragment.setData(response.body().getData());
                         AddFragments.addFragmentToDrawerActivity(getContext(), null, fragment.getClass());
                         return;

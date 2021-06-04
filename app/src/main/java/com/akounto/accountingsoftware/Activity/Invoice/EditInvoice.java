@@ -192,13 +192,19 @@ public class EditInvoice extends AppCompatActivity {
         findViewById(R.id.iv_close).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(EditInvoice.this, DashboardActivity.class));
+                finish();
             }
         });
         add_items.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivityForResult(new Intent(EditInvoice.this, ItemList.class), 3);
+            }
+        });
+        add_customer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivityForResult(new Intent(EditInvoice.this, CustomerList.class), 2);
             }
         });
         findViewById(R.id.iv_save).setOnClickListener(new View.OnClickListener() {
@@ -666,7 +672,8 @@ public class EditInvoice extends AppCompatActivity {
                         Log.d("invoice_type", new Gson().toJson((Object) response.body()));
                         EditInvoice EditInvoice = EditInvoice.this;
                         UiUtil.showToast(EditInvoice, invoice_type + " Updated");
-                        startActivity(new Intent(EditInvoice.this, DashboardActivity.class));
+                        ViewInvoice.guid=receivedData.getGuid();
+                        finish();
                         return;
                     } else {
                         UiUtil.showToast(EditInvoice.this, ((response.body().getTransactionStatus().getError())).getDescription());
@@ -765,7 +772,7 @@ public class EditInvoice extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-       /* if (requestCode == 2) {
+       if (requestCode == 2) {
             try {
                 if (CustomerList.result != null) {
                     id_cust.setVisibility(View.VISIBLE);
@@ -780,7 +787,7 @@ public class EditInvoice extends AppCompatActivity {
                 this.customerHeadTransactionId = CustomerList.result.getHeadTransactionId();
             } catch (Exception e) {
             }
-        } else */
+        } else
         if (resultCode != 0) {
             if (requestCode == 3) {
                 try {

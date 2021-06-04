@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.Activity.CreatingProductsAndServices;
+import com.akounto.accountingsoftware.adapter.InvoiceItemAdapter;
 import com.akounto.accountingsoftware.adapter.ItemAdapter;
 import com.akounto.accountingsoftware.network.CustomCallBack;
 import com.akounto.accountingsoftware.network.RestClient;
@@ -171,7 +172,7 @@ public class ItemList extends AppCompatActivity {
             rc.setVisibility(View.VISIBLE);
             noData.setVisibility(View.GONE);
             rc.removeAllViews();
-            rc.setAdapter(new ItemAdapter(itmeList, "$", new ItemAdapter.OnItemClickListener() {
+            rc.setAdapter(new InvoiceItemAdapter(itmeList, "$", new InvoiceItemAdapter.OnItemClickListener() {
                 @Override
                 public void onItemClick(Product item, int position) {
                     result = item;

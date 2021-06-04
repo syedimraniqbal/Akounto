@@ -21,6 +21,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.akounto.accountingsoftware.Activity.DashboardActivity;
 import com.akounto.accountingsoftware.Activity.Type;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
@@ -80,7 +81,7 @@ public class InvoiceList extends AppCompatActivity implements InvoiceItemClick {
         findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                startActivity(new Intent(InvoiceList.this, DashboardActivity.class));
             }
         });
         this.searchEt = editText;

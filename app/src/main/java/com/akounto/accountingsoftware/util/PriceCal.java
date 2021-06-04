@@ -59,13 +59,15 @@ public class PriceCal {
             for (int i = 0; i < items.size(); i++) {
                 double amount = 0.0;
                 ProductServiceTaxesItem temp;
-                for (int j = 0; j < items.get(i).getProductServiceTaxes().size(); j++) {
-                    amount = amount + (((items.get(i).getPrice() * Double.parseDouble(items.get(i).getQty())) / 100.0f) * items.get(i).getProductServiceTaxes().get(j).getRate());
-                    temp = items.get(i).getProductServiceTaxes().get(j);
-                    temp.setAmount(((items.get(i).getPrice() * Double.parseDouble(items.get(i).getQty())) / 100.0f) * items.get(i).getProductServiceTaxes().get(j).getRate());
-                    taxs.add(temp);
+                if (items.get(i).getProductServiceTaxes() != null) {
+                    for (int j = 0; j < items.get(i).getProductServiceTaxes().size(); j++) {
+                        amount = amount + (((items.get(i).getPrice() * Double.parseDouble(items.get(i).getQty())) / 100.0f) * items.get(i).getProductServiceTaxes().get(j).getRate());
+                        temp = items.get(i).getProductServiceTaxes().get(j);
+                        temp.setAmount(((items.get(i).getPrice() * Double.parseDouble(items.get(i).getQty())) / 100.0f) * items.get(i).getProductServiceTaxes().get(j).getRate());
+                        taxs.add(temp);
+                    }
+                    taxamount.put(items.get(i).getName(), amount);
                 }
-                taxamount.put(items.get(i).getName(), amount);
             }
         } catch (Exception e) {
         }
@@ -122,3 +124,4 @@ public class PriceCal {
         this.taxes = taxes;
     }
 }
+

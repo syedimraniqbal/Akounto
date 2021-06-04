@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
+import com.akounto.accountingsoftware.Activity.SplashScreenActivity;
 import com.google.gson.Gson;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.Data.Business;
@@ -274,6 +275,10 @@ public class AddBusinessFragment extends Fragment {
                 super.onResponse(call, response);
                 if (response.isSuccessful()) {
                     UiUtil.showToast(AddBusinessFragment.this.getContext(), "Business Added!");
+                    Bundle b=new Bundle();
+                    b.putString(Constant.CATEGORY,"profile");
+                    b.putString(Constant.ACTION,"add_business");
+                    SplashScreenActivity.mFirebaseAnalytics.logEvent("profile_add_business",b);
                     UserDetails userDetails = UiUtil.getUserDetail(getContext());
                     SignInResponse signInResponse=UiUtil.getUserDetails(getContext());
                     List<Business> list_buss=userDetails.getBusiness();

@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.request.RegisterBusiness;
 import com.akounto.accountingsoftware.request.User;
@@ -35,6 +36,12 @@ public class SIgnUpStep0 extends AppCompatActivity {
             findViewById(R.id.signUpButton).setOnClickListener(new View.OnClickListener() {
                 public final void onClick(View view) {
                     if (isValid()) {
+                        Bundle b=new Bundle();
+                        b.putString(Constant.CATEGORY,"sign_up");
+                        b.putString(Constant.ACTION,"email_verify");
+                        b.putString(Constant.EMAIL,emailET.getText().toString());
+                        SplashScreenActivity.mFirebaseAnalytics.logEvent("sign_up_verify_email",b);
+
                         RegisterBusiness registerBusiness = new RegisterBusiness();
                         User user = new User();
                         user.setEmail(emailET.getText().toString());

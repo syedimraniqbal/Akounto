@@ -218,6 +218,10 @@ public class CreateProductsAndServicesPurchase extends AppCompatActivity impleme
                 public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                     super.onResponse(call, response);
                     if (response.isSuccessful()) {
+                        Bundle b=new Bundle();
+                        b.putString(Constant.CATEGORY,"billing");
+                        b.putString(Constant.ACTION,"add_item");
+                        SplashScreenActivity.mFirebaseAnalytics.logEvent("bill_add_item",b);
                         UiUtil.showToast(CreateProductsAndServicesPurchase.this, "Product Added");
                         CreateProductsAndServicesPurchase.this.finish();
                     }

@@ -79,6 +79,6 @@
             android:textColor="#727d8a"
             android:textSize="14sp"
             android:textStyle="normal"
-            tools:text="+ GST 18%" />
+            android:text="no taxs" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

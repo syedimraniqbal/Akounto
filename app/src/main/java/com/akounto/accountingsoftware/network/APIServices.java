@@ -65,6 +65,7 @@ import com.akounto.accountingsoftware.response.TaxResponseList;
 import com.akounto.accountingsoftware.response.Taxs.TaxsResponse;
 import com.akounto.accountingsoftware.response.Transaction;
 import com.akounto.accountingsoftware.response.TransectionDetails;
+import com.akounto.accountingsoftware.response.UpdateResponse;
 import com.akounto.accountingsoftware.response.UpdateStatusResponse;
 import com.akounto.accountingsoftware.response.UserInfoResponse;
 import com.akounto.accountingsoftware.response.UserManagementResponse;
@@ -353,4 +354,8 @@ public interface APIServices {
     @Multipart
     @POST("api/bank/transaction-csv-import-new")
     Call<BankAccountData> uploadBankCSV(@Header("X-Signature") String signature, @Header("Authorization") String authHeader, @Header("X-Company") String company, @Part MultipartBody.Part file1, @Part("BankAccountId") RequestBody bbank_account_id, @Part("OpeningBallance") RequestBody opening_ballance);
+
+    @GET("api/general/android-app-version")
+    Call<UpdateResponse> getUpadte();
+
 }

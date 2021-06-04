@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color">
@@ -52,7 +53,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Company Name*"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -66,7 +67,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
-                            android:padding="@dimen/_8sdp"
+                            android:padding="@dimen/_12sdp"
                             android:textColor="@color/text_color" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -84,7 +85,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Email"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -99,7 +100,7 @@
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
                             android:inputType="textEmailAddress"
-                            android:padding="@dimen/_8sdp"
+                            android:padding="@dimen/_12sdp"
                             android:textColor="@color/blackTextColor" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -117,7 +118,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Phone"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -134,8 +135,9 @@
                             android:inputType="number"
                             android:maxEms="10"
                             android:maxLength="10"
-                            android:padding="@dimen/_8sdp"
-                            android:textColor="@color/text_color" />
+                            android:padding="@dimen/_12sdp"
+                            android:textColor="@color/text_color"
+                            tools:ignore="TextFields" />
                     </RelativeLayout>
                 </RelativeLayout>
             </LinearLayout>
@@ -170,7 +172,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Address Line 1"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -184,7 +186,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
-                            android:padding="@dimen/_8sdp"
+                            android:padding="@dimen/_12sdp"
+                            android:maxLength="50"
                             android:textColor="@color/text_color" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -202,7 +205,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Address Line 2"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -216,7 +219,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
-                            android:padding="@dimen/_8sdp"
+                            android:padding="@dimen/_12sdp"
+                            android:maxLength="50"
                             android:textColor="@color/text_color" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -234,7 +238,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="City"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -248,7 +252,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
-                            android:padding="@dimen/_8sdp"
+                            android:padding="@dimen/_12sdp"
+                            android:maxLength="50"
                             android:textColor="@color/text_color" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -266,7 +271,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Postal Zip Code"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -281,7 +286,8 @@
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
                             android:inputType="number"
-                            android:padding="@dimen/_8sdp"
+                            android:maxLength="10"
+                            android:padding="@dimen/_12sdp"
                             android:textColor="@color/text_color" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -299,7 +305,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Country"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -345,7 +351,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Province / State"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -419,7 +425,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Address Line 1"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -433,7 +439,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
-                            android:padding="@dimen/_8sdp"
+                            android:padding="@dimen/_12sdp"
+                            android:maxLength="50"
                             android:textColor="@color/text_color" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -451,7 +458,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Address Line 2"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -465,7 +472,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
-                            android:padding="@dimen/_8sdp"
+                            android:padding="@dimen/_12sdp"
+                            android:maxLength="50"
                             android:textColor="@color/text_color" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -483,7 +491,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="City"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -497,8 +505,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
-                            android:inputType="number"
-                            android:padding="@dimen/_8sdp"
+                            android:inputType="text"
+                            android:maxLength="50"
+                            android:padding="@dimen/_12sdp"
                             android:textColor="@color/text_color" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -516,7 +525,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Postal Zip Code"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -530,7 +539,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
-                            android:padding="@dimen/_8sdp"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:padding="@dimen/_12sdp"
                             android:textColor="@color/text_color" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -548,7 +559,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Country"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -594,7 +605,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Province / State"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -658,7 +669,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Currency"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -704,7 +715,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Account Number"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -718,7 +729,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
-                            android:padding="@dimen/_8sdp"
+                            android:padding="@dimen/_12sdp"
+                            android:inputType="number"
+                            android:maxLength="17"
                             android:textColor="@color/text_color" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -735,8 +748,9 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
                         android:text="Fax"
+                        android:inputType="number"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -751,7 +765,8 @@
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
                             android:inputType="number"
-                            android:padding="@dimen/_8sdp"
+                            android:maxLength="15"
+                            android:padding="@dimen/_12sdp"
                             android:textColor="@color/text_color" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -769,7 +784,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Mobile"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -783,8 +798,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
-                            android:inputType="phone"
-                            android:padding="@dimen/_8sdp"
+                            android:inputType="number"
+                            android:maxLength="15"
+                            android:padding="@dimen/_12sdp"
                             android:textColor="@color/text_color" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -802,7 +818,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Toll-free"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -817,7 +833,8 @@
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
                             android:inputType="phone"
-                            android:padding="@dimen/_8sdp"
+                            android:maxLength="15"
+                            android:padding="@dimen/_12sdp"
                             android:textColor="@color/text_color" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -835,7 +852,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Portal"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -849,7 +866,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
-                            android:padding="@dimen/_8sdp"
+                            android:padding="@dimen/_12sdp"
                             android:textColor="@color/text_color" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -867,7 +884,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="Internal Notes"
                         android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -881,7 +898,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/_60sdp"
                             android:background="@color/transparent"
-                            android:padding="@dimen/_8sdp"
+                            android:padding="@dimen/_12sdp"
                             android:textColor="@color/text_color" />
                     </RelativeLayout>
                 </RelativeLayout>

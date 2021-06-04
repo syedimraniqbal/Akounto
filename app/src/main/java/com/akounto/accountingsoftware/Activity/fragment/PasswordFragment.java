@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
+import com.akounto.accountingsoftware.Activity.SplashScreenActivity;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.Activity.Dashboard.MoreFragment;
@@ -128,6 +129,10 @@ public class PasswordFragment extends Fragment {
         RestClient.getInstance(getContext()).changeUserPassword(Constant.X_SIGNATURE,"Bearer " +UiUtil.getAcccessToken(getContext()),UiUtil.getComp_Id(getContext()),map).enqueue(new CustomCallBack<SignUpResponse>(getContext(), null) {
             public void onResponse(Call<SignUpResponse> call, Response<SignUpResponse> response) {
                 super.onResponse(call, response);
+                Bundle b=new Bundle();
+                b.putString(Constant.CATEGORY,"profile");
+                b.putString(Constant.ACTION,"change_password");
+                SplashScreenActivity.mFirebaseAnalytics.logEvent("profile_change_password",b);
                 if (!response.isSuccessful()) {
                     UiUtil.showToast(PasswordFragment.this.getContext(), "Error while updating");
                 } else if (response.body().getTransactionStatus().isIsSuccess()) {

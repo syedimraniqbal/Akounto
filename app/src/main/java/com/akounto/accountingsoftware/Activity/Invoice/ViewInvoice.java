@@ -12,6 +12,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -20,6 +21,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.akounto.accountingsoftware.Activity.SplashScreenActivity;
 import com.akounto.accountingsoftware.Activity.fragment.InvoicesFragment;
 import com.akounto.accountingsoftware.util.AddFragments;
 import com.google.gson.Gson;
@@ -70,12 +72,14 @@ public class ViewInvoice extends AppCompatActivity {
     public static String cust_email = "";
     private List<Currency> currencyList = new ArrayList<>();
     private Currency corency = new Currency();
+    public static String guid;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.layout_test3);
         mContext = this;
+        guid = "";
         bussinessCurrency = UiUtil.getBussinessCurrenSymbul(mContext);
         rc = binding.rcItem;
         rc.setHasFixedSize(true);
@@ -177,6 +181,14 @@ public class ViewInvoice extends AppCompatActivity {
         setAdapter();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (!guid.equalsIgnoreCase("")) {
+            fetchInvoiceDetails(guid, 2);
+        }
+    }
+
     private void fetchCurrencies() throws JSONException {
         String loadJSONFromAsset = JsonUtils.loadJSONFromAsset("currency.json", getApplicationContext());
         Objects.requireNonNull(loadJSONFromAsset);
@@ -186,6 +198,68 @@ public class ViewInvoice extends AppCompatActivity {
             this.currencyList.add(new Currency(jsonObject.getString("Symbol"), jsonObject.getString("Id"), jsonObject.getString("Name")));
         }
 
+    }
+
+    private void setUI() {
+
+        try {
+            Gson gson = new Gson();
+            items = new ArrayList<>();
+            for (int k = 0; k < receivedData.getInvoiceTransaction().size(); k++) {
+                Product temp = gson.fromJson(gson.toJson(receivedData.getInvoiceTransaction().get(k)), Product.class);
+                if (temp.getTaxes() != null) {
+                    temp.setProductServiceTaxes(UiUtil.trasforme(temp.getTaxes()));
+                }
+                items.add(temp);
+            }
+        } catch (Exception e) {
+            Log.e("Error :: ", e.getMessage());
+        }
+
+        try {
+            selectedCurrencyId = receivedData.getCustCurrencySymbol();
+            binding.customerCompany.setText(receivedData.getCustomer().getName());
+            binding.cusmoterName.setText(receivedData.getCustomer().getEmail());
+            cust_email = receivedData.getCustomer().getEmail();
+            binding.customerEmail.setText(receivedData.getCustomer().getPhone());
+            binding.billNumber.setText(receivedData.getInvoiceNoPS());
+            try {
+                binding.noInvoice.setText("#" + String.valueOf(receivedData.getInvoiceNo()));
+            } catch (Exception e) {
+                Log.e("Error :: ", e.toString());
+            }
+            binding.dueAmount.setText(bussinessCurrency + " " + String.format("%.2f", receivedData.getDueAmount()));
+            binding.dueOnPTV.setText(getFormattedDate(receivedData.getPaymentDue()));
+            fetchCurrencies();
+            corency = UiUtil.getcurancy(receivedData.getCustCurrency(), currencyList);
+            binding.currency.setText(corency.getName() + " (" + corency.getId() + " )");
+        } catch (Exception e) {
+            Log.e("Error :: ", e.toString());
+        }
+
+        if (receivedData.getStatus() == 0) {
+            binding.approveTv.setVisibility(View.VISIBLE);
+            binding.approveTv.setText("Approve draft");
+            binding.editDraft.setVisibility(View.VISIBLE);
+        } else if (receivedData.getStatus() == 100) {
+            binding.approveTv.setVisibility(View.GONE);
+            binding.editDraft.setVisibility(View.GONE);
+            binding.cacncelInvoice.setVisibility(View.VISIBLE);
+            binding.convertToInvoice.setVisibility(View.GONE);
+            binding.sendEstimate.setVisibility(View.VISIBLE);
+        } else if (receivedData.getStatus() == 400) {
+            binding.cacncelInvoice.setVisibility(View.GONE);
+            binding.editDraft.setVisibility(View.GONE);
+            binding.sendEstimate.setVisibility(View.GONE);
+            binding.convertToInvoice.setVisibility(View.GONE);
+            binding.approveTv.setVisibility(View.GONE);
+        } else {
+            binding.editDraft.setVisibility(View.GONE);
+            binding.approveTv.setVisibility(View.GONE);
+            binding.sendEstimate.setText("Resend Invoice");
+            binding.sendEstimate.setVisibility(View.VISIBLE);
+        }
+        setAdapter();
     }
 
     private void sendAproval() {
@@ -206,6 +280,10 @@ public class ViewInvoice extends AppCompatActivity {
                         binding.cacncelInvoice.setVisibility(View.VISIBLE);
                         binding.convertToInvoice.setVisibility(View.GONE);
                         binding.sendEstimate.setVisibility(View.VISIBLE);
+                        Bundle b = new Bundle();
+                        b.putString(Constant.CATEGORY, "invoicing");
+                        b.putString(Constant.ACTION, "change_status");
+                        SplashScreenActivity.mFirebaseAnalytics.logEvent("invoice_change_status", b);
                     } else {
                         UiUtil.showToast(ViewInvoice.this, ((response.body().getTransactionStatus().getError())).getDescription());
                     }
@@ -309,6 +387,28 @@ public class ViewInvoice extends AppCompatActivity {
         dialog.show();
     }
 
+    private void fetchInvoiceDetails(String guid, final int type) {
+        RestClient.getInstance(mContext).getInvoiceById(Constant.X_SIGNATURE, "Bearer " + UiUtil.getAcccessToken(mContext), UiUtil.getComp_Id(mContext), "invoice", guid).enqueue(new CustomCallBack<GetInvoiceByIdResponse>(mContext, null) {
+            public void onResponse(Call<GetInvoiceByIdResponse> call, Response<GetInvoiceByIdResponse> response) {
+                super.onResponse(call, response);
+                ViewInvoice.guid = "";
+                try {
+                    if (response.body().getTransactionStatus().isIsSuccess() && response.body() != null) {
+                        receivedData = response.body().getInvoiceDetails();
+                        setUI();
+                    } else {
+                        Toast.makeText(mContext, "Unable to fetch", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (Exception e) {
+                }
+            }
+
+            public void onFailure(Call<GetInvoiceByIdResponse> call, Throwable t) {
+                super.onFailure(call, t);
+            }
+        });
+    }
+
     public void cancelInvoice() {
         ApproveRecurringInvoice req = new ApproveRecurringInvoice();
         req.setInvoiceId(this.receivedData.getId());
@@ -323,6 +423,10 @@ public class ViewInvoice extends AppCompatActivity {
                     binding.cacncelInvoice.setVisibility(View.GONE);
                     binding.convertToInvoice.setVisibility(View.GONE);
                     binding.sendEstimate.setVisibility(View.GONE);
+                    Bundle b = new Bundle();
+                    b.putString(Constant.CATEGORY, "invoicing");
+                    b.putString(Constant.ACTION, "cancel_invoice");
+                    SplashScreenActivity.mFirebaseAnalytics.logEvent("invoice_cancel_invoice", b);
                     return;
                 }
                 UiUtil.showToast(ViewInvoice.this, "Update scheduler, before approving");
@@ -342,6 +446,10 @@ public class ViewInvoice extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     UiUtil.showToast(ViewInvoice.this, "Succefully Converted");
                     ViewInvoice.this.finish();
+                    Bundle b = new Bundle();
+                    b.putString(Constant.CATEGORY, "invoicing");
+                    b.putString(Constant.ACTION, "cancel_invoice");
+                    SplashScreenActivity.mFirebaseAnalytics.logEvent("invoice_cancel_invoice", b);
                     return;
                 }
                 UiUtil.showToast(ViewInvoice.this, "Error while adding");

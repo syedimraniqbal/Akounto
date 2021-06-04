@@ -120,6 +120,11 @@ public class ExternalSignUp extends AppCompatActivity implements View.OnClickLis
             if (m_number.getText().toString().length()>=10) {
                 model.extReg(mContext, JsonUtils.getExtRegRequst(m_number.getText().toString(),name, email, bn, id_token, String.valueOf(ExternalSignUp.this.dealsWithId + 1), ExternalSignUp.this.dealsWith, String.valueOf(ExternalSignUp.this.businessTypeId + 1), ExternalSignUp.this.businessType)).observe(this, userDetails -> {
                     if (userDetails.getStatus() == 0) {
+                        Bundle b=new Bundle();
+                        b.putString(Constant.CATEGORY,"sign_up");
+                        b.putString(Constant.ACTION,"social");
+                        b.putString(Constant.EMAIL,email);
+                        SplashScreenActivity.mFirebaseAnalytics.logEvent("sign_up_social",b);
                         UiUtil.addLoginToSharedPref(ExternalSignUp.this, true);
                         UiUtil.addUserDetails(ExternalSignUp.this, userDetails);
                         Intent mainIntent = new Intent(ExternalSignUp.this, SignUpStep3.class);

@@ -180,8 +180,9 @@ public class EditBill extends AppCompatActivity {
             List<ProductServiceTaxesItem> taxAddedList2 = items.get(i).getProductServiceTaxes();
             List<Object> taxes = new ArrayList<>();
             if (taxAddedList2 != null) {
-                BillTaxs addBillTax = new BillTaxs();
+                BillTaxs addBillTax = null;
                 for (ProductServiceTaxesItem res : taxAddedList2) {
+                    addBillTax = new BillTaxs();
                     addBillTax.setName(res.getTaxName());
                     addBillTax.setRate((int) res.getRate());
                     addBillTax.setTransactionHeadTaxId(res.getTaxId());
@@ -286,9 +287,11 @@ public class EditBill extends AppCompatActivity {
         vend = receivedData.getVendor();
         items = new ArrayList<>();
         for (int k = 0; k < receivedData.getBillTransaction().size(); k++) {
+            try{
             PurchaseItem temp = gson.fromJson(gson.toJson(receivedData.getBillTransaction().get(k)), PurchaseItem.class);
             temp.setProductServiceTaxes(UiUtil.trasformeBill(receivedData.getBillTransaction().get(k).getTaxes()));
-            items.add(temp);
+            items.add(temp);} catch (Exception e) {
+            }
         }
         items.get(0).getCompanyId();
         selectedCurrencyId = receivedData.getCustCurrencySymbol();
@@ -413,6 +416,27 @@ public class EditBill extends AppCompatActivity {
         }
     }
 
+    /*private void display_taxs() {
+        try {
+            binding.taxsNameList.removeAllViews();
+            binding.taxsAmountList.removeAllViews();
+            for (int i = 0; i < priceCal.getTaxes().size(); i++) {
+                TextView name = new TextView(mContext);
+                TextView amount = new TextView(mContext);
+                if (priceCal.getTaxes().get(i).getName() != null) {
+                    name.setText(priceCal.getTaxes().get(i).getName() + " " + priceCal.getTaxes().get(i).getRate());
+                } else {
+                    name.setText(priceCal.getTaxes().get(i).getTaxName() + " " + priceCal.getTaxes().get(i).getRate());
+                }
+                amount.setText(selectedCurrencyId + " " + String.format("%.2f", priceCal.getTaxes().get(i).getAmount()));
+                amount.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+                amount.setGravity(Gravity.RIGHT);
+                binding.taxsNameList.addView(name);
+                binding.taxsAmountList.addView(amount);
+            }
+        } catch (Exception e) {
+        }
+    }*/
     private void display_taxs() {
         try {
             binding.taxsNameList.removeAllViews();

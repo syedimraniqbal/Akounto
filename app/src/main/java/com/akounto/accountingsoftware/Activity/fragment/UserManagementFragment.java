@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.akounto.accountingsoftware.Activity.SplashScreenActivity;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.Activity.Setting.SettingMenu;
@@ -197,6 +198,10 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 super.onResponse(call, response);
                 if (response.isSuccessful()) {
+                    Bundle b=new Bundle();
+                    b.putString(Constant.CATEGORY,"setting");
+                    b.putString(Constant.ACTION,"add_user");
+                    SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_add_user",b);
                     UiUtil.showToast(UserManagementFragment.this.getContext(), "Added");
                     if (UserManagementFragment.this.dialog != null) {
                         UserManagementFragment.this.dialog.dismiss();
@@ -204,6 +209,10 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
                     UserManagementFragment.this.getUsers();
                     return;
                 }
+                Bundle b=new Bundle();
+                b.putString(Constant.CATEGORY,"setting");
+                b.putString(Constant.ACTION,"add_user_fail");
+                SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_add_user",b);
                 UiUtil.showToast(UserManagementFragment.this.getContext(), "Error while adding");
             }
 

@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
@@ -17,7 +18,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     private ImageView imageView;
     Context mContext;
-    private FirebaseAnalytics mFirebaseAnalytics;
+    public static FirebaseAnalytics mFirebaseAnalytics;
     int i = 0;
 
     public void onCreate(Bundle savedInstanceState) {
@@ -25,11 +26,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         mContext = this;
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-       /* Bundle b=new Bundle();
-        b.putString("screenname","testing");
-        mFirebaseAnalytics.logEvent("screenname",b);*/
         try {
-
             this.imageView = findViewById(R.id.app_logo);
             this.imageView.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce));
             new Handler().postDelayed(new Runnable() {

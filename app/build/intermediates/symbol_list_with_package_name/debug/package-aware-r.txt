@@ -948,10 +948,6 @@ attr rollType
 attr round
 attr roundPercent
 attr saturation
-attr sb_handlerColor
-attr sb_horizontal
-attr sb_indicatorColor
-attr sb_indicatorTextColor
 attr scopeUris
 attr scrimAnimationDuration
 attr scrimBackground
@@ -3080,6 +3076,7 @@ drawable fab_add
 drawable fedded_button
 drawable footer_bg
 drawable general
+drawable google_play_logo_svg
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable gray_button_background
@@ -3726,6 +3723,7 @@ id btn_import
 id btn_information
 id btn_invoice
 id btn_invoice_customize
+id btn_no
 id btn_nxt_activity
 id btn_product_and_services
 id btn_products_and_services
@@ -4201,6 +4199,7 @@ id imageView2
 id imageView3
 id imageView4
 id imageView5
+id imageView6
 id imageViewArrow
 id imageViewDelete
 id imageViewInfo
@@ -5124,6 +5123,7 @@ id unlabeled
 id up
 id upButton
 id updateButton
+id update_message
 id uploadBillButton
 id uploadButton
 id uploadReceipt
@@ -5437,6 +5437,7 @@ layout layout_create_bill
 layout layout_customize_invoice
 layout layout_customize_invoice_image_preview
 layout layout_customize_invoice_style
+layout layout_dilog_update
 layout layout_edit_invoice
 layout layout_extlogin
 layout layout_forgot_password
@@ -6847,7 +6848,6 @@ styleable RecyclerView android_orientation android_clipToPadding android_descend
 styleable Rotate3dAnimation customPivotX customPivotY fromDeg rollType toDeg
 styleable RoundedButton buttonColor buttonCornerRadius buttonGradientEndColor buttonGradientStartColor buttonRippleAlpha buttonRippleColor
 styleable ScrimInsetsFrameLayout insetForeground
-styleable ScrollBar sb_handlerColor sb_horizontal sb_indicatorColor sb_indicatorTextColor
 styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
 styleable SeekBarPreference android_layout android_max adjustable min seekBarIncrement showSeekBarValue updatesContinuously

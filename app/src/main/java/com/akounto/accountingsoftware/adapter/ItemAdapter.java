@@ -43,22 +43,33 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             holder.item_name.setText(item_list.get(position).getName().trim());
             holder.item_price.setText(cur + " " + String.valueOf(item_list.get(position).getPrice() * Double.parseDouble(item_list.get(position).getQty())));
             holder.product_decription.setText(item_list.get(position).getDescription().trim());
+        } catch (Exception e) {
+        }
+        try {
             if (item_list.get(position).getProductServiceTaxes() != null) {
                 if (item_list.get(position).getProductServiceTaxes().get(0).getName() != null)
                     holder.taxtes.setText(item_list.get(position).getProductServiceTaxes().get(0).getName().trim() + " " + item_list.get(position).getProductServiceTaxes().get(0).getRate() + "%");
                 else
                     holder.taxtes.setText(item_list.get(position).getProductServiceTaxes().get(0).getTaxName().trim() + " " + item_list.get(position).getProductServiceTaxes().get(0).getRate() + "%");
             }
+        } catch (Exception e) {
+        }
+        try {
             if (item_list.get(position).getProductServiceTaxes() != null) {
-                if (item_list.get(position).getProductServiceTaxes().size() != 1)
-                    holder.no_taxs.setText("+ " + (item_list.get(position).getProductServiceTaxes().size()-1) + " more");
+                if (item_list.get(position).getProductServiceTaxes().size() != 0)
+                    if (item_list.get(position).getProductServiceTaxes().size() != 1)
+                        holder.no_taxs.setText("+ " + (item_list.get(position).getProductServiceTaxes().size() - 1) + " more");
             }
+        } catch (Exception e) {
+        }
+        try {
             if (item_list.get(position).getQty() != null)
                 holder.tv_qyt.setText(item_list.get(position).getQty() + " x " + item_list.get(position).getPrice() + " each");
             else
                 holder.tv_qyt.setText("1 x " + item_list.get(position).getPrice() + " each");
         } catch (Exception e) {
         }
+
         holder.item_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -92,6 +92,11 @@ public class SignUpStep2 extends AppCompatActivity {
                             @Override
                             public void onResponse(Call<SignUpResponse> call, Response<SignUpResponse> response) {
                                 UiUtil.cancelProgressDialogue();
+                                Bundle b=new Bundle();
+                                b.putString(Constant.CATEGORY,"sign_up");
+                                b.putString(Constant.ACTION,"business_info");
+                                b.putString(Constant.COMPANY,business_name);
+                                SplashScreenActivity.mFirebaseAnalytics.logEvent("sign_up_connect_bank",b);
                                 SignUpResponse responsed = response.body();
                                 try {
                                     if (responsed.getTransactionStatus().getIsSuccess()) {

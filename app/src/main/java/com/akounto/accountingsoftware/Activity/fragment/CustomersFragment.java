@@ -34,7 +34,7 @@ import retrofit2.Call;
 import retrofit2.Response;
 
 public class CustomersFragment extends Fragment implements UpdateCustomer {
-    /* access modifiers changed from: private */
+
     public List<Customer> customerList = new ArrayList();
     RecyclerView customer_rv;
     ConstraintLayout noDataLayout;
@@ -69,7 +69,8 @@ public class CustomersFragment extends Fragment implements UpdateCustomer {
     }
 
     public /* synthetic */ void lambda$onCreateView$0$CustomersFragment(View click) {
-        startActivity(new Intent(getActivity(), AddCustomersActivity.class));
+       // startActivity(new Intent(getActivity(), AddCustomersActivity.class));
+        AddFragments.addFragmentToDrawerActivity(getActivity(), null, AddCustomerFragmet.class);
     }
 
     public void onResume() {
@@ -135,12 +136,16 @@ public class CustomersFragment extends Fragment implements UpdateCustomer {
         if (id == 3) {
             deleteCustomer(customer.getHeadTransactionId());
         } else if (id == 2) {
-            Intent intent = new Intent(getActivity(), AddCustomersActivity.class);
+           /* Intent intent = new Intent(getActivity(), AddCustomersActivity.class);
             intent.putExtra("IS_EDIT", true);
             intent.putExtra("EXTRA_DATA", new Gson().toJson(customer));
             intent.putExtra(UiConstants.IS_EDIT, 2);
             intent.putExtra(UiConstants.CUSTOMER_DATE, new Gson().toJson(customer));
-            startActivity(intent);
+            startActivity(intent);*/
+            AddCustomerFragmet.is_edit=true;
+            AddCustomerFragmet.editCont=2;
+            AddCustomerFragmet.customer=customer;
+            AddFragments.addFragmentToDrawerActivity(getActivity(), null, AddCustomerFragmet.class);
         }
     }
 }

@@ -17,6 +17,7 @@ import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.Activity.CreateProductsAndServicesPurchase;
 import com.akounto.accountingsoftware.adapter.BillItem;
+import com.akounto.accountingsoftware.adapter.BillItemAdapter;
 import com.akounto.accountingsoftware.network.CustomCallBack;
 import com.akounto.accountingsoftware.network.RestClient;
 import com.akounto.accountingsoftware.response.PurchaseItem;
@@ -146,7 +147,7 @@ public class ListPurchaseItem extends AppCompatActivity {
             rc.setVisibility(View.VISIBLE);
             noData.setVisibility(View.GONE);
             rc.removeAllViews();
-            rc.setAdapter(new BillItem(itmeList, "$", new BillItem.OnItemClickListener() {
+            rc.setAdapter(new BillItemAdapter(itmeList, "$", new BillItemAdapter.OnItemClickListener() {
                 @Override
                 public void onItemClick(PurchaseItem item, int position) {
                     result = item;

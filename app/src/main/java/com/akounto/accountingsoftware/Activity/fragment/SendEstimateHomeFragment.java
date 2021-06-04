@@ -10,6 +10,7 @@ import android.widget.EditText;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
+import com.akounto.accountingsoftware.Activity.SplashScreenActivity;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.Activity.Invoice.ViewInvoice;
@@ -94,6 +95,11 @@ public class SendEstimateHomeFragment extends Fragment {
                 super.onResponse(call, response);
                 if (response.code() == 200) {
                     if (response.body().getTransactionStatus().isIsSuccess()) {
+                        Bundle b=new Bundle();
+                        b.putString(Constant.CATEGORY,"invoicing");
+                        b.putString(Constant.ACTION,"sending");
+                        SplashScreenActivity.mFirebaseAnalytics.logEvent("invoice_send",b);
+
                         SendEstimateHomeFragment.this.lambda$onCreateView$0$SendEstimateHomeFragment(view);
                     } else {
                         UiUtil.showToast(getContext(), response.body().getTransactionStatus().getError().getDescription());

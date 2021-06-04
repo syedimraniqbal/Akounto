@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
+import com.akounto.accountingsoftware.Activity.SplashScreenActivity;
 import com.google.gson.Gson;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.Data.UserDetails;
@@ -69,12 +70,20 @@ public class AccountBasisFragment extends Fragment {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 super.onResponse(call, response);
                 if (response.isSuccessful()) {
+                    Bundle b=new Bundle();
+                    b.putString(Constant.CATEGORY,"setting");
+                    b.putString(Constant.ACTION,"account_basis");
+                    SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_account_basis",b);
                     UiUtil.showToast(AccountBasisFragment.this.getContext(), "Saved");
                     user.getActiveBusiness().setAccountingBasisType(type);
                     SignInResponse signInResponse=UiUtil.getUserDetails(mContext);
                     signInResponse.setUserDetails(new Gson().toJson(user));
                     UiUtil.addUserDetails(mContext, signInResponse);
                 } else {
+                    Bundle b=new Bundle();
+                    b.putString(Constant.CATEGORY,"setting");
+                    b.putString(Constant.ACTION,"account_basis_fail");
+                    SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_account_basis",b);
                     UiUtil.showToast(AccountBasisFragment.this.getContext(), "Error while Saving");
                 }
             }
@@ -82,6 +91,10 @@ public class AccountBasisFragment extends Fragment {
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 super.onFailure(call, t);
                 Log.d("error", t.toString());
+                Bundle b=new Bundle();
+                b.putString(Constant.CATEGORY,"setting");
+                b.putString(Constant.ACTION,"account_basis_fail");
+                SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_account_basis",b);
             }
         });
     }

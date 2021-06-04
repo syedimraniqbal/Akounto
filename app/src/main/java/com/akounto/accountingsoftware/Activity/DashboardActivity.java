@@ -2,14 +2,20 @@ package com.akounto.accountingsoftware.Activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
@@ -17,15 +23,24 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.akounto.accountingsoftware.Activity.Invoice.InvoiceList;
+import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.Activity.Dashboard.MainMenu;
 import com.akounto.accountingsoftware.Activity.Dashboard.MoreFragment;
 import com.akounto.accountingsoftware.Activity.fragment.HomeDashboardFragment;
 import com.akounto.accountingsoftware.Activity.fragment.InvoicesFragment;
+import com.akounto.accountingsoftware.network.CustomCallBack;
+import com.akounto.accountingsoftware.network.RestClient;
+import com.akounto.accountingsoftware.response.CustomeResponse;
 import com.akounto.accountingsoftware.response.SignInResponse;
+import com.akounto.accountingsoftware.response.TaxResponseList;
 import com.akounto.accountingsoftware.util.AddFragments;
 import com.akounto.accountingsoftware.util.AppSingle;
 import com.akounto.accountingsoftware.util.UiUtil;
+import com.google.gson.Gson;
+
+import retrofit2.Call;
+import retrofit2.Response;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -34,7 +49,6 @@ public class DashboardActivity extends AppCompatActivity {
     SignInResponse signInResponse;
     FrameLayout fl;
 
-    /* access modifiers changed from: protected */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawer_parent_layout);
@@ -47,7 +61,6 @@ public class DashboardActivity extends AppCompatActivity {
             helloNorman.setText(name);
         } catch (Exception e) {
         }
-
         findViewById(R.id.bell).setOnClickListener(view -> DashboardActivity.this.lambda$onCreate$5$DashboardActivity(view));
         findViewById(R.id.notification).setOnClickListener(view -> DashboardActivity.this.lambda$onCreate$6$DashboardActivity(view));
         findViewById(R.id.footer_home).setOnClickListener(new View.OnClickListener() {
@@ -145,6 +158,10 @@ public class DashboardActivity extends AppCompatActivity {
         } catch (Exception e) {
         }
     }
+
+
+
+
 
     public void addFragmentNotToStack(Fragment fragment) {
         try {

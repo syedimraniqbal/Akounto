@@ -120,7 +120,7 @@
                                 android:singleLine="true"
                                 android:text=""
                                 android:textColor="#333333"
-                                android:textSize="14sp"
+                                android:textSize="16sp"
                                 android:textStyle="normal" />
                         </LinearLayout>
 
@@ -151,7 +151,7 @@
                                 android:singleLine="true"
                                 android:text=""
                                 android:textColor="#333333"
-                                android:textSize="14sp"
+                                android:textSize="16sp"
                                 android:textStyle="normal" />
                         </LinearLayout>
 
@@ -183,7 +183,7 @@
                                 android:singleLine="true"
                                 android:text=""
                                 android:textColor="#333333"
-                                android:textSize="14sp"
+                                android:textSize="16sp"
                                 android:textStyle="normal" />
                         </LinearLayout>
                     </LinearLayout>
@@ -233,7 +233,7 @@
                                     android:lineSpacingExtra="13.3sp"
                                     android:text="Bill To :"
                                     android:textColor="#333333"
-                                    android:textSize="17sp"
+                                    android:textSize="16sp"
                                     android:textStyle="normal" />
                             </LinearLayout>
 
@@ -252,7 +252,7 @@
                                     android:lineSpacingExtra="13.3sp"
                                     android:text="Sales Corp. Ltd."
                                     android:textColor="#333333"
-                                    android:textSize="17sp"
+                                    android:textSize="14sp"
                                     android:textStyle="normal" />
 
                                 <TextView
@@ -277,7 +277,7 @@
                                     android:lineSpacingExtra="13.3sp"
                                     android:text="info@salescorp.co.in"
                                     android:textColor="#727d8a"
-                                    android:textSize="10.7sp"
+                                    android:textSize="14sp"
                                     android:textStyle="normal" />
                             </LinearLayout>
                         </LinearLayout>
@@ -323,7 +323,7 @@
                             android:gravity="center_vertical|left"
                             android:text="Subtotal"
                             android:textColor="#333333"
-                            android:textSize="16sp"
+                            android:textSize="14sp"
                             android:textStyle="normal"
                             tools:ignore="RtlHardcoded" />
 
@@ -337,7 +337,7 @@
                             android:lineSpacingExtra="6sp"
                             android:text="$0.00"
                             android:textColor="#333333"
-                            android:textSize="16sp"
+                            android:textSize="14sp"
                             android:textStyle="normal"
                             tools:ignore="RtlHardcoded" />
 
@@ -394,7 +394,7 @@
                             android:gravity="center_vertical|left"
                             android:text="Total"
                             android:textColor="#333333"
-                            android:textSize="16sp"
+                            android:textSize="14sp"
                             android:textStyle="normal"
                             tools:ignore="RtlHardcoded" />
 
@@ -408,7 +408,7 @@
                             android:lineSpacingExtra="6sp"
                             android:text="$0.00"
                             android:textColor="#333333"
-                            android:textSize="16sp"
+                            android:textSize="14sp"
                             android:textStyle="normal"
                             tools:ignore="RtlHardcoded" />
 
@@ -438,6 +438,7 @@
                             android:layout_marginTop="@dimen/_4ssp"
                             android:layout_marginBottom="@dimen/_4ssp"
                             android:fontFamily="@font/poppins_medium"
+                            android:textSize="14sp"
                             android:gravity="center_vertical|left"
                             android:textColor="#333333"
                             tools:ignore="RtlHardcoded" />
@@ -451,7 +452,7 @@
                             android:lineSpacingExtra="6sp"
                             android:text="$0.00"
                             android:textColor="#333333"
-                            android:textSize="16sp"
+                            android:textSize="14sp"
                             android:textStyle="normal"
                             tools:ignore="RtlHardcoded" />
 

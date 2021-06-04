@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.akounto.accountingsoftware.Activity.SplashScreenActivity;
 import com.google.gson.Gson;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
@@ -231,7 +232,16 @@ public class AddCustomers extends AppCompatActivity {
                                 result_add = response.body();
                                 UiUtil.showToast(AddCustomers.this, "Customer Added");
                                 lunch();
+                                Bundle b=new Bundle();
+                                b.putString(Constant.CATEGORY,"invoicing");
+                                b.putString(Constant.ACTION,"add_customer_success");
+                                SplashScreenActivity.mFirebaseAnalytics.logEvent("invoice_add_customer",b);
                             } else {
+                                Bundle b=new Bundle();
+                                b.putString(Constant.CATEGORY,"invoicing");
+                                b.putString(Constant.ACTION,"add_customer_fail");
+                                SplashScreenActivity.mFirebaseAnalytics.logEvent("invoice_add_customer",b);
+
                                 UiUtil.showToast(AddCustomers.this, response.body().getTransactionStatus().getError().getDescription());
                                 UiUtil.showToast(AddCustomers.this, "Fail to add customer");
                             }

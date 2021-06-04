@@ -69,6 +69,7 @@ public class MoreFragment extends Fragment {
                 clearBackStack();
                 UiUtil.addLoginToSharedPref(getActivity(), false);
                 UiUtil.addUserDetails(mContext, (SignInResponse)null);
+                //update
             }
         });
 

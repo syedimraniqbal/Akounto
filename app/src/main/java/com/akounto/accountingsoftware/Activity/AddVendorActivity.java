@@ -87,41 +87,45 @@ public class AddVendorActivity extends AppCompatActivity {
     }
 
     private void initUi() throws JSONException {
-        TextView textView = findViewById(R.id.pageTitle);
-        this.pageTitle = textView;
-        textView.setText("Add Vendor");
-        if (this.editType == 2) {
-            this.pageTitle.setText("Edit Vendor");
-        }
-        this.shipAddrCheckBox = findViewById(R.id.shipToDiffCB);
-        this.et_vname = findViewById(R.id.et_vname);
-        this.et_vemail = findViewById(R.id.et_vemail);
-        this.et_firstname = findViewById(R.id.et_fname);
-        this.et_lname = findViewById(R.id.et_lname);
-        this.address1 = findViewById(R.id.et_billAddr1);
-        this.address2 = findViewById(R.id.et_billAddr2);
-        this.et_billCity = findViewById(R.id.et_billCity);
-        this.et_billPostCode = findViewById(R.id.et_billPostCode);
-        LinearLayout linearLayout = findViewById(R.id.shipAddrLayout);
-        fetchCountries();
-        fetchCurrencies();
-        setBillCountrySpinner();
-        if (this.editType == 2) {
-            Vendor vendor2 = new Gson().fromJson(getIntent().getStringExtra(UiConstants.CUSTOMER_DATE), Vendor.class);
-            this.vendor = vendor2;
-            getVendorById(vendor2.getHeadTransactionId());
-        }
-        findViewById(R.id.saveButton).setOnClickListener(new View.OnClickListener() {
-            public final void onClick(View view) {
-                AddVendorActivity.this.lambda$initUi$0$AddVendorActivity(view);
+        try {
+            TextView textView = findViewById(R.id.pageTitle);
+            this.pageTitle = textView;
+            textView.setText("Add Vendor");
+            if (this.editType == 2) {
+                this.pageTitle.setText("Edit Vendor");
             }
-        });
-        findViewById(R.id.iv_close).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AddVendorActivity.this.finish();
+            this.shipAddrCheckBox = findViewById(R.id.shipToDiffCB);
+            this.et_vname = findViewById(R.id.et_vname);
+            this.et_vemail = findViewById(R.id.et_vemail);
+            this.et_firstname = findViewById(R.id.et_fname);
+            this.et_lname = findViewById(R.id.et_lname);
+            this.address1 = findViewById(R.id.et_billAddr1);
+            this.address2 = findViewById(R.id.et_billAddr2);
+            this.et_billCity = findViewById(R.id.et_billCity);
+            this.et_billPostCode = findViewById(R.id.et_billPostCode);
+            LinearLayout linearLayout = findViewById(R.id.shipAddrLayout);
+            fetchCountries();
+            fetchCurrencies();
+            setBillCountrySpinner();
+            if (this.editType == 2) {
+                Vendor vendor2 = new Gson().fromJson(getIntent().getStringExtra(UiConstants.CUSTOMER_DATE), Vendor.class);
+                this.vendor = vendor2;
+                getVendorById(vendor2.getHeadTransactionId());
             }
-        });
+
+            findViewById(R.id.saveButton).setOnClickListener(new View.OnClickListener() {
+                public final void onClick(View view) {
+                    AddVendorActivity.this.lambda$initUi$0$AddVendorActivity(view);
+                }
+            });
+            findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AddVendorActivity.this.finish();
+                }
+            });
+        } catch (Exception e) {
+        }
     }
 
     public void lambda$initUi$0$AddVendorActivity(View v) {
@@ -259,6 +263,10 @@ public class AddVendorActivity extends AppCompatActivity {
                     super.onResponse(call, response);
                     if (response.isSuccessful()) {
                         UiUtil.showToast(AddVendorActivity.this, "Vendor Added");
+                        Bundle b=new Bundle();
+                        b.putString(Constant.CATEGORY,"billing");
+                        b.putString(Constant.ACTION,"add_vendor");
+                        SplashScreenActivity.mFirebaseAnalytics.logEvent("bill_add_vendor",b);
                         lunch();
                     }
                 }

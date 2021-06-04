@@ -135,7 +135,7 @@
                     android:textColor="#727d8a"
                     android:textSize="14sp"
                     android:textStyle="normal"
-                    android:text="1 x 70.00 each" />
+                    android:text="" />
 
             </LinearLayout>
 

@@ -19,6 +19,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.akounto.accountingsoftware.Activity.SplashScreenActivity;
+import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.Data.RegisterBank.Bank;
 import com.akounto.accountingsoftware.Data.RegisterBank.BankAccountData;
 import com.akounto.accountingsoftware.R;
@@ -141,6 +143,10 @@ public class BankListActivity extends AppCompatActivity implements BankListAdapt
                         if (bankAccountData.getStatus() == 0) {
                             if (bankAccountData.getData().getBanks().size() != 0) {
                                 setAdapter(bankAccountData.getData().getBanks());
+                                Bundle b=new Bundle();
+                                b.putString(Constant.CATEGORY,"banking");
+                                b.putString(Constant.ACTION,"connect_bank");
+                                SplashScreenActivity.mFirebaseAnalytics.logEvent("account_banking",b);
                             } else {
                                 Toast.makeText(getApplicationContext(), "Not data for display", Toast.LENGTH_LONG).show();
                             }

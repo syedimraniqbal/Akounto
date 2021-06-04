@@ -59,6 +59,10 @@ public class ForgotPassword extends AppCompatActivity {
                                 ForgotPasswordData passwordData = response.body();
                                 try {
                                     if (passwordData.isData()) {
+                                        Bundle b = new Bundle();
+                                        b.putString(Constant.CATEGORY, "profile");
+                                        b.putString(Constant.ACTION, "forgot_password");
+                                        SplashScreenActivity.mFirebaseAnalytics.logEvent("profile_forgot_password", b);
                                         UiUtil.showToast(mContext, "Check your email\n" +
                                                 "If we find " + emal + " in our system, we will send\n" +
                                                 "you an email with a link to reset your password.\n" +

@@ -213,7 +213,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/poppins_medium"
                             android:gravity="center"
-                            android:text="YYYY-MM-DD"
+                            android:hint="YYYY-MM-DD"
                             android:textAllCaps="true"
                             android:textColor="#333333"
                             android:textSize="14sp"
@@ -270,6 +270,7 @@
                                 android:gravity="center"
                                 android:text="S"
                                 android:textSize="20sp" />
+
                         </LinearLayout>
                     </LinearLayout>
 

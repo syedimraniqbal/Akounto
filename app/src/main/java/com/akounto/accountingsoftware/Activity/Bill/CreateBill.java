@@ -26,6 +26,8 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.akounto.accountingsoftware.Activity.SplashScreenActivity;
 import com.akounto.accountingsoftware.response.CustomeResponse;
 import com.google.gson.Gson;
 import com.akounto.accountingsoftware.Constants.Constant;
@@ -232,11 +234,24 @@ public class CreateBill extends AppCompatActivity {
                 super.onResponse(call, response);
                 try {
                     if (response.body().getTransactionStatus().isIsSuccess()) {
+                        Bundle b=new Bundle();
+                        b.putString(Constant.CATEGORY,"billing");
+                        b.putString(Constant.ACTION,"adding_success");
+                        SplashScreenActivity.mFirebaseAnalytics.logEvent("bill_create",b);
                         finish();
                     } else {
+                        Bundle b=new Bundle();
+                        b.putString(Constant.CATEGORY,"billing");
+                        b.putString(Constant.ACTION,"adding_fail");
+                        SplashScreenActivity.mFirebaseAnalytics.logEvent("bill_create",b);
                         UiUtil.showToast(getApplicationContext(), response.body().getTransactionStatus().getError().getDescription());
                     }
                 } catch (Exception e) {
+                    Bundle b=new Bundle();
+                    b.putString(Constant.CATEGORY,"billing");
+                    b.putString(Constant.ACTION,"adding_fail");
+                    b.putString(Constant.CAUSES,e.getMessage());
+                    SplashScreenActivity.mFirebaseAnalytics.logEvent("bill_create",b);
                     UiUtil.showToast(getApplicationContext(), "Failed");
                 }
             }
@@ -244,6 +259,11 @@ public class CreateBill extends AppCompatActivity {
             public void onFailure(Call<CustomeResponse> call, Throwable t) {
                 super.onFailure(call, t);
                 Log.d("errorerror-bill", t.toString());
+                Bundle b=new Bundle();
+                b.putString(Constant.CATEGORY,"billing");
+                b.putString(Constant.ACTION,"adding_fail");
+                b.putString(Constant.CAUSES,t.toString());
+                SplashScreenActivity.mFirebaseAnalytics.logEvent("bill_create",b);
                 UiUtil.showToast(getApplicationContext(), "Something went wrong");
             }
         });

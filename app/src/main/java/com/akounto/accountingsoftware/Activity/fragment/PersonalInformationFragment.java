@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.akounto.accountingsoftware.Activity.SplashScreenActivity;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.Activity.Dashboard.MoreFragment;
@@ -282,6 +283,10 @@ public class PersonalInformationFragment extends Fragment {
                 super.onResponse(call, response);
                 if (response.isSuccessful()) {
                     UiUtil.showToast(PersonalInformationFragment.this.getContext(), "Updated");
+                    Bundle b=new Bundle();
+                    b.putString(Constant.CATEGORY,"profile");
+                    b.putString(Constant.ACTION,"update");
+                    SplashScreenActivity.mFirebaseAnalytics.logEvent("profile_update",b);
                 } else {
                     UiUtil.showToast(PersonalInformationFragment.this.getContext(), "Error while updating");
                 }

@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.akounto.accountingsoftware.Activity.SplashScreenActivity;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.Activity.Setting.SettingMenu;
@@ -112,6 +113,10 @@ public class SaleTaxesFragment extends Fragment implements SettingSaleTaxItemCli
                 ArrayList<EffectiveTaxesItem> effectiveTaxesItems = new ArrayList<>();
                 effectiveTaxesItems.add(new EffectiveTaxesItem(Double.parseDouble(taxRate)));
                 ArrayList<EffectiveTaxesItem> arrayList = effectiveTaxesItems;
+                Bundle b=new Bundle();
+                b.putString(Constant.CATEGORY,"setting");
+                b.putString(Constant.ACTION,"add_tax");
+                SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_add_tax",b);
                 RestClient.getInstance(getContext()).addSaleTax(Constant.X_SIGNATURE,"Bearer " +UiUtil.getAcccessToken(getContext()),UiUtil.getComp_Id(getContext()),new AddSaleTaxRequest(taxName, taxDesc, false, true, taxNumber, effectiveTaxesItems)).enqueue(new CustomCallBack<ResponseBody>(getContext(), "Adding Sale tax...") {
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         super.onResponse(call, response);
@@ -136,6 +141,10 @@ public class SaleTaxesFragment extends Fragment implements SettingSaleTaxItemCli
     }
 
     private void getSaleTaxById(int id) {
+        Bundle b=new Bundle();
+        b.putString(Constant.CATEGORY,"setting");
+        b.putString(Constant.ACTION,"edit_tax");
+        SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_edit_tax",b);
         RestClient.getInstance(getContext()).getSaleTaxById(Constant.X_SIGNATURE,"Bearer " + UiUtil.getAcccessToken(getContext()),UiUtil.getComp_Id(getContext()),id).enqueue(new CustomCallBack<EditSaleTaxResponse>(getContext(), null) {
             public void onResponse(Call<EditSaleTaxResponse> call, Response<EditSaleTaxResponse> response) {
                 super.onResponse(call, response);

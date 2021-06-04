@@ -2,20 +2,30 @@ package com.akounto.accountingsoftware.Activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.akounto.accountingsoftware.network.CustomCallBack;
+import com.akounto.accountingsoftware.network.RestClient;
+import com.akounto.accountingsoftware.response.CustomeResponse;
+import com.akounto.accountingsoftware.response.UpdateResponse;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -54,6 +64,7 @@ import java.util.List;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SignInActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
@@ -80,9 +91,10 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
             setContentView(R.layout.layout_signin);
             getWindow().setFlags(1024, 1024);
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
+//            SplashScreenActivity.mFirebaseAnalytics.logEvent();
             mContext = this;
             owner = this;
+            getUpdateDilog();
             Dexter.withActivity(this).withPermissions("android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE").withListener(new MultiplePermissionsListener() {
                 public void onPermissionsChecked(MultiplePermissionsReport report) {
                 }
@@ -185,6 +197,10 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                 try {
                     if (response.code() == 200) {
                         if (response.body().getTransactionStatus() == null) {
+                            Bundle b = new Bundle();
+                            b.putString(Constant.CATEGORY, "profile");
+                            b.putString(Constant.ACTION, "signin");
+                            SplashScreenActivity.mFirebaseAnalytics.logEvent("profile_signin", b);
                             UiUtil.addLoginToSharedPref(SignInActivity.this, true);
                             UiUtil.addUserDetails(SignInActivity.this, loginData);
                             Intent intent = new Intent(SignInActivity.this, DashboardActivity.class);
@@ -287,37 +303,41 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                     public void onChanged(CheckEmailData checkEmailData) {
                        /* if (external_sign_up) {
                             external_sign_up = false;*/
-                            try {
-                                if (checkEmailData.getStatus() == 0) {
-                                    if (!checkEmailData.isData()) {
-                                        Intent mainIntent = new Intent(SignInActivity.this, ExternalSignUp.class);
-                                        mainIntent.putExtra(Constant.FIRST_NAME, task.getResult().getUser().getDisplayName());
-                                        mainIntent.putExtra(Constant.EMAIL, task.getResult().getUser().getEmail());
-                                        mainIntent.putExtra(Constant.ID_TOKEN, account.getIdToken());
-                                        SignInActivity.this.startActivity(mainIntent);
-                                    } else {
-                                        model.extLogin(mContext, "Google", account.getIdToken()).observe(owner, userDetails -> {
-                                            UserDetails ud;
-                                            if (userDetails.getStatus() == 0) {
-                                                try {
-                                                    UiUtil.addLoginToSharedPref(SignInActivity.this, true);
-                                                    UiUtil.addUserDetails(SignInActivity.this, userDetails);
-                                                    Intent mainIntent = new Intent(SignInActivity.this, DashboardActivity.class);
-                                                    SignInActivity.this.startActivity(mainIntent);
-                                                } catch (Exception e) {
-                                                    Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_LONG).show();
-                                                }
-                                            } else {
-                                                Toast.makeText(SignInActivity.this, userDetails.getStatusMessage(), Toast.LENGTH_SHORT).show();
-                                            }
-                                        });
-                                    }
+                        try {
+                            if (checkEmailData.getStatus() == 0) {
+                                if (!checkEmailData.isData()) {
+                                    Intent mainIntent = new Intent(SignInActivity.this, ExternalSignUp.class);
+                                    mainIntent.putExtra(Constant.FIRST_NAME, task.getResult().getUser().getDisplayName());
+                                    mainIntent.putExtra(Constant.EMAIL, task.getResult().getUser().getEmail());
+                                    mainIntent.putExtra(Constant.ID_TOKEN, account.getIdToken());
+                                    SignInActivity.this.startActivity(mainIntent);
                                 } else {
-                                    Toast.makeText(SignInActivity.this, checkEmailData.getStatusMessage(), Toast.LENGTH_SHORT).show();
+                                    model.extLogin(mContext, "Google", account.getIdToken()).observe(owner, userDetails -> {
+                                        UserDetails ud;
+                                        if (userDetails.getStatus() == 0) {
+                                            try {
+                                                Bundle b = new Bundle();
+                                                b.putString(Constant.CATEGORY, "profile");
+                                                b.putString(Constant.ACTION, "signin_social");
+                                                SplashScreenActivity.mFirebaseAnalytics.logEvent("profile_signin_social", b);
+                                                UiUtil.addLoginToSharedPref(SignInActivity.this, true);
+                                                UiUtil.addUserDetails(SignInActivity.this, userDetails);
+                                                Intent mainIntent = new Intent(SignInActivity.this, DashboardActivity.class);
+                                                SignInActivity.this.startActivity(mainIntent);
+                                            } catch (Exception e) {
+                                                Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_LONG).show();
+                                            }
+                                        } else {
+                                            Toast.makeText(SignInActivity.this, userDetails.getStatusMessage(), Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
                                 }
-                            } catch (Exception e) {
+                            } else {
+                                Toast.makeText(SignInActivity.this, checkEmailData.getStatusMessage(), Toast.LENGTH_SHORT).show();
                             }
-                       /* }*/
+                        } catch (Exception e) {
+                        }
+                        /* }*/
                     }
                 });
             } else {
@@ -364,11 +384,70 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
         }
     }
 
+    private void showUpdateDilog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(SignInActivity.this);
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+        View dialogView = LayoutInflater.from(mContext).inflate(R.layout.layout_dilog_update, viewGroup, false);
+        Button no = dialogView.findViewById(R.id.btn_no);
+        Button update = dialogView.findViewById(R.id.btn_update);
+        TextView msg = dialogView.findViewById(R.id.update_message);
+        builder.setView(dialogView);
+        AlertDialog alertDialog = builder.create();
+        no.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+                finish();
+            }
+        });
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+                final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                } catch (android.content.ActivityNotFoundException anfe) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                }
+                finish();
+            }
+        });
+        alertDialog.show();
+    }
+
+    private void getUpdateDilog() {
+        RestClient.getInstance(this).getUpadte().enqueue(new CustomCallBack<UpdateResponse>(this, null) {
+            public void onResponse(Call<UpdateResponse> call, Response<UpdateResponse> response) {
+                super.onResponse(call, response);
+                try {
+                    if (response.body().getTransactionStatus().isIsSuccess()) {
+                        PackageInfo pinfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+                        int versionNumber = pinfo.versionCode;
+                        if (response.body().getData() > versionNumber) {
+                            showUpdateDilog();
+                        }
+                    } else {
+                        Toast.makeText(mContext, "else", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (Exception e) {
+                    //Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Log.e("Error :: ", e.toString());
+                }
+            }
+
+            public void onFailure(Call<UpdateResponse> call, Throwable t) {
+                super.onFailure(call, t);
+                Log.e("Error :: ", t.toString());
+            }
+        });
+    }
+
     @Override
     public void onBackPressed() {
         finish();
         finishAffinity();
-        Intent i=new Intent(Intent.ACTION_MAIN);
+        Intent i = new Intent(Intent.ACTION_MAIN);
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         i.addCategory(Intent.CATEGORY_HOME);
         startActivity(i);

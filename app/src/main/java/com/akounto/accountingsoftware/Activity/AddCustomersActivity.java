@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.akounto.accountingsoftware.Constants.Constant;
@@ -28,6 +29,7 @@ import com.akounto.accountingsoftware.util.UiUtil;
 import com.google.gson.Gson;
 import com.skydoves.powerspinner.OnSpinnerItemSelectedListener;
 import com.skydoves.powerspinner.PowerSpinnerView;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -36,6 +38,7 @@ import java.util.regex.Pattern;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -97,7 +100,7 @@ public class AddCustomersActivity extends AppCompatActivity {
         fetchCountries();
         fetchCurrencies();
         LinearLayout ll = findViewById(R.id.shipAddrLayout);
-        back=findViewById(R.id.backButton);
+        back = findViewById(R.id.backButton);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -186,32 +189,46 @@ public class AddCustomersActivity extends AppCompatActivity {
                 addCustomer.setId(this.cid);
                 addCustomer.setHeadTransactionId(this.HeadTransactionId);
                 addCustomer.setCompanyId(this.CompanyId);
-                RestClient.getInstance(this).updateCustomer(Constant.X_SIGNATURE,"Bearer " + UiUtil.getAcccessToken(getApplicationContext()),UiUtil.getComp_Id(getApplicationContext()),addCustomer).enqueue(new CustomCallBack<CustomerUpdateResponse>(this, "Adding Customer...") {
+                RestClient.getInstance(this).updateCustomer(Constant.X_SIGNATURE, "Bearer " + UiUtil.getAcccessToken(getApplicationContext()), UiUtil.getComp_Id(getApplicationContext()), addCustomer).enqueue(new CustomCallBack<CustomerUpdateResponse>(this, "Adding Customer...") {
                     public void onResponse(Call<CustomerUpdateResponse> call, Response<CustomerUpdateResponse> response) {
                         super.onResponse(call, response);
-                        if (response.isSuccessful()) {
-                            UiUtil.showToast(AddCustomersActivity.this, "Customer Added");
-                            AddCustomersActivity.this.finish();
+                        try {
+                            if (response.body().getTransactionStatus().isIsSuccess()) {
+                                UiUtil.showToast(AddCustomersActivity.this, "Customer Added");
+                                AddCustomersActivity.this.finish();
+                            } else {
+                                UiUtil.showToast(AddCustomersActivity.this, response.body().getTransactionStatus().getError().getDescription());
+                            }
+                        } catch (Exception e) {
+                            UiUtil.showToast(AddCustomersActivity.this, "Fail to update");
                         }
                     }
 
                     public void onFailure(Call<CustomerUpdateResponse> call, Throwable t) {
                         super.onFailure(call, t);
+                        UiUtil.showToast(AddCustomersActivity.this, "Fail to update");
                     }
                 });
                 return;
             }
-            RestClient.getInstance(this).addCustomer(Constant.X_SIGNATURE,"Bearer " +UiUtil.getAcccessToken(getApplicationContext()),UiUtil.getComp_Id(getApplicationContext()),addCustomer).enqueue(new CustomCallBack<CustomerUpdateResponse>(this, "Adding Customer...") {
+            RestClient.getInstance(this).addCustomer(Constant.X_SIGNATURE, "Bearer " + UiUtil.getAcccessToken(getApplicationContext()), UiUtil.getComp_Id(getApplicationContext()), addCustomer).enqueue(new CustomCallBack<CustomerUpdateResponse>(this, "Adding Customer...") {
                 public void onResponse(Call<CustomerUpdateResponse> call, Response<CustomerUpdateResponse> response) {
                     super.onResponse(call, response);
-                    if (response.isSuccessful()) {
-                        UiUtil.showToast(AddCustomersActivity.this, "Customer Added");
-                        AddCustomersActivity.this.finish();
+                    try {
+                        if (response.body().getTransactionStatus().isIsSuccess()) {
+                            UiUtil.showToast(AddCustomersActivity.this, "Customer Added");
+                            AddCustomersActivity.this.finish();
+                        } else {
+                            UiUtil.showToast(AddCustomersActivity.this, response.body().getTransactionStatus().getError().getDescription());
+                        }
+                    } catch (Exception e) {
+                        UiUtil.showToast(AddCustomersActivity.this, "Fail to update");
                     }
                 }
 
                 public void onFailure(Call<CustomerUpdateResponse> call, Throwable t) {
                     super.onFailure(call, t);
+                    UiUtil.showToast(AddCustomersActivity.this, "Fail to update");
                 }
             });
         } else {
@@ -221,7 +238,7 @@ public class AddCustomersActivity extends AppCompatActivity {
     }
 
     private void fetchCountries() throws JSONException {
-        String loadJSONFromAsset = JsonUtils.loadJSONFromAsset("country.json",this);
+        String loadJSONFromAsset = JsonUtils.loadJSONFromAsset("country.json", this);
         Objects.requireNonNull(loadJSONFromAsset);
         JSONArray jsonArray = new JSONArray(loadJSONFromAsset);
         for (int i = 0; i < jsonArray.length(); i++) {
@@ -271,7 +288,7 @@ public class AddCustomersActivity extends AppCompatActivity {
     }
 
     private void getStatesByCountry(int countryId, final String billOrShip) {
-        RestClient.getInstance(this).getStatesByCountryId(Constant.X_SIGNATURE,"Bearer " +UiUtil.getAcccessToken(getApplicationContext()),UiUtil.getComp_Id(getApplicationContext()),countryId).enqueue(new CustomCallBack<GetStatesResponse>(this, "Fetching States...") {
+        RestClient.getInstance(this).getStatesByCountryId(Constant.X_SIGNATURE, "Bearer " + UiUtil.getAcccessToken(getApplicationContext()), UiUtil.getComp_Id(getApplicationContext()), countryId).enqueue(new CustomCallBack<GetStatesResponse>(this, "Fetching States...") {
             public void onResponse(Call<GetStatesResponse> call, Response<GetStatesResponse> response) {
                 super.onResponse(call, response);
                 if (response.isSuccessful() && response.body() != null) {
@@ -359,7 +376,7 @@ public class AddCustomersActivity extends AppCompatActivity {
     }
 
     private void getCustomerOnly(int id) {
-        RestClient.getInstance(this).getCustomerListById(Constant.X_SIGNATURE,"Bearer " +UiUtil.getAcccessToken(getApplicationContext()),UiUtil.getComp_Id(getApplicationContext()),id).enqueue(new CustomCallBack<CustomerOnlyResponse>(this, null) {
+        RestClient.getInstance(this).getCustomerListById(Constant.X_SIGNATURE, "Bearer " + UiUtil.getAcccessToken(getApplicationContext()), UiUtil.getComp_Id(getApplicationContext()), id).enqueue(new CustomCallBack<CustomerOnlyResponse>(this, null) {
             public void onResponse(Call<CustomerOnlyResponse> call, Response<CustomerOnlyResponse> response) {
                 super.onResponse(call, response);
                 Log.d("CustomerResponse---", response.toString());
@@ -377,6 +394,7 @@ public class AddCustomersActivity extends AppCompatActivity {
 
     /* access modifiers changed from: private */
     public void updateCustomerData(Customer customer2) {
+        Log.e("Customer Data :;", new Gson().toJson(customer2));
         if (customer2.getName() != null) {
             this.etCompanyName.setText(customer2.getName());
         }

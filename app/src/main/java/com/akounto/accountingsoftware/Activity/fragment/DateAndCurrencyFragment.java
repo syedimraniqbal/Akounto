@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.akounto.accountingsoftware.Activity.SplashScreenActivity;
 import com.google.gson.Gson;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.Data.LoginData;
@@ -37,7 +38,7 @@ import retrofit2.Response;
 
 public class DateAndCurrencyFragment extends Fragment {
 
-    List<String> dates = new ArrayList();
+    ArrayList<String> dates = null;
     Spinner datesSpinner;
     int financialDayEnd = 31;
     int financialMonthEnd = 12;
@@ -47,9 +48,10 @@ public class DateAndCurrencyFragment extends Fragment {
     View view;
     int d = 0;
     int m = 0;
+    int count = 0;
     UserDetails userDetails;
     SignInResponse signInResponse;
-    boolean start = true;
+    boolean start = false;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,11 +63,8 @@ public class DateAndCurrencyFragment extends Fragment {
             String endfy = UiUtil.getUserDetail(getContext()).getActiveBusiness().getFinancialYearEnd();
             d = Integer.parseInt(endfy.split("-")[0]);
             m = Integer.parseInt(endfy.split("-")[1]) - 1;
-
             userDetails = UiUtil.getUserDetail(getContext());
             signInResponse = UiUtil.getUserDetails(getContext());
-
-
         } catch (Exception e) {
 
         }
@@ -84,12 +83,11 @@ public class DateAndCurrencyFragment extends Fragment {
         this.monthsSpinner = this.view.findViewById(R.id.monthsSpinner);
         this.datesSpinner = this.view.findViewById(R.id.datesSpinner);
         updateDateSpinner(this.financialMonthEnd - 1);
-
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, this.months);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         monthsSpinner.setAdapter(dataAdapter);
         try {
-            this.monthsSpinner.setSelection(m);
+            monthsSpinner.setSelection(m);
         } catch (Exception e) {
         }
         monthsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -97,7 +95,12 @@ public class DateAndCurrencyFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 try {
                     financialMonthEnd = position + 1;
-                    updateDateSpinner(position);
+                    if (start) {
+                        updateDateSpinner(position);
+                    } else {
+                        start = true;
+                    }
+
                 } catch (Exception e) {
                 }
             }
@@ -109,61 +112,54 @@ public class DateAndCurrencyFragment extends Fragment {
         });
         this.view.findViewById(R.id.saveButton).setOnClickListener(new View.OnClickListener() {
             public final void onClick(View view) {
-                DateAndCurrencyFragment.this.lambda$initUI$1$DateAndCurrencyFragment(view);
+                Map<String, Integer> map = new HashMap<>();
+                map.put("FinancialMonthEnd", Integer.valueOf(financialMonthEnd));
+                map.put("FinancialDayEnd", Integer.valueOf(financialDayEnd));
+                submitRequest(map);
             }
         });
         this.view.findViewById(R.id.infoIv).setOnClickListener(new View.OnClickListener() {
             public final void onClick(View view) {
-                DateAndCurrencyFragment.this.lambda$initUI$2$DateAndCurrencyFragment(view);
+                if (tipTv.getVisibility() == View.VISIBLE) {
+                    tipTv.setVisibility(View.GONE);
+                } else {
+                    tipTv.setVisibility(View.VISIBLE);
+                }
             }
         });
     }
 
-    public void lambda$initUI$0$DateAndCurrencyFragment(int i, String s, int selectedIndex, String selectedItem) {
-
-    }
-
-    public void lambda$initUI$1$DateAndCurrencyFragment(View v) {
-        Map<String, Integer> map = new HashMap<>();
-        map.put("FinancialMonthEnd", Integer.valueOf(this.financialMonthEnd));
-        map.put("FinancialDayEnd", Integer.valueOf(this.financialDayEnd));
-        submitRequest(map);
-    }
-
-    public void lambda$initUI$2$DateAndCurrencyFragment(View v) {
-        if (this.tipTv.getVisibility() == View.VISIBLE) {
-            this.tipTv.setVisibility(View.GONE);
-        } else {
-            this.tipTv.setVisibility(View.VISIBLE);
-        }
-    }
-
     private void updateDateSpinner(int financialMonthEnd2) {
-        this.dates.clear();
+        dates = new ArrayList<>();
         Spinner powerSpinnerView = this.datesSpinner;
+        int days = Constant.days_month[financialMonthEnd2];
         try {
-            Calendar calendar = Calendar.getInstance();
-            calendar.set(1, calendar.get(1));
-            calendar.set(2, financialMonthEnd2);
-            int days = calendar.getActualMaximum(5);
             this.financialDayEnd = days;
             for (int i = 1; i <= days; i++) {
                 List<String> list = this.dates;
                 list.add("" + i);
             }
+            if (start) {
+                d=dates.size();
+            }
             ArrayAdapter dataAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, this.dates);
             dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             powerSpinnerView.setAdapter(dataAdapter);
-            if (start) {
-                powerSpinnerView.setSelection(d - 1);
+            count++;
+            Log.e("Count Date :: ", count + " " + d);
+            try {
+                datesSpinner.setSelection(d - 1);
+            } catch (Exception e) {
+                Log.e("error :: ", e.toString());
             }
+
+
         } catch (Exception e) {
         }
         powerSpinnerView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                start = false;
                 financialDayEnd = position + 1;
             }
 
@@ -175,15 +171,15 @@ public class DateAndCurrencyFragment extends Fragment {
         List<String> list2 = this.dates;
     }
 
-    public void lambda$updateDateSpinner$3$DateAndCurrencyFragment(int i, String s, int selectedIndex, String selectedItem) {
-
-    }
-
     private void submitRequest(Map<String, Integer> map) {
         RestClient.getInstance(getContext()).editCompanyFinancialYear(Constant.X_SIGNATURE, "Bearer " + UiUtil.getAcccessToken(getContext()), UiUtil.getComp_Id(getContext()), map).enqueue(new CustomCallBack<ResponseBody>(getContext(), null) {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 super.onResponse(call, response);
                 if (response.isSuccessful()) {
+                    Bundle b=new Bundle();
+                    b.putString(Constant.CATEGORY,"setting");
+                    b.putString(Constant.ACTION,"end_fin_year");
+                    SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_end_fin_year",b);
                     UiUtil.showToast(DateAndCurrencyFragment.this.getContext(), "Saved");
                     userDetails.getActiveBusiness().setFinancialYearEnd(financialDayEnd + "-" + financialMonthEnd);
                     signInResponse.setUserDetails(new Gson().toJson(userDetails));

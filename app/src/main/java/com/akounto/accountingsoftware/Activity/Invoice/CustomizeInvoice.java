@@ -27,6 +27,7 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
+import com.akounto.accountingsoftware.Activity.SplashScreenActivity;
 import com.google.gson.Gson;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.Data.RadioData;
@@ -396,14 +397,31 @@ public class CustomizeInvoice extends Fragment {
                     if (settings.getTransactionStatus().getIsSuccess()) {
                         Toast.makeText(getContext(), "Setting Updated", Toast.LENGTH_LONG).show();
                         AddFragments.addFragmentToDrawerActivity(getContext(), null, SettingMenu.class);
+                        Bundle b=new Bundle();
+                        b.putString(Constant.CATEGORY,"setting");
+                        b.putString(Constant.ACTION,"customize_invoice_updated");
+                        SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_customize_invoice",b);
+                    }else{
+                        Bundle b=new Bundle();
+                        b.putString(Constant.CATEGORY,"setting");
+                        b.putString(Constant.ACTION,"customize_invoice_fail");
+                        SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_customize_invoice",b);
                     }
                 } catch (Exception e) {
+                    Bundle b=new Bundle();
+                    b.putString(Constant.CATEGORY,"setting");
+                    b.putString(Constant.ACTION,"customize_invoice_fail");
+                    SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_customize_invoice",b);
                 }
             }
 
             public void onFailure(Call<ReportSettings> call, Throwable t) {
                 super.onFailure(call, t);
                 Log.d("error", t.toString());
+                Bundle b=new Bundle();
+                b.putString(Constant.CATEGORY,"setting");
+                b.putString(Constant.ACTION,"customize_invoice_fail");
+                SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_customize_invoice",b);
             }
         });
     }

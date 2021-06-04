@@ -34,24 +34,39 @@ public class BillItem extends RecyclerView.Adapter<BillItem.ViewHolder> {
     @NonNull
     @Override
     public BillItem.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new BillItem.ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_product, parent, false));
+        return new BillItem.ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_product2, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull BillItem.ViewHolder holder, int position) {
         try {
-
-            if (item_list.get(position).getQuantity() == 1)
-                holder.item_name.setText(item_list.get(position).getName().trim());
-            else
-                holder.item_name.setText(item_list.get(position).getName().trim() + " +" + item_list.get(position).getQuantity());
-
-            holder.item_price.setText(cur + " " + String.valueOf(item_list.get(position).getPrice()));
+            holder.item_name.setText(item_list.get(position).getName().trim());
+            double p = item_list.get(position).getPrice() * item_list.get(position).getQuantity();
+            holder.item_price.setText(cur + " " + String.valueOf(p));
             holder.product_decription.setText(item_list.get(position).getDescription().trim());
-            if (item_list.get(position).getProductServiceTaxes().size() != 1)
-                holder.taxtes.setText(item_list.get(position).getProductServiceTaxes().get(0).getTaxName().trim() + "+" + item_list.get(position).getProductServiceTaxes().size());
-            else
-                holder.taxtes.setText(item_list.get(position).getProductServiceTaxes().get(0).getTaxName().trim());
+            try {
+                if (item_list.get(position).getProductServiceTaxes().size() != 1)
+                    holder.taxtes.setText(item_list.get(position).getProductServiceTaxes().get(0).getTaxName().trim() + " " + item_list.get(position).getProductServiceTaxes().get(position).getRate() + " %");
+                else
+                    holder.taxtes.setText(item_list.get(position).getProductServiceTaxes().get(0).getTaxName().trim() + " " + item_list.get(position).getProductServiceTaxes().get(position).getRate() + " %");
+            } catch (Exception e) {
+            }
+            try {
+                if (item_list.get(position).getProductServiceTaxes() != null) {
+                    if (item_list.get(position).getProductServiceTaxes().size() != 0)
+                        if (item_list.get(position).getProductServiceTaxes().size() != 1)
+                            holder.no_taxs.setText("+ " + (item_list.get(position).getProductServiceTaxes().size() - 1) + " more");
+                }
+            } catch (Exception e) {
+                holder.no_taxs.setText("");
+            }
+            try {
+                if (item_list.get(position).getQuantity() != 0)
+                    holder.tv_qyt.setText(item_list.get(position).getQuantity() + " x " + item_list.get(position).getPrice() + " each");
+                else
+                    holder.tv_qyt.setText("1 x " + item_list.get(position).getPrice() + " each");
+            } catch (Exception e) {
+            }
         } catch (Exception e) {
         }
         holder.item_main.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +91,7 @@ public class BillItem extends RecyclerView.Adapter<BillItem.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView item_name, item_price, product_decription, taxtes;
+        public TextView item_name, item_price, product_decription, taxtes, no_taxs, tv_qyt;
         public LinearLayout item_main;
 
         public ViewHolder(View itemView) {
@@ -86,6 +101,8 @@ public class BillItem extends RecyclerView.Adapter<BillItem.ViewHolder> {
             this.product_decription = itemView.findViewById(R.id.product_decription);
             this.taxtes = itemView.findViewById(R.id.taxtes);
             this.item_main = itemView.findViewById(R.id.item_main);
+            this.no_taxs = itemView.findViewById(R.id.tv_no_tax);
+            this.tv_qyt = itemView.findViewById(R.id.tv_qty);
         }
     }
 }

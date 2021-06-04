@@ -399,6 +399,7 @@ com/akounto/accountingsoftware/Activity/Invoice/ViewInvoice.java
  com.akounto.accountingsoftware.Activity.Invoice.ViewInvoice$10
  com.akounto.accountingsoftware.Activity.Invoice.ViewInvoice$11
  com.akounto.accountingsoftware.Activity.Invoice.ViewInvoice$12
+ com.akounto.accountingsoftware.Activity.Invoice.ViewInvoice$13
  com.akounto.accountingsoftware.Activity.Invoice.ViewInvoice$2
  com.akounto.accountingsoftware.Activity.Invoice.ViewInvoice$3
  com.akounto.accountingsoftware.Activity.Invoice.ViewInvoice$4
@@ -481,6 +482,7 @@ com/akounto/accountingsoftware/Activity/Invoice/EditInvoice.java
  com.akounto.accountingsoftware.Activity.Invoice.EditInvoice$18
  com.akounto.accountingsoftware.Activity.Invoice.EditInvoice$19
  com.akounto.accountingsoftware.Activity.Invoice.EditInvoice$2
+ com.akounto.accountingsoftware.Activity.Invoice.EditInvoice$20
  com.akounto.accountingsoftware.Activity.Invoice.EditInvoice$3
  com.akounto.accountingsoftware.Activity.Invoice.EditInvoice$4
  com.akounto.accountingsoftware.Activity.Invoice.EditInvoice$5
@@ -633,6 +635,20 @@ com/akounto/accountingsoftware/Data/Dashboard/DashboardData.java
  com.akounto.accountingsoftware.Data.Dashboard.DashboardData
 com/akounto/accountingsoftware/request/Bills.java
  com.akounto.accountingsoftware.request.Bills
+com/akounto/accountingsoftware/Activity/fragment/AddCustomerFragmet.java
+ com.akounto.accountingsoftware.Activity.fragment.AddCustomerFragmet
+ com.akounto.accountingsoftware.Activity.fragment.AddCustomerFragmet$1
+ com.akounto.accountingsoftware.Activity.fragment.AddCustomerFragmet$10
+ com.akounto.accountingsoftware.Activity.fragment.AddCustomerFragmet$11
+ com.akounto.accountingsoftware.Activity.fragment.AddCustomerFragmet$12
+ com.akounto.accountingsoftware.Activity.fragment.AddCustomerFragmet$2
+ com.akounto.accountingsoftware.Activity.fragment.AddCustomerFragmet$3
+ com.akounto.accountingsoftware.Activity.fragment.AddCustomerFragmet$4
+ com.akounto.accountingsoftware.Activity.fragment.AddCustomerFragmet$5
+ com.akounto.accountingsoftware.Activity.fragment.AddCustomerFragmet$6
+ com.akounto.accountingsoftware.Activity.fragment.AddCustomerFragmet$7
+ com.akounto.accountingsoftware.Activity.fragment.AddCustomerFragmet$8
+ com.akounto.accountingsoftware.Activity.fragment.AddCustomerFragmet$9
 com/akounto/accountingsoftware/request/ViewReportRequest.java
  com.akounto.accountingsoftware.request.ViewReportRequest
 com/akounto/accountingsoftware/adapter/SettingSaleTaxItemClick.java
@@ -1106,6 +1122,8 @@ com/akounto/accountingsoftware/response/LastActivitiesItem.java
  com.akounto.accountingsoftware.response.LastActivitiesItem
 com/akounto/accountingsoftware/response/RecurringInvoicesItem.java
  com.akounto.accountingsoftware.response.RecurringInvoicesItem
+com/akounto/accountingsoftware/response/UpdateResponse.java
+ com.akounto.accountingsoftware.response.UpdateResponse
 com/akounto/accountingsoftware/Activity/$$Lambda$CreateBillActivityBcg$FKPcGS9VddEes1zx73zy8ES9M2Y.java
  com.akounto.accountingsoftware.Activity.$$Lambda$CreateBillActivityBcg$FKPcGS9VddEes1zx73zy8ES9M2Y
 com/akounto/accountingsoftware/util/PopinsBlackItalicView.java
@@ -1204,6 +1222,8 @@ com/akounto/accountingsoftware/adapter/InvalidAdapter.java
 com/akounto/accountingsoftware/Activity/SignInActivity.java
  com.akounto.accountingsoftware.Activity.SignInActivity
  com.akounto.accountingsoftware.Activity.SignInActivity$1
+ com.akounto.accountingsoftware.Activity.SignInActivity$10
+ com.akounto.accountingsoftware.Activity.SignInActivity$11
  com.akounto.accountingsoftware.Activity.SignInActivity$2
  com.akounto.accountingsoftware.Activity.SignInActivity$3
  com.akounto.accountingsoftware.Activity.SignInActivity$4
@@ -1211,6 +1231,7 @@ com/akounto/accountingsoftware/Activity/SignInActivity.java
  com.akounto.accountingsoftware.Activity.SignInActivity$6
  com.akounto.accountingsoftware.Activity.SignInActivity$7
  com.akounto.accountingsoftware.Activity.SignInActivity$8
+ com.akounto.accountingsoftware.Activity.SignInActivity$9
 com/akounto/accountingsoftware/Activity/fragment/GetShareLinkFragment.java
  com.akounto.accountingsoftware.Activity.fragment.GetShareLinkFragment
  com.akounto.accountingsoftware.Activity.fragment.GetShareLinkFragment$1
@@ -1277,6 +1298,11 @@ com/akounto/accountingsoftware/Activity/fragment/EditBusinessFragment.java
  com.akounto.accountingsoftware.Activity.fragment.EditBusinessFragment$5
 com/akounto/accountingsoftware/Activity/fragment/CompanyProfileFragment.java
  com.akounto.accountingsoftware.Activity.fragment.CompanyProfileFragment
+com/akounto/accountingsoftware/adapter/BillItemAdapter.java
+ com.akounto.accountingsoftware.adapter.BillItemAdapter
+ com.akounto.accountingsoftware.adapter.BillItemAdapter$1
+ com.akounto.accountingsoftware.adapter.BillItemAdapter$OnItemClickListener
+ com.akounto.accountingsoftware.adapter.BillItemAdapter$ViewHolder
 com/akounto/accountingsoftware/adapter/BillsAdapter.java
  com.akounto.accountingsoftware.adapter.BillsAdapter
  com.akounto.accountingsoftware.adapter.BillsAdapter$1
@@ -1572,6 +1598,11 @@ com/akounto/accountingsoftware/response/Taxs/Data.java
  com.akounto.accountingsoftware.response.Taxs.Data
 com/akounto/accountingsoftware/response/viewreport/InvoiceProfitLoss.java
  com.akounto.accountingsoftware.response.viewreport.InvoiceProfitLoss
+com/akounto/accountingsoftware/adapter/InvoiceItemAdapter.java
+ com.akounto.accountingsoftware.adapter.InvoiceItemAdapter
+ com.akounto.accountingsoftware.adapter.InvoiceItemAdapter$1
+ com.akounto.accountingsoftware.adapter.InvoiceItemAdapter$OnItemClickListener
+ com.akounto.accountingsoftware.adapter.InvoiceItemAdapter$ViewHolder
 com/akounto/accountingsoftware/response/BankBalanceItem.java
  com.akounto.accountingsoftware.response.BankBalanceItem
 com/akounto/accountingsoftware/request/RecurringInvoiceSalesTaxItem.java

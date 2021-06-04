@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.Data.RegisterBank.BankAccountData;
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.ViewModel.BankListViewModel;
@@ -85,6 +86,10 @@ public class SignUpStep3 extends AppCompatActivity {
                     @Override
                     public void onChanged(BankAccountData bankAccountData) {
                         if (bankAccountData.getStatus() == 0) {
+                            Bundle b=new Bundle();
+                            b.putString(Constant.CATEGORY,"SignUp");
+                            b.putString(Constant.ACTION,"connect_bank");
+                            SplashScreenActivity.mFirebaseAnalytics.logEvent("evtSignUpConnectBank",b);
                             Intent intent = new Intent(SignUpStep3.this.getApplicationContext(), DashboardActivity.class);
                             SignUpStep3.this.startActivity(intent);
                             SignUpStep3.this.finish();

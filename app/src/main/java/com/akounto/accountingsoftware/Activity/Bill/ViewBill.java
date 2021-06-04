@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.akounto.accountingsoftware.Activity.SplashScreenActivity;
 import com.google.gson.Gson;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
@@ -122,9 +123,12 @@ public class ViewBill extends AppCompatActivity {
             binding.dueOnPTV.setText(getFormattedDate(receivedData.getDueAt()));
             items = new ArrayList<>();
             for (int k = 0; k < receivedData.getBillTransaction().size(); k++) {
-                PurchaseItem temp = gson.fromJson(gson.toJson(receivedData.getBillTransaction().get(k)), PurchaseItem.class);
-                temp.setProductServiceTaxes(UiUtil.trasformeBill(receivedData.getBillTransaction().get(k).getTaxes()));
-                items.add(temp);
+                try {
+                    PurchaseItem temp = gson.fromJson(gson.toJson(receivedData.getBillTransaction().get(k)), PurchaseItem.class);
+                    temp.setProductServiceTaxes(UiUtil.trasformeBill(receivedData.getBillTransaction().get(k).getTaxes()));
+                    items.add(temp);
+                } catch (Exception e) {
+                }
             }
             items.get(0).getCompanyId();
             selectedCurrencyId = receivedData.getCustCurrencySymbol();
@@ -254,9 +258,9 @@ public class ViewBill extends AppCompatActivity {
                 TextView name = new TextView(mContext);
                 TextView amount = new TextView(mContext);
                 if (priceCal.getTaxes().get(i).getName() != null) {
-                    name.setText(priceCal.getTaxes().get(i).getName() + " (" + priceCal.getTaxes().get(i).getRate()+" %)");
+                    name.setText(priceCal.getTaxes().get(i).getName() + " (" + priceCal.getTaxes().get(i).getRate() + " %)");
                 } else {
-                    name.setText(priceCal.getTaxes().get(i).getTaxName() + " (" + priceCal.getTaxes().get(i).getRate()+" %)");
+                    name.setText(priceCal.getTaxes().get(i).getTaxName() + " (" + priceCal.getTaxes().get(i).getRate() + " %)");
                 }
                 amount.setText(selectedCurrencyId + " " + String.format("%.2f", priceCal.getTaxes().get(i).getAmount()));
                 amount.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
@@ -276,6 +280,11 @@ public class ViewBill extends AppCompatActivity {
             public void onResponse(Call<BillsByIdResponse> call, Response<BillsByIdResponse> response) {
                 super.onResponse(call, response);
                 ViewBill.this.finish();
+                Bundle b=new Bundle();
+                b.putString(Constant.CATEGORY,"billing");
+                b.putString(Constant.ACTION,"approve_bill");
+                SplashScreenActivity.mFirebaseAnalytics.logEvent("bill_approve_bill",b);
+
             }
 
             public void onFailure(Call<BillsByIdResponse> call, Throwable t) {
