@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
+import com.akounto.accountingsoftware.util.UiUtil;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class SplashScreenActivity extends AppCompatActivity {
@@ -35,9 +36,12 @@ public class SplashScreenActivity extends AppCompatActivity {
                         if (i == 0) {
                             i++;
                             //if (!UiUtil.isLoggedin(SplashScreenActivity.this)) {
-                            Log.e("Count %s", String.valueOf(i));
-                            SplashScreenActivity.this.startActivity(new Intent(SplashScreenActivity.this, SignInActivity.class));
-                            /*} else {
+                            if(UiUtil.isFirstLogin(getApplicationContext())) {
+                                Log.e("Count %s", String.valueOf(i));
+                                SplashScreenActivity.this.startActivity(new Intent(SplashScreenActivity.this, SignInActivity.class));
+                            }else{
+                                SplashScreenActivity.this.startActivity(new Intent(SplashScreenActivity.this, WelcomeActivity.class));
+                            }/*} else {
                                 SplashScreenActivity.this.startActivity(new Intent(SplashScreenActivity.this, DashboardActivity.class));
                             }*/
                             SplashScreenActivity.this.finish();

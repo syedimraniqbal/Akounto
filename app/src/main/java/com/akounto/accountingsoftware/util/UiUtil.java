@@ -234,6 +234,15 @@ public class UiUtil {
         editor.commit();
     }
 
+    public static void SetFirstLogin(Context context, boolean isFirstTime) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("com.akounto.accountingsoftware", PRIVATE_MODE);
+        pref = sharedPreferences;
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        editor = edit;
+        edit.putBoolean(UiConstants.FIRST_LOGIN, isFirstTime);
+        editor.commit();
+    }
+
     public static void addAcccessToken(Context context, SignInResponse isLoogedIn) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("com.akounto.accountingsoftware", PRIVATE_MODE);
         pref = sharedPreferences;
@@ -243,6 +252,11 @@ public class UiUtil {
         editor.commit();
     }
 
+    public static boolean isFirstLogin(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("com.akounto.accountingsoftware", PRIVATE_MODE);
+        pref = sharedPreferences;
+        return sharedPreferences.getBoolean(UiConstants.FIRST_LOGIN, false);
+    }
     public static String getBussinessCurren(Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("com.akounto.accountingsoftware", PRIVATE_MODE);
         pref = sharedPreferences;
@@ -487,7 +501,7 @@ public class UiUtil {
             leftAxis.setTypeface(poppins_regular);
             leftAxis.setValueFormatter(new LargeValueFormatter());
             if (barChart.getData() == null || (barChart.getData()).getDataSetCount() <= 0) {
-                if (UiUtil.getAccountingType(mContext) == 2)  {
+                if (UiUtil.getAccountingType(mContext) == 2) {
                     BarDataSet inCome = new BarDataSet(incomeValues, "Income");
                     inCome.setColor(Color.parseColor("#1a8b8c"));//green
                     BarDataSet outCome = new BarDataSet(outComeValues, "Expense");

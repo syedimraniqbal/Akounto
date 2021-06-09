@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:1-195:12
-INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:1-195:12
-INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:1-195:12
-INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:1-195:12
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:1-197:12
+INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:1-197:12
+INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:1-197:12
+INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:1-197:12
 MERGED from [androidx.databinding:databinding-adapters:4.1.2] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\876bf713e16c6cef1896515b6204827d\databinding-adapters-4.1.2\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.databinding:databinding-runtime:4.1.2] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\28bacf6ba7b1c0cf136db91fbd88ab93\databinding-runtime-4.1.2\AndroidManifest.xml:17:1-24:12
 MERGED from [com.karumi:dexter:6.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\97b725d13cb23d487c12ce22ba314b7c\jetified-dexter-6.0.0\AndroidManifest.xml:17:1-32:12
@@ -127,22 +127,22 @@ MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Imran\.
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\47bb964620e11e803d3cdc76777443f6\jetified-rxandroid-2.1.1\AndroidManifest.xml:15:1-20:12
 MERGED from [com.google.firebase:protolite-well-known-types:17.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\9f844afa0b5807072f8b827c2e29b621\jetified-protolite-well-known-types-17.1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.dagger:dagger-lint-aar:2.29.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\dd747c6f526faaa1d2076e793f657a21\jetified-dagger-lint-aar-2.29.1\AndroidManifest.xml:16:1-19:12
-INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:1-195:12
-INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:1-195:12
-INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:1-195:12
+INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:1-197:12
+INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:1-197:12
+INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:1-197:12
 	package
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:4:5-45
 		INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml
 		INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:1-195:12
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:1-197:12
 		INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:1-195:12
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:1-197:12
 		INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:2:11-69
@@ -261,7 +261,7 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] C:\Us
 	android:name
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:13:22-107
 application
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:15:5-193:19
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:15:5-195:19
 MERGED from [com.karumi:dexter:6.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\97b725d13cb23d487c12ce22ba314b7c\jetified-dexter-6.0.0\AndroidManifest.xml:26:5-30:19
 MERGED from [com.karumi:dexter:6.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\97b725d13cb23d487c12ce22ba314b7c\jetified-dexter-6.0.0\AndroidManifest.xml:26:5-30:19
 MERGED from [com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cd56e0f1a63e2b4a8f5568cc9d6b3a3c\jetified-sdk-core-3.2.4\AndroidManifest.xml:19:5-42:19
@@ -432,276 +432,284 @@ activity#com.akounto.accountingsoftware.Activity.Bill.AddBillItem
 ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:37:9-93
 	android:name
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:37:19-90
+activity#com.akounto.accountingsoftware.Activity.WelcomeActivity
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:38:9-92
+	android:name
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:38:19-89
 activity#com.akounto.accountingsoftware.Activity.Bill.EditBillItem
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:38:9-94
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:39:9-94
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:38:19-91
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:39:19-91
 activity#com.akounto.accountingsoftware.Activity.Bank.BankListActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:39:9-98
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:40:9-98
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:39:19-95
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:40:19-95
 activity#com.akounto.accountingsoftware.Activity.Bill.ViewBill
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:40:9-90
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:41:9-90
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:40:19-87
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:41:19-87
 activity#com.akounto.accountingsoftware.Activity.SettingActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:41:9-92
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:42:9-92
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:41:19-89
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:42:19-89
+activity#com.akounto.accountingsoftware.Activity.Test
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:43:9-81
+	android:name
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:43:19-78
 activity#com.akounto.accountingsoftware.Activity.AddJournalTransactionActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:42:9-106
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:44:9-106
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:42:19-103
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:44:19-103
 activity#com.akounto.accountingsoftware.Activity.SendEstimateActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:43:9-97
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:45:9-97
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:43:19-94
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:45:19-94
 activity#com.akounto.accountingsoftware.Activity.ViewRecurringInvoiceActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:44:9-105
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:46:9-105
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:44:19-102
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:46:19-102
 activity#com.akounto.accountingsoftware.Activity.EditChatOfAccount
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:45:9-94
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:47:9-94
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:45:19-91
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:47:19-91
 activity#com.akounto.accountingsoftware.Activity.CommonInvoiceActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:46:9-98
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:48:9-98
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:46:19-95
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:48:19-95
 activity#com.akounto.accountingsoftware.Activity.CreateInvoiceActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:47:9-98
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:49:9-98
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:47:19-95
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:49:19-95
 activity#com.akounto.accountingsoftware.Activity.CreateEstimateActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:48:9-99
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:50:9-99
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:48:19-96
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:50:19-96
 activity#com.akounto.accountingsoftware.Activity.AddCustomersActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:49:9-97
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:51:9-97
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:49:19-94
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:51:19-94
 activity#com.akounto.accountingsoftware.Activity.AddVendorActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:50:9-94
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:52:9-94
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:50:19-91
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:52:19-91
 activity#com.akounto.accountingsoftware.Activity.CreatingProductsAndServices
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:51:9-104
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:53:9-104
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:51:19-101
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:53:19-101
 activity#com.akounto.accountingsoftware.Activity.NotifcationActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:52:9-96
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:54:9-96
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:52:19-93
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:54:19-93
 activity#com.akounto.accountingsoftware.Activity.CompanyProfileActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:53:9-99
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:55:9-99
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:53:19-96
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:55:19-96
 activity#com.akounto.accountingsoftware.Activity.HangTightActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:54:9-94
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:56:9-94
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:54:19-91
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:56:19-91
 activity#com.akounto.accountingsoftware.Activity.GetStartedActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:55:9-95
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:57:9-95
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:55:19-92
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:57:19-92
 activity#com.akounto.accountingsoftware.Activity.SignUpActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:56:9-91
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:58:9-91
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:56:19-88
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:58:19-88
 activity#com.akounto.accountingsoftware.Activity.ForgotPassword
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:57:9-91
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:59:9-91
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:57:19-88
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:59:19-88
 activity#com.akounto.accountingsoftware.Activity.AddTransactionActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:58:9-99
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:60:9-99
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:58:19-96
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:60:19-96
 activity#com.akounto.accountingsoftware.Activity.SIgnUpStep0
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:59:9-88
-	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:59:19-85
-activity#com.akounto.accountingsoftware.Activity.SignUpStep1
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:60:9-88
-	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:60:19-85
-activity#com.akounto.accountingsoftware.Activity.SignUpStep2
 ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:61:9-88
 	android:name
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:61:19-85
-activity#com.akounto.accountingsoftware.Activity.SignUpStep3
+activity#com.akounto.accountingsoftware.Activity.SignUpStep1
 ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:62:9-88
 	android:name
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:62:19-85
+activity#com.akounto.accountingsoftware.Activity.SignUpStep2
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:63:9-88
+	android:name
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:63:19-85
+activity#com.akounto.accountingsoftware.Activity.SignUpStep3
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:64:9-88
+	android:name
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:64:19-85
 activity#com.akounto.accountingsoftware.Activity.Invoice.EditInvoice
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:63:9-96
-	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:63:19-93
-activity#com.akounto.accountingsoftware.Activity.UploadBankStatementActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:64:9-104
-	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:64:19-101
-activity#com.akounto.accountingsoftware.Activity.Invoice.ViewInvoice
 ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:65:9-96
 	android:name
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:65:19-93
+activity#com.akounto.accountingsoftware.Activity.UploadBankStatementActivity
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:66:9-104
+	android:name
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:66:19-101
+activity#com.akounto.accountingsoftware.Activity.Invoice.ViewInvoice
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:67:9-96
+	android:name
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:67:19-93
 activity#com.akounto.accountingsoftware.Activity.Bill.EditBill
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:66:9-90
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:68:9-90
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:66:19-87
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:68:19-87
 activity#com.akounto.accountingsoftware.Activity.ProductAndCreateActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:67:9-69:55
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:69:9-71:55
 	android:theme
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:69:13-52
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:71:13-52
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:68:13-92
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:70:13-92
 activity#com.akounto.accountingsoftware.Activity.CreateProductsAndServicesPurchase
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:70:9-72:55
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:72:9-74:55
 	android:theme
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:72:13-52
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:74:13-52
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:71:13-101
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:73:13-101
 activity#com.akounto.accountingsoftware.Activity.AddChatOfAccountActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:73:9-101
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:75:9-101
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:73:19-98
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:75:19-98
 activity#com.akounto.accountingsoftware.Activity.EstimateDetailsActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:74:9-76:55
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:76:9-78:55
 	android:theme
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:76:13-52
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:78:13-52
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:75:13-91
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:77:13-91
 activity#com.akounto.accountingsoftware.Activity.InvoiceDetailsActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:77:9-79:55
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:79:9-81:55
 	android:theme
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:79:13-52
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:81:13-52
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:78:13-90
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:80:13-90
 activity#com.akounto.accountingsoftware.Activity.ViewPdfActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:80:9-82:55
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:82:9-84:55
 	android:theme
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:82:13-52
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:84:13-52
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:81:13-83
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:83:13-83
 activity#com.akounto.accountingsoftware.Activity.BillDetailsActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:83:9-85:55
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:85:9-87:55
 	android:theme
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:85:13-52
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:87:13-52
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:84:13-87
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:86:13-87
 activity#com.akounto.accountingsoftware.Activity.EditBillActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:86:9-88:55
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:88:9-90:55
 	android:theme
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:88:13-52
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:90:13-52
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:87:13-84
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:89:13-84
 activity#com.akounto.accountingsoftware.Activity.UploadSecondActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:89:9-91:55
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:91:9-93:55
 	android:theme
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:91:13-52
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:93:13-52
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:90:13-88
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:92:13-88
 activity#com.akounto.accountingsoftware.Activity.AdvancedFilterActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:92:9-99
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:94:9-99
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:92:19-96
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:94:19-96
 activity#com.akounto.accountingsoftware.Activity.UploadReceipt
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:93:9-90
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:95:9-90
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:93:19-87
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:95:19-87
 activity#com.akounto.accountingsoftware.Activity.CreateBillActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:94:9-96:55
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:96:9-98:55
 	android:theme
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:96:13-52
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:98:13-52
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:95:13-86
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:97:13-86
 activity#com.akounto.accountingsoftware.Activity.DashboardActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:97:9-99:50
-	android:launchMode
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:99:13-48
-	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:98:13-85
-activity#com.akounto.accountingsoftware.Activity.ExternalSignUp
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:100:9-102:39
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:99:9-101:50
 	android:launchMode
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:101:13-48
-	android:noHistory
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:102:13-37
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:100:19-88
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:100:13-85
+activity#com.akounto.accountingsoftware.Activity.ExternalSignUp
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:102:9-104:39
+	android:launchMode
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:103:13-48
+	android:noHistory
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:104:13-37
+	android:name
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:102:19-88
 activity#com.akounto.accountingsoftware.util.ActivityImagePicker
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:103:9-105:39
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:105:9-107:39
 	android:launchMode
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:104:13-48
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:106:13-48
 	android:noHistory
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:105:13-37
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:107:13-37
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:103:19-89
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:105:19-89
 activity#com.akounto.accountingsoftware.Activity.SignInActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:106:9-107:50
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:108:9-109:50
 	android:launchMode
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:107:13-48
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:109:13-48
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:106:19-88
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:108:19-88
 activity#com.akounto.accountingsoftware.Activity.VideoAfterSplashActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:109:9-114:20
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:111:9-116:20
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:109:19-98
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:111:19-98
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:110:13-113:29
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:112:13-115:29
 action#android.intent.action.MAIN
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:111:17-69
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:113:17-69
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:111:25-66
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:113:25-66
 category#android.intent.category.DEFAULT
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:112:17-76
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:114:17-76
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:112:27-73
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:114:27-73
 activity#com.akounto.accountingsoftware.Activity.SplashScreenActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:115:9-120:20
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:117:9-122:20
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:115:19-94
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:117:19-94
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:116:13-119:29
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:118:13-121:29
 category#android.intent.category.LAUNCHER
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:118:17-77
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:120:17-77
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:118:27-74
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:120:27-74
 activity#com.akounto.accountingsoftware.Activity.MainActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:121:9-126:20
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:123:9-128:20
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:121:19-86
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:123:19-86
 provider#androidx.core.content.FileProvider
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:127:9-135:20
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:129:9-137:20
 	android:grantUriPermissions
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:131:13-47
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:133:13-47
 	android:authorities
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:129:13-74
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:131:13-74
 	android:exported
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:130:13-37
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:132:13-37
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:128:13-62
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:130:13-62
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:132:13-134:58
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:134:13-136:58
 	android:resource
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:134:17-55
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:136:17-55
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:133:17-67
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:135:17-67
 activity#com.karumi.dexter.DexterActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:136:9-138:72
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:138:9-140:72
 MERGED from [com.karumi:dexter:6.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\97b725d13cb23d487c12ce22ba314b7c\jetified-dexter-6.0.0\AndroidManifest.xml:27:9-29:72
 MERGED from [com.karumi:dexter:6.0.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\97b725d13cb23d487c12ce22ba314b7c\jetified-dexter-6.0.0\AndroidManifest.xml:27:9-29:72
 	android:theme
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:138:13-69
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:140:13-69
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:137:13-60
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:139:13-60
 meta-data#firebase_performance_logcat_enabled
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:139:9-141:36
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:141:9-143:36
 	android:value
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:141:13-33
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:143:13-33
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:140:13-63
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:142:13-63
 service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:142:9-158:19
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:144:9-160:19
 MERGED from [com.google.firebase:firebase-perf:19.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\9282daa5c68e788934cc46362388676a\jetified-firebase-perf-19.1.1\AndroidManifest.xml:20:9-26:19
 MERGED from [com.google.firebase:firebase-perf:19.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\9282daa5c68e788934cc46362388676a\jetified-firebase-perf-19.1.1\AndroidManifest.xml:20:9-26:19
 MERGED from [com.google.firebase:firebase-crashlytics:17.3.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\4a2ab775fd06ea80aecad6aaaa887d9e\jetified-firebase-crashlytics-17.3.1\AndroidManifest.xml:15:9-21:19
@@ -725,71 +733,71 @@ MERGED from [com.google.firebase:firebase-abt:20.0.0] C:\Users\Imran\.gradle\cac
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e29521b6e56822584c7f186eb4c4847d\jetified-firebase-common-19.5.0\AndroidManifest.xml:33:9-46:19
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e29521b6e56822584c7f186eb4c4847d\jetified-firebase-common-19.5.0\AndroidManifest.xml:33:9-46:19
 	android:exported
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:145:13-37
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:147:13-37
 	tools:targetApi
 		ADDED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e29521b6e56822584c7f186eb4c4847d\jetified-firebase-common-19.5.0\AndroidManifest.xml:37:13-32
 	android:directBootAware
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:144:13-43
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:146:13-43
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:143:13-84
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:145:13-84
 meta-data#com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:146:13-148:85
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:148:13-150:85
 MERGED from [com.google.firebase:firebase-crashlytics:17.3.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\4a2ab775fd06ea80aecad6aaaa887d9e\jetified-firebase-crashlytics-17.3.1\AndroidManifest.xml:18:13-20:85
 MERGED from [com.google.firebase:firebase-crashlytics:17.3.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\4a2ab775fd06ea80aecad6aaaa887d9e\jetified-firebase-crashlytics-17.3.1\AndroidManifest.xml:18:13-20:85
 	android:value
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:148:17-82
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:150:17-82
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:147:17-115
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:149:17-115
 meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:149:13-151:85
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:151:13-153:85
 MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\8cbfb01e038a51d72ca0b808111cf050\jetified-play-services-measurement-api-18.0.2\AndroidManifest.xml:30:13-32:85
 MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\8cbfb01e038a51d72ca0b808111cf050\jetified-play-services-measurement-api-18.0.2\AndroidManifest.xml:30:13-32:85
 	android:value
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:151:17-82
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:153:17-82
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:150:17-139
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:152:17-139
 meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:152:13-154:85
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:154:13-156:85
 MERGED from [com.google.firebase:firebase-installations:16.3.5] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\1f475e4a7105f24b7f1484b2a105319f\jetified-firebase-installations-16.3.5\AndroidManifest.xml:18:13-20:85
 MERGED from [com.google.firebase:firebase-installations:16.3.5] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\1f475e4a7105f24b7f1484b2a105319f\jetified-firebase-installations-16.3.5\AndroidManifest.xml:18:13-20:85
 	android:value
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:154:17-82
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:156:17-82
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:153:17-127
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:155:17-127
 meta-data#com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:155:13-157:85
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:157:13-159:85
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e29521b6e56822584c7f186eb4c4847d\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\e29521b6e56822584c7f186eb4c4847d\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
 	android:value
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:157:17-82
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:159:17-82
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:156:17-121
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:158:17-121
 service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:159:9-165:19
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:161:9-167:19
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\a84c66fb27aac3d37bceb8d0cc2e064d\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:29:9-35:19
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\a84c66fb27aac3d37bceb8d0cc2e064d\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:29:9-35:19
 MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\53e28226299623d06512c85a26922c2a\jetified-transport-runtime-2.2.6\AndroidManifest.xml:36:9-38:40
 MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\53e28226299623d06512c85a26922c2a\jetified-transport-runtime-2.2.6\AndroidManifest.xml:36:9-38:40
 	android:exported
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:161:13-37
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:163:13-37
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:160:13-103
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:162:13-103
 meta-data#backend:com.google.android.datatransport.cct.CctBackendFactory
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:162:13-164:39
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:164:13-166:39
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\a84c66fb27aac3d37bceb8d0cc2e064d\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:32:13-34:39
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\a84c66fb27aac3d37bceb8d0cc2e064d\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:32:13-34:39
 	android:value
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:164:17-36
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:166:17-36
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:163:17-94
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:165:17-94
 meta-data#com.google.android.gms.version
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:189:9-191:69
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:191:9-193:69
 MERGED from [com.google.android.gms:play-services-basement:17.3.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\539f008f90d709d90a62114727611eac\jetified-play-services-basement-17.3.0\AndroidManifest.xml:23:9-25:69
 MERGED from [com.google.android.gms:play-services-basement:17.3.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\539f008f90d709d90a62114727611eac\jetified-play-services-basement-17.3.0\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:191:13-66
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:193:13-66
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:190:13-58
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:192:13-58
 uses-sdk
 INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml

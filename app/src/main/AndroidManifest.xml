@@ -35,10 +35,12 @@
         <activity android:name="com.akounto.accountingsoftware.Activity.Bill.ListVendor" />
         <activity android:name="com.akounto.accountingsoftware.Activity.Bill.ListPurchaseItem" />
         <activity android:name="com.akounto.accountingsoftware.Activity.Bill.AddBillItem" />
+        <activity android:name="com.akounto.accountingsoftware.Activity.WelcomeActivity" />
         <activity android:name="com.akounto.accountingsoftware.Activity.Bill.EditBillItem" />
         <activity android:name="com.akounto.accountingsoftware.Activity.Bank.BankListActivity" />
         <activity android:name="com.akounto.accountingsoftware.Activity.Bill.ViewBill" />
         <activity android:name="com.akounto.accountingsoftware.Activity.SettingActivity" />
+        <activity android:name="com.akounto.accountingsoftware.Activity.Test" />
         <activity android:name="com.akounto.accountingsoftware.Activity.AddJournalTransactionActivity" />
         <activity android:name="com.akounto.accountingsoftware.Activity.SendEstimateActivity" />
         <activity android:name="com.akounto.accountingsoftware.Activity.ViewRecurringInvoiceActivity" />

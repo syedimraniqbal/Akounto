@@ -88,7 +88,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            setContentView(R.layout.layout_signin);
+            setContentView(R.layout.welcome_slide4);
             getWindow().setFlags(1024, 1024);
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 //            SplashScreenActivity.mFirebaseAnalytics.logEvent();

@@ -12,6 +12,7 @@ public class UiConstants {
     public static final String LAST_NAME = "last_name";
     public static final String PHONE_NUMBER = "phone_name";
     public static final String LOGIN = "token";
+    public static final String FIRST_LOGIN = "first_login";
     //public static final String PREF_NAME = "com.akounto.android";
    // public static final String SERVER_IP = "https://beta.api.akounto.com/";
     //public static final String X_SIGNATURE = "20FCC48BAC3E4B6496FDE12BFA1E93C2";

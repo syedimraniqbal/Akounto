@@ -1,10 +1,10 @@
-#Thu Jun 03 22:51:18 IST 2021
-base.2=E\:\\Android Code\\Akounto\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes3.dex
+#Thu Jun 10 01:45:20 IST 2021
 path.2=classes3.dex
-base.1=E\:\\Android Code\\Akounto\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes2.dex
 path.1=classes2.dex
-base.0=E\:\\Android Code\\Akounto\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex
+path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-path.0=classes.dex
+base.2=E\:\\Android Code\\Akounto\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes3.dex
+base.1=E\:\\Android Code\\Akounto\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes2.dex
+base.0=E\:\\Android Code\\Akounto\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex

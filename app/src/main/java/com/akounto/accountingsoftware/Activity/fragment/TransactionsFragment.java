@@ -27,6 +27,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.akounto.accountingsoftware.Activity.SplashScreenActivity;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.Activity.Accounting.AccountingMenu;
@@ -612,6 +613,10 @@ public class TransactionsFragment extends Fragment implements View.OnClickListen
             /*Intent intent1 = new Intent(getActivity(), AddTransactionActivity.class);
             intent1.putExtra("depositOrWithdrawal", "Deposit");
             startActivity(intent1);*/
+            Bundle b=new Bundle();
+            b.putString(Constant.CATEGORY,"accounting");
+            b.putString(Constant.ACTION,"add_deposit");
+            SplashScreenActivity.mFirebaseAnalytics.logEvent("accounting_add_deposit",b);
             AddTransactionFragment f = new AddTransactionFragment();
             f.setData("Deposit");
             AddFragments.addFragmentToDrawerActivity(getContext(), null, f.getClass());
@@ -619,6 +624,10 @@ public class TransactionsFragment extends Fragment implements View.OnClickListen
             /*Intent intent = new Intent(getActivity(), AddTransactionActivity.class);
             intent.putExtra("depositOrWithdrawal", "Withdrawal");
             startActivity(intent);*/
+            Bundle b=new Bundle();
+            b.putString(Constant.CATEGORY,"accounting");
+            b.putString(Constant.ACTION,"add_with_drawal");
+            SplashScreenActivity.mFirebaseAnalytics.logEvent("accounting_add_with_drawal",b);
             AddTransactionFragment f = new AddTransactionFragment();
             f.setData("Deposit");
             AddFragments.addFragmentToDrawerActivity(getContext(), null, f.getClass());
@@ -709,7 +718,10 @@ public class TransactionsFragment extends Fragment implements View.OnClickListen
 
             public void onResponse(Call<Transaction> call, Response<Transaction> response) {
                 super.onResponse(call, response);
-                Log.d("Banks Response---", response.toString());
+                Bundle b=new Bundle();
+                b.putString(Constant.CATEGORY,"accounting");
+                b.putString(Constant.ACTION,"update_cat_action");
+                SplashScreenActivity.mFirebaseAnalytics.logEvent("accounting_update_cat_action",b);
                 if (!response.isSuccessful()) {
                     UiUtil.showToast(TransactionsFragment.this.getContext(), "Failed. Please try after sometime");
                 } else if (response.body() != null) {

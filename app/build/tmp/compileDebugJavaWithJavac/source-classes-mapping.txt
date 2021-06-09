@@ -572,6 +572,9 @@ com/akounto/accountingsoftware/request/CashFlowRequest.java
  com.akounto.accountingsoftware.request.CashFlowRequest
 com/akounto/accountingsoftware/Data/RegisterBank/Bank.java
  com.akounto.accountingsoftware.Data.RegisterBank.Bank
+com/akounto/accountingsoftware/Activity/Test.java
+ com.akounto.accountingsoftware.Activity.Test
+ com.akounto.accountingsoftware.Activity.Test$1
 com/akounto/accountingsoftware/Constants/Constant.java
  com.akounto.accountingsoftware.Constants.Constant
 com/akounto/accountingsoftware/Data/JsonData.java
@@ -620,10 +623,10 @@ com/akounto/accountingsoftware/adapter/ActivitiesDashboardAdapter.java
  com.akounto.accountingsoftware.adapter.ActivitiesDashboardAdapter$MyViewHolder
 com/akounto/accountingsoftware/request/AddSchedulerReq.java
  com.akounto.accountingsoftware.request.AddSchedulerReq
-com/akounto/accountingsoftware/response/trialbalance/TrialBalanceTransaction.java
- com.akounto.accountingsoftware.response.trialbalance.TrialBalanceTransaction
 com/akounto/accountingsoftware/response/DashboardData.java
  com.akounto.accountingsoftware.response.DashboardData
+com/akounto/accountingsoftware/response/trialbalance/TrialBalanceTransaction.java
+ com.akounto.accountingsoftware.response.trialbalance.TrialBalanceTransaction
 com/akounto/accountingsoftware/Activity/fragment/RecentNotificationFragment.java
  com.akounto.accountingsoftware.Activity.fragment.RecentNotificationFragment
 com/akounto/accountingsoftware/Activity/fragment/BillsFragment.java
@@ -1003,6 +1006,12 @@ com/akounto/accountingsoftware/response/cashflow/CashFLowData.java
  com.akounto.accountingsoftware.response.cashflow.CashFLowData
 com/akounto/accountingsoftware/response/Product.java
  com.akounto.accountingsoftware.response.Product
+com/akounto/accountingsoftware/Activity/WelcomeActivity.java
+ com.akounto.accountingsoftware.Activity.WelcomeActivity
+ com.akounto.accountingsoftware.Activity.WelcomeActivity$1
+ com.akounto.accountingsoftware.Activity.WelcomeActivity$2
+ com.akounto.accountingsoftware.Activity.WelcomeActivity$3
+ com.akounto.accountingsoftware.Activity.WelcomeActivity$4
 com/akounto/accountingsoftware/adapter/DeleteTaxClick.java
  com.akounto.accountingsoftware.adapter.DeleteTaxClick
 com/akounto/accountingsoftware/Activity/EstimateDetailsActivity.java
@@ -1710,6 +1719,8 @@ com/akounto/accountingsoftware/response/mailreq/MailReceipentData.java
  com.akounto.accountingsoftware.response.mailreq.MailReceipentData
 com/akounto/accountingsoftware/Data/RegisterBank/AutoSynData.java
  com.akounto.accountingsoftware.Data.RegisterBank.AutoSynData
+com/akounto/accountingsoftware/adapter/SliderPagerAdapter.java
+ com.akounto.accountingsoftware.adapter.SliderPagerAdapter
 com/akounto/accountingsoftware/response/DownloadResponse.java
  com.akounto.accountingsoftware.response.DownloadResponse
 com/akounto/accountingsoftware/Data/RegisterBank/BankAccountData.java

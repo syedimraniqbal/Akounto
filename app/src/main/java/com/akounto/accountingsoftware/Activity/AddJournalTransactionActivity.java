@@ -518,6 +518,10 @@ public class AddJournalTransactionActivity extends AppCompatActivity implements 
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 super.onResponse(call, response);
                 if (response.isSuccessful()) {
+                    Bundle b=new Bundle();
+                    b.putString(Constant.CATEGORY,"accounting");
+                    b.putString(Constant.ACTION,"add_journal_transaction");
+                    SplashScreenActivity.mFirebaseAnalytics.logEvent("accounting_add_journal_transaction",b);
                     UiUtil.showToast(AddJournalTransactionActivity.this, "Added");
                     AddJournalTransactionActivity.this.finish();
                     return;

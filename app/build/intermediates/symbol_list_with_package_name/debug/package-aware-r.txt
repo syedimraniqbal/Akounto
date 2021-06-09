@@ -2492,6 +2492,7 @@ dimen dashboard_height
 dimen dashboard_top_margin
 dimen default_dimension
 dimen deletebtn_size
+dimen desc_padding
 dimen design_appbar_elevation
 dimen design_bottom_navigation_active_item_max_width
 dimen design_bottom_navigation_active_item_min_width
@@ -2541,6 +2542,8 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen dots_height
+dimen dots_margin_bottom
 dimen edit_profile_icon_size
 dimen exam_header_textsize
 dimen exam_text_padding
@@ -3005,6 +3008,7 @@ drawable calendar_icon
 drawable cancel
 drawable cash_flow
 drawable circle
+drawable circle_back
 drawable circle_blue
 drawable circle_green
 drawable circle_menu
@@ -3076,6 +3080,7 @@ drawable fab_add
 drawable fedded_button
 drawable footer_bg
 drawable general
+drawable general2
 drawable google_play_logo_svg
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -3137,6 +3142,7 @@ drawable ic_keyboard_arrow_right_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_keys_accounting
 drawable ic_launcher_background
+drawable ic_launcher_foreground
 drawable ic_linkedin_icon
 drawable ic_logo
 drawable ic_logo_foreground
@@ -3243,6 +3249,7 @@ drawable icon_lock
 drawable icon_login
 drawable icon_logout
 drawable icon_mail
+drawable icon_material_check
 drawable icon_material_close
 drawable icon_menu_s1
 drawable icon_menu_s2
@@ -3328,6 +3335,8 @@ drawable left_rounded_draft
 drawable loading_animation
 drawable loading_dots
 drawable logo
+drawable logo2
+drawable logo3
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -3359,6 +3368,8 @@ drawable mtrl_popupmenu_background
 drawable mtrl_popupmenu_background_dark
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
+drawable new_back
+drawable new_light_blue
 drawable no_internet_image2
 drawable nobill
 drawable notification_action_background
@@ -3377,6 +3388,7 @@ drawable notify_panel_notification_icon_bg
 drawable off_toggle
 drawable on_toggle
 drawable onboarding_button
+drawable path
 drawable pia_chart
 drawable plad
 drawable plaid_input_box_border_color
@@ -3444,11 +3456,15 @@ drawable rounded_holo_blue_button
 drawable sale
 drawable save
 drawable selected_busns
+drawable selected_dot
 drawable settings_selector
 drawable splash
 drawable split_this_deposit_bg
 drawable success_bow
 drawable success_circle
+drawable tab_indicator_default
+drawable tab_indicator_selected
+drawable tab_selector
 drawable test_custom_background
 drawable tiles
 drawable toggle_off
@@ -3475,6 +3491,9 @@ drawable up_arrow2
 drawable upload_logo
 drawable user
 drawable view
+drawable w1
+drawable w2
+drawable w3
 drawable wallet
 drawable warning_circle
 drawable warning_sigh
@@ -3520,6 +3539,8 @@ id SYM
 id TOP_END
 id TOP_START
 id Yellow
+id about_business
+id about_us
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -3730,6 +3751,8 @@ id btn_products_and_services
 id btn_recurring_invoices
 id btn_report
 id btn_save
+id btn_signin
+id btn_signup
 id btn_style
 id btn_transaction
 id btn_update
@@ -3799,6 +3822,7 @@ id chapterName
 id chartExpandable
 id chatNew
 id checkBox_select
+id checkBox_tnc
 id checkbox
 id checked
 id chevron
@@ -4200,6 +4224,9 @@ id imageView3
 id imageView4
 id imageView5
 id imageView6
+id imageView7
+id imageView8
+id imageView9
 id imageViewArrow
 id imageViewDelete
 id imageViewInfo
@@ -4258,6 +4285,7 @@ id item_rv
 id item_touch_helper_previous_elevation
 id itemdesc
 id itemquanc
+id iv
 id ivSave
 id iv_back
 id iv_close
@@ -4449,6 +4477,7 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id number
+id nxt_done
 id off
 id ok
 id on
@@ -4854,6 +4883,7 @@ id switch2
 id switchWidget
 id tabLayout
 id tabMode
+id tab_layout
 id table
 id table_title
 id tag_accessibility_actions
@@ -5066,6 +5096,7 @@ id tv_date
 id tv_desc
 id tv_dueDate
 id tv_due_date
+id tv_error
 id tv_expiryDate
 id tv_from_date
 id tv_gross_profit
@@ -5165,6 +5196,7 @@ id viewPaswordAgainET
 id viewPaswordET
 id view_offset_helper
 id view_overlay
+id view_pager
 id view_tree_lifecycle_owner
 id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
@@ -5296,6 +5328,7 @@ layout activity_upload_receipt
 layout activity_upload_second
 layout activity_video_after_splash
 layout activity_view_recurring_invoice
+layout activity_welcome
 layout add_business_fragment
 layout add_chart_of_account
 layout add_customer
@@ -5451,6 +5484,7 @@ layout layout_sales_fargment
 layout layout_setting_accounting
 layout layout_setting_fragment
 layout layout_signin
+layout layout_signup1
 layout layout_signup1st
 layout layout_signupsetp0
 layout layout_signupsetp1
@@ -5634,6 +5668,10 @@ layout user_selection_fragment
 layout vendors_fragment
 layout view
 layout webview_fragment
+layout welcome_slide1
+layout welcome_slide2
+layout welcome_slide3
+layout welcome_slide4
 menu bills_menu
 menu bills_menu_approved
 menu close_menu
