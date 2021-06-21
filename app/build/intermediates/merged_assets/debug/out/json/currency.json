@@ -1,9 +1,5 @@
 [
   { "Id":"USD", "Name": "Dollar", "Symbol":"$"},
-  { "Id":"AUD", "Name": "Dollar", "Symbol":"$"},
-  { "Id":"BSD", "Name": "Dollar", "Symbol":"$"},
-  { "Id":"BBD", "Name": "Dollar", "Symbol":"$"},
-  { "Id":"BMD", "Name": "Dollar", "Symbol":"$"},
   { "Id":"AFN", "Name": "Afghani", "Symbol":"؋"},
   { "Id":"ALL", "Name": "New Lek", "Symbol":"Lek"},
   { "Id":"DZD", "Name": "Dinar", "Symbol":"دج"},
@@ -13,12 +9,16 @@
   { "Id":"ARS", "Name": "Peso", "Symbol":"$"},
   { "Id":"AMD", "Name": "Dram", "Symbol":"դր"},
   { "Id":"AWG", "Name": "Florin", "Symbol":"ƒ"},
+  { "Id":"AUD", "Name": "Dollar", "Symbol":"$"},
   { "Id":"AZN", "Name": "Manat", "Symbol":"₼"},
+  { "Id":"BSD", "Name": "Dollar", "Symbol":"$"},
   { "Id":"BHD", "Name": "Dinar", "Symbol":".د.ب"},
   { "Id":"BDT", "Name": "Taka", "Symbol":"৳"},
+  { "Id":"BBD", "Name": "Dollar", "Symbol":"$"},
   { "Id":"BYN", "Name": "Ruble", "Symbol":"Br"},
   { "Id":"BZD", "Name": "Dollar", "Symbol":"BZ$"},
   { "Id":"XOF", "Name": "Franc", "Symbol":"CFA"},
+  { "Id":"BMD", "Name": "Dollar", "Symbol":"$"},
   { "Id":"BTN", "Name": "Ngultrum", "Symbol":"Nu."},
   { "Id":"BOB", "Name": "Boliviano", "Symbol":"$b"},
   { "Id":"BAM", "Name": "Mark", "Symbol":"KM"},
@@ -157,3 +157,4 @@
   { "Id":"YER", "Name": "Rial", "Symbol":"﷼"},
   { "Id":"ZMW", "Name": "Kwacha", "Symbol":"ZK"}
 ]
+

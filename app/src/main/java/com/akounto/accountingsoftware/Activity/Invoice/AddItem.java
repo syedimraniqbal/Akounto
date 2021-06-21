@@ -49,6 +49,7 @@ public class AddItem extends AppCompatActivity {
     private Context mContext;
     public List<TaxResponse> taxReceivedList = new ArrayList<>();
     List<ProductServiceTaxesItem> taxs;
+
     @SuppressLint("SetTextI18n")
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -268,7 +269,7 @@ public class AddItem extends AppCompatActivity {
                 public void onClick(View v) {
                     dialog.dismiss();
                     try {
-                        taxs=ta.getItemList();
+                        taxs = ta.getItemList();
                         ItemList.adds_item.setProductServiceTaxes(taxs);
                         spinner_taxtes.setText("Taxts + " + ItemList.adds_item.getProductServiceTaxes().size());
                     } catch (Exception e) {
@@ -314,20 +315,23 @@ public class AddItem extends AppCompatActivity {
                     public void onResponse(Call<TaxsResponse> call, Response<TaxsResponse> response) {
                         super.onResponse(call, response);
                         if (response.isSuccessful()) {
-                            UiUtil.showToast(mContext, "Sale Tax added!");
-                            dialog2.dismiss();
-                            ProductServiceTaxesItem taxesItem = new ProductServiceTaxesItem();
-                            taxesItem.setTaxName(response.body().getData().getName());
-                            taxesItem.setName(response.body().getData().getName());
-                            taxesItem.setRate(response.body().getData().getEffectiveTaxes().get(0).getRate());
-                            taxesItem.setTaxId(response.body().getData().getId());
-                            tax.onTaxSelected(taxesItem);
-                            TaxResponse taxesm = new TaxResponse();
-                            taxesm.setName(response.body().getData().getName());
-                            taxesm.setEffectiveTaxes(response.body().getData().getEffectiveTaxes());
-                            taxesm.setId(response.body().getData().getId());
-                            taxReceivedList.add(taxesm);
-                            //SaleTaxesFragment.this.getSalesTaxList();
+                            try {
+                                UiUtil.showToast(mContext, "Sale Tax added!");
+                                dialog2.dismiss();
+                                ProductServiceTaxesItem taxesItem = new ProductServiceTaxesItem();
+                                taxesItem.setTaxName(response.body().getData().getName());
+                                taxesItem.setName(response.body().getData().getName());
+                                taxesItem.setRate(response.body().getData().getEffectiveTaxes().get(0).getRate());
+                                taxesItem.setTaxId(response.body().getData().getId());
+                                tax.onTaxSelected(taxesItem);
+                                TaxResponse taxesm = new TaxResponse();
+                                taxesm.setName(response.body().getData().getName());
+                                taxesm.setEffectiveTaxes(response.body().getData().getEffectiveTaxes());
+                                taxesm.setId(response.body().getData().getId());
+                                taxReceivedList.add(taxesm);
+                                //SaleTaxesFragment.this.getSalesTaxList();
+                            } catch (Exception e) {
+                            }
                         }
                     }
 

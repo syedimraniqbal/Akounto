@@ -92,6 +92,7 @@ public class CreateBill extends AppCompatActivity {
     public static PurchaseItem edit_item = null;
     private List<Currency> currencyList = new ArrayList();
     private List<String> currencyListForSpinner = new ArrayList();
+    private List<String> currencyListForDisplay = new ArrayList();
     private String selectedCurrencyId = "$";
     private LinearLayout taxs_name_list, taxs_amount_list;
     private BillPriceCalculator priceCal;
@@ -237,13 +238,13 @@ public class CreateBill extends AppCompatActivity {
                         Bundle b=new Bundle();
                         b.putString(Constant.CATEGORY,"billing");
                         b.putString(Constant.ACTION,"adding_success");
-                        SplashScreenActivity.mFirebaseAnalytics.logEvent("bill_create",b);
+                        SplashScreenActivity.sendEvent("bill_create",b);
                         finish();
                     } else {
                         Bundle b=new Bundle();
                         b.putString(Constant.CATEGORY,"billing");
                         b.putString(Constant.ACTION,"adding_fail");
-                        SplashScreenActivity.mFirebaseAnalytics.logEvent("bill_create",b);
+                        SplashScreenActivity.sendEvent("bill_create",b);
                         UiUtil.showToast(getApplicationContext(), response.body().getTransactionStatus().getError().getDescription());
                     }
                 } catch (Exception e) {
@@ -251,7 +252,7 @@ public class CreateBill extends AppCompatActivity {
                     b.putString(Constant.CATEGORY,"billing");
                     b.putString(Constant.ACTION,"adding_fail");
                     b.putString(Constant.CAUSES,e.getMessage());
-                    SplashScreenActivity.mFirebaseAnalytics.logEvent("bill_create",b);
+                    SplashScreenActivity.sendEvent("bill_create",b);
                     UiUtil.showToast(getApplicationContext(), "Failed");
                 }
             }
@@ -263,7 +264,7 @@ public class CreateBill extends AppCompatActivity {
                 b.putString(Constant.CATEGORY,"billing");
                 b.putString(Constant.ACTION,"adding_fail");
                 b.putString(Constant.CAUSES,t.toString());
-                SplashScreenActivity.mFirebaseAnalytics.logEvent("bill_create",b);
+                SplashScreenActivity.sendEvent("bill_create",b);
                 UiUtil.showToast(getApplicationContext(), "Something went wrong");
             }
         });
@@ -418,14 +419,15 @@ public class CreateBill extends AppCompatActivity {
 
     private void fetchCurrencies() throws JSONException {
         String loadJSONFromAsset = JsonUtils.loadJSONFromAsset("currency.json", getApplicationContext());
-        Objects.requireNonNull(loadJSONFromAsset);
+//        Objects.requireNonNull(loadJSONFromAsset);
         JSONArray jsonArray = new JSONArray(loadJSONFromAsset);
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject jsonObject = jsonArray.getJSONObject(i);
             this.currencyList.add(new com.akounto.accountingsoftware.model.Currency(jsonObject.getString("Symbol"), jsonObject.getString("Id"), jsonObject.getString("Name")));
+            currencyListForDisplay.add(  jsonObject.getString("Id") + "-"+jsonObject.getString("Name"));
             this.currencyListForSpinner.add(jsonObject.getString("Name"));
         }
-        setCurrencySpinner(this.currencyListForSpinner);
+        setCurrencySpinner(currencyListForSpinner, this.currencyListForDisplay);
     }
 
     private void getExchangedCurrency(String id) {
@@ -449,8 +451,9 @@ public class CreateBill extends AppCompatActivity {
         });
     }
 
-    private void setCurrencySpinner(List<String> currencies) {
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, R.layout.sppiner_text, currencies);
+    private void setCurrencySpinner(List<String> currencies, List<String> display) {
+        Spinner currencySpinner = findViewById(R.id.currencySpinner);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, R.layout.sppiner_text, display);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         currencySpinner.setAdapter(dataAdapter);
         currencySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

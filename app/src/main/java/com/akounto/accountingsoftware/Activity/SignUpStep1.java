@@ -31,7 +31,7 @@ public class SignUpStep1 extends AppCompatActivity {
                         b.putString(Constant.CATEGORY,"sign_up");
                         b.putString(Constant.ACTION,"personal_info");
                         b.putString(Constant.PHONE,p_n.getText().toString());
-                        SplashScreenActivity.mFirebaseAnalytics.logEvent("sign_up_personal_info",b);
+                        SplashScreenActivity.sendEvent("sign_up_personal_info",b);
                         Intent i = new Intent(SignUpStep1.this, SignUpStep2.class);
                         i.putExtra(UiConstants.FIRST_NAME, f_n.getText().toString());
                         i.putExtra(UiConstants.LAST_NAME, l_n.getText().toString());

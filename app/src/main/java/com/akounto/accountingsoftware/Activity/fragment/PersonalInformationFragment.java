@@ -286,7 +286,7 @@ public class PersonalInformationFragment extends Fragment {
                     Bundle b=new Bundle();
                     b.putString(Constant.CATEGORY,"profile");
                     b.putString(Constant.ACTION,"update");
-                    SplashScreenActivity.mFirebaseAnalytics.logEvent("profile_update",b);
+                    SplashScreenActivity.sendEvent("profile_update",b);
                 } else {
                     UiUtil.showToast(PersonalInformationFragment.this.getContext(), "Error while updating");
                 }

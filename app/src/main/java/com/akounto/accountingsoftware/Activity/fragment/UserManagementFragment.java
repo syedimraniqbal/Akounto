@@ -201,7 +201,7 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
                     Bundle b=new Bundle();
                     b.putString(Constant.CATEGORY,"setting");
                     b.putString(Constant.ACTION,"add_user");
-                    SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_add_user",b);
+                    SplashScreenActivity.sendEvent("setting_add_user",b);
                     UiUtil.showToast(UserManagementFragment.this.getContext(), "Added");
                     if (UserManagementFragment.this.dialog != null) {
                         UserManagementFragment.this.dialog.dismiss();
@@ -212,7 +212,7 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
                 Bundle b=new Bundle();
                 b.putString(Constant.CATEGORY,"setting");
                 b.putString(Constant.ACTION,"add_user_fail");
-                SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_add_user",b);
+                SplashScreenActivity.sendEvent("setting_add_user",b);
                 UiUtil.showToast(UserManagementFragment.this.getContext(), "Error while adding");
             }
 

@@ -146,7 +146,7 @@ public class BankListActivity extends AppCompatActivity implements BankListAdapt
                                 Bundle b=new Bundle();
                                 b.putString(Constant.CATEGORY,"banking");
                                 b.putString(Constant.ACTION,"connect_bank");
-                                SplashScreenActivity.mFirebaseAnalytics.logEvent("account_banking",b);
+                                SplashScreenActivity.sendEvent("account_banking",b);
                             } else {
                                 Toast.makeText(getApplicationContext(), "Not data for display", Toast.LENGTH_LONG).show();
                             }

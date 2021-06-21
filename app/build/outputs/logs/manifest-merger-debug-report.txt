@@ -11,14 +11,14 @@ MERGED from [com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transf
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\8e834ade9e84324ef76cc90c9e2ede56\material-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\205d218d5e3398405879eb7d1790a982\constraintlayout-2.0.4\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.skydoves:powerspinner:1.1.7] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\f1e8912034a651ec2c7dadd877d7ff39\jetified-powerspinner-1.1.7\AndroidManifest.xml:2:1-11:12
-MERGED from [com.github.sabujak-sabujak:RoundedButton:v0.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\fa6c36ffb92214361f9ae08e40fc8443\jetified-RoundedButton-v0.1.1\AndroidManifest.xml:2:1-11:12
-MERGED from [com.xwray:passwordview:1.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\a5e1f1ff260f52d1d4aed966874773f2\jetified-passwordview-1.0\AndroidManifest.xml:2:1-15:12
-MERGED from [com.github.kaushikthedeveloper:squarelayout:0.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\3d79410f8e9136045e8ee87ebafd88e0\jetified-squarelayout-0.0.3\AndroidManifest.xml:2:1-17:12
+MERGED from [com.github.sabujak-sabujak:RoundedButton:v0.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\72df68dde08b6d633ef0c75f2fe836f3\jetified-RoundedButton-v0.1.1\AndroidManifest.xml:2:1-11:12
+MERGED from [com.xwray:passwordview:1.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\856bdf6dcb4341e3b5d44cdf219cc49a\jetified-passwordview-1.0\AndroidManifest.xml:2:1-15:12
+MERGED from [com.github.kaushikthedeveloper:squarelayout:0.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\c29412eb170d8576d5864f1550373aca\jetified-squarelayout-0.0.3\AndroidManifest.xml:2:1-17:12
 MERGED from [com.github.adhishlal:gifloader:1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\2db0edd810393b88837b0572b6e54cb9\jetified-gifloader-1.1\AndroidManifest.xml:2:1-17:12
 MERGED from [com.github.levitnudi:LegacyTableView:1.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\3475f1967b7352bb5824451a60fb41c9\jetified-LegacyTableView-1.4\AndroidManifest.xml:2:1-17:12
-MERGED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:2:1-35:12
+MERGED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:2:1-35:12
 MERGED from [com.google.firebase:firebase-perf:19.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\9282daa5c68e788934cc46362388676a\jetified-firebase-perf-19.1.1\AndroidManifest.xml:3:1-29:12
-MERGED from [com.github.yalantis:ucrop:2.2.2] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da9c4e2292cc5bd80c33c2ad25c4d4a8\jetified-ucrop-2.2.2\AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.yalantis:ucrop:2.2.2] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\c01a28e1ccaee9bd127561f97f86451b\jetified-ucrop-2.2.2\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.preference:preference-ktx:1.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\05366d39fa4e59b8f4bbcf7dcdccdbc5\jetified-preference-ktx-1.1.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.preference:preference:1.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\303e565ef7c0fb45af7c2e763cec5c83\preference-1.1.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.3.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\ebf937112f9a0c5cba96a971c5dc867a\appcompat-1.3.0\AndroidManifest.xml:17:1-24:12
@@ -216,16 +216,16 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] C:
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:7:22-64
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:8:5-9:40
-MERGED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:12:5-81
-MERGED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:12:5-81
+MERGED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:12:5-81
+MERGED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:12:5-81
 	tools:ignore
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:9:9-37
 	android:name
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:8:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:10:5-80
-MERGED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:11:5-80
-MERGED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:11:5-80
+MERGED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:11:5-80
+MERGED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:11:5-80
 	android:name
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:10:22-77
 uses-permission#android.permission.ACCESS_WIFI_STATE
@@ -270,16 +270,16 @@ MERGED from [com.google.android.material:material:1.3.0] C:\Users\Imran\.gradle\
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\8e834ade9e84324ef76cc90c9e2ede56\material-1.3.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\205d218d5e3398405879eb7d1790a982\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\205d218d5e3398405879eb7d1790a982\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
-MERGED from [com.xwray:passwordview:1.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\a5e1f1ff260f52d1d4aed966874773f2\jetified-passwordview-1.0\AndroidManifest.xml:12:5-13:19
-MERGED from [com.xwray:passwordview:1.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\a5e1f1ff260f52d1d4aed966874773f2\jetified-passwordview-1.0\AndroidManifest.xml:12:5-13:19
-MERGED from [com.github.kaushikthedeveloper:squarelayout:0.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\3d79410f8e9136045e8ee87ebafd88e0\jetified-squarelayout-0.0.3\AndroidManifest.xml:11:5-15:19
-MERGED from [com.github.kaushikthedeveloper:squarelayout:0.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\3d79410f8e9136045e8ee87ebafd88e0\jetified-squarelayout-0.0.3\AndroidManifest.xml:11:5-15:19
+MERGED from [com.xwray:passwordview:1.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\856bdf6dcb4341e3b5d44cdf219cc49a\jetified-passwordview-1.0\AndroidManifest.xml:12:5-13:19
+MERGED from [com.xwray:passwordview:1.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\856bdf6dcb4341e3b5d44cdf219cc49a\jetified-passwordview-1.0\AndroidManifest.xml:12:5-13:19
+MERGED from [com.github.kaushikthedeveloper:squarelayout:0.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\c29412eb170d8576d5864f1550373aca\jetified-squarelayout-0.0.3\AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.kaushikthedeveloper:squarelayout:0.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\c29412eb170d8576d5864f1550373aca\jetified-squarelayout-0.0.3\AndroidManifest.xml:11:5-15:19
 MERGED from [com.github.adhishlal:gifloader:1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\2db0edd810393b88837b0572b6e54cb9\jetified-gifloader-1.1\AndroidManifest.xml:11:5-15:19
 MERGED from [com.github.adhishlal:gifloader:1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\2db0edd810393b88837b0572b6e54cb9\jetified-gifloader-1.1\AndroidManifest.xml:11:5-15:19
 MERGED from [com.github.levitnudi:LegacyTableView:1.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\3475f1967b7352bb5824451a60fb41c9\jetified-LegacyTableView-1.4\AndroidManifest.xml:11:5-15:19
 MERGED from [com.github.levitnudi:LegacyTableView:1.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\3475f1967b7352bb5824451a60fb41c9\jetified-LegacyTableView-1.4\AndroidManifest.xml:11:5-15:19
-MERGED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:14:5-33:19
-MERGED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:14:5-33:19
+MERGED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:14:5-33:19
+MERGED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:14:5-33:19
 MERGED from [com.google.firebase:firebase-perf:19.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\9282daa5c68e788934cc46362388676a\jetified-firebase-perf-19.1.1\AndroidManifest.xml:13:5-27:19
 MERGED from [com.google.firebase:firebase-perf:19.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\9282daa5c68e788934cc46362388676a\jetified-firebase-perf-19.1.1\AndroidManifest.xml:13:5-27:19
 MERGED from [com.github.clans:fab:1.6.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\474e4455b371e88a39a77a41a3428061\jetified-fab-1.6.4\AndroidManifest.xml:12:5-20
@@ -361,21 +361,21 @@ MERGED from [androidx.room:room-runtime:2.2.5] C:\Users\Imran\.gradle\caches\tra
 MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\d8aa4ac54ac61f77b541fd1d509e513d\jetified-materialish-progress-1.7\AndroidManifest.xml:11:5-20
 MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\d8aa4ac54ac61f77b541fd1d509e513d\jetified-materialish-progress-1.7\AndroidManifest.xml:11:5-20
 	android:requestLegacyExternalStorage
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:21:9-52
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:20:9-52
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.5.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\f72435c118b7175f3c665e415c24e35e\core-1.5.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:22:9-35
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:21:9-35
 	android:label
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:19:9-41
-	android:launchMode
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:20:9-39
 	android:icon
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:18:9-43
 	android:allowBackup
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:17:9-35
 	android:theme
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:23:9-40
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:22:9-40
+	android:networkSecurityConfig
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:23:9-69
 	android:usesCleartextTraffic
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:24:9-44
 	android:name
@@ -452,10 +452,10 @@ activity#com.akounto.accountingsoftware.Activity.SettingActivity
 ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:42:9-92
 	android:name
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:42:19-89
-activity#com.akounto.accountingsoftware.Activity.Test
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:43:9-81
+activity#com.akounto.accountingsoftware.Activity.SignUpDetails
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:43:9-90
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:43:19-78
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:43:19-87
 activity#com.akounto.accountingsoftware.Activity.AddJournalTransactionActivity
 ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:44:9-106
 	android:name
@@ -472,10 +472,10 @@ activity#com.akounto.accountingsoftware.Activity.EditChatOfAccount
 ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:47:9-94
 	android:name
 		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:47:19-91
-activity#com.akounto.accountingsoftware.Activity.CommonInvoiceActivity
-ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:48:9-98
+activity#com.akounto.accountingsoftware.Activity.TnCActivity
+ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:48:9-88
 	android:name
-		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:48:19-95
+		ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:48:19-85
 activity#com.akounto.accountingsoftware.Activity.CreateInvoiceActivity
 ADDED from E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:49:9-98
 	android:name
@@ -816,22 +816,22 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Imran\.g
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\205d218d5e3398405879eb7d1790a982\constraintlayout-2.0.4\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.skydoves:powerspinner:1.1.7] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\f1e8912034a651ec2c7dadd877d7ff39\jetified-powerspinner-1.1.7\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.skydoves:powerspinner:1.1.7] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\f1e8912034a651ec2c7dadd877d7ff39\jetified-powerspinner-1.1.7\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.sabujak-sabujak:RoundedButton:v0.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\fa6c36ffb92214361f9ae08e40fc8443\jetified-RoundedButton-v0.1.1\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.sabujak-sabujak:RoundedButton:v0.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\fa6c36ffb92214361f9ae08e40fc8443\jetified-RoundedButton-v0.1.1\AndroidManifest.xml:7:5-9:41
-MERGED from [com.xwray:passwordview:1.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\a5e1f1ff260f52d1d4aed966874773f2\jetified-passwordview-1.0\AndroidManifest.xml:8:5-10:41
-MERGED from [com.xwray:passwordview:1.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\a5e1f1ff260f52d1d4aed966874773f2\jetified-passwordview-1.0\AndroidManifest.xml:8:5-10:41
-MERGED from [com.github.kaushikthedeveloper:squarelayout:0.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\3d79410f8e9136045e8ee87ebafd88e0\jetified-squarelayout-0.0.3\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.kaushikthedeveloper:squarelayout:0.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\3d79410f8e9136045e8ee87ebafd88e0\jetified-squarelayout-0.0.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.sabujak-sabujak:RoundedButton:v0.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\72df68dde08b6d633ef0c75f2fe836f3\jetified-RoundedButton-v0.1.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.sabujak-sabujak:RoundedButton:v0.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\72df68dde08b6d633ef0c75f2fe836f3\jetified-RoundedButton-v0.1.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.xwray:passwordview:1.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\856bdf6dcb4341e3b5d44cdf219cc49a\jetified-passwordview-1.0\AndroidManifest.xml:8:5-10:41
+MERGED from [com.xwray:passwordview:1.0] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\856bdf6dcb4341e3b5d44cdf219cc49a\jetified-passwordview-1.0\AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.kaushikthedeveloper:squarelayout:0.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\c29412eb170d8576d5864f1550373aca\jetified-squarelayout-0.0.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.kaushikthedeveloper:squarelayout:0.0.3] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\c29412eb170d8576d5864f1550373aca\jetified-squarelayout-0.0.3\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.adhishlal:gifloader:1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\2db0edd810393b88837b0572b6e54cb9\jetified-gifloader-1.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.adhishlal:gifloader:1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\2db0edd810393b88837b0572b6e54cb9\jetified-gifloader-1.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.levitnudi:LegacyTableView:1.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\3475f1967b7352bb5824451a60fb41c9\jetified-LegacyTableView-1.4\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.levitnudi:LegacyTableView:1.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\3475f1967b7352bb5824451a60fb41c9\jetified-LegacyTableView-1.4\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-perf:19.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\9282daa5c68e788934cc46362388676a\jetified-firebase-perf-19.1.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-perf:19.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\9282daa5c68e788934cc46362388676a\jetified-firebase-perf-19.1.1\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.yalantis:ucrop:2.2.2] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da9c4e2292cc5bd80c33c2ad25c4d4a8\jetified-ucrop-2.2.2\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.yalantis:ucrop:2.2.2] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\da9c4e2292cc5bd80c33c2ad25c4d4a8\jetified-ucrop-2.2.2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.yalantis:ucrop:2.2.2] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\c01a28e1ccaee9bd127561f97f86451b\jetified-ucrop-2.2.2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.yalantis:ucrop:2.2.2] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\c01a28e1ccaee9bd127561f97f86451b\jetified-ucrop-2.2.2\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.preference:preference-ktx:1.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\05366d39fa4e59b8f4bbcf7dcdccdbc5\jetified-preference-ktx-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.preference:preference-ktx:1.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\05366d39fa4e59b8f4bbcf7dcdccdbc5\jetified-preference-ktx-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.preference:preference:1.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\303e565ef7c0fb45af7c2e763cec5c83\preference-1.1.1\AndroidManifest.xml:20:5-22:41
@@ -1111,31 +1111,31 @@ ADDED from [com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transfo
 	android:name
 		ADDED from [com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cd56e0f1a63e2b4a8f5568cc9d6b3a3c\jetified-sdk-core-3.2.4\AndroidManifest.xml:40:13-55
 activity#com.github.dhaval2404.imagepicker.ImagePickerActivity
-ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:15:9-18:68
+ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:15:9-18:68
 	android:screenOrientation
-		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:17:13-52
+		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:17:13-52
 	android:theme
-		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:18:13-65
+		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:18:13-65
 	android:name
-		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:16:13-81
+		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:16:13-81
 activity#com.yalantis.ucrop.UCropActivity
-ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:19:9-22:72
+ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:19:9-22:72
 	android:screenOrientation
-		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:21:13-49
+		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:21:13-49
 	android:theme
-		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:22:13-69
+		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:22:13-69
 	android:name
-		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:20:13-60
+		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:20:13-60
 provider#com.github.dhaval2404.imagepicker.ImagePickerFileProvider
-ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:24:9-32:20
+ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:24:9-32:20
 	android:grantUriPermissions
-		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:28:13-47
+		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:28:13-47
 	android:authorities
-		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:26:13-72
+		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:26:13-72
 	android:exported
-		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:27:13-37
+		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:27:13-37
 	android:name
-		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:25:13-85
+		ADDED from [com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:25:13-85
 provider#com.google.firebase.perf.provider.FirebasePerfProvider
 ADDED from [com.google.firebase:firebase-perf:19.1.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\9282daa5c68e788934cc46362388676a\jetified-firebase-perf-19.1.1\AndroidManifest.xml:14:9-18:39
 	android:authorities

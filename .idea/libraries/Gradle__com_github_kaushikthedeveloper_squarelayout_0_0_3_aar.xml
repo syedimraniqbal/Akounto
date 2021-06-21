@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.kaushikthedeveloper:squarelayout:0.0.3@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3d79410f8e9136045e8ee87ebafd88e0/jetified-squarelayout-0.0.3/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3d79410f8e9136045e8ee87ebafd88e0/jetified-squarelayout-0.0.3/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3d79410f8e9136045e8ee87ebafd88e0/jetified-squarelayout-0.0.3/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c29412eb170d8576d5864f1550373aca/jetified-squarelayout-0.0.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c29412eb170d8576d5864f1550373aca/jetified-squarelayout-0.0.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c29412eb170d8576d5864f1550373aca/jetified-squarelayout-0.0.3/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kaushikthedeveloper/squarelayout/0.0.3/915440b6c757682e118c3fc5ccd1d24628c71c1a/squarelayout-0.0.3-javadoc.jar!/" />

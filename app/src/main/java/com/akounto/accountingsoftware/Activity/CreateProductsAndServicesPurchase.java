@@ -221,7 +221,7 @@ public class CreateProductsAndServicesPurchase extends AppCompatActivity impleme
                         Bundle b=new Bundle();
                         b.putString(Constant.CATEGORY,"billing");
                         b.putString(Constant.ACTION,"add_item");
-                        SplashScreenActivity.mFirebaseAnalytics.logEvent("bill_add_item",b);
+                        SplashScreenActivity.sendEvent("bill_add_item",b);
                         UiUtil.showToast(CreateProductsAndServicesPurchase.this, "Product Added");
                         CreateProductsAndServicesPurchase.this.finish();
                     }

@@ -1,9 +1,5 @@
 [
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\raw_sample_video.mp4.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\raw\\sample_video.mp4"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_error_center_x.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\error_center_x.xml"
     },
@@ -68,12 +64,12 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\color\\design_icon_tint.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\color_switch_thumb_material_light.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\color\\switch_thumb_material_light.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_menu_arrow_up_black_24dp.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\ic_menu_arrow_up_black_24dp.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\color_switch_thumb_material_light.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\color\\switch_thumb_material_light.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\anim_enter_from_right.xml.flat",
@@ -100,12 +96,12 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\preference_recyclerview.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_lines_media.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\notification_template_lines_media.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic__left_arrow.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\ic__left_arrow.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_lines_media.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\notification_template_lines_media.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_welcome_slide3.xml.flat",
@@ -346,6 +342,10 @@
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_selector_background_transition_holo_dark.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_p_n_s.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\fragment_p_n_s.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_footer_bg.xml.flat",
@@ -1148,6 +1148,10 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\menu\\options_menu.xml"
     },
     {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_slide1.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\slide1.xml"
+    },
+    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_edit_sale_tax_fragment.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\edit_sale_tax_fragment.xml"
     },
@@ -1496,6 +1500,10 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\ic_tick_round.xml"
     },
     {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_dropdown_text.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\dropdown_text.xml"
+    },
+    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_text_input_end_icon.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\design_text_input_end_icon.xml"
     },
@@ -1666,6 +1674,10 @@
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_background_cache_hint_selector_material_dark.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\color\\abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_error.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\error.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_chronometer.xml.flat",
@@ -2752,10 +2764,6 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\preference_list_divider_material.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_welcome_slide4.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\welcome_slide4.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_mtrl_picker_fullscreen.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\mtrl_picker_fullscreen.xml"
     },
@@ -2898,6 +2906,10 @@
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_sales_estimate.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\item_sales_estimate.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\xml_network_security_config.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\xml\\network_security_config.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_signupsetp3.xml.flat",
@@ -3074,6 +3086,10 @@
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_action_tombstone.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_web_view.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\fragment_web_view.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_banklist.xml.flat",
@@ -3434,10 +3450,6 @@
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_accounting_icon.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\ic_accounting_icon.xml"
-    },
-    {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_loading_animation.gif.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\loading_animation.gif"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_bottom_nav_item_tint.xml.flat",

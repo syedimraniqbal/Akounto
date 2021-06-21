@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -34,31 +36,42 @@ public class ProductsAndServicesFragment extends Fragment implements View.OnClic
 
     TextView goButton;
     ConstraintLayout noDataLayout;
+    RelativeLayout withDataLayout;
     public List<Product> productList = new ArrayList();
     View view;
-
+    Button btn_create_new;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View inflate = inflater.inflate(R.layout.products_and_services_fragment, container, false);
+        View inflate = inflater.inflate(R.layout.fragment_p_n_s, container, false);
         this.view = inflate;
+        btn_create_new=view.findViewById(R.id.btn_create_new);
+        goButton=view.findViewById(R.id.goButton);
+        withDataLayout=view.findViewById(R.id.withDataLayout);
         view.findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AddFragments.addFragmentToDrawerActivity(getActivity(), null, InvoiceMenu.class,true);
             }
         });
-        this.noDataLayout = inflate.findViewById(R.id.noDataLayout);
+        this.noDataLayout = view.findViewById(R.id.noDataLayout);
+    /*    btn_create_new.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AddFragments.addFragmentToDrawerActivity(getActivity(), null, CreatingProductsAndServicesFragment.class);
+            }
+        });*/
+
         inItUi();
         return this.view;
     }
 
     private void inItUi() {
-        TextView textView = this.view.findViewById(R.id.goButton);
-        this.goButton = textView;
-        textView.setOnClickListener(this);
+        try{
+        goButton.setOnClickListener(this);
+        btn_create_new.setOnClickListener(this);}catch(Exception e){}
     }
 
     private void getSalesProductList() {
@@ -78,12 +91,13 @@ public class ProductsAndServicesFragment extends Fragment implements View.OnClic
         });
     }
 
-    /* access modifiers changed from: private */
     public void populateData(List<Product> productList2) {
         if (productList2 == null || productList2.size() == 0) {
             this.noDataLayout.setVisibility(View.VISIBLE);
+            withDataLayout.setVisibility(View.GONE);
         } else {
             this.noDataLayout.setVisibility(View.GONE);
+            withDataLayout.setVisibility(View.VISIBLE);
         }
         RecyclerView product_rv = this.view.findViewById(R.id.prodAndServicesRecyclerView);
         ProductAndServicesAdapter productAndServicesAdapter = new ProductAndServicesAdapter(getContext(), productList2, this);
@@ -93,7 +107,9 @@ public class ProductsAndServicesFragment extends Fragment implements View.OnClic
 
     public void onClick(View v) {
         if (v.getId() == R.id.goButton) {
-            startActivity(new Intent(getActivity(), CreatingProductsAndServices.class));
+            AddFragments.addFragmentToDrawerActivity(getActivity(), null, CreatingProductsAndServicesFragment.class);
+        }else if(v.getId() == R.id.btn_create_new){
+            AddFragments.addFragmentToDrawerActivity(getActivity(), null, CreatingProductsAndServicesFragment.class);
         }
     }
 

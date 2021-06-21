@@ -13,6 +13,7 @@ import com.akounto.accountingsoftware.model.ForgotPasswordData;
 import com.akounto.accountingsoftware.response.SignUp.SignUpResponse;
 import com.google.gson.JsonObject;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
@@ -23,6 +24,11 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface Api {
+
+
+    @POST("api/profile/adnroid-log-error")
+    @FormUrlEncoded
+    Call<ResponseBody> addErrorLog(@Header("X-Signature") String signature, @Field("message") String message, @Field("level") int level, @Field("filename") String filename);
 
     @POST("token")
     @FormUrlEncoded

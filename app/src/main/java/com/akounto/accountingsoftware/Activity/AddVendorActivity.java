@@ -50,6 +50,7 @@ public class AddVendorActivity extends AppCompatActivity {
     List<String> countryListForSpinner = new ArrayList();
     List<Currency> currencyList = new ArrayList();
     List<String> currencyListForSpinner = new ArrayList();
+    private List<String> currencyListForDisplay = new ArrayList();
     PowerSpinnerView currencySpinner;
     int editType = 1;
     EditText et_billCity;
@@ -266,7 +267,7 @@ public class AddVendorActivity extends AppCompatActivity {
                         Bundle b=new Bundle();
                         b.putString(Constant.CATEGORY,"billing");
                         b.putString(Constant.ACTION,"add_vendor");
-                        SplashScreenActivity.mFirebaseAnalytics.logEvent("bill_add_vendor",b);
+                        SplashScreenActivity.sendEvent("bill_add_vendor",b);
                         lunch();
                     }
                 }
@@ -370,21 +371,22 @@ public class AddVendorActivity extends AppCompatActivity {
     }
 
     private void fetchCurrencies() throws JSONException {
-        String loadJSONFromAsset = JsonUtils.loadJSONFromAsset("currency.json", this);
+        String loadJSONFromAsset = JsonUtils.loadJSONFromAsset("currency.json", getApplicationContext());
         //Objects.requireNonNull(loadJSONFromAsset);
         JSONArray jsonArray = new JSONArray(loadJSONFromAsset);
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject jsonObject = jsonArray.getJSONObject(i);
-            this.currencyList.add(new Currency(jsonObject.getString("Symbol"), jsonObject.getString("Id"), jsonObject.getString("Name")));
+            this.currencyList.add(new com.akounto.accountingsoftware.model.Currency(jsonObject.getString("Symbol"), jsonObject.getString("Id"), jsonObject.getString("Name")));
+            currencyListForDisplay.add( jsonObject.getString("Id") + "-"+jsonObject.getString("Name") );
             this.currencyListForSpinner.add(jsonObject.getString("Name"));
         }
-        setCurrencySpinner(this.currencyListForSpinner);
+        setCurrencySpinner(currencyListForSpinner, this.currencyListForDisplay);
     }
 
-    private void setCurrencySpinner(List<String> currencies) {
+    private void setCurrencySpinner(List<String> currencies,List<String> display) {
         PowerSpinnerView powerSpinnerView = findViewById(R.id.currencySpinner);
         this.currencySpinner = powerSpinnerView;
-        powerSpinnerView.setItems(currencies);
+        powerSpinnerView.setItems(display);
         this.currencySpinner.setOnSpinnerItemSelectedListener(new OnSpinnerItemSelectedListener() {
             public final void onItemSelected(int i, Object obj, int i2, Object obj2) {
                 AddVendorActivity.this.lambda$setCurrencySpinner$5$AddVendorActivity(i, (String) obj, i2, (String) obj2);

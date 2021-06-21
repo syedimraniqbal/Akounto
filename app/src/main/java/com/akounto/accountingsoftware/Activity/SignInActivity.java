@@ -5,12 +5,16 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -82,27 +86,53 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
     private String idToken;
     private LoginViewModel model;
     private LifecycleOwner owner;
-    boolean external_sign_up = true;
+    LinearLayout back;
+    ImageView mail_ckeck;
 
     /* access modifiers changed from: protected */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            setContentView(R.layout.welcome_slide4);
-            getWindow().setFlags(1024, 1024);
+            setContentView(R.layout.layout_signin);
+            //getWindow().setFlags(1024, 1024);
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 //            SplashScreenActivity.mFirebaseAnalytics.logEvent();
             mContext = this;
             owner = this;
             getUpdateDilog();
-            Dexter.withActivity(this).withPermissions("android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE").withListener(new MultiplePermissionsListener() {
-                public void onPermissionsChecked(MultiplePermissionsReport report) {
+
+            this.emailET = findViewById(R.id.emailET);
+            mail_ckeck = findViewById(R.id.mail_ckeck);
+            back = findViewById(R.id.back);
+            back.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    UiUtil.SetFirstLogin(getApplicationContext(), false);
+                    startActivity(new Intent(SignInActivity.this, WelcomeActivity.class));
+                }
+            });
+            emailET.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
                 }
 
-                public void onPermissionRationaleShouldBeShown(List<PermissionRequest> list, PermissionToken token) {
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+
                 }
-            }).check();
-            this.emailET = findViewById(R.id.emailET);
+
+                @Override
+                public void afterTextChanged(Editable s) {
+                    if (!UiUtil.isValidEmail(emailET.getText().toString())) {
+                        mail_ckeck.setVisibility(View.VISIBLE);
+                        Log.e("Checked ::", "true" + s);
+                    } else {
+                        mail_ckeck.setVisibility(View.GONE);
+                        Log.e("Checked ::", "false" + s);
+                    }
+                }
+            });
             this.passwordET = findViewById(R.id.passwordET);
             signup = findViewById(R.id.text_signup);
             forgot_password = findViewById(R.id.txt_forgot_password);
@@ -155,6 +185,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                 }
             });
         } catch (Exception e) {
+
         }
     }
 
@@ -196,25 +227,21 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                 LoginData loginData = response.body();
                 try {
                     if (response.code() == 200) {
-                        if (response.body().getTransactionStatus() == null) {
-                            Bundle b = new Bundle();
-                            b.putString(Constant.CATEGORY, "profile");
-                            b.putString(Constant.ACTION, "signin");
-                            SplashScreenActivity.mFirebaseAnalytics.logEvent("profile_signin", b);
-                            UiUtil.addLoginToSharedPref(SignInActivity.this, true);
-                            UiUtil.addUserDetails(SignInActivity.this, loginData);
-                            Intent intent = new Intent(SignInActivity.this, DashboardActivity.class);
-                            SignInActivity.this.startActivity(intent);
-                            SignInActivity.this.finish();
-                        } else {
-                            Toast.makeText(mContext, ((LinkedTreeMap) (response.body().getTransactionStatus().getError())).get("Description").toString(), Toast.LENGTH_SHORT).show();
-                        }
+                        UiUtil.addLoginToSharedPref(SignInActivity.this, true);
+                        UiUtil.addUserDetails(SignInActivity.this, loginData);
+                        Intent intent = new Intent(SignInActivity.this, DashboardActivity.class);
+                        SignInActivity.this.startActivity(intent);
+                        SignInActivity.this.finish();
+                        Bundle b = new Bundle();
+                        b.putString(Constant.CATEGORY, "profile");
+                        b.putString(Constant.ACTION, "signin");
+                        SplashScreenActivity.sendEvent("profile_signin", b);
                     } else {
                         ErrorData error = new Gson().fromJson(response.errorBody().string(), ErrorData.class);
                         Toast.makeText(mContext, error.getError_description(), Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception e) {
-                    Toast.makeText(mContext, "Something went wrong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -319,7 +346,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                                                 Bundle b = new Bundle();
                                                 b.putString(Constant.CATEGORY, "profile");
                                                 b.putString(Constant.ACTION, "signin_social");
-                                                SplashScreenActivity.mFirebaseAnalytics.logEvent("profile_signin_social", b);
+                                                SplashScreenActivity.sendEvent("profile_signin_social", b);
                                                 UiUtil.addLoginToSharedPref(SignInActivity.this, true);
                                                 UiUtil.addUserDetails(SignInActivity.this, userDetails);
                                                 Intent mainIntent = new Intent(SignInActivity.this, DashboardActivity.class);
@@ -431,7 +458,6 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                         Toast.makeText(mContext, "else", Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception e) {
-                    //Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_SHORT).show();
                     Log.e("Error :: ", e.toString());
                 }
             }

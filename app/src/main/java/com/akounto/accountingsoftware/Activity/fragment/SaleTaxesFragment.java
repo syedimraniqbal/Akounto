@@ -116,7 +116,7 @@ public class SaleTaxesFragment extends Fragment implements SettingSaleTaxItemCli
                 Bundle b=new Bundle();
                 b.putString(Constant.CATEGORY,"setting");
                 b.putString(Constant.ACTION,"add_tax");
-                SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_add_tax",b);
+                SplashScreenActivity.sendEvent("setting_add_tax",b);
                 RestClient.getInstance(getContext()).addSaleTax(Constant.X_SIGNATURE,"Bearer " +UiUtil.getAcccessToken(getContext()),UiUtil.getComp_Id(getContext()),new AddSaleTaxRequest(taxName, taxDesc, false, true, taxNumber, effectiveTaxesItems)).enqueue(new CustomCallBack<ResponseBody>(getContext(), "Adding Sale tax...") {
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         super.onResponse(call, response);
@@ -144,7 +144,7 @@ public class SaleTaxesFragment extends Fragment implements SettingSaleTaxItemCli
         Bundle b=new Bundle();
         b.putString(Constant.CATEGORY,"setting");
         b.putString(Constant.ACTION,"edit_tax");
-        SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_edit_tax",b);
+        SplashScreenActivity.sendEvent("setting_edit_tax",b);
         RestClient.getInstance(getContext()).getSaleTaxById(Constant.X_SIGNATURE,"Bearer " + UiUtil.getAcccessToken(getContext()),UiUtil.getComp_Id(getContext()),id).enqueue(new CustomCallBack<EditSaleTaxResponse>(getContext(), null) {
             public void onResponse(Call<EditSaleTaxResponse> call, Response<EditSaleTaxResponse> response) {
                 super.onResponse(call, response);

@@ -132,7 +132,7 @@ public class PasswordFragment extends Fragment {
                 Bundle b=new Bundle();
                 b.putString(Constant.CATEGORY,"profile");
                 b.putString(Constant.ACTION,"change_password");
-                SplashScreenActivity.mFirebaseAnalytics.logEvent("profile_change_password",b);
+                SplashScreenActivity.sendEvent("profile_change_password",b);
                 if (!response.isSuccessful()) {
                     UiUtil.showToast(PasswordFragment.this.getContext(), "Error while updating");
                 } else if (response.body().getTransactionStatus().isIsSuccess()) {

@@ -3073,6 +3073,7 @@ drawable dot2
 drawable down_arrow
 drawable down_arrow1
 drawable download
+drawable error
 drawable error_center_x
 drawable error_circle
 drawable extra_rounded_corner_light_grey
@@ -3332,7 +3333,6 @@ drawable invoice_name_bg
 drawable left_rounded_approved
 drawable left_rounded_converted
 drawable left_rounded_draft
-drawable loading_animation
 drawable loading_dots
 drawable logo
 drawable logo2
@@ -3458,6 +3458,7 @@ drawable save
 drawable selected_busns
 drawable selected_dot
 drawable settings_selector
+drawable slide1
 drawable splash
 drawable split_this_deposit_bg
 drawable success_bow
@@ -3766,6 +3767,8 @@ id businessCurrencyText
 id businessCurrencyTitle
 id businessTypeSpinner
 id business_name
+id business_name_error
+id business_name_ll
 id buttonDisclaimer
 id buttonLayout
 id buttonPanel
@@ -4018,6 +4021,7 @@ id edit_item_name
 id edit_item_price
 id edit_query
 id edt_phone_number
+id edt_phone_number_error
 id effectiveDate
 id effectiveDateTv
 id elastic
@@ -4026,6 +4030,7 @@ id emailET
 id emailErrorTv
 id emailText
 id email_forget
+id email_ll
 id end
 id endToStart
 id end_padder
@@ -4144,6 +4149,8 @@ id final_invoice_no
 id financialCard
 id firstCard
 id first_name
+id first_name_error
+id first_name_ll
 id fitToContents
 id fixed
 id flip
@@ -4226,7 +4233,6 @@ id imageView5
 id imageView6
 id imageView7
 id imageView8
-id imageView9
 id imageViewArrow
 id imageViewDelete
 id imageViewInfo
@@ -4311,6 +4317,8 @@ id labeled
 id largeLabel
 id lastNameIsTV
 id last_name
+id last_name_error
+id last_name_ll
 id last_update
 id layout
 id layoutItem
@@ -4356,6 +4364,7 @@ id ll_cc
 id ll_d
 id ll_date
 id ll_upload_bankstmt
+id ll_weview
 id loadMore
 id loading
 id loading_layout
@@ -4366,6 +4375,7 @@ id logoUpload
 id logo_upload
 id lytCameraPick
 id lytGalleryPick
+id mail_ckeck
 id mainLayout
 id main_title
 id marquee
@@ -4477,6 +4487,7 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id number
+id nxt_back
 id nxt_done
 id off
 id ok
@@ -4508,6 +4519,8 @@ id parentRelative
 id parent_matrix
 id password
 id passwordET
+id password_error
+id password_ll
 id password_toggle
 id passwordsDoNotMatch
 id path
@@ -4524,6 +4537,7 @@ id perosonal_info
 id personalinfo
 id phoneNumber
 id phoneText
+id phone_number_ll
 id pin
 id plaidCallToActionButton
 id plaidCheckBox
@@ -4586,6 +4600,7 @@ id posoEDTV
 id postCodeText
 id postLayout
 id powerSpinner_preference
+id pp
 id preference_title
 id prevInvoice
 id prevTv
@@ -4939,7 +4954,6 @@ id textView11
 id textView2
 id textView22
 id textView3
-id textView4
 id textView5
 id textViewAddress
 id textViewAddressDiff
@@ -5032,6 +5046,7 @@ id titleText1
 id title_template
 id title_text
 id titlee
+id tnc
 id toDateButton
 id toDateTv
 id toEstimateEDTTV
@@ -5392,6 +5407,7 @@ layout dilog_tax_display
 layout dp_example
 layout draft_fragment
 layout drawer_parent_layout
+layout dropdown_text
 layout edit_business_fragment
 layout edit_chart_of_account
 layout edit_product_dilog
@@ -5404,7 +5420,9 @@ layout fragment_balancesheet
 layout fragment_cashflow
 layout fragment_chatsubdetails
 layout fragment_dashboard
+layout fragment_p_n_s
 layout fragment_saletax
+layout fragment_web_view
 layout general
 layout get_share_link_fragment
 layout home_dashboard_fragment
@@ -5671,7 +5689,6 @@ layout webview_fragment
 layout welcome_slide1
 layout welcome_slide2
 layout welcome_slide3
-layout welcome_slide4
 menu bills_menu
 menu bills_menu_approved
 menu close_menu
@@ -5684,7 +5701,6 @@ menu ucrop_menu_activity
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
-raw sample_video
 string LOADING
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -5754,6 +5770,7 @@ string content_cancel
 string content_exit
 string copy
 string currency_sign
+string customer_care
 string default_progressbar
 string default_web_client_id
 string deprecated_client_version
@@ -6924,6 +6941,7 @@ styleable ucrop_AspectRatioTextView ucrop_artv_ratio_title ucrop_artv_ratio_x uc
 styleable ucrop_UCropView ucrop_aspect_ratio_x ucrop_aspect_ratio_y ucrop_circle_dimmed_layer ucrop_dimmed_color ucrop_frame_color ucrop_frame_stroke_size ucrop_grid_color ucrop_grid_column_count ucrop_grid_row_count ucrop_grid_stroke_size ucrop_show_frame ucrop_show_grid ucrop_show_oval_crop_frame
 xml file_provider
 xml image_picker_provider_paths
+xml network_security_config
 xml provider_paths
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end

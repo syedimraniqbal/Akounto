@@ -43,6 +43,7 @@ import retrofit2.Call;
 import retrofit2.Response;
 
 public class AddCustomersActivity extends AppCompatActivity {
+
     int CompanyId;
     int HeadTransactionId;
     int cid;
@@ -310,7 +311,6 @@ public class AddCustomersActivity extends AppCompatActivity {
         });
     }
 
-    /* access modifiers changed from: private */
     public void setBillStateSpinner(List<String> states2) {
         PowerSpinnerView billStateSpinner = findViewById(R.id.billStateSpinner);
         billStateSpinner.setItems(states2);
@@ -325,7 +325,6 @@ public class AddCustomersActivity extends AppCompatActivity {
         this.selectedBillState = selectedItem;
     }
 
-    /* access modifiers changed from: private */
     public void setShipStateSpinner(List<String> states2) {
         PowerSpinnerView shipStateSpinner = findViewById(R.id.shipStateSpinner);
         shipStateSpinner.setItems(states2);
@@ -392,7 +391,6 @@ public class AddCustomersActivity extends AppCompatActivity {
         });
     }
 
-    /* access modifiers changed from: private */
     public void updateCustomerData(Customer customer2) {
         Log.e("Customer Data :;", new Gson().toJson(customer2));
         if (customer2.getName() != null) {

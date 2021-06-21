@@ -283,7 +283,7 @@ public class ViewBill extends AppCompatActivity {
                 Bundle b=new Bundle();
                 b.putString(Constant.CATEGORY,"billing");
                 b.putString(Constant.ACTION,"approve_bill");
-                SplashScreenActivity.mFirebaseAnalytics.logEvent("bill_approve_bill",b);
+                SplashScreenActivity.sendEvent("bill_approve_bill",b);
 
             }
 

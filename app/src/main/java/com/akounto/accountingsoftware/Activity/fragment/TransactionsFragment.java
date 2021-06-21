@@ -616,7 +616,7 @@ public class TransactionsFragment extends Fragment implements View.OnClickListen
             Bundle b=new Bundle();
             b.putString(Constant.CATEGORY,"accounting");
             b.putString(Constant.ACTION,"add_deposit");
-            SplashScreenActivity.mFirebaseAnalytics.logEvent("accounting_add_deposit",b);
+            SplashScreenActivity.sendEvent("accounting_add_deposit",b);
             AddTransactionFragment f = new AddTransactionFragment();
             f.setData("Deposit");
             AddFragments.addFragmentToDrawerActivity(getContext(), null, f.getClass());
@@ -627,7 +627,7 @@ public class TransactionsFragment extends Fragment implements View.OnClickListen
             Bundle b=new Bundle();
             b.putString(Constant.CATEGORY,"accounting");
             b.putString(Constant.ACTION,"add_with_drawal");
-            SplashScreenActivity.mFirebaseAnalytics.logEvent("accounting_add_with_drawal",b);
+            SplashScreenActivity.sendEvent("accounting_add_with_drawal",b);
             AddTransactionFragment f = new AddTransactionFragment();
             f.setData("Deposit");
             AddFragments.addFragmentToDrawerActivity(getContext(), null, f.getClass());
@@ -721,7 +721,7 @@ public class TransactionsFragment extends Fragment implements View.OnClickListen
                 Bundle b=new Bundle();
                 b.putString(Constant.CATEGORY,"accounting");
                 b.putString(Constant.ACTION,"update_cat_action");
-                SplashScreenActivity.mFirebaseAnalytics.logEvent("accounting_update_cat_action",b);
+                SplashScreenActivity.sendEvent("accounting_update_cat_action",b);
                 if (!response.isSuccessful()) {
                     UiUtil.showToast(TransactionsFragment.this.getContext(), "Failed. Please try after sometime");
                 } else if (response.body() != null) {

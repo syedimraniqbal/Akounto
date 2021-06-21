@@ -8,6 +8,8 @@ import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import com.akounto.accountingsoftware.databinding.ActivityAddtransectionBindingImpl;
 import com.akounto.accountingsoftware.databinding.ActivityBankListBindingImpl;
+import com.akounto.accountingsoftware.databinding.ActivityCreatingProductsAndServicesBindingImpl;
+import com.akounto.accountingsoftware.databinding.FragmentWebViewBindingImpl;
 import com.akounto.accountingsoftware.databinding.LayoutAccountingFragmentBindingImpl;
 import com.akounto.accountingsoftware.databinding.LayoutBussniessListBindingImpl;
 import com.akounto.accountingsoftware.databinding.LayoutBviewBillBindingImpl;
@@ -38,41 +40,47 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_ACTIVITYBANKLIST = 2;
 
-  private static final int LAYOUT_LAYOUTACCOUNTINGFRAGMENT = 3;
+  private static final int LAYOUT_ACTIVITYCREATINGPRODUCTSANDSERVICES = 3;
 
-  private static final int LAYOUT_LAYOUTBUSSNIESSLIST = 4;
+  private static final int LAYOUT_FRAGMENTWEBVIEW = 4;
 
-  private static final int LAYOUT_LAYOUTBVIEWBILL = 5;
+  private static final int LAYOUT_LAYOUTACCOUNTINGFRAGMENT = 5;
 
-  private static final int LAYOUT_LAYOUTCREATEBILL = 6;
+  private static final int LAYOUT_LAYOUTBUSSNIESSLIST = 6;
 
-  private static final int LAYOUT_LAYOUTCUSTOMIZEINVOICE = 7;
+  private static final int LAYOUT_LAYOUTBVIEWBILL = 7;
 
-  private static final int LAYOUT_LAYOUTCUSTOMIZEINVOICESTYLE = 8;
+  private static final int LAYOUT_LAYOUTCREATEBILL = 8;
 
-  private static final int LAYOUT_LAYOUTMENUFRAGMENT = 9;
+  private static final int LAYOUT_LAYOUTCUSTOMIZEINVOICE = 9;
 
-  private static final int LAYOUT_LAYOUTMORE = 10;
+  private static final int LAYOUT_LAYOUTCUSTOMIZEINVOICESTYLE = 10;
 
-  private static final int LAYOUT_LAYOUTPURCHASEFRAGMENT = 11;
+  private static final int LAYOUT_LAYOUTMENUFRAGMENT = 11;
 
-  private static final int LAYOUT_LAYOUTSALESFARGMENT = 12;
+  private static final int LAYOUT_LAYOUTMORE = 12;
 
-  private static final int LAYOUT_LAYOUTSETTINGACCOUNTING = 13;
+  private static final int LAYOUT_LAYOUTPURCHASEFRAGMENT = 13;
 
-  private static final int LAYOUT_LAYOUTSETTINGFRAGMENT = 14;
+  private static final int LAYOUT_LAYOUTSALESFARGMENT = 14;
 
-  private static final int LAYOUT_LAYOUTTEST2 = 15;
+  private static final int LAYOUT_LAYOUTSETTINGACCOUNTING = 15;
 
-  private static final int LAYOUT_LAYOUTTEST3 = 16;
+  private static final int LAYOUT_LAYOUTSETTINGFRAGMENT = 16;
 
-  private static final int LAYOUT_SENDESTIMATEHOMEFRAGMENT = 17;
+  private static final int LAYOUT_LAYOUTTEST2 = 17;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(17);
+  private static final int LAYOUT_LAYOUTTEST3 = 18;
+
+  private static final int LAYOUT_SENDESTIMATEHOMEFRAGMENT = 19;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(19);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.akounto.accountingsoftware.R.layout.activity_addtransection, LAYOUT_ACTIVITYADDTRANSECTION);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.akounto.accountingsoftware.R.layout.activity_bank_list, LAYOUT_ACTIVITYBANKLIST);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.akounto.accountingsoftware.R.layout.activity_creating_products_and_services, LAYOUT_ACTIVITYCREATINGPRODUCTSANDSERVICES);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.akounto.accountingsoftware.R.layout.fragment_web_view, LAYOUT_FRAGMENTWEBVIEW);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.akounto.accountingsoftware.R.layout.layout_accounting_fragment, LAYOUT_LAYOUTACCOUNTINGFRAGMENT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.akounto.accountingsoftware.R.layout.layout_bussniess_list, LAYOUT_LAYOUTBUSSNIESSLIST);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.akounto.accountingsoftware.R.layout.layout_bview_bill, LAYOUT_LAYOUTBVIEWBILL);
@@ -110,6 +118,18 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new ActivityBankListBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for activity_bank_list is invalid. Received: " + tag);
+        }
+        case  LAYOUT_ACTIVITYCREATINGPRODUCTSANDSERVICES: {
+          if ("layout/activity_creating_products_and_services_0".equals(tag)) {
+            return new ActivityCreatingProductsAndServicesBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for activity_creating_products_and_services is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTWEBVIEW: {
+          if ("layout/fragment_web_view_0".equals(tag)) {
+            return new FragmentWebViewBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_web_view is invalid. Received: " + tag);
         }
         case  LAYOUT_LAYOUTACCOUNTINGFRAGMENT: {
           if ("layout/layout_accounting_fragment_0".equals(tag)) {
@@ -254,11 +274,13 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(17);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(19);
 
     static {
       sKeys.put("layout/activity_addtransection_0", com.akounto.accountingsoftware.R.layout.activity_addtransection);
       sKeys.put("layout/activity_bank_list_0", com.akounto.accountingsoftware.R.layout.activity_bank_list);
+      sKeys.put("layout/activity_creating_products_and_services_0", com.akounto.accountingsoftware.R.layout.activity_creating_products_and_services);
+      sKeys.put("layout/fragment_web_view_0", com.akounto.accountingsoftware.R.layout.fragment_web_view);
       sKeys.put("layout/layout_accounting_fragment_0", com.akounto.accountingsoftware.R.layout.layout_accounting_fragment);
       sKeys.put("layout/layout_bussniess_list_0", com.akounto.accountingsoftware.R.layout.layout_bussniess_list);
       sKeys.put("layout/layout_bview_bill_0", com.akounto.accountingsoftware.R.layout.layout_bview_bill);

@@ -94,6 +94,7 @@ import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Multipart;
@@ -357,5 +358,8 @@ public interface APIServices {
 
     @GET("api/general/android-app-version")
     Call<UpdateResponse> getUpadte();
+
+    @POST("api/profile/adnroid-log-error")
+    Call<ResponseBody> addErrorLog(@Header("X-Signature") String signature, @Field("message") String message, @Field("level") int level, @Field("filename") String filename);
 
 }

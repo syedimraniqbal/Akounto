@@ -82,6 +82,9 @@ com/akounto/accountingsoftware/response/AddBusinessResponse.java
  com.akounto.accountingsoftware.response.AddBusinessResponse
 com/akounto/accountingsoftware/response/SignInResponseData.java
  com.akounto.accountingsoftware.response.SignInResponseData
+com/akounto/accountingsoftware/Activity/TnCActivity.java
+ com.akounto.accountingsoftware.Activity.TnCActivity
+ com.akounto.accountingsoftware.Activity.TnCActivity$SSLTolerentWebViewClient
 com/akounto/accountingsoftware/util/Config.java
  com.akounto.accountingsoftware.util.Config
 com/akounto/accountingsoftware/Activity/fragment/AccountingFragment.java
@@ -175,6 +178,7 @@ com/akounto/accountingsoftware/Repository/LoginRepo.java
  com.akounto.accountingsoftware.Repository.LoginRepo$3
  com.akounto.accountingsoftware.Repository.LoginRepo$4
  com.akounto.accountingsoftware.Repository.LoginRepo$5
+ com.akounto.accountingsoftware.Repository.LoginRepo$6
 com/akounto/accountingsoftware/Activity/fragment/ReportSummaryFragment.java
  com.akounto.accountingsoftware.Activity.fragment.ReportSummaryFragment
 com/akounto/accountingsoftware/request/User.java
@@ -336,6 +340,18 @@ com/akounto/accountingsoftware/Activity/fragment/RecurringInvoicesFragment.java
  com.akounto.accountingsoftware.Activity.fragment.RecurringInvoicesFragment$9
 com/akounto/accountingsoftware/response/accounting/DefaultTransactionHead.java
  com.akounto.accountingsoftware.response.accounting.DefaultTransactionHead
+com/akounto/accountingsoftware/Activity/fragment/CreatingProductsAndServicesFragment.java
+ com.akounto.accountingsoftware.Activity.fragment.CreatingProductsAndServicesFragment
+ com.akounto.accountingsoftware.Activity.fragment.CreatingProductsAndServicesFragment$1
+ com.akounto.accountingsoftware.Activity.fragment.CreatingProductsAndServicesFragment$2
+ com.akounto.accountingsoftware.Activity.fragment.CreatingProductsAndServicesFragment$3
+ com.akounto.accountingsoftware.Activity.fragment.CreatingProductsAndServicesFragment$4
+ com.akounto.accountingsoftware.Activity.fragment.CreatingProductsAndServicesFragment$4$1
+ com.akounto.accountingsoftware.Activity.fragment.CreatingProductsAndServicesFragment$5
+ com.akounto.accountingsoftware.Activity.fragment.CreatingProductsAndServicesFragment$6
+ com.akounto.accountingsoftware.Activity.fragment.CreatingProductsAndServicesFragment$7
+ com.akounto.accountingsoftware.Activity.fragment.CreatingProductsAndServicesFragment$8
+ com.akounto.accountingsoftware.Activity.fragment.CreatingProductsAndServicesFragment$9
 com/akounto/accountingsoftware/util/UiConstants.java
  com.akounto.accountingsoftware.util.UiConstants
 com/akounto/accountingsoftware/Data/Profile/ForgotPasswordData.java
@@ -513,6 +529,8 @@ com/akounto/accountingsoftware/Activity/Invoice/AddItem.java
  com.akounto.accountingsoftware.Activity.Invoice.AddItem$8$1
  com.akounto.accountingsoftware.Activity.Invoice.AddItem$9
  com.akounto.accountingsoftware.Activity.Invoice.AddItem$TaxSelected
+com/akounto/accountingsoftware/databinding/FragmentWebViewBinding.java
+ com.akounto.accountingsoftware.databinding.FragmentWebViewBinding
 com/akounto/accountingsoftware/response/InvoiceNumberResponse.java
  com.akounto.accountingsoftware.response.InvoiceNumberResponse
 com/akounto/accountingsoftware/response/viewreport/InvoiceProfitLossDateRange.java
@@ -572,9 +590,6 @@ com/akounto/accountingsoftware/request/CashFlowRequest.java
  com.akounto.accountingsoftware.request.CashFlowRequest
 com/akounto/accountingsoftware/Data/RegisterBank/Bank.java
  com.akounto.accountingsoftware.Data.RegisterBank.Bank
-com/akounto/accountingsoftware/Activity/Test.java
- com.akounto.accountingsoftware.Activity.Test
- com.akounto.accountingsoftware.Activity.Test$1
 com/akounto/accountingsoftware/Constants/Constant.java
  com.akounto.accountingsoftware.Constants.Constant
 com/akounto/accountingsoftware/Data/JsonData.java
@@ -634,6 +649,8 @@ com/akounto/accountingsoftware/Activity/fragment/BillsFragment.java
  com.akounto.accountingsoftware.Activity.fragment.BillsFragment$1
  com.akounto.accountingsoftware.Activity.fragment.BillsFragment$2
  com.akounto.accountingsoftware.Activity.fragment.BillsFragment$3
+com/akounto/accountingsoftware/databinding/ActivityCreatingProductsAndServicesBinding.java
+ com.akounto.accountingsoftware.databinding.ActivityCreatingProductsAndServicesBinding
 com/akounto/accountingsoftware/Data/Dashboard/DashboardData.java
  com.akounto.accountingsoftware.Data.Dashboard.DashboardData
 com/akounto/accountingsoftware/request/Bills.java
@@ -762,6 +779,8 @@ com/akounto/accountingsoftware/response/BData.java
  com.akounto.accountingsoftware.response.BData
 com/akounto/accountingsoftware/Services/Api.java
  com.akounto.accountingsoftware.Services.Api
+com/akounto/accountingsoftware/adapter/DrawerListAdapter.java
+ com.akounto.accountingsoftware.adapter.DrawerListAdapter
 com/akounto/accountingsoftware/Data/ActiveBusiness.java
  com.akounto.accountingsoftware.Data.ActiveBusiness
 com/akounto/accountingsoftware/request/SendMailRequest.java
@@ -884,10 +903,8 @@ com/akounto/accountingsoftware/Activity/fragment/ReportFragment.java
  com.akounto.accountingsoftware.Activity.fragment.ReportFragment$5
 com/akounto/accountingsoftware/databinding/LayoutSettingAccountingBinding.java
  com.akounto.accountingsoftware.databinding.LayoutSettingAccountingBinding
-com/akounto/accountingsoftware/Activity/SIgnUpStep0.java
- com.akounto.accountingsoftware.Activity.SIgnUpStep0
- com.akounto.accountingsoftware.Activity.SIgnUpStep0$1
- com.akounto.accountingsoftware.Activity.SIgnUpStep0$2
+com/akounto/accountingsoftware/response/getBalanceSheet/ReportRQ.java
+ com.akounto.accountingsoftware.response.getBalanceSheet.ReportRQ
 com/akounto/accountingsoftware/response/getusercompany/GetUserCompany.java
  com.akounto.accountingsoftware.response.getusercompany.GetUserCompany
 com/akounto/accountingsoftware/Activity/fragment/ProductsAndServicesPurchaseFragment.java
@@ -1006,12 +1023,8 @@ com/akounto/accountingsoftware/response/cashflow/CashFLowData.java
  com.akounto.accountingsoftware.response.cashflow.CashFLowData
 com/akounto/accountingsoftware/response/Product.java
  com.akounto.accountingsoftware.response.Product
-com/akounto/accountingsoftware/Activity/WelcomeActivity.java
- com.akounto.accountingsoftware.Activity.WelcomeActivity
- com.akounto.accountingsoftware.Activity.WelcomeActivity$1
- com.akounto.accountingsoftware.Activity.WelcomeActivity$2
- com.akounto.accountingsoftware.Activity.WelcomeActivity$3
- com.akounto.accountingsoftware.Activity.WelcomeActivity$4
+com/akounto/accountingsoftware/databinding/LayoutSettingFragmentBinding.java
+ com.akounto.accountingsoftware.databinding.LayoutSettingFragmentBinding
 com/akounto/accountingsoftware/adapter/DeleteTaxClick.java
  com.akounto.accountingsoftware.adapter.DeleteTaxClick
 com/akounto/accountingsoftware/Activity/EstimateDetailsActivity.java
@@ -1228,19 +1241,8 @@ com/akounto/accountingsoftware/Data/Profile/UserRegister.java
 com/akounto/accountingsoftware/adapter/InvalidAdapter.java
  com.akounto.accountingsoftware.adapter.InvalidAdapter
  com.akounto.accountingsoftware.adapter.InvalidAdapter$MyViewHolder
-com/akounto/accountingsoftware/Activity/SignInActivity.java
- com.akounto.accountingsoftware.Activity.SignInActivity
- com.akounto.accountingsoftware.Activity.SignInActivity$1
- com.akounto.accountingsoftware.Activity.SignInActivity$10
- com.akounto.accountingsoftware.Activity.SignInActivity$11
- com.akounto.accountingsoftware.Activity.SignInActivity$2
- com.akounto.accountingsoftware.Activity.SignInActivity$3
- com.akounto.accountingsoftware.Activity.SignInActivity$4
- com.akounto.accountingsoftware.Activity.SignInActivity$5
- com.akounto.accountingsoftware.Activity.SignInActivity$6
- com.akounto.accountingsoftware.Activity.SignInActivity$7
- com.akounto.accountingsoftware.Activity.SignInActivity$8
- com.akounto.accountingsoftware.Activity.SignInActivity$9
+com/akounto/accountingsoftware/network/APIServices.java
+ com.akounto.accountingsoftware.network.APIServices
 com/akounto/accountingsoftware/Activity/fragment/GetShareLinkFragment.java
  com.akounto.accountingsoftware.Activity.fragment.GetShareLinkFragment
  com.akounto.accountingsoftware.Activity.fragment.GetShareLinkFragment$1
@@ -1351,7 +1353,8 @@ com/akounto/accountingsoftware/model/AddWithDrawalCategory.java
 com/akounto/accountingsoftware/Activity/ForgotPassword.java
  com.akounto.accountingsoftware.Activity.ForgotPassword
  com.akounto.accountingsoftware.Activity.ForgotPassword$1
- com.akounto.accountingsoftware.Activity.ForgotPassword$1$1
+ com.akounto.accountingsoftware.Activity.ForgotPassword$2
+ com.akounto.accountingsoftware.Activity.ForgotPassword$2$1
 com/akounto/accountingsoftware/response/EffectiveTaxesItem.java
  com.akounto.accountingsoftware.response.EffectiveTaxesItem
 com/akounto/accountingsoftware/Data/Dashboard/CashFlow.java
@@ -1678,6 +1681,8 @@ com/akounto/accountingsoftware/adapter/RecurringInvoicesAdapter.java
  com.akounto.accountingsoftware.adapter.RecurringInvoicesAdapter$MyViewHolder
 com/akounto/accountingsoftware/response/BillListResponse.java
  com.akounto.accountingsoftware.response.BillListResponse
+com/akounto/accountingsoftware/ViewModel/PrintLogs.java
+ com.akounto.accountingsoftware.ViewModel.PrintLogs
 com/akounto/accountingsoftware/databinding/LayoutAccountingFragmentBinding.java
  com.akounto.accountingsoftware.databinding.LayoutAccountingFragmentBinding
 com/akounto/accountingsoftware/adapter/PurchasetaxAddAdapter.java
@@ -1817,11 +1822,42 @@ com/akounto/accountingsoftware/adapter/RIAddItemsAdapter.java
  com.akounto.accountingsoftware.adapter.RIAddItemsAdapter$MyViewHolder
 com/akounto/accountingsoftware/databinding/ActivityAddtransectionBinding.java
  com.akounto.accountingsoftware.databinding.ActivityAddtransectionBinding
-com/akounto/accountingsoftware/databinding/LayoutSettingFragmentBinding.java
- com.akounto.accountingsoftware.databinding.LayoutSettingFragmentBinding
-com/akounto/accountingsoftware/adapter/DrawerListAdapter.java
- com.akounto.accountingsoftware.adapter.DrawerListAdapter
-com/akounto/accountingsoftware/network/APIServices.java
- com.akounto.accountingsoftware.network.APIServices
-com/akounto/accountingsoftware/response/getBalanceSheet/ReportRQ.java
- com.akounto.accountingsoftware.response.getBalanceSheet.ReportRQ
+com/akounto/accountingsoftware/Activity/SIgnUpStep0.java
+ com.akounto.accountingsoftware.Activity.SIgnUpStep0
+ com.akounto.accountingsoftware.Activity.SIgnUpStep0$1
+ com.akounto.accountingsoftware.Activity.SIgnUpStep0$2
+ com.akounto.accountingsoftware.Activity.SIgnUpStep0$3
+ com.akounto.accountingsoftware.Activity.SIgnUpStep0$4
+ com.akounto.accountingsoftware.Activity.SIgnUpStep0$5
+ com.akounto.accountingsoftware.Activity.SIgnUpStep0$6
+ com.akounto.accountingsoftware.Activity.SIgnUpStep0$7
+com/akounto/accountingsoftware/Activity/SignInActivity.java
+ com.akounto.accountingsoftware.Activity.SignInActivity
+ com.akounto.accountingsoftware.Activity.SignInActivity$1
+ com.akounto.accountingsoftware.Activity.SignInActivity$10
+ com.akounto.accountingsoftware.Activity.SignInActivity$11
+ com.akounto.accountingsoftware.Activity.SignInActivity$12
+ com.akounto.accountingsoftware.Activity.SignInActivity$2
+ com.akounto.accountingsoftware.Activity.SignInActivity$3
+ com.akounto.accountingsoftware.Activity.SignInActivity$4
+ com.akounto.accountingsoftware.Activity.SignInActivity$5
+ com.akounto.accountingsoftware.Activity.SignInActivity$6
+ com.akounto.accountingsoftware.Activity.SignInActivity$7
+ com.akounto.accountingsoftware.Activity.SignInActivity$8
+ com.akounto.accountingsoftware.Activity.SignInActivity$9
+com/akounto/accountingsoftware/Activity/SignUpDetails.java
+ com.akounto.accountingsoftware.Activity.SignUpDetails
+ com.akounto.accountingsoftware.Activity.SignUpDetails$1
+ com.akounto.accountingsoftware.Activity.SignUpDetails$2
+ com.akounto.accountingsoftware.Activity.SignUpDetails$2$1
+ com.akounto.accountingsoftware.Activity.SignUpDetails$3
+ com.akounto.accountingsoftware.Activity.SignUpDetails$4
+ com.akounto.accountingsoftware.Activity.SignUpDetails$5
+ com.akounto.accountingsoftware.Activity.SignUpDetails$6
+com/akounto/accountingsoftware/Activity/WelcomeActivity.java
+ com.akounto.accountingsoftware.Activity.WelcomeActivity
+ com.akounto.accountingsoftware.Activity.WelcomeActivity$1
+ com.akounto.accountingsoftware.Activity.WelcomeActivity$2
+ com.akounto.accountingsoftware.Activity.WelcomeActivity$3
+ com.akounto.accountingsoftware.Activity.WelcomeActivity$4
+ com.akounto.accountingsoftware.Activity.WelcomeActivity$5

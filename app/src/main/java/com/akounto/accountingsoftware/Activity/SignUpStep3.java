@@ -89,7 +89,7 @@ public class SignUpStep3 extends AppCompatActivity {
                             Bundle b=new Bundle();
                             b.putString(Constant.CATEGORY,"SignUp");
                             b.putString(Constant.ACTION,"connect_bank");
-                            SplashScreenActivity.mFirebaseAnalytics.logEvent("evtSignUpConnectBank",b);
+                            SplashScreenActivity.sendEvent("evtSignUpConnectBank",b);
                             Intent intent = new Intent(SignUpStep3.this.getApplicationContext(), DashboardActivity.class);
                             SignUpStep3.this.startActivity(intent);
                             SignUpStep3.this.finish();

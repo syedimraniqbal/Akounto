@@ -43,7 +43,12 @@ public class ForgotPassword extends AppCompatActivity {
             mContext = this;
             email = findViewById(R.id.email_forget);
             submit = findViewById(R.id.forgotButton);
-
+            findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
             submit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

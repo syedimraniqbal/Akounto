@@ -4,7 +4,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:weightSum="10">
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="4">
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/logo3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="6">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,20 +57,26 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/w3" />
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="137"
+            android:orientation="vertical"
+            android:layout_weight="30" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="107"
             android:gravity="center"
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Simplify books &amp; accounts"
                 android:fontFamily="@font/poppins_semibold"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_alignParentTop="true"
+                android:textAlignment="center"
+                android:gravity="center"
                 android:textStyle="normal"
                 android:textColor="#2f2f2f"
                 android:textSize="18sp" />
@@ -47,12 +84,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center_horizontal"
-                android:paddingStart="28dp"
                 android:paddingLeft="@dimen/desc_padding"
-                android:paddingEnd="28dp"
                 android:paddingRight="@dimen/desc_padding"
+                android:autoSizeTextType="uniform"
                 android:text="Real-time profit tracking at zero cost with 24x7 expert’s support."
                 android:textAlignment="center"
                 android:fontFamily="@font/poppins_regular"

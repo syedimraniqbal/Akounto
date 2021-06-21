@@ -1,11 +1,11 @@
 [
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_customize_invoice.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_customize_invoice.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_bussniess_list.xml",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_bussniess_list.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_customize_invoice.xml",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_customize_invoice.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_setting_accounting.xml",
@@ -14,6 +14,10 @@
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_bview_bill.xml",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_bview_bill.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_web_view.xml",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\fragment_web_view.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_purchase_fragment.xml",
@@ -26,6 +30,10 @@
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_more.xml",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_more.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_creating_products_and_services.xml",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\activity_creating_products_and_services.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\send_estimate_home_fragment.xml",

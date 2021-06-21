@@ -2,7 +2,7 @@ package com.akounto.accountingsoftware.Data;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.akounto.accountingsoftware.Data.RegisterBank.TransactionStatus;
+import com.akounto.accountingsoftware.response.TransactionStatus;
 
 public class CheckEmailData {
 

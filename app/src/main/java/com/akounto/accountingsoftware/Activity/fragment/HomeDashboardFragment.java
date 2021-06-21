@@ -2,6 +2,7 @@ package com.akounto.accountingsoftware.Activity.fragment;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,8 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import com.akounto.accountingsoftware.Activity.Bill.BillList;
+import com.akounto.accountingsoftware.Activity.Invoice.InvoiceList;
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 import com.akounto.accountingsoftware.Constants.Constant;
@@ -115,14 +118,14 @@ public class HomeDashboardFragment extends Fragment {
         circle_invoice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AddFragments.addFragmentToDrawerActivity(getContext(), null, InvoicesFragment.class);
+                startActivity(new Intent(getContext(), InvoiceList.class));
             }
         });
         circle_bill = this.view.findViewById(R.id.circle_bill);
         circle_bill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AddFragments.addFragmentToDrawerActivity(getContext(), null, BillsFragment.class);
+                startActivity(new Intent(getContext(), BillList.class));
             }
         });
 ///        getHomeDashBoardData(new GetDashboardRequest(fromDate, ud.getData().get(0).getStart(), ud.getData().get(0).getEnd(), UiUtil.getAccountingType(getContext()), 0), false);

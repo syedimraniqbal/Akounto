@@ -210,7 +210,7 @@ public class CreatingProductsAndServices extends AppCompatActivity implements De
                         Bundle b=new Bundle();
                         b.putString(Constant.CATEGORY,"invoicing");
                         b.putString(Constant.ACTION,"add_item");
-                        SplashScreenActivity.mFirebaseAnalytics.logEvent("invoice_add_item",b);
+                        SplashScreenActivity.sendEvent("invoice_add_item",b);
                         UiUtil.showToast(CreatingProductsAndServices.this, "Product Added");
                         CreatingProductsAndServices.this.finish();
                     }

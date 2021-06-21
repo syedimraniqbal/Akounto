@@ -400,18 +400,18 @@ public class CustomizeInvoice extends Fragment {
                         Bundle b=new Bundle();
                         b.putString(Constant.CATEGORY,"setting");
                         b.putString(Constant.ACTION,"customize_invoice_updated");
-                        SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_customize_invoice",b);
+                        SplashScreenActivity.sendEvent("setting_customize_invoice",b);
                     }else{
                         Bundle b=new Bundle();
                         b.putString(Constant.CATEGORY,"setting");
                         b.putString(Constant.ACTION,"customize_invoice_fail");
-                        SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_customize_invoice",b);
+                        SplashScreenActivity.sendEvent("setting_customize_invoice",b);
                     }
                 } catch (Exception e) {
                     Bundle b=new Bundle();
                     b.putString(Constant.CATEGORY,"setting");
                     b.putString(Constant.ACTION,"customize_invoice_fail");
-                    SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_customize_invoice",b);
+                    SplashScreenActivity.sendEvent("setting_customize_invoice",b);
                 }
             }
 
@@ -421,7 +421,7 @@ public class CustomizeInvoice extends Fragment {
                 Bundle b=new Bundle();
                 b.putString(Constant.CATEGORY,"setting");
                 b.putString(Constant.ACTION,"customize_invoice_fail");
-                SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_customize_invoice",b);
+                SplashScreenActivity.sendEvent("setting_customize_invoice",b);
             }
         });
     }

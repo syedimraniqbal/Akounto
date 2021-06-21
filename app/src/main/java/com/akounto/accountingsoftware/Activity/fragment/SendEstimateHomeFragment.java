@@ -98,7 +98,7 @@ public class SendEstimateHomeFragment extends Fragment {
                         Bundle b=new Bundle();
                         b.putString(Constant.CATEGORY,"invoicing");
                         b.putString(Constant.ACTION,"sending");
-                        SplashScreenActivity.mFirebaseAnalytics.logEvent("invoice_send",b);
+                        SplashScreenActivity.sendEvent("invoice_send",b);
 
                         SendEstimateHomeFragment.this.lambda$onCreateView$0$SendEstimateHomeFragment(view);
                     } else {

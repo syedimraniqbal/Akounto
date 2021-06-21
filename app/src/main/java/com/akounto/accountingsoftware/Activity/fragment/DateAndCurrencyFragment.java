@@ -179,7 +179,7 @@ public class DateAndCurrencyFragment extends Fragment {
                     Bundle b=new Bundle();
                     b.putString(Constant.CATEGORY,"setting");
                     b.putString(Constant.ACTION,"end_fin_year");
-                    SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_end_fin_year",b);
+                    SplashScreenActivity.sendEvent("setting_end_fin_year",b);
                     UiUtil.showToast(DateAndCurrencyFragment.this.getContext(), "Saved");
                     userDetails.getActiveBusiness().setFinancialYearEnd(financialDayEnd + "-" + financialMonthEnd);
                     signInResponse.setUserDetails(new Gson().toJson(userDetails));

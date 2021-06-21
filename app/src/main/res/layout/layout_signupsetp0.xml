@@ -8,7 +8,7 @@
         android:id="@+id/imageView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_marginTop="40dp"
         android:src="@drawable/path" />
 
     <LinearLayout
@@ -27,6 +27,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/back"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="@dimen/_7sdp"
@@ -52,7 +53,7 @@
 
             <ImageView
                 android:id="@+id/imageView8"
-                android:layout_width="wrap_content"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/logo3" />
 
@@ -60,6 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="26.7dp"
+                android:autoSizeTextType="uniform"
                 android:fontFamily="@font/poppins_semibold"
                 android:letterSpacing="0.02"
                 android:lineSpacingExtra="8sp"
@@ -80,7 +82,7 @@
                     android:lineSpacingExtra="4sp"
                     android:text="Scale your business with "
                     android:textColor="#3a3a3a"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="normal" />
 
                 <TextView
@@ -123,12 +125,13 @@
                     android:textStyle="normal" />
 
                 <RelativeLayout
+                    android:id="@+id/email_ll"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/new_light_blue"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="10dp">
+                    android:padding="12dp">
 
                     <EditText
                         android:id="@+id/emailET"
@@ -143,22 +146,25 @@
                         android:textSize="14dp" />
 
                     <ImageView
-                        android:id="@+id/imageView9"
+                        android:id="@+id/mail_ckeck"
                         android:layout_width="22dp"
                         android:layout_height="17dp"
                         android:layout_alignParentEnd="true"
-                        android:src="@drawable/icon_material_check" />
+                        android:src="@drawable/icon_material_check"
+                        android:visibility="gone" />
                 </RelativeLayout>
+
                 <TextView
                     android:id="@+id/tv_error"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:visibility="gone"
-                    android:text=" already register"
-                    android:textColor="@color/red_btn_bg_pressed_color"
-                    android:textSize="12sp"
-                    android:textStyle="normal" />
+                    android:text=" Email already exist!"
+                    android:fontFamily="@font/poppins_light"
+                    android:textStyle="normal"
+                    android:textSize="8sp"
+                    android:textColor="#ff2a2a"
+                    android:lineSpacingExtra="4sp"
+                    android:visibility="gone" />
             </LinearLayout>
 
             <LinearLayout
@@ -180,11 +186,12 @@
                     android:textStyle="normal" />
 
                 <LinearLayout
+                    android:id="@+id/password_ll"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/new_light_blue"
                     android:orientation="horizontal"
-                    android:padding="10dp">
+                    android:padding="12dp">
 
                     <com.xwray.passwordview.PasswordView
                         android:id="@+id/passwordET"
@@ -196,11 +203,21 @@
                         android:imeOptions="actionDone"
                         android:textSize="14dp" />
                 </LinearLayout>
-
+                <TextView
+                    android:id="@+id/password_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Please enter valid password"
+                    android:fontFamily="@font/poppins_light"
+                    android:textStyle="normal"
+                    android:textSize="8sp"
+                    android:textColor="#ff2a2a"
+                    android:lineSpacingExtra="4sp"
+                    android:visibility="gone" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:orientation="horizontal">
 
                     <CheckBox
@@ -208,39 +225,62 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
-                        android:text="I agree to the"
+                        android:text=""
+                        android:checked="true"
                         android:textColor="#3a3a3a"
-                        android:textSize="14sp"
+                        android:textSize="12sp"
                         android:textStyle="normal" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text=" Terms &amp; Conditions"
-                        android:textColor="#5a53fd"
-                        android:textSize="14sp"
-                        android:textStyle="normal" />
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text=" and"
-                        android:textColor="#3a3a3a"
-                        android:textSize="14sp"
-                        android:textStyle="normal" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="I agree to the"
+                                android:textColor="#3a3a3a"
+                                android:textSize="12sp"
+                                android:textStyle="normal" />
+                            <TextView
+                                android:id="@+id/tnc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text=" Terms &amp; Conditions"
+                                android:textColor="#5a53fd"
+                                android:textSize="12sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text=" and"
+                                android:textColor="#3a3a3a"
+                                android:textSize="12sp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/pp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Privacy Policy."
+                            android:textColor="#5a53fd"
+                            android:textSize="11sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="27dp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Privacy Policy."
-                    android:textColor="#5a53fd"
-                    android:textSize="14sp"
-                    android:textStyle="normal" />
+
             </LinearLayout>
         </LinearLayout>
 
@@ -255,12 +295,13 @@
                 android:id="@+id/signUpButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/rounded_corner_button"
                 android:fontFamily="@font/poppins_regular"
                 android:gravity="center"
-                android:layout_marginTop="@dimen/_10sdp"
                 android:lineSpacingExtra="9sp"
-                android:text="Create account"
+                android:text="Create Account"
+                android:textAllCaps="false"
                 android:textColor="#ffffff"
                 android:textSize="16sp"
                 android:textStyle="normal" />
@@ -277,25 +318,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_regular"
-                    android:textStyle="normal"
-                    android:textSize="14sp"
-                    android:textColor="#7d7d7d"
                     android:lineSpacingExtra="7sp"
                     android:text="Already have an account?  "
-                    />
+                    android:textColor="#3a3a3a"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
 
                 <TextView
                     android:id="@+id/loginText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_medium"
-                    android:textStyle="normal"
-                    android:textSize="16sp"
-                    android:textColor="#5a53fd"
-                    android:lineSpacingExtra="9sp"
                     android:gravity="center_horizontal"
+                    android:lineSpacingExtra="9sp"
                     android:text="Sign in"
-                    />
+                    android:textColor="#5a53fd"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

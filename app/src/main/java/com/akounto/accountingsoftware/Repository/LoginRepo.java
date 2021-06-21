@@ -15,6 +15,8 @@ import com.akounto.accountingsoftware.Data.ErrorData;
 import com.akounto.accountingsoftware.Data.LoginData;
 import com.akounto.accountingsoftware.Data.SoclData;
 import com.akounto.accountingsoftware.util.UiUtil;
+
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -74,6 +76,31 @@ public class LoginRepo {
         });
     }
 
+    public void prinLogs(String msg,int label ,String screen) {
+
+        Api api = ApiUtils.getAPIService();
+        api.addErrorLog(Constant.X_SIGNATURE, msg, label,screen).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+                try {
+                    if (response.code() == 200) {
+
+                    } else {
+                        ErrorData error = new Gson().fromJson(response.errorBody().string(), ErrorData.class);
+                        Log.d("ERROR :: ", error.getError_description());
+                    }
+                } catch (Exception e) {
+                    Log.d("TEG :: ", e.getLocalizedMessage());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
+    }
    /* public void authLogin(String code,String refresh_token,String c_id,String c_sec) {
         if (auth == null) {
             auth = new MutableLiveData<>();
@@ -182,7 +209,8 @@ public class LoginRepo {
         });
     }
     public void loadExtRegister(Context mContext, JsonObject request) {
-        UiUtil.showProgressDialogue(mContext,"","Please wait..");
+        try{
+        UiUtil.showProgressDialogue(mContext,"","Please wait..");}catch(Exception e){}
         if (extRegData == null) {
             extRegData = new MutableLiveData<>();
         }

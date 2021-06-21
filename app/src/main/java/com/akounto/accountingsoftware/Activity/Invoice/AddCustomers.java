@@ -235,12 +235,12 @@ public class AddCustomers extends AppCompatActivity {
                                 Bundle b=new Bundle();
                                 b.putString(Constant.CATEGORY,"invoicing");
                                 b.putString(Constant.ACTION,"add_customer_success");
-                                SplashScreenActivity.mFirebaseAnalytics.logEvent("invoice_add_customer",b);
+                                SplashScreenActivity.sendEvent("invoice_add_customer",b);
                             } else {
                                 Bundle b=new Bundle();
                                 b.putString(Constant.CATEGORY,"invoicing");
                                 b.putString(Constant.ACTION,"add_customer_fail");
-                                SplashScreenActivity.mFirebaseAnalytics.logEvent("invoice_add_customer",b);
+                                SplashScreenActivity.sendEvent("invoice_add_customer",b);
 
                                 UiUtil.showToast(AddCustomers.this, response.body().getTransactionStatus().getError().getDescription());
                                 UiUtil.showToast(AddCustomers.this, "Fail to add customer");

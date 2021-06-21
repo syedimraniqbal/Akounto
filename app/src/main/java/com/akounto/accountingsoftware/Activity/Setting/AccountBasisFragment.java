@@ -73,7 +73,7 @@ public class AccountBasisFragment extends Fragment {
                     Bundle b=new Bundle();
                     b.putString(Constant.CATEGORY,"setting");
                     b.putString(Constant.ACTION,"account_basis");
-                    SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_account_basis",b);
+                    SplashScreenActivity.sendEvent("setting_account_basis",b);
                     UiUtil.showToast(AccountBasisFragment.this.getContext(), "Saved");
                     user.getActiveBusiness().setAccountingBasisType(type);
                     SignInResponse signInResponse=UiUtil.getUserDetails(mContext);
@@ -83,7 +83,7 @@ public class AccountBasisFragment extends Fragment {
                     Bundle b=new Bundle();
                     b.putString(Constant.CATEGORY,"setting");
                     b.putString(Constant.ACTION,"account_basis_fail");
-                    SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_account_basis",b);
+                    SplashScreenActivity.sendEvent("setting_account_basis",b);
                     UiUtil.showToast(AccountBasisFragment.this.getContext(), "Error while Saving");
                 }
             }
@@ -94,7 +94,7 @@ public class AccountBasisFragment extends Fragment {
                 Bundle b=new Bundle();
                 b.putString(Constant.CATEGORY,"setting");
                 b.putString(Constant.ACTION,"account_basis_fail");
-                SplashScreenActivity.mFirebaseAnalytics.logEvent("setting_account_basis",b);
+                SplashScreenActivity.sendEvent("setting_account_basis",b);
             }
         });
     }

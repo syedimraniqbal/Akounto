@@ -47,19 +47,19 @@ public class AddBusinessFragment extends Fragment {
 
     TextView businessCurrencyErrorTv;
     Spinner businessCurrencySpinner;
+    Spinner countrySpinner;
     TextView companyNameErrorTv;
     TextView countryErrorTv;
+    int selectedCountry = 0;
+    String selectedCurrencyId = "USD";
     List<String> countryListForSpinner = new ArrayList();
     Map<Integer, String> countryMap = new HashMap();
-    Spinner countrySpinner;
     List<String> currencyListForSpinner = new ArrayList();
     Map<String, String> currencyMap = new HashMap();
     TextView dealsWithErrorTv;
     List<String> dealsWithList = new ArrayList();
     Spinner dealsWithSpinner;
     EditText etCompanyName;
-    int selectedCountry = 0;
-    String selectedCurrencyId = "USD";
     String selectedDealsWith;
     String selectedTypeOfBusiness;
     TextView typeOfBusinessErrorTv;
@@ -278,7 +278,7 @@ public class AddBusinessFragment extends Fragment {
                     Bundle b=new Bundle();
                     b.putString(Constant.CATEGORY,"profile");
                     b.putString(Constant.ACTION,"add_business");
-                    SplashScreenActivity.mFirebaseAnalytics.logEvent("profile_add_business",b);
+                    SplashScreenActivity.sendEvent("profile_add_business",b);
                     UserDetails userDetails = UiUtil.getUserDetail(getContext());
                     SignInResponse signInResponse=UiUtil.getUserDetails(getContext());
                     List<Business> list_buss=userDetails.getBusiness();

@@ -1,8 +1,8 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.akounto.accountingsoftware"
-4    android:versionCode="7"
-5    android:versionName="1.0.6" >
+4    android:versionCode="14"
+5    android:versionName="1.0.12" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="24"
@@ -68,15 +68,15 @@
 35-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:18:9-43
 36        android:label="@string/app_name"
 36-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:19:9-41
-37        android:launchMode="singleTop"
-37-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:20:9-39
+37        android:networkSecurityConfig="@xml/network_security_config"
+37-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:23:9-69
 38        android:requestLegacyExternalStorage="true"
-38-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:21:9-52
+38-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:20:9-52
 39        android:supportsRtl="true"
-39-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:22:9-35
+39-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:21:9-35
 40        android:testOnly="true"
 41        android:theme="@style/AppTheme"
-41-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:23:9-40
+41-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:22:9-40
 42        android:usesCleartextTraffic="true" >
 42-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:24:9-44
 43        <activity android:name="com.akounto.accountingsoftware.Activity.SalesInvoiceActivity" />
@@ -133,9 +133,9 @@
 60        <activity android:name="com.akounto.accountingsoftware.Activity.SettingActivity" />
 60-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:42:9-92
 60-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:42:19-89
-61        <activity android:name="com.akounto.accountingsoftware.Activity.Test" />
-61-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:43:9-81
-61-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:43:19-78
+61        <activity android:name="com.akounto.accountingsoftware.Activity.SignUpDetails" />
+61-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:43:9-90
+61-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:43:19-87
 62        <activity android:name="com.akounto.accountingsoftware.Activity.AddJournalTransactionActivity" />
 62-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:44:9-106
 62-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:44:19-103
@@ -148,9 +148,9 @@
 65        <activity android:name="com.akounto.accountingsoftware.Activity.EditChatOfAccount" />
 65-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:47:9-94
 65-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:47:19-91
-66        <activity android:name="com.akounto.accountingsoftware.Activity.CommonInvoiceActivity" />
-66-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:48:9-98
-66-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:48:19-95
+66        <activity android:name="com.akounto.accountingsoftware.Activity.TnCActivity" />
+66-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:48:9-88
+66-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:48:19-85
 67        <activity android:name="com.akounto.accountingsoftware.Activity.CreateInvoiceActivity" />
 67-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:49:9-98
 67-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:49:19-95
@@ -542,32 +542,32 @@
 266            android:theme="@style/PlaidTheme" />
 266-->[com.plaid.link:sdk-core:3.2.4] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\cd56e0f1a63e2b4a8f5568cc9d6b3a3c\jetified-sdk-core-3.2.4\AndroidManifest.xml:41:13-46
 267        <activity
-267-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:15:9-18:68
+267-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:15:9-18:68
 268            android:name="com.github.dhaval2404.imagepicker.ImagePickerActivity"
-268-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:16:13-81
+268-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:16:13-81
 269            android:screenOrientation="unspecified"
-269-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:17:13-52
+269-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:17:13-52
 270            android:theme="@style/Theme.Transparent.ImagePicker" />
-270-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:18:13-65
+270-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:18:13-65
 271        <activity
-271-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:19:9-22:72
+271-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:19:9-22:72
 272            android:name="com.yalantis.ucrop.UCropActivity"
-272-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:20:13-60
+272-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:20:13-60
 273            android:screenOrientation="portrait"
-273-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:21:13-49
+273-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:21:13-49
 274            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-274-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:22:13-69
+274-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:22:13-69
 275
 276        <provider
-276-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:24:9-32:20
+276-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:24:9-32:20
 277            android:name="com.github.dhaval2404.imagepicker.ImagePickerFileProvider"
-277-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:25:13-85
+277-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:25:13-85
 278            android:authorities="com.akounto.accountingsoftware.imagepicker.provider"
-278-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:26:13-72
+278-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:26:13-72
 279            android:exported="false"
-279-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:27:13-37
+279-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:27:13-37
 280            android:grantUriPermissions="true" >
-280-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\442a2c766d6067812ad42d08c7c0cdcc\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:28:13-47
+280-->[com.github.dhaval2404:imagepicker-support:1.7.1] C:\Users\Imran\.gradle\caches\transforms-2\files-2.1\6ac7c1943b6d4eede9e4fca7f752389b\jetified-imagepicker-support-1.7.1\AndroidManifest.xml:28:13-47
 281            <meta-data
 281-->E:\Android Code\Akounto\app\src\main\AndroidManifest.xml:134:13-136:58
 282                android:name="android.support.FILE_PROVIDER_PATHS"

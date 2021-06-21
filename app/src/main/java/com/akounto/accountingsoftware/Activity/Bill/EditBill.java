@@ -466,7 +466,7 @@ public class EditBill extends AppCompatActivity {
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject jsonObject = jsonArray.getJSONObject(i);
             this.currencyList.add(new com.akounto.accountingsoftware.model.Currency(jsonObject.getString("Symbol"), jsonObject.getString("Id"), jsonObject.getString("Name")));
-            this.currencyListForDisplay.add(jsonObject.getString("Name") + " ( " + jsonObject.getString("Id") + " ) ");
+            currencyListForDisplay.add(  jsonObject.getString("Id") + "-"+jsonObject.getString("Name"));
             this.currencyListForSpinner.add(jsonObject.getString("Name"));
         }
         setCurrencySpinner(this.currencyListForSpinner);

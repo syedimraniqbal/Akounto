@@ -145,7 +145,7 @@ public class CreateInvoice extends AppCompatActivity {
         findViewById(R.id.iv_close).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               finish();
+                finish();
             }
         });
         iv_due_date.setOnClickListener(new View.OnClickListener() {
@@ -298,7 +298,7 @@ public class CreateInvoice extends AppCompatActivity {
         dialog.findViewById(R.id.btn_cancel).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 dialog.dismiss();
-                startActivity(new Intent(CreateInvoice.this,DashboardActivity.class));
+                startActivity(new Intent(CreateInvoice.this, DashboardActivity.class));
             }
         });
         dialog.findViewById(R.id.btn_save).setOnClickListener(new View.OnClickListener() {
@@ -559,37 +559,43 @@ public class CreateInvoice extends AppCompatActivity {
                         Log.d("invoice_type", new Gson().toJson((Object) response.body()));
                         CreateInvoice CreateInvoice = CreateInvoice.this;
                         UiUtil.showToast(CreateInvoice, invoice_type + " Added");
-                        Bundle b=new Bundle();
-                        b.putString(Constant.CATEGORY,"invoicing");
-                        b.putString(Constant.ACTION,"adding_success");
-                        SplashScreenActivity.mFirebaseAnalytics.logEvent("invoice_create",b);
+                        Bundle b = new Bundle();
+                        b.putString(Constant.CATEGORY, "invoicing");
+                        b.putString(Constant.ACTION, "adding_success");
+                        SplashScreenActivity.sendEvent("invoice_create", b);
                         finish();
                         return;
                     }
                     CreateInvoice commonInvoiceActivity2 = CreateInvoice.this;
                     UiUtil.showToast(commonInvoiceActivity2, invoice_type + " Error while adding");
-                    Bundle b=new Bundle();
-                    b.putString(Constant.CATEGORY,"invoicing");
-                    b.putString(Constant.ACTION,"adding_fail");
-                    SplashScreenActivity.mFirebaseAnalytics.logEvent("invoice_create",b);
+                    Bundle b = new Bundle();
+                    b.putString(Constant.CATEGORY, "invoicing");
+                    b.putString(Constant.ACTION, "adding_fail");
+                    SplashScreenActivity.sendEvent("invoice_create", b);
                 } catch (Exception e) {
-                    Bundle b=new Bundle();
-                    b.putString(Constant.CATEGORY,"invoicing");
-                    b.putString(Constant.ACTION,"adding_fail");
-                    b.putString(Constant.CAUSES,e.getMessage());
-                    SplashScreenActivity.mFirebaseAnalytics.logEvent("invoice_create",b);
-                    UiUtil.showToast(getApplicationContext(), invoice_type + " Error while adding");
+                    try {
+                        Bundle b = new Bundle();
+                        b.putString(Constant.CATEGORY, "invoicing");
+                        b.putString(Constant.ACTION, "adding_fail");
+                        b.putString(Constant.CAUSES, e.getMessage());
+                        SplashScreenActivity.sendEvent("invoice_create", b);
+                        UiUtil.showToast(getApplicationContext(), invoice_type + " Error while adding");
+                    } catch (Exception e1) {
+                    }
                 }
             }
 
             public void onFailure(Call<CustomeResponse> call, Throwable t) {
                 super.onFailure(call, t);
-                Bundle b=new Bundle();
-                b.putString(Constant.CATEGORY,"invoicing");
-                b.putString(Constant.ACTION,"adding_fail");
-                b.putString(Constant.CAUSES,t.getMessage());
-                SplashScreenActivity.mFirebaseAnalytics.logEvent("invoice_create",b);
-                UiUtil.showToast(getApplicationContext(), invoice_type + " Error while adding");
+                try {
+                    Bundle b = new Bundle();
+                    b.putString(Constant.CATEGORY, "invoicing");
+                    b.putString(Constant.ACTION, "adding_fail");
+                    b.putString(Constant.CAUSES, t.getMessage());
+                    SplashScreenActivity.sendEvent("invoice_create", b);
+                    UiUtil.showToast(getApplicationContext(), invoice_type + " Error while adding");
+                } catch (Exception e) {
+                }
             }
         });
     }

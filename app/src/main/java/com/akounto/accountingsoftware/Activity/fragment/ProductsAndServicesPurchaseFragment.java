@@ -6,14 +6,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.Activity.Bill.BillMenu;
@@ -29,18 +26,16 @@ import com.akounto.accountingsoftware.response.SalesProductResponse;
 import com.google.gson.Gson;
 import com.akounto.accountingsoftware.util.AddFragments;
 import com.akounto.accountingsoftware.util.UiUtil;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Response;
 
 public class ProductsAndServicesPurchaseFragment extends Fragment implements View.OnClickListener, UpdateProduct, UpdatePurchaseProduct {
+
     ProductAndServicesPurchseAdapter adapter;
     TextView goButton;
     ConstraintLayout noDataLayout;
-    /* access modifiers changed from: private */
     public List<Product> productList = new ArrayList();
     View view;
 
@@ -56,16 +51,13 @@ public class ProductsAndServicesPurchaseFragment extends Fragment implements Vie
                 AddFragments.addFragmentToDrawerActivity(getActivity(), null, BillMenu.class);
             }
         });
+
         view.findViewById(R.id.btn_create_new).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                try {
-                    Intent intent = new Intent(getActivity(), CreateProductsAndServicesPurchase.class);
-                    intent.putExtra("IS_PURCHASECALL", true);
-                    startActivity(intent);
-                } catch (Exception e) {
-                    Log.e("Error :: ",e.getMessage());
-                }
+            public void onClick(View v) {
+                Intent intent =new Intent(getContext(), CreateProductsAndServicesPurchase.class);
+                intent.putExtra("IS_PURCHASECALL", true);
+                startActivity(intent);
             }
         });
         inItUi();

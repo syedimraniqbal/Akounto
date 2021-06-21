@@ -283,7 +283,7 @@ public class ViewInvoice extends AppCompatActivity {
                         Bundle b = new Bundle();
                         b.putString(Constant.CATEGORY, "invoicing");
                         b.putString(Constant.ACTION, "change_status");
-                        SplashScreenActivity.mFirebaseAnalytics.logEvent("invoice_change_status", b);
+                        SplashScreenActivity.sendEvent("invoice_change_status", b);
                     } else {
                         UiUtil.showToast(ViewInvoice.this, ((response.body().getTransactionStatus().getError())).getDescription());
                     }
@@ -426,7 +426,7 @@ public class ViewInvoice extends AppCompatActivity {
                     Bundle b = new Bundle();
                     b.putString(Constant.CATEGORY, "invoicing");
                     b.putString(Constant.ACTION, "cancel_invoice");
-                    SplashScreenActivity.mFirebaseAnalytics.logEvent("invoice_cancel_invoice", b);
+                    SplashScreenActivity.sendEvent("invoice_cancel_invoice", b);
                     return;
                 }
                 UiUtil.showToast(ViewInvoice.this, "Update scheduler, before approving");
@@ -449,7 +449,7 @@ public class ViewInvoice extends AppCompatActivity {
                     Bundle b = new Bundle();
                     b.putString(Constant.CATEGORY, "invoicing");
                     b.putString(Constant.ACTION, "cancel_invoice");
-                    SplashScreenActivity.mFirebaseAnalytics.logEvent("invoice_cancel_invoice", b);
+                    SplashScreenActivity.sendEvent("invoice_cancel_invoice", b);
                     return;
                 }
                 UiUtil.showToast(ViewInvoice.this, "Error while adding");

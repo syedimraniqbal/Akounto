@@ -23,23 +23,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Imran\\.gradle\\caches\\transforms-2\\files-2.1\\da9c4e2292cc5bd80c33c2ad25c4d4a8\\jetified-ucrop-2.2.2\\res\\values-de\\values-de.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,121,179",
-                        "endColumns": "65,57,55",
-                        "endOffsets": "116,174,230"
-                    },
-                    "to": {
-                        "startLines": "116,117,118",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "11429,11495,11553",
-                        "endColumns": "65,57,55",
-                        "endOffsets": "11490,11548,11604"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Imran\\.gradle\\caches\\transforms-2\\files-2.1\\f72435c118b7175f3c665e415c24e35e\\core-1.5.0\\res\\values-de\\values-de.xml",
                     "from": {
                         "startLines": "2",
@@ -156,6 +139,23 @@
                         "startOffsets": "11112,11210,11330",
                         "endColumns": "97,119,98",
                         "endOffsets": "11205,11325,11424"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Imran\\.gradle\\caches\\transforms-2\\files-2.1\\c01a28e1ccaee9bd127561f97f86451b\\jetified-ucrop-2.2.2\\res\\values-de\\values-de.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,121,179",
+                        "endColumns": "65,57,55",
+                        "endOffsets": "116,174,230"
+                    },
+                    "to": {
+                        "startLines": "116,117,118",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "11429,11495,11553",
+                        "endColumns": "65,57,55",
+                        "endOffsets": "11490,11548,11604"
                     }
                 }
             ]

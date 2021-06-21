@@ -148,8 +148,8 @@ public class UiUtil {
             main.addProperty("IndustryTypeName", business.getIndustryTypeName());
             main.addProperty("BusinessEntityId", business.getBusinessEntityId());
             main.addProperty("BusinessEntity", business.getBusinessEntity());
-            main.addProperty("Country", "1");
-            main.addProperty("BusinessCurrency", "USD");
+            main.addProperty("Country", business.getCountry());
+            main.addProperty("BusinessCurrency", business.getBusinessCurrency());
             main.addProperty("Phone", business.getPhone());
         } catch (Exception e) {
             Log.e("Error :: ", e.getMessage());
@@ -257,6 +257,7 @@ public class UiUtil {
         pref = sharedPreferences;
         return sharedPreferences.getBoolean(UiConstants.FIRST_LOGIN, false);
     }
+
     public static String getBussinessCurren(Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("com.akounto.accountingsoftware", PRIVATE_MODE);
         pref = sharedPreferences;
@@ -298,9 +299,14 @@ public class UiUtil {
     }
 
     public static String getAcccessToken(Context context) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences("com.akounto.accountingsoftware", PRIVATE_MODE);
-        pref = sharedPreferences;
-        return new Gson().fromJson(sharedPreferences.getString(UiConstants.USR_DETAILS, ""), SignInResponse.class).getAccess_token();
+        String at = "";
+        try {
+            SharedPreferences sharedPreferences = context.getSharedPreferences("com.akounto.accountingsoftware", PRIVATE_MODE);
+            pref = sharedPreferences;
+            at = new Gson().fromJson(sharedPreferences.getString(UiConstants.USR_DETAILS, ""), SignInResponse.class).getAccess_token();
+        } catch (Exception e) {
+        }
+        return at;
     }
 
     public static String getFirstName(Context context) {
@@ -351,6 +357,15 @@ public class UiUtil {
         return !(!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
     }
 
+    /* public static boolean isValidEmail(String email){
+
+           return Patterns.compile("^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
+                   + "((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                   + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\."
+                   + "([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                   + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+                   + "([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$").matcher(email).matches();
+       }*/
     public static String loadJSONFromAsset(Context context, String fileName) {
         try {
             InputStream is = context.getAssets().open(fileName);
