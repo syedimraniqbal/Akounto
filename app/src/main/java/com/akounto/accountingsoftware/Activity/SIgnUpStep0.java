@@ -27,6 +27,7 @@ import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.Data.CheckEmailData;
 import com.akounto.accountingsoftware.Data.ErrorData;
 import com.akounto.accountingsoftware.R;
+import com.akounto.accountingsoftware.Repository.LoginRepo;
 import com.akounto.accountingsoftware.Services.Api;
 import com.akounto.accountingsoftware.Services.ApiUtils;
 import com.akounto.accountingsoftware.ViewModel.LoginViewModel;
@@ -138,8 +139,7 @@ public class SIgnUpStep0 extends AppCompatActivity {
                     startActivity(new Intent(SIgnUpStep0.this, SignInActivity.class));
                 }
             });
-        } catch (Exception e) {
-        }
+
         findViewById(R.id.tnc).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -156,12 +156,17 @@ public class SIgnUpStep0 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        } catch (Exception e) {
+            LoginRepo.prinLogs(""+Log.getStackTraceString(e),5,"Sign Up virfy Email");
+        }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         success = true;
+        emailET.setText("");
+        passwordET.setText("");
     }
 
     public void checkEmail(Context mContext, String email) {
@@ -175,7 +180,7 @@ public class SIgnUpStep0 extends AppCompatActivity {
                 try {
                     if (response.code() == 200) {
                         if (response.body().getTransactionStatus().isIsSuccess()) {
-                            if (response.body().isData()) {
+                            if (!response.body().isData()) {
                                 if (success) {
                                     success = false;
                                     tv_error.setVisibility(View.GONE);
@@ -235,6 +240,7 @@ public class SIgnUpStep0 extends AppCompatActivity {
                     tv_error.setVisibility(View.VISIBLE);
                     tv_error.setText(e.getMessage());
                     email_ll.setBackgroundResource(R.drawable.error);
+                    LoginRepo.prinLogs(""+Log.getStackTraceString(e),5,"Sign Up virfy Email");
                 }
             }
 
@@ -255,21 +261,21 @@ public class SIgnUpStep0 extends AppCompatActivity {
 
     private boolean isValid() {
         if (UiUtil.isValidEmail(this.emailET.getText().toString())) {
-            UiUtil.showToast(this, "Please enter valid email");
+            //UiUtil.showToast(this, "Please enter valid email");
             emailET.requestFocus();
             tv_error.setText("Please enter valid email");
             tv_error.setVisibility(View.VISIBLE);
             email_ll.setBackgroundResource(R.drawable.error);
             return false;
         } else if (this.passwordET.getText().toString().length() == 0) {
-            UiUtil.showToast(this, "Please enter valid password");
+            //UiUtil.showToast(this, "Please enter valid password");
             passwordET.requestFocus();
             password_error.setText("Please enter valid password");
             password_error.setVisibility(View.VISIBLE);
             password_ll.setBackgroundResource(R.drawable.error);
             return false;
         } else if (this.passwordET.getText().toString().length() < 6) {
-            UiUtil.showToast(this, "Password must be more the six characters");
+            //UiUtil.showToast(this, "Password must be more the six characters");
             passwordET.requestFocus();
             password_error.setText("Password must be more the six characters");
             password_error.setVisibility(View.VISIBLE);

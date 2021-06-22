@@ -1,11 +1,11 @@
 [
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_error_center_x.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\error_center_x.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_vendors_fragment.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\vendors_fragment.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_error_center_x.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\error_center_x.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_tile_bg.xml.flat",
@@ -64,12 +64,12 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\color\\design_icon_tint.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_menu_arrow_up_black_24dp.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\ic_menu_arrow_up_black_24dp.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\color_switch_thumb_material_light.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_menu_arrow_up_black_24dp.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\ic_menu_arrow_up_black_24dp.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\anim_enter_from_right.xml.flat",
@@ -248,24 +248,24 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable-hdpi\\splash.png"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cash_flow.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\cash_flow.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_mtrl_picker_header_title_text.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\mtrl_picker_header_title_text.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_green_button_background.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\green_button_background.xml"
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cash_flow.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\cash_flow.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_down_arrow.png.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\down_arrow.png"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_right_rounded_settled.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\right_rounded_settled.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_down_arrow.png.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\down_arrow.png"
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_green_button_background.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\green_button_background.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_general.xml.flat",
@@ -276,12 +276,12 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\tooltip_frame_dark.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_tooltip_frame_light.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\tooltip_frame_light.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_no_internet_image2.png.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\no_internet_image2.png"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_tooltip_frame_light.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\tooltip_frame_light.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_account_payable_inside_report.xml.flat",
@@ -308,16 +308,16 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\alert_dialog.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_home_icon.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\ic_home_icon.xml"
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_mgmt_admin_item.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\user_mgmt_admin_item.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_up_arrow2.png.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\up_arrow2.png"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_mgmt_admin_item.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\user_mgmt_admin_item.xml"
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_home_icon.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\ic_home_icon.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_profile_fragment.xml.flat",
@@ -400,12 +400,12 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\activity_product_and_services.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_chat_new_fragment.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\chat_new_fragment.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_left_rounded_draft.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\left_rounded_draft.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_chat_new_fragment.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\chat_new_fragment.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bg_color.xml.flat",
@@ -424,32 +424,32 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\abc_ic_menu_overflow_material.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_activitie.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\activitie.xml"
-    },
-    {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\menu_transection_menu.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\menu\\transection_menu.xml"
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_bottom_sheet_dialog.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\design_bottom_sheet_dialog.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_transaction.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\transaction.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_bottom_sheet_dialog.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\design_bottom_sheet_dialog.xml"
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\menu_transection_menu.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\menu\\transection_menu.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_activitie.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\activitie.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_select_dialog_material.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_circle_red.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\circle_red.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_cascading_menu_item_layout.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\abc_cascading_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_circle_red.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\circle_red.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_preference_material.xml.flat",
@@ -484,12 +484,12 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\dialogue_edititem.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\color_material_on_surface_emphasis_high_type.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\color\\material_on_surface_emphasis_high_type.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_navigation_item_icon_tint.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\color\\mtrl_navigation_item_icon_tint.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\color_material_on_surface_emphasis_high_type.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\color\\material_on_surface_emphasis_high_type.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_test_toolbar_elevation.xml.flat",
@@ -520,12 +520,12 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\animator\\design_fab_show_motion_spec.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item_subheader.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\design_navigation_item_subheader.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\anim_dispose_center.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\anim\\dispose_center.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item_subheader.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\design_navigation_item_subheader.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_minimal_5.png.flat",
@@ -536,12 +536,12 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\drawer_parent_layout.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_tab_indicator_material.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\abc_tab_indicator_material.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bottom_bar_background.png.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\bottom_bar_background.png"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_tab_indicator_material.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_calendar_selected_range.xml.flat",
@@ -616,12 +616,12 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable-hdpi\\circle.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_filter_dilog.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\filter_dilog.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_filter_dilog.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\filter_dilog.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
@@ -700,12 +700,12 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_product.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\item_product.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_default_4.png.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\default_4.png"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_product.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\item_product.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_default_mtrl_shape.xml.flat",
@@ -852,12 +852,12 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\abc_btn_colored_material.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_background_cache_hint_selector_material_light.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\color\\abc_background_cache_hint_selector_material_light.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_layout.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_background_cache_hint_selector_material_light.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\color\\abc_background_cache_hint_selector_material_light.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_spinner_item.xml.flat",
@@ -972,12 +972,12 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\anim\\error_frame_in.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rounded_corner_approve_draft.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\rounded_corner_approve_draft.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rounded_corner_green_button.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\rounded_corner_green_button.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rounded_corner_approve_draft.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\rounded_corner_approve_draft.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_text_view_without_line_height.xml.flat",
@@ -1020,12 +1020,12 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\invoices_fragment.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon_material_check.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\icon_material_check.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_create_estimate.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\activity_create_estimate.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon_material_check.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\icon_material_check.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_notification_icon.xml.flat",
@@ -1124,12 +1124,12 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\anim\\design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_company_profile.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\activity_company_profile.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_fill_tick.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\ic_fill_tick.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_company_profile.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\activity_company_profile.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_text_cursor_material.xml.flat",
@@ -1252,12 +1252,12 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\abc_seekbar_thumb_material.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_menuicon.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\ic_menuicon.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_transectione.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\item_transectione.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_menuicon.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\ic_menuicon.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_parentexpandabletax.xml.flat",
@@ -1312,16 +1312,16 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\design_navigation_item.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_dashboard.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\fragment_dashboard.xml"
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_rounded_corner_button.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable-hdpi\\rounded_corner_button.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg_low.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\notification_bg_low.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_rounded_corner_button.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable-hdpi\\rounded_corner_button.xml"
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_dashboard.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\fragment_dashboard.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_extended_fab_bg_color_selector.xml.flat",
@@ -1360,12 +1360,12 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\color\\mtrl_btn_ripple_color.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_test_action_chip.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\test_action_chip.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_ucrop_layout_rotate_wheel.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\ucrop_layout_rotate_wheel.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_test_action_chip.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\test_action_chip.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\xml_standalone_badge_gravity_bottom_start.xml.flat",

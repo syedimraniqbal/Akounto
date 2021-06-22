@@ -1,11 +1,11 @@
 [
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_bussniess_list.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_bussniess_list.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_customize_invoice.xml",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_customize_invoice.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_bussniess_list.xml",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_bussniess_list.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_setting_accounting.xml",

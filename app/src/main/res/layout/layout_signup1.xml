@@ -180,6 +180,7 @@
                         android:background="@null"
                         android:fontFamily="@font/poppins_regular"
                         android:hint="first name"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                         android:imeOptions="actionNext"
                         android:inputType="text"
                         android:maxLength="50"
@@ -193,7 +194,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_light"
                     android:textStyle="normal"
-                    android:textSize="8sp"
+                    android:textSize="12sp"
                     android:textColor="#ff2a2a"
                     android:lineSpacingExtra="4sp"
                     android:visibility="gone"
@@ -244,6 +245,7 @@
                         android:background="@null"
                         android:fontFamily="@font/poppins_regular"
                         android:hint="last name"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                         android:imeOptions="actionNext"
                         android:inputType="text"
                         android:maxLength="50"
@@ -257,7 +259,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_light"
                     android:textStyle="normal"
-                    android:textSize="8sp"
+                    android:textSize="12sp"
                     android:textColor="#ff2a2a"
                     android:lineSpacingExtra="4sp"
                     android:visibility="gone"
@@ -306,11 +308,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@null"
+                        android:digits="1234567890+"
                         android:fontFamily="@font/poppins_regular"
                         android:hint="mobile"
                         android:imeOptions="actionDone"
                         android:inputType="number"
-                        android:maxLength="15"
+                        android:maxLength="16"
                         android:singleLine="true"
                         android:textSize="14dp" />
 
@@ -321,7 +324,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_light"
                     android:textStyle="normal"
-                    android:textSize="8sp"
+                    android:textSize="12sp"
                     android:textColor="#ff2a2a"
                     android:lineSpacingExtra="4sp"
                     android:visibility="gone"
@@ -442,6 +445,7 @@
                         android:background="@null"
                         android:fontFamily="@font/poppins_regular"
                         android:hint="business name"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz1234567890"
                         android:imeOptions="actionNext"
                         android:inputType="text"
                         android:maxLength="70"
@@ -456,7 +460,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_light"
                     android:textStyle="normal"
-                    android:textSize="8sp"
+                    android:textSize="12sp"
                     android:textColor="#ff2a2a"
                     android:lineSpacingExtra="4sp"
                     android:visibility="gone"
@@ -492,13 +496,14 @@
 
 
                 <LinearLayout
+                    android:id="@+id/typeBusiness_error"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_7sdp"
                     android:background="@drawable/new_light_blue"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="12dp">
+                    android:padding="7dp">
 
                     <Spinner
                         android:id="@+id/typeBusinessSpinner"
@@ -507,6 +512,18 @@
                         android:layout_below="@+id/typeBusiness" />
 
                 </LinearLayout>
+                <TextView
+                    android:id="@+id/type_business_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:textStyle="normal"
+                    android:textSize="12sp"
+                    android:textColor="#ff2a2a"
+                    android:lineSpacingExtra="4sp"
+                    android:visibility="gone"
+                    android:text="please your organisation type."
+                    />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -537,13 +554,14 @@
 
 
                 <LinearLayout
+                    android:id="@+id/dealsWithBusiness_error"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_7sdp"
                     android:background="@drawable/new_light_blue"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="12dp">
+                    android:padding="7dp">
 
                     <Spinner
                         android:id="@+id/dealsWithBusinessSpinner"
@@ -552,6 +570,18 @@
                         android:layout_below="@+id/dealsWith" />
 
                 </LinearLayout>
+                <TextView
+                    android:id="@+id/deals_with_business_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:textStyle="normal"
+                    android:textSize="12sp"
+                    android:textColor="#ff2a2a"
+                    android:lineSpacingExtra="4sp"
+                    android:visibility="gone"
+                    android:text="please select your industry."
+                    />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -588,7 +618,7 @@
                     android:background="@drawable/new_light_blue"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="12dp">
+                    android:padding="7dp">
 
                     <Spinner
                         android:id="@+id/countrySpinner"
@@ -633,7 +663,7 @@
                     android:background="@drawable/new_light_blue"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="12dp">
+                    android:padding="7dp">
 
                     <Spinner
                         android:id="@+id/businessCurrencySpinner"
@@ -677,6 +707,7 @@
                         android:textStyle="normal" />
 
                     <TextView
+                        android:id="@+id/cusmoter_care"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_medium"

@@ -466,6 +466,7 @@ attr expandedTitleMarginTop
 attr expandedTitleTextAppearance
 attr extendMotionSpec
 attr extendedFloatingActionButtonStyle
+attr eyeTint
 attr fabAlignmentMode
 attr fabAnimationMode
 attr fabCradleMargin
@@ -1051,6 +1052,7 @@ attr state_lifted
 attr statusBarBackground
 attr statusBarForeground
 attr statusBarScrim
+attr strikeThrough
 attr strokeColor
 attr strokeWidth
 attr subMenuArrow
@@ -3185,6 +3187,8 @@ drawable ic_up_arrow
 drawable ic_up_arrow__circular
 drawable ic_upload_statement
 drawable ic_vendors_logo
+drawable ic_visibility_black_24dp
+drawable ic_visibility_off_black_24dp
 drawable ic_wallet
 drawable ic_yahoo_logo
 drawable icon_activity
@@ -3903,6 +3907,7 @@ id currencyTv
 id currency_sign
 id current_bussiness_email
 id current_bussiness_name
+id cusmoter_care
 id cusmoter_name
 id custom
 id customPanel
@@ -3931,12 +3936,14 @@ id datesAndCurrencyTv
 id datesSpinner
 id dealsWith
 id dealsWithBusinessSpinner
+id dealsWithBusiness_error
 id dealsWithET
 id dealsWithErrorTv
 id dealsWithNote
 id dealsWithRL
 id dealsWithSpinner
 id dealsWithText
+id deals_with_business_error
 id debitList
 id decelerate
 id decelerateAndComplete
@@ -5153,11 +5160,13 @@ id txt_forgot_password
 id typeBusiness
 id typeBusinessET
 id typeBusinessSpinner
+id typeBusiness_error
 id typeClient
 id typeOfBusinessErrorTv
 id typeOfBusinessNote
 id typeOfBusinessText
 id typeStatus
+id type_business_error
 id typesLayout
 id typesSpinner
 id ucrop
@@ -6872,7 +6881,7 @@ styleable MultiSelectListPreference android_entries android_entryValues entries 
 styleable NavigationView android_background android_fitsSystemWindows android_maxWidth elevation headerLayout itemBackground itemHorizontalPadding itemIconPadding itemIconSize itemIconTint itemMaxLines itemShapeAppearance itemShapeAppearanceOverlay itemShapeFillColor itemShapeInsetBottom itemShapeInsetEnd itemShapeInsetStart itemShapeInsetTop itemTextAppearance itemTextColor menu shapeAppearance shapeAppearanceOverlay
 styleable OnClick clickAction targetId
 styleable OnSwipe dragDirection dragScale dragThreshold limitBoundsTo maxAcceleration maxVelocity moveWhenScrollAtTop nestedScrollFlags onTouchUp touchAnchorId touchAnchorSide touchRegionId
-styleable PasswordView useStrikeThrough
+styleable PasswordView eyeTint strikeThrough useStrikeThrough
 styleable PercentLayout_Layout layout_aspectRatio layout_heightPercent layout_marginBottomPercent layout_marginEndPercent layout_marginLeftPercent layout_marginPercent layout_marginRightPercent layout_marginStartPercent layout_marginTopPercent layout_widthPercent
 styleable PlaidBanner plaid_banner_color plaid_banner_cta plaid_banner_description
 styleable PlaidCard plaid_detail plaid_label plaid_title

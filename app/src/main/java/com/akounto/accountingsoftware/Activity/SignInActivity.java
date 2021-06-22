@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.akounto.accountingsoftware.Repository.LoginRepo;
 import com.akounto.accountingsoftware.network.CustomCallBack;
 import com.akounto.accountingsoftware.network.RestClient;
 import com.akounto.accountingsoftware.response.CustomeResponse;
@@ -61,7 +63,7 @@ import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
-import com.xwray.passwordview.PasswordView;
+import com.subhrajyoti.passwordview.PasswordView;
 
 import java.util.List;
 
@@ -76,6 +78,8 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
     private PasswordView passwordET;
     private TextView signup;
     private TextView forgot_password;
+    LinearLayout password_ll;
+    RelativeLayout email_ll;
     private Context mContext;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
@@ -88,6 +92,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
     private LifecycleOwner owner;
     LinearLayout back;
     ImageView mail_ckeck;
+    TextView tv_error, password_error;
 
     /* access modifiers changed from: protected */
     public void onCreate(Bundle savedInstanceState) {
@@ -96,11 +101,14 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
             setContentView(R.layout.layout_signin);
             //getWindow().setFlags(1024, 1024);
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-//            SplashScreenActivity.mFirebaseAnalytics.logEvent();
+            //SplashScreenActivity.mFirebaseAnalytics.logEvent();
             mContext = this;
             owner = this;
             getUpdateDilog();
-
+            tv_error = findViewById(R.id.tv_error);
+            password_error = findViewById(R.id.password_error);
+            email_ll = findViewById(R.id.email_ll);
+            password_ll = findViewById(R.id.password_ll);
             this.emailET = findViewById(R.id.emailET);
             mail_ckeck = findViewById(R.id.mail_ckeck);
             back = findViewById(R.id.back);
@@ -139,6 +147,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
             firebaseAuth = com.google.firebase.auth.FirebaseAuth.getInstance();
             findViewById(R.id.signUpButton).setOnClickListener(new View.OnClickListener() {
                 public final void onClick(View view) {
+                    reset();
                     login();
                 }
             });
@@ -185,34 +194,42 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                 }
             });
         } catch (Exception e) {
-
+            LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "Sign in");
         }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        try {
-
-        } catch (Exception e) {
-        }
+        emailET.setText("");
+        passwordET.setText("");
     }
 
     public void login() {
         try {
             String user = this.emailET.getText().toString();
             String pass = this.passwordET.getText().toString();
-            if (!user.equalsIgnoreCase("")) {
+            if (!UiUtil.isValidEmail(this.emailET.getText().toString())) {
                 if (!pass.equalsIgnoreCase("")) {
                     loadLogin(mContext, user, pass);
                 } else {
-                    Toast.makeText(mContext, "Please enter valid password", Toast.LENGTH_SHORT).show();
+                    passwordET.requestFocus();
+                    password_error.setText("Please enter valid password");
+                    password_error.setVisibility(View.VISIBLE);
+                    password_ll.setBackgroundResource(R.drawable.error);
                 }
             } else {
-                Toast.makeText(mContext, "Please enter valid email id", Toast.LENGTH_SHORT).show();
+                emailET.requestFocus();
+                tv_error.setText("Please enter valid email id");
+                tv_error.setVisibility(View.VISIBLE);
+                email_ll.setBackgroundResource(R.drawable.error);
             }
         } catch (Exception e) {
-            Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_SHORT).show();
+            emailET.requestFocus();
+            tv_error.setText(e.getMessage());
+            tv_error.setVisibility(View.VISIBLE);
+            email_ll.setBackgroundResource(R.drawable.error);
+            LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "Sign in");
         }
     }
 
@@ -239,15 +256,30 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                     } else {
                         ErrorData error = new Gson().fromJson(response.errorBody().string(), ErrorData.class);
                         Toast.makeText(mContext, error.getError_description(), Toast.LENGTH_SHORT).show();
+                        emailET.requestFocus();
+                        if (!error.getError_description().equalsIgnoreCase(""))
+                            tv_error.setText(error.getError_description());
+                        tv_error.setVisibility(View.VISIBLE);
+                        email_ll.setBackgroundResource(R.drawable.error);
                     }
                 } catch (Exception e) {
                     Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    emailET.requestFocus();
+                    tv_error.setText(e.getMessage());
+                    tv_error.setVisibility(View.VISIBLE);
+                    email_ll.setBackgroundResource(R.drawable.error);
+                    LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "Sign in");
                 }
             }
 
             @Override
             public void onFailure(Call<LoginData> call, Throwable t) {
                 Toast.makeText(mContext, "Something went wrong", Toast.LENGTH_SHORT).show();
+                emailET.requestFocus();
+                tv_error.setText(t.getMessage());
+                tv_error.setVisibility(View.VISIBLE);
+                email_ll.setBackgroundResource(R.drawable.error);
+                LoginRepo.prinLogs("" + Log.getStackTraceString(t), 5, "Sign in");
             }
         });
     }
@@ -286,11 +318,15 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
             if (requestCode == RC_SIGN_IN) {
                 GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
                 GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
-                acct.getServerAuthCode();
+                try {
+                    acct.getServerAuthCode();
+                } catch (Exception e) {
+                }
                 //Log.d("Server Auth :: ",acct.getServerAuthCode());
                 handleSignInResult(result);
             }
         } catch (Exception e) {
+            LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "Sign in");
         }
     }
 
@@ -317,6 +353,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                 Toast.makeText(this, "Login Unsuccessful" + result.getStatus().getStatusMessage(), Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
+            LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "Sign in");
         }
     }
 
@@ -363,6 +400,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                                 Toast.makeText(SignInActivity.this, checkEmailData.getStatusMessage(), Toast.LENGTH_SHORT).show();
                             }
                         } catch (Exception e) {
+                            LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "Sign in");
                         }
                         /* }*/
                     }
@@ -385,6 +423,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                 firebaseAuth.removeAuthStateListener(authStateListener);
             }
         } catch (Exception e) {
+            LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "Sign in");
         }
     }
 
@@ -397,6 +436,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
             }
             firebaseAuth.addAuthStateListener(authStateListener);
         } catch (Exception e) {
+            LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "Sign in");
         }
     }
 
@@ -408,6 +448,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                 firebaseAuth.removeAuthStateListener(authStateListener);
             }
         } catch (Exception e) {
+            LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "Sign in");
         }
     }
 
@@ -459,12 +500,14 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                     }
                 } catch (Exception e) {
                     Log.e("Error :: ", e.toString());
+                    LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "Sign in");
                 }
             }
 
             public void onFailure(Call<UpdateResponse> call, Throwable t) {
                 super.onFailure(call, t);
                 Log.e("Error :: ", t.toString());
+                LoginRepo.prinLogs("" + Log.getStackTraceString(t), 5, "Sign in");
             }
         });
     }
@@ -477,5 +520,13 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         i.addCategory(Intent.CATEGORY_HOME);
         startActivity(i);
+    }
+
+    private void reset() {
+        email_ll.setBackgroundResource(R.drawable.new_light_blue);
+        password_ll.setBackgroundResource(R.drawable.new_light_blue);
+
+        tv_error.setVisibility(View.GONE);
+        password_error.setVisibility(View.GONE);
     }
 }

@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.Repository.LoginRepo;
+import com.akounto.accountingsoftware.util.LogsPrint;
 import com.akounto.accountingsoftware.util.UiUtil;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
@@ -28,13 +29,12 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         mContext = this;
-       /* try{
-            int i= a[5];
-        }catch (Exception e){
-            LoginRepo loginRepo =new LoginRepo();
-            loginRepo.prinLogs(""+Log.getStackTraceString(e),5,"SplashScreenActivity");
-        }*/
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+       /* try {
+            Log.e("String :: ",""+a[4]);
+        } catch (Exception e) {
+            LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "SplashScreenActivity");
+        }*/
         try {
             this.imageView = findViewById(R.id.app_logo);
             this.imageView.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce));
@@ -55,10 +55,13 @@ public class SplashScreenActivity extends AppCompatActivity {
                             SplashScreenActivity.this.finish();
                         }
                     } catch (Exception e) {
+                        LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "SplashScreenActivity");
+                        //LoginRepo.prinLogs(""+Log.getStackTraceString(e),5,"SplashScreenActivity");
                     }
                 }
             }, 2000);
         } catch (Exception e) {
+            LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "SplashScreenActivity");
         }
     }
 
@@ -67,6 +70,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             if (Constant.ANALATICS_ON)
                 SplashScreenActivity.mFirebaseAnalytics.logEvent(event_name, b);
         } catch (Exception e) {
+            LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "SplashScreenActivity");
         }
     }
 

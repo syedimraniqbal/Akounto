@@ -76,7 +76,7 @@ public class LoginRepo {
         });
     }
 
-    public void prinLogs(String msg,int label ,String screen) {
+    public static void prinLogs(String msg,int label ,String screen) {
 
         Api api = ApiUtils.getAPIService();
         api.addErrorLog(Constant.X_SIGNATURE, msg, label,screen).enqueue(new Callback<ResponseBody>() {
@@ -97,7 +97,7 @@ public class LoginRepo {
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-
+                Log.d("TEG :: ", t.getLocalizedMessage());
             }
         });
     }
