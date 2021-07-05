@@ -47,7 +47,6 @@ public class AppSingle extends Application {
         this.comp_name = comp_name;
     }
 
-
     public String getCurrency() {
         return currency;
     }

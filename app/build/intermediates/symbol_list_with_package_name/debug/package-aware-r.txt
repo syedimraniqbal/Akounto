@@ -3626,7 +3626,6 @@ id activitiesRV
 id activity_chooser_view_content
 id add
 id addAccount
-id addBusinessLayout
 id addButton
 id addCategory
 id addCategoryText
@@ -3764,10 +3763,7 @@ id btn_update
 id btn_user_management
 id btn_vendor
 id btn_vendors
-id businessCurrencyErrorTv
-id businessCurrencyNote
 id businessCurrencySpinner
-id businessCurrencyText
 id businessCurrencyTitle
 id businessTypeSpinner
 id business_name
@@ -3887,10 +3883,12 @@ id coordinator
 id copyLink
 id cos
 id counterclockwise
+id country
 id countryErrorTv
 id countryNote
 id countrySpinner
 id countryText
+id country_code
 id createAnotherBillButton
 id createBill
 id createBusiness
@@ -3939,10 +3937,8 @@ id dealsWithBusinessSpinner
 id dealsWithBusiness_error
 id dealsWithET
 id dealsWithErrorTv
-id dealsWithNote
 id dealsWithRL
 id dealsWithSpinner
-id dealsWithText
 id deals_with_business_error
 id debitList
 id decelerate
@@ -4029,6 +4025,7 @@ id edit_item_price
 id edit_query
 id edt_phone_number
 id edt_phone_number_error
+id edt_phone_number_tooltip
 id effectiveDate
 id effectiveDateTv
 id elastic
@@ -4036,6 +4033,7 @@ id email
 id emailET
 id emailErrorTv
 id emailText
+id email_error
 id email_forget
 id email_ll
 id end
@@ -4223,6 +4221,7 @@ id icon_only
 id id_circle
 id id_customer
 id id_vendor
+id idfg
 id ifRoom
 id ignore
 id ignoreRequest
@@ -4250,6 +4249,7 @@ id image_view_logo
 id image_view_state_aspect_ratio
 id image_view_state_rotate
 id image_view_state_scale
+id img_flag
 id impReportsCard
 id incomeAccountSpinner
 id incorrectPassword
@@ -4365,10 +4365,6 @@ id listItemRecycler
 id listMode
 id listView
 id list_item
-id ll_b
-id ll_c
-id ll_cc
-id ll_d
 id ll_date
 id ll_upload_bankstmt
 id ll_weview
@@ -4544,6 +4540,8 @@ id perosonal_info
 id personalinfo
 id phoneNumber
 id phoneText
+id phone_code_spiner
+id phone_code_tv
 id phone_number_ll
 id pin
 id plaidCallToActionButton
@@ -4752,6 +4750,7 @@ id roundedButton
 id row_index_key
 id runABusiness
 id runABusinessET
+id rv_list
 id saleTaxRL
 id saleTaxesRv
 id salesTaxSpinner
@@ -4825,6 +4824,7 @@ id showTitle
 id signUpButton
 id sign_in_button
 id sign_out
+id sign_up_button
 id sin
 id skipButton
 id skipCollapsed
@@ -5157,14 +5157,13 @@ id tv_totalincoiceamount
 id two
 id txtSumry
 id txt_forgot_password
+id txt_view_title
 id typeBusiness
 id typeBusinessET
 id typeBusinessSpinner
 id typeBusiness_error
 id typeClient
 id typeOfBusinessErrorTv
-id typeOfBusinessNote
-id typeOfBusinessText
 id typeStatus
 id type_business_error
 id typesLayout
@@ -5540,6 +5539,8 @@ layout material_timepicker_dialog
 layout material_timepicker_textinput_display
 layout menu_drawer_layout
 layout missed_notification_fragment
+layout mobile_code_dilog
+layout mobile_code_item
 layout more
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions

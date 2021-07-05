@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:aapt="http://schemas.android.com/aapt"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,340 +8,493 @@
     android:focusable="true"
     android:focusableInTouchMode="true">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/path" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="@dimen/_10sdp">
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/hedar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_7sdp"
-                android:layout_marginBottom="@dimen/_16ssp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/back"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/abc_ic_ab_back_material" />
 
-                <TextView
-                    android:id="@+id/title"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/hedar"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/_16ssp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:lineSpacingExtra="6.7sp"
-                    android:text="Create a Business"
-                    android:textColor="#333333"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:layout_marginBottom="@dimen/_16ssp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/abc_ic_ab_back_material" />
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_16ssp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:lineSpacingExtra="6.7sp"
+                        android:text="Create a Business"
+                        android:textColor="#333333"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/companyNameText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Company Name*"
-                android:textColor="#333333"
-                android:textSize="@dimen/_12sdp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hedar" />
-
-            <EditText
-                android:id="@+id/et_companyName"
+            <LinearLayout
+                android:id="@+id/about_business"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_2sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:background="@drawable/general"
-                android:imeOptions="actionDone"
-                android:padding="@dimen/_10sdp"
-                app:layout_constraintTop_toBottomOf="@+id/companyNameText" />
-
-            <TextView
-                android:id="@+id/companyNameErrorTv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_2sdp"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Business Name can&apos;t be blank!."
-                android:textColor="@color/red_btn_bg_color"
-                android:textSize="@dimen/_10sdp"
-                android:visibility="gone"
-                app:layout_constraintTop_toBottomOf="@+id/et_companyName" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/addBusinessLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/companyNameErrorTv">
-
-                <TextView
-                    android:id="@+id/typeOfBusinessText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_12sdp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Type of Business*"
-                    android:textColor="#333333"
-                    android:textSize="@dimen/_12sdp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/ll_b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:lineSpacingExtra="7sp"
+                        android:text="Business name"
+                        android:textColor="#3a3a3a"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:lineSpacingExtra="7sp"
+                        android:text="*"
+                        android:textColor="#ff2a2a"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/business_name_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
                     android:background="@drawable/general"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    app:layout_constraintTop_toBottomOf="@+id/typeOfBusinessText">
+                    android:padding="12dp">
+
+                    <EditText
+                        android:id="@+id/et_companyName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz1234567890"
+                        android:fontFamily="@font/poppins_regular"
+                        android:hint="Business name"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLength="70"
+                        android:singleLine="true"
+                        android:textColor="#333333"
+                        android:textColorHint="#333333"
+                        android:textSize="14dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/companyNameErrorTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:lineSpacingExtra="4sp"
+                    android:text="Please enter valid business name."
+                    android:textColor="#ff2a2a"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="34dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:lineSpacingExtra="7sp"
+                        android:text="Type of business"
+                        android:textColor="#3a3a3a"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="34dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:lineSpacingExtra="7sp"
+                        android:text="*"
+                        android:textColor="#ff2a2a"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/typeBusiness_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@drawable/general"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="7dp">
 
                     <Spinner
                         android:id="@+id/businessTypeSpinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_9ssp"
-                        android:layout_marginBottom="@dimen/_9ssp" />
+                        android:layout_below="@+id/typeBusiness" />
+
                 </LinearLayout>
 
                 <TextView
                     android:id="@+id/typeOfBusinessErrorTv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_2sdp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="This field is required."
-                    android:textColor="@color/red_btn_bg_color"
-                    android:textSize="@dimen/_10sdp"
-                    android:visibility="gone"
-                    app:layout_constraintTop_toBottomOf="@+id/ll_b" />
-
-                <TextView
-                    android:id="@+id/typeOfBusinessNote"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_2sdp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="This helps Akounto display the right accounts, saving you time. Choose the option that best represents your business."
-                    android:textColor="#333333"
-                    android:textSize="@dimen/_10sdp"
-                    android:visibility="gone"
-                    app:layout_constraintTop_toBottomOf="@+id/typeOfBusinessErrorTv" />
-
-                <TextView
-                    android:id="@+id/dealsWithText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_12sdp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Deals with*"
-                    android:textColor="#333333"
-                    android:textSize="@dimen/_12sdp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/typeOfBusinessNote" />
+                    android:fontFamily="@font/poppins_light"
+                    android:lineSpacingExtra="4sp"
+                    android:text="Please select your organisation type."
+                    android:textColor="#ff2a2a"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    android:visibility="gone" />
 
                 <LinearLayout
-                    android:id="@+id/ll_d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_4sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="34dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:lineSpacingExtra="7sp"
+                        android:text="Deals in"
+                        android:textColor="#3a3a3a"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="34dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:lineSpacingExtra="7sp"
+                        android:text="*"
+                        android:textColor="#ff2a2a"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/dealsWithBusiness_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
                     android:background="@drawable/general"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    app:layout_constraintTop_toBottomOf="@+id/dealsWithText">
+                    android:padding="7dp">
 
                     <Spinner
                         android:id="@+id/dealsWithSpinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_9ssp"
-                        android:layout_marginBottom="@dimen/_9ssp" />
+                        android:layout_below="@+id/dealsWith" />
+
                 </LinearLayout>
 
                 <TextView
                     android:id="@+id/dealsWithErrorTv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_2sdp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="This field is required."
-                    android:textColor="@color/red_btn_bg_color"
-                    android:textSize="@dimen/_10sdp"
-                    android:visibility="gone"
-                    app:layout_constraintTop_toBottomOf="@+id/ll_d" />
-
-                <TextView
-                    android:id="@+id/dealsWithNote"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_2sdp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Choose Sole Proprietor if you have not incorporated (and do not plan to), and are not in partnership with anyone else."
-                    android:textColor="#333333"
-                    android:textSize="@dimen/_10sdp"
-                    android:visibility="gone"
-                    app:layout_constraintTop_toBottomOf="@+id/dealsWithErrorTv" />
-
-                <TextView
-                    android:id="@+id/countryText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_12sdp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Country*"
-                    android:textColor="#333333"
-                    android:textSize="@dimen/_12sdp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/dealsWithNote" />
+                    android:fontFamily="@font/poppins_light"
+                    android:lineSpacingExtra="4sp"
+                    android:text="Please select your industry type."
+                    android:textColor="#ff2a2a"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    android:visibility="gone" />
 
                 <LinearLayout
-                    android:id="@+id/ll_c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_4sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="34dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:lineSpacingExtra="7sp"
+                        android:text="Business country"
+                        android:textColor="#3a3a3a"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="34dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:lineSpacingExtra="7sp"
+                        android:text="*"
+                        android:textColor="#ff2a2a"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
                     android:background="@drawable/general"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    app:layout_constraintTop_toBottomOf="@+id/countryText">
+                    android:padding="7dp">
 
                     <Spinner
                         android:id="@+id/countrySpinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_9ssp"
-                        android:layout_marginBottom="@dimen/_9ssp" />
+                        android:layout_below="@+id/typeBusiness" />
+
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/countryErrorTv"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_2sdp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="This field is required."
-                    android:textColor="@color/red_btn_bg_color"
-                    android:textSize="@dimen/_10sdp"
-                    android:visibility="gone"
-                    app:layout_constraintTop_toBottomOf="@+id/ll_c" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/countryNote"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_2sdp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="If you do business in one country but are based in another, choose the country where you file your taxes, or where your business is incorporated. Once you start using Payroll or Payments, you won&apos;t be able to change your business country."
-                    android:textColor="#333333"
-                    android:textSize="@dimen/_10sdp"
-                    android:visibility="gone"
-                    app:layout_constraintTop_toBottomOf="@+id/countryErrorTv" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="34dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:lineSpacingExtra="7sp"
+                        android:text="Business currency"
+                        android:textColor="#3a3a3a"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
 
-                <TextView
-                    android:id="@+id/businessCurrencyText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_12sdp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Business Currency*"
-                    android:textColor="#333333"
-                    android:textSize="@dimen/_12sdp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/countryNote" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="34dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:lineSpacingExtra="7sp"
+                        android:text="*"
+                        android:textColor="#ff2a2a"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/ll_cc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_7sdp"
                     android:background="@drawable/general"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    app:layout_constraintTop_toBottomOf="@+id/businessCurrencyText">
+                    android:padding="7dp">
 
                     <Spinner
                         android:id="@+id/businessCurrencySpinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_9ssp"
-                        android:layout_marginBottom="@dimen/_9ssp" />
+                        android:layout_below="@+id/typeBusiness" />
+
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/businessCurrencyErrorTv"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_2sdp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="This field is required."
-                    android:textColor="@color/red_btn_bg_color"
-                    android:textSize="@dimen/_10sdp"
-                    android:visibility="gone"
-                    app:layout_constraintTop_toBottomOf="@+id/ll_cc" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/businessCurrencyNote"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="34dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:lineSpacingExtra="7sp"
+                        android:text="Fiscal year end"
+                        android:textColor="#3a3a3a"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="34dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:lineSpacingExtra="7sp"
+                        android:text="*"
+                        android:textColor="#ff2a2a"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_2sdp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="This is your reporting currency and cannot be changed. You can still send invoices, track expenses and enter transactions in any currency and an exchange rate is applied for you."
-                    android:textColor="#333333"
-                    android:textSize="@dimen/_10sdp"
-                    android:visibility="gone"
-                    app:layout_constraintTop_toBottomOf="@+id/businessCurrencyErrorTv" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@drawable/general"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
 
-            <TextView
-                android:id="@+id/saveButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/_24sdp"
-                android:layout_marginBottom="@dimen/_12sdp"
-                android:background="@drawable/rounded_corner_green_button"
-                android:fontFamily="@font/poppins_regular"
-                android:gravity="center"
-                android:paddingLeft="@dimen/_30sdp"
-                android:paddingTop="@dimen/_12sdp"
-                android:paddingRight="@dimen/_30sdp"
-                android:paddingBottom="@dimen/_12sdp"
-                android:text="Save"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_12sdp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/cancelButton"
-                app:layout_constraintTop_toBottomOf="@+id/addBusinessLayout" />
+                    <Spinner
+                        android:id="@+id/monthsSpinner"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="6.5"
+                        android:padding="10dp" />
 
-            <TextView
-                android:id="@+id/cancelButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_12sdp"
-                android:background="@drawable/rounded_holo_blue_button"
-                android:fontFamily="@font/poppins_regular"
-                android:paddingLeft="@dimen/_30sdp"
-                android:paddingTop="@dimen/_6sdp"
-                android:paddingRight="@dimen/_30sdp"
-                android:paddingBottom="@dimen/_6sdp"
-                android:text="Cancel"
-                android:textColor="@color/text_color_blue"
-                android:textSize="@dimen/_12sdp"
-                app:layout_constraintEnd_toStartOf="@+id/saveButton"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/saveButton" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="match_parent"
+                            android:background="#333333" />
+                    </LinearLayout>
+
+                    <Spinner
+                        android:id="@+id/datesSpinner"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:hint="31"
+                        android:padding="10dp" />
+
+                    <!--<Spinner
+                        android:id="@+id/businessCurrencySpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/typeBusiness" />-->
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_24ssp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/cancelButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginRight="7dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_corner_button"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:paddingLeft="30dp"
+                        android:paddingTop="12dp"
+                        android:paddingRight="30dp"
+                        android:paddingBottom="12dp"
+                        android:text="Cancel"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/saveButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_corner_button"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:lineSpacingExtra="9sp"
+                        android:text="Add"
+                        android:textAllCaps="false"
+                        android:textColor="#ffffff"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:lineSpacingExtra="7sp"
+                        android:text="Need help with Akounto?  "
+                        android:textColor="#3a3a3a"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/cusmoter_care"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center_horizontal"
+                        android:lineSpacingExtra="9sp"
+                        android:maxLines="1"
+                        android:text="@string/customer_care"
+                        android:textColor="#5a53fd"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

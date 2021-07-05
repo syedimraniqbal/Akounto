@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,7 +30,9 @@ import com.akounto.accountingsoftware.response.UserManagementResponse;
 import com.akounto.accountingsoftware.response.Users;
 import com.akounto.accountingsoftware.util.AddFragments;
 import com.akounto.accountingsoftware.util.UiUtil;
+
 import java.util.List;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -78,7 +81,7 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
 
     /* access modifiers changed from: private */
     public void getUsers() {
-        RestClient.getInstance(getActivity()).getUsers(Constant.X_SIGNATURE,"Bearer " + UiUtil.getAcccessToken(getContext()),UiUtil.getComp_Id(getContext())).enqueue(new CustomCallBack<UserManagementResponse>(getContext(), null) {
+        RestClient.getInstance(getActivity()).getUsers(Constant.X_SIGNATURE, "Bearer " + UiUtil.getAcccessToken(getContext()), UiUtil.getComp_Id(getContext())).enqueue(new CustomCallBack<UserManagementResponse>(getContext(), null) {
             public void onResponse(Call<UserManagementResponse> call, Response<UserManagementResponse> response) {
                 super.onResponse(call, response);
                 if (response.isSuccessful()) {
@@ -106,17 +109,17 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
 
     private void editAdminDialog(Users users) {
         Dialog dialog2 = new Dialog(getContext(), android.R.style.Theme_Black_NoTitleBar_Fullscreen);
-        this.dialog = dialog2;
         dialog2.requestWindowFeature(1);
+        this.dialog=dialog2;
         this.dialog.setContentView(R.layout.user_mgmt_edit_admin_layout);
         this.dialog.setCancelable(true);
         this.dialog.setCanceledOnTouchOutside(true);
         this.dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-        LinearLayout back=this.dialog.findViewById(R.id.back);
+        LinearLayout back = this.dialog.findViewById(R.id.back);
         TextView title = this.dialog.findViewById(R.id.title);
-        if(users!=null){
+        if (users != null) {
             title.setText(" Edit User");
-        }else{
+        } else {
             title.setText(" Invite User");
         }
         EditText fnameEt = this.dialog.findViewById(R.id.et_fname);
@@ -143,7 +146,10 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                UserManagementFragment.this.lambda$editAdminDialog$1$UserManagementFragment(roleGroup, fnameEt, fnameErrorTv, lnameEt, lnameErrorTv,emailEt, emailErrorTv, view);
+                reset(fnameErrorTv, lnameErrorTv, emailErrorTv);
+                if (isValidAbout(roleGroup, fnameEt, lnameEt, emailEt, fnameErrorTv, lnameErrorTv, emailErrorTv)) {
+                    addUser(new AddUserRequest(roleButton.getText().toString(), emailEt.getText().toString(), fnameEt.getText().toString(), f90id, lnameEt.getText().toString()), mode);
+                }
             }
         });
         this.dialog.findViewById(R.id.cancelButton).setOnClickListener(new View.OnClickListener() {
@@ -157,6 +163,68 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
             }
         });
         this.dialog.show();
+    }
+
+    private boolean isValidAbout(RadioGroup roleGroup, EditText fnameEt, EditText lnameEt, EditText emailEt, TextView fnameErrorTv, TextView lnameErrorTv, TextView emailErrorTv) {
+        boolean response = true;
+        boolean focusfield = true;
+
+        this.roleButton = this.dialog.findViewById(roleGroup.getCheckedRadioButtonId());
+        String firstName = fnameEt.getText().toString();
+        if (firstName.isEmpty()) {
+            fnameErrorTv.setText("Please enter first name");
+            fnameErrorTv.setVisibility(View.VISIBLE);
+            response = false;
+            if (focusfield) {
+                fnameEt.requestFocus();
+                focusfield = false;
+            }
+        } else if (firstName.length() < 3) {
+            fnameErrorTv.setText("First name is too small. (min 3 chars)");
+            fnameErrorTv.setVisibility(View.VISIBLE);
+            response = false;
+            if (focusfield) {
+                fnameEt.requestFocus();
+                focusfield = false;
+            }
+        }
+
+        String lastName = lnameEt.getText().toString();
+        if (lastName.isEmpty()) {
+            lnameErrorTv.setText("Please enter last name");
+            lnameErrorTv.setVisibility(View.VISIBLE);
+            response = false;
+            if (focusfield) {
+                lnameEt.requestFocus();
+                focusfield = false;
+            }
+        } else if (lastName.length() < 3) {
+            lnameErrorTv.setText("Last name is too small. (min 3 chars)");
+            lnameErrorTv.setVisibility(View.VISIBLE);
+            response = false;
+            if (focusfield) {
+                lnameEt.requestFocus();
+                focusfield = false;
+            }
+        }
+        String email = emailEt.getText().toString();
+        if (UiUtil.isValidEmail(email)) {
+            emailErrorTv.setVisibility(View.VISIBLE);
+            response = false;
+            if (focusfield) {
+                emailEt.requestFocus();
+                focusfield = false;
+            }
+        }
+
+        return response;
+    }
+
+    public void reset(TextView fnameErrorTv, TextView lnameErrorTv, TextView emailErrorTv) {
+        fnameErrorTv.setVisibility(View.GONE);
+        lnameErrorTv.setVisibility(View.GONE);
+        emailErrorTv.setVisibility(View.GONE);
+
     }
 
     public void lambda$editAdminDialog$1$UserManagementFragment(RadioGroup roleGroup, EditText fnameEt, TextView fnameErrorTv, EditText lnameEt, TextView lnameErrorTv, EditText emailEt, TextView emailErrorTv, View v) {
@@ -183,7 +251,7 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
             } else {
                 textView2.setVisibility(View.GONE);
                 String email = emailEt.getText().toString();
-                if (email.isEmpty()) {
+                if (UiUtil.isValidEmail(email)) {
                     textView3.setVisibility(View.VISIBLE);
                     return;
                 }
@@ -194,14 +262,14 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
     }
 
     private void addUser(AddUserRequest addUserRequest, String mode2) {
-        RestClient.getInstance(getContext()).createUser(Constant.X_SIGNATURE,"Bearer " +UiUtil.getAcccessToken(getContext()),UiUtil.getComp_Id(getContext()),addUserRequest, mode2).enqueue(new CustomCallBack<ResponseBody>(getContext(), null) {
+        RestClient.getInstance(getContext()).createUser(Constant.X_SIGNATURE, "Bearer " + UiUtil.getAcccessToken(getContext()), UiUtil.getComp_Id(getContext()), addUserRequest, mode2).enqueue(new CustomCallBack<ResponseBody>(getContext(), null) {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 super.onResponse(call, response);
                 if (response.isSuccessful()) {
-                    Bundle b=new Bundle();
-                    b.putString(Constant.CATEGORY,"setting");
-                    b.putString(Constant.ACTION,"add_user");
-                    SplashScreenActivity.sendEvent("setting_add_user",b);
+                    Bundle b = new Bundle();
+                    b.putString(Constant.CATEGORY, "setting");
+                    b.putString(Constant.ACTION, "add_user");
+                    SplashScreenActivity.sendEvent("setting_add_user", b);
                     UiUtil.showToast(UserManagementFragment.this.getContext(), "Added");
                     if (UserManagementFragment.this.dialog != null) {
                         UserManagementFragment.this.dialog.dismiss();
@@ -209,10 +277,10 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
                     UserManagementFragment.this.getUsers();
                     return;
                 }
-                Bundle b=new Bundle();
-                b.putString(Constant.CATEGORY,"setting");
-                b.putString(Constant.ACTION,"add_user_fail");
-                SplashScreenActivity.sendEvent("setting_add_user",b);
+                Bundle b = new Bundle();
+                b.putString(Constant.CATEGORY, "setting");
+                b.putString(Constant.ACTION, "add_user_fail");
+                SplashScreenActivity.sendEvent("setting_add_user", b);
                 UiUtil.showToast(UserManagementFragment.this.getContext(), "Error while adding");
             }
 

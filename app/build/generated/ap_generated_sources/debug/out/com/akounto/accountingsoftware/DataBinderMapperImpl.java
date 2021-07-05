@@ -24,6 +24,8 @@ import com.akounto.accountingsoftware.databinding.LayoutSettingAccountingBinding
 import com.akounto.accountingsoftware.databinding.LayoutSettingFragmentBindingImpl;
 import com.akounto.accountingsoftware.databinding.LayoutTest2BindingImpl;
 import com.akounto.accountingsoftware.databinding.LayoutTest3BindingImpl;
+import com.akounto.accountingsoftware.databinding.MobileCodeDilogBindingImpl;
+import com.akounto.accountingsoftware.databinding.MobileCodeItemBindingImpl;
 import com.akounto.accountingsoftware.databinding.SendEstimateHomeFragmentBindingImpl;
 import java.lang.IllegalArgumentException;
 import java.lang.Integer;
@@ -72,9 +74,13 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_LAYOUTTEST3 = 18;
 
-  private static final int LAYOUT_SENDESTIMATEHOMEFRAGMENT = 19;
+  private static final int LAYOUT_MOBILECODEDILOG = 19;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(19);
+  private static final int LAYOUT_MOBILECODEITEM = 20;
+
+  private static final int LAYOUT_SENDESTIMATEHOMEFRAGMENT = 21;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(21);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.akounto.accountingsoftware.R.layout.activity_addtransection, LAYOUT_ACTIVITYADDTRANSECTION);
@@ -95,6 +101,8 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.akounto.accountingsoftware.R.layout.layout_setting_fragment, LAYOUT_LAYOUTSETTINGFRAGMENT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.akounto.accountingsoftware.R.layout.layout_test2, LAYOUT_LAYOUTTEST2);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.akounto.accountingsoftware.R.layout.layout_test3, LAYOUT_LAYOUTTEST3);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.akounto.accountingsoftware.R.layout.mobile_code_dilog, LAYOUT_MOBILECODEDILOG);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.akounto.accountingsoftware.R.layout.mobile_code_item, LAYOUT_MOBILECODEITEM);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.akounto.accountingsoftware.R.layout.send_estimate_home_fragment, LAYOUT_SENDESTIMATEHOMEFRAGMENT);
   }
 
@@ -215,6 +223,18 @@ public class DataBinderMapperImpl extends DataBinderMapper {
           }
           throw new IllegalArgumentException("The tag for layout_test3 is invalid. Received: " + tag);
         }
+        case  LAYOUT_MOBILECODEDILOG: {
+          if ("layout/mobile_code_dilog_0".equals(tag)) {
+            return new MobileCodeDilogBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for mobile_code_dilog is invalid. Received: " + tag);
+        }
+        case  LAYOUT_MOBILECODEITEM: {
+          if ("layout/mobile_code_item_0".equals(tag)) {
+            return new MobileCodeItemBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for mobile_code_item is invalid. Received: " + tag);
+        }
         case  LAYOUT_SENDESTIMATEHOMEFRAGMENT: {
           if ("layout/send_estimate_home_fragment_0".equals(tag)) {
             return new SendEstimateHomeFragmentBindingImpl(component, view);
@@ -274,7 +294,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(19);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(21);
 
     static {
       sKeys.put("layout/activity_addtransection_0", com.akounto.accountingsoftware.R.layout.activity_addtransection);
@@ -295,6 +315,8 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/layout_setting_fragment_0", com.akounto.accountingsoftware.R.layout.layout_setting_fragment);
       sKeys.put("layout/layout_test2_0", com.akounto.accountingsoftware.R.layout.layout_test2);
       sKeys.put("layout/layout_test3_0", com.akounto.accountingsoftware.R.layout.layout_test3);
+      sKeys.put("layout/mobile_code_dilog_0", com.akounto.accountingsoftware.R.layout.mobile_code_dilog);
+      sKeys.put("layout/mobile_code_item_0", com.akounto.accountingsoftware.R.layout.mobile_code_item);
       sKeys.put("layout/send_estimate_home_fragment_0", com.akounto.accountingsoftware.R.layout.send_estimate_home_fragment);
     }
   }

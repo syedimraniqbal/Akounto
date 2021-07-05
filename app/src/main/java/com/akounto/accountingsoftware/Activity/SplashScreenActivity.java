@@ -67,8 +67,11 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     public static void sendEvent(String event_name, Bundle b) {
         try {
-            if (Constant.ANALATICS_ON)
+            if (Constant.ANALATICS_ON && b != null)
                 SplashScreenActivity.mFirebaseAnalytics.logEvent(event_name, b);
+            else if (Constant.ANALATICS_ON) {
+                SplashScreenActivity.mFirebaseAnalytics.logEvent(event_name, new Bundle());
+            }
         } catch (Exception e) {
             LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "SplashScreenActivity");
         }

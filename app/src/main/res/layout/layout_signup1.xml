@@ -130,7 +130,7 @@
                     android:layout_marginTop="40dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:lineSpacingExtra="9sp"
-                    android:text="About You"
+                    android:text="About you"
                     android:textColor="#3a3a3a"
                     android:textSize="16sp"
                     android:textStyle="normal" />
@@ -179,7 +179,9 @@
                         android:layout_height="wrap_content"
                         android:background="@null"
                         android:fontFamily="@font/poppins_regular"
-                        android:hint="first name"
+                        android:hint="First name"
+                        android:textColor="#333333"
+                        android:textColorHint="#333333"
                         android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                         android:imeOptions="actionNext"
                         android:inputType="text"
@@ -198,7 +200,7 @@
                     android:textColor="#ff2a2a"
                     android:lineSpacingExtra="4sp"
                     android:visibility="gone"
-                    android:text="please enter valid first name."
+                    android:text="Please enter valid first name."
                     />
 
                 <LinearLayout
@@ -244,10 +246,12 @@
                         android:layout_height="wrap_content"
                         android:background="@null"
                         android:fontFamily="@font/poppins_regular"
-                        android:hint="last name"
+                        android:hint="Last name"
                         android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                         android:imeOptions="actionNext"
                         android:inputType="text"
+                        android:textColor="#333333"
+                        android:textColorHint="#333333"
                         android:maxLength="50"
                         android:singleLine="true"
                         android:textSize="14dp" />
@@ -263,7 +267,7 @@
                     android:textColor="#ff2a2a"
                     android:lineSpacingExtra="4sp"
                     android:visibility="gone"
-                    android:text="please enter valid last name."
+                    android:text="Please enter valid last name."
                     />
 
                 <LinearLayout
@@ -277,7 +281,7 @@
                         android:layout_marginTop="34dp"
                         android:fontFamily="@font/poppins_medium"
                         android:lineSpacingExtra="7sp"
-                        android:text="Phone number"
+                        android:text="Contact number"
                         android:textColor="#3a3a3a"
                         android:textSize="14sp"
                         android:textStyle="normal" />
@@ -301,21 +305,55 @@
                     android:background="@drawable/new_light_blue"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="12dp">
+                    android:weightSum="10">
+                    <ImageView
+                        android:id="@+id/phone_code_spiner"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1.5"
+                        android:padding="4dp"/>
 
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="match_parent"
+                            android:background="#333333" />
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/phone_code_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="+1"
+                        android:gravity="center"
+                        android:layout_weight="1.25"
+                        android:fontFamily="@font/poppins_regular"
+                        android:lineSpacingExtra="7sp"
+                        android:textStyle="normal"
+                        android:textColor="#333333"
+                        android:textColorHint="#333333"
+                        android:textSize="14sp"
+                         />
                     <EditText
                         android:id="@+id/edt_phone_number"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:background="@null"
-                        android:digits="1234567890+"
+                        android:digits="1234567890"
                         android:fontFamily="@font/poppins_regular"
-                        android:hint="mobile"
+                        android:hint="Contact number"
+                        android:textColor="#333333"
+                        android:textColorHint="#333333"
                         android:imeOptions="actionDone"
+                        android:layout_weight="7"
                         android:inputType="number"
-                        android:maxLength="16"
+                        android:maxLength="12"
                         android:singleLine="true"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
 
                 </LinearLayout>
                 <TextView
@@ -328,7 +366,18 @@
                     android:textColor="#ff2a2a"
                     android:lineSpacingExtra="4sp"
                     android:visibility="gone"
-                    android:text="please enter valid mobile number."
+                    android:text="Contact number should be 10 digit number."
+                    />
+                <TextView
+                    android:id="@+id/edt_phone_number_tooltip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:textStyle="normal"
+                    android:textSize="11sp"
+                    android:textColor="#333333"
+                    android:lineSpacingExtra="4sp"
+                    android:text="** Number must contain 10 digit without prefixing 0 &amp; 1.\n** Landline number need area code."
                     />
                 <LinearLayout
                     android:id="@+id/nxt_done"
@@ -343,7 +392,7 @@
                         android:layout_marginTop="34dp"
                         android:fontFamily="@font/poppins_semibold"
                         android:lineSpacingExtra="9sp"
-                        android:text="About Your Business"
+                        android:text="About your business"
                         android:textColor="#3a3a3a"
                         android:textSize="16sp"
                         android:textStyle="normal" />
@@ -379,7 +428,7 @@
                         android:layout_marginTop="40dp"
                         android:fontFamily="@font/poppins_semibold"
                         android:lineSpacingExtra="9sp"
-                        android:text="About Your Business"
+                        android:text="About your business"
                         android:textColor="#3a3a3a"
                         android:textSize="16sp"
                         android:textStyle="normal" />
@@ -444,12 +493,13 @@
                         android:layout_height="wrap_content"
                         android:background="@null"
                         android:fontFamily="@font/poppins_regular"
-                        android:hint="business name"
+                        android:hint="Business name"
+                        android:textColor="#333333"
+                        android:textColorHint="#333333"
                         android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz1234567890"
                         android:imeOptions="actionNext"
                         android:inputType="text"
                         android:maxLength="70"
-                        android:paddingStart="7dp"
                         android:singleLine="true"
                         android:textSize="14dp" />
 
@@ -464,7 +514,7 @@
                     android:textColor="#ff2a2a"
                     android:lineSpacingExtra="4sp"
                     android:visibility="gone"
-                    android:text="please enter valid business name."
+                    android:text="Please enter valid business name."
                     />
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -522,7 +572,7 @@
                     android:textColor="#ff2a2a"
                     android:lineSpacingExtra="4sp"
                     android:visibility="gone"
-                    android:text="please your organisation type."
+                    android:text="Please select your organisation type."
                     />
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -580,7 +630,7 @@
                     android:textColor="#ff2a2a"
                     android:lineSpacingExtra="4sp"
                     android:visibility="gone"
-                    android:text="please select your industry."
+                    android:text="Please select your industry type."
                     />
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -593,7 +643,7 @@
                         android:layout_marginTop="34dp"
                         android:fontFamily="@font/poppins_medium"
                         android:lineSpacingExtra="7sp"
-                        android:text="Business Country"
+                        android:text="Business country"
                         android:textColor="#3a3a3a"
                         android:textSize="14sp"
                         android:textStyle="normal" />
@@ -639,7 +689,7 @@
                         android:layout_marginTop="34dp"
                         android:fontFamily="@font/poppins_medium"
                         android:lineSpacingExtra="7sp"
-                        android:text="Business Currency"
+                        android:text="Business currency"
                         android:textColor="#3a3a3a"
                         android:textSize="14sp"
                         android:textStyle="normal" />
@@ -714,6 +764,8 @@
                         android:gravity="center_horizontal"
                         android:lineSpacingExtra="9sp"
                         android:text="@string/customer_care"
+                        android:ellipsize="end"
+                        android:maxLines="1"
                         android:textColor="#5a53fd"
                         android:textSize="16sp"
                         android:textStyle="normal" />

@@ -22,7 +22,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="160"
+            android:layout_weight="120"
             android:gravity="bottom"
             android:orientation="vertical">
 
@@ -47,7 +47,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="390"
+            android:layout_weight="360"
             android:gravity="bottom"
             android:orientation="vertical">
 
@@ -101,7 +101,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="550"
+            android:layout_weight="580"
             android:gravity="center_vertical"
             android:orientation="vertical"
             android:weightSum="500">
@@ -119,20 +119,20 @@
                     android:layout_marginBottom="@dimen/_7sdp"
                     android:fontFamily="@font/poppins_medium"
                     android:lineSpacingExtra="7sp"
-                    android:text="Your Email"
+                    android:text="Your email"
                     android:textColor="#3a3a3a"
                     android:textSize="14sp"
                     android:textStyle="normal" />
 
                 <RelativeLayout
                     android:id="@+id/email_ll"
-                    android:textSize="12sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/new_light_blue"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="12dp">
+                    android:padding="12dp"
+                    android:textSize="12sp">
 
                     <EditText
                         android:id="@+id/emailET"
@@ -159,12 +159,12 @@
                     android:id="@+id/tv_error"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" Email already exist!"
                     android:fontFamily="@font/poppins_light"
-                    android:textStyle="normal"
-                    android:textSize="12sp"
-                    android:textColor="#ff2a2a"
                     android:lineSpacingExtra="4sp"
+                    android:text=" Email already exist!"
+                    android:textColor="#ff2a2a"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
                     android:visibility="gone" />
             </LinearLayout>
 
@@ -201,22 +201,24 @@
                         android:background="@null"
                         android:fontFamily="@font/poppins_regular"
                         android:hint="Password"
-                        app:eyeTint="#5a53fd"
-                        app:strikeThrough="true"
                         android:imeOptions="actionDone"
-                        android:textSize="14dp" />
+                        android:textSize="14dp"
+                        app:eyeTint="#5a53fd"
+                        app:strikeThrough="true" />
                 </LinearLayout>
+
                 <TextView
                     android:id="@+id/password_error"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" Please enter valid password"
                     android:fontFamily="@font/poppins_light"
-                    android:textStyle="normal"
-                    android:textSize="12sp"
-                    android:textColor="#ff2a2a"
                     android:lineSpacingExtra="4sp"
+                    android:text=" Please enter valid password"
+                    android:textColor="#ff2a2a"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
                     android:visibility="gone" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -227,9 +229,9 @@
                         android:id="@+id/checkBox_tnc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:checked="true"
                         android:fontFamily="@font/poppins_regular"
                         android:text=""
-                        android:checked="true"
                         android:textColor="#3a3a3a"
                         android:textSize="12sp"
                         android:textStyle="normal" />
@@ -244,6 +246,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -252,6 +255,7 @@
                                 android:textColor="#3a3a3a"
                                 android:textSize="12sp"
                                 android:textStyle="normal" />
+
                             <TextView
                                 android:id="@+id/tnc"
                                 android:layout_width="wrap_content"
@@ -271,6 +275,7 @@
                                 android:textSize="12sp"
                                 android:textStyle="normal" />
                         </LinearLayout>
+
                         <TextView
                             android:id="@+id/pp"
                             android:layout_width="wrap_content"
@@ -290,31 +295,59 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="350"
+            android:layout_weight="390"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:weightSum="10">
 
-            <Button
-                android:id="@+id/signUpButton"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:background="@drawable/rounded_corner_button"
-                android:fontFamily="@font/poppins_regular"
-                android:gravity="center"
-                android:lineSpacingExtra="9sp"
-                android:text="Create Account"
-                android:textAllCaps="false"
-                android:textColor="#ffffff"
-                android:textSize="16sp"
-                android:textStyle="normal" />
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:orientation="horizontal">
 
+                <Button
+                    android:id="@+id/signUpButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_button"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    android:lineSpacingExtra="9sp"
+                    android:text="Create Account"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="118dp"
+                android:layout_marginRight="118dp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="#c1d5fa" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:orientation="horizontal">
+
+                <com.google.android.gms.common.SignInButton
+                    android:id="@+id/sign_up_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:gravity="bottom|center_horizontal"
+                android:layout_weight="2"
+                android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
                 <TextView

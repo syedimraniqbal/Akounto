@@ -520,12 +520,12 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\animator\\design_fab_show_motion_spec.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\anim_dispose_center.xml.flat",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\anim\\dispose_center.xml"
-    },
-    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item_subheader.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\anim_dispose_center.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\anim\\dispose_center.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_minimal_5.png.flat",
@@ -542,6 +542,10 @@
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_tab_indicator_material.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_mobile_code_dilog.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\mobile_code_dilog.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_calendar_selected_range.xml.flat",
@@ -3622,6 +3626,10 @@
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_sdp_example.xml.flat",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\sdp_example.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_mobile_code_item.xml.flat",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\mobile_code_item.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rounded_corner_button_white.xml.flat",

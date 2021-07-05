@@ -76,12 +76,12 @@ public class JsonUtils {
         return listcircel;
     }*/
 
-    public static JsonObject getExtRegRequst(String mobile,String f_name, String email, String businessName, String externalAccessToken, String industryTypeId, String industryTypeName, String businessEntityId, String businessEntity) {
+    public static JsonObject getExtRegRequst(String mobile,String f_name,String l_name, String email, String businessName, String externalAccessToken, String industryTypeId, String industryTypeName, String businessEntityId, String businessEntity,String country, String currency,String phoneCode) {
         JsonObject main = new JsonObject();
         try {
             JsonObject rest_data = new JsonObject();
             rest_data.addProperty("FirstName", f_name);
-            rest_data.addProperty("LastName", "");
+            rest_data.addProperty("LastName", l_name);
             rest_data.addProperty("Email", email);
             main.add("user", rest_data);
             main.addProperty("BusinessName", businessName);
@@ -89,10 +89,11 @@ public class JsonUtils {
             main.addProperty("IndustryTypeName", industryTypeName);
             main.addProperty("BusinessEntityId", businessEntityId);
             main.addProperty("BusinessEntity", businessEntity);
-            main.addProperty("Country", "1");
-            main.addProperty("BusinessCurrency", "USD");
+            main.addProperty("Country", country);
+            main.addProperty("BusinessCurrency", currency);
             main.addProperty("Provider", "Google");
             main.addProperty("Phone",mobile);
+            main.addProperty("PhoneCode",phoneCode);
             main.addProperty("IdToken", externalAccessToken);
         }catch(Exception e){
             Log.e("Error :: ",e.getMessage());

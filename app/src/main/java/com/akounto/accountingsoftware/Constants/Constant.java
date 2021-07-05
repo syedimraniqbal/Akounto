@@ -5,23 +5,24 @@ import com.akounto.accountingsoftware.R;
 public final class Constant {
 
     //UAT
-/*    public static final boolean ANALATICS_ON = false;
+    public static final boolean ANALATICS_ON = false;
     public static final String BASE_URL = "https://beta.api.akounto.com/";
     public static final String X_SIGNATURE = "20FCC48BAC3E4B6496FDE12BFA1E93C3";
-    public static final String WebURL = "http://staging.akounto.com";*/
+    public static final String WebURL = "http://staging.akounto.com";
 
     //Pre Production
-/*    public static final boolean ANALATICS_ON = false;
+    /*public static final boolean ANALATICS_ON = false;
     public static final String BASE_URL = "https://api.akounto.com/";
     public static final String X_SIGNATURE = "F1EF64264FF54BA581FC0296825DA82B";
     public static final String WebURL = "https://app.akounto.com";*/
 
     //Production
-    public static final boolean ANALATICS_ON = true;
+    /*public static final boolean ANALATICS_ON = true;
     public static final String BASE_URL = "https://api.akounto.com/";
     public static final String X_SIGNATURE = "F1EF64264FF54BA581FC0296825DA82B";
-    public static final String WebURL = "https://app.akounto.com";
+    public static final String WebURL = "https://app.akounto.com";*/
 
+    public static final String IMG_URL = "https://app.akounto.com/assets/flags/";
     public static final String GRANT_TYPE = "password";
     public static final String FIRST_NAME = "first_name";
     public static final String ID_TOKEN = "id_token";

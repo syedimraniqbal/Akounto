@@ -17,9 +17,9 @@ public class AddFragments {
             ((DashboardActivity) context).addFragmentBackAllow(Fragment.instantiate(context, fragmentClass.getName(), bundle));
         }
     }
-    public static void addFragmentToStack(Context context, Bundle bundle, Class<? extends Fragment> fragmentClass) {
+    public static void changgeName(Context context, String name) {
         if (context instanceof DashboardActivity) {
-            addFragmentActivityTotack(context, bundle, fragmentClass);
+            ((DashboardActivity) context).changename(name);
         }
     }
 

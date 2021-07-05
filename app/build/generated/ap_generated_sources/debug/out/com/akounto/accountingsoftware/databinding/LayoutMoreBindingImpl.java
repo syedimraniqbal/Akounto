@@ -52,7 +52,7 @@ public class LayoutMoreBindingImpl extends LayoutMoreBinding  {
             , (android.widget.LinearLayout) bindings[10]
             , (android.widget.LinearLayout) bindings[9]
             , (android.widget.LinearLayout) bindings[11]
-            , (android.widget.Button) bindings[12]
+            , (android.widget.TextView) bindings[12]
             , (android.widget.TextView) bindings[4]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];

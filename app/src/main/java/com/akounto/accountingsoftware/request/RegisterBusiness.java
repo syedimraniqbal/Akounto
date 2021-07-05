@@ -14,6 +14,7 @@ public class RegisterBusiness {
     private int IndustryTypeId;
     private String IndustryTypeName;
     private User User;
+    private String PhoneCode;
 
     public String getBusinessName() {
         return this.BusinessName;
@@ -101,5 +102,13 @@ public class RegisterBusiness {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getPhoneCode() {
+        return PhoneCode;
+    }
+
+    public void setPhoneCode(String phoneCode) {
+        PhoneCode = phoneCode;
     }
 }

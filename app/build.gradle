@@ -16,7 +16,7 @@ android {
         minSdkVersion 24
         targetSdkVersion 30
         versionCode 15
-        versionName "1.0.13"
+        versionName "1.0.16"
         vectorDrawables.useSupportLibrary true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'lib-proguard-rules.txt'

@@ -44,7 +44,7 @@ public class WelcomeActivity extends AppCompatActivity {
     final long DELAY_MS = 500;//delay in milliseconds before task is to be executed
     final long PERIOD_MS = 7000; // time in milliseconds between successive task executions.
     int current = 0;
-
+    Bundle b=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,10 +58,10 @@ public class WelcomeActivity extends AppCompatActivity {
                 public void onPermissionRationaleShouldBeShown(List<PermissionRequest> list, PermissionToken token) {
                 }
             }).check();
-            Bundle b=new Bundle();
-            b.putString(Constant.CATEGORY,"welcome");
-            b.putString(Constant.ACTION,"welcome_screen");
-            SplashScreenActivity.sendEvent("welcome_screenview",b);
+            b = new Bundle();
+            b.putString(Constant.CATEGORY, "welcome");
+            b.putString(Constant.ACTION, "welcome_screen");
+            SplashScreenActivity.sendEvent("welcome_screenview", b);
             viewPager = (ViewPager) findViewById(R.id.view_pager);
             dotsLayout = (com.google.android.material.tabs.TabLayout) findViewById(R.id.tab_layout);
             dotsLayout.setupWithViewPager(viewPager, true);
@@ -70,9 +70,9 @@ public class WelcomeActivity extends AppCompatActivity {
             btnSignIn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Bundle b=new Bundle();
-                    b.putString(Constant.CATEGORY,"welcome");
-                    b.putString(Constant.ACTION,"click_sign_in");
+                    b = new Bundle();
+                    b.putString(Constant.CATEGORY, "welcome");
+                    b.putString(Constant.ACTION, "click_sign_in");
                     SplashScreenActivity.sendEvent("welcome_click_sign_in",b);
                     launchHomeScreen();
                 }
@@ -80,10 +80,10 @@ public class WelcomeActivity extends AppCompatActivity {
             btnSignUp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Bundle b=new Bundle();
-                    b.putString(Constant.CATEGORY,"welcome");
-                    b.putString(Constant.ACTION,"click_sign_up");
-                    SplashScreenActivity.sendEvent("welcome_click_sign_up",b);
+                    b = new Bundle();
+                    b.putString(Constant.CATEGORY, "welcome");
+                    b.putString(Constant.ACTION, "click_sign_up");
+                    SplashScreenActivity.sendEvent("welcome_click_sign_up", b);
                     startActivity(new Intent(WelcomeActivity.this, SIgnUpStep0.class));
                 }
             });

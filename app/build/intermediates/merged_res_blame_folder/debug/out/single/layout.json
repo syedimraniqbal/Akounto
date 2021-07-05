@@ -20,6 +20,10 @@
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\fragment_web_view.xml"
     },
     {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\mobile_code_dilog.xml",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\mobile_code_dilog.xml"
+    },
+    {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_purchase_fragment.xml",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_purchase_fragment.xml"
     },
@@ -54,6 +58,10 @@
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_bank_list.xml",
         "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\activity_bank_list.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\mobile_code_item.xml",
+        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\mobile_code_item.xml"
     },
     {
         "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_test3.xml",

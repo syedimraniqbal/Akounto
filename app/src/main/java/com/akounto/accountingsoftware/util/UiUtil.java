@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -55,6 +56,7 @@ import com.akounto.accountingsoftware.response.TaxResponse;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -150,6 +152,7 @@ public class UiUtil {
             main.addProperty("BusinessEntity", business.getBusinessEntity());
             main.addProperty("Country", business.getCountry());
             main.addProperty("BusinessCurrency", business.getBusinessCurrency());
+            main.addProperty("PhoneCode", business.getPhoneCode());
             main.addProperty("Phone", business.getPhone());
         } catch (Exception e) {
             Log.e("Error :: ", e.getMessage());
@@ -699,5 +702,31 @@ public class UiUtil {
         return c;
     }
 
+    public static void removeAll(EditText editText) {
+        try {
+            Field field = findField("mListeners", editText.getClass());
+            if (field != null) {
+                field.setAccessible(true);
+                ArrayList<TextWatcher> list = (ArrayList<TextWatcher>) field.get(editText); //IllegalAccessException
+                if (list != null) {
+                    list.clear();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
+    }
+
+    private static Field findField(String name, Class<?> type) {
+        for (Field declaredField : type.getDeclaredFields()) {
+            if (declaredField.getName().equals(name)) {
+                return declaredField;
+            }
+        }
+        if (type.getSuperclass() != null) {
+            return findField(name, type.getSuperclass());
+        }
+        return null;
+    }
 }

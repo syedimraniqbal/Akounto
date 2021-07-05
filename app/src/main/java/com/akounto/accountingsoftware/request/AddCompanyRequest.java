@@ -17,6 +17,10 @@ public class AddCompanyRequest {
     private String industryTypeId;
     @SerializedName("IndustryTypeName")
     private String industryTypeName;
+    @SerializedName("FinancialDayEnd")
+    private int financialDayEnd;
+    @SerializedName("FinancialMonthEnd")
+    private int financialMonthEnd;
 
     public void setIndustryTypeId(String industryTypeId2) {
         this.industryTypeId = industryTypeId2;
@@ -78,13 +82,16 @@ public class AddCompanyRequest {
         this.industryTypeId = industryTypeId2;
     }
 
-    public AddCompanyRequest(String industryTypeId2, String businessEntityId2, String businessCurrency2, String businessName2, String industryTypeName2, String country2, String businessEntity2) {
+    public AddCompanyRequest(String industryTypeId2, String businessEntityId2, String businessCurrency2, String businessName2, String industryTypeName2, String country2, String businessCurrency,String businessEntity2,int financialDayEnd,int financialMonthEnd) {
         this.industryTypeId = industryTypeId2;
         this.businessEntityId = businessEntityId2;
         this.businessCurrency = businessCurrency2;
         this.businessName = businessName2;
         this.industryTypeName = industryTypeName2;
         this.country = country2;
+        this.businessCurrency=businessCurrency;
         this.businessEntity = businessEntity2;
+        this.financialMonthEnd=financialMonthEnd;
+        this.financialDayEnd=financialDayEnd;
     }
 }

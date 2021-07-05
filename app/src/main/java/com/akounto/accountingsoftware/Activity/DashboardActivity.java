@@ -56,11 +56,7 @@ public class DashboardActivity extends AppCompatActivity {
         this.signInResponse = UiUtil.getUserDetails(this);
 
         this.helloNorman = findViewById(R.id.tv_company_name);
-        String name = UiUtil.getUserName(getApplicationContext());
-        try {
-            helloNorman.setText(name);
-        } catch (Exception e) {
-        }
+
         findViewById(R.id.bell).setOnClickListener(view -> DashboardActivity.this.lambda$onCreate$5$DashboardActivity(view));
         findViewById(R.id.notification).setOnClickListener(view -> DashboardActivity.this.lambda$onCreate$6$DashboardActivity(view));
         findViewById(R.id.footer_home).setOnClickListener(new View.OnClickListener() {
@@ -91,6 +87,10 @@ public class DashboardActivity extends AppCompatActivity {
         fl = findViewById(R.id.content_frame);
         addFragmentNotToStack(new HomeDashboardFragment());
         //findViewById(R.id.settingLayout).setOnClickListener(view -> DashboardActivity.this.lambda$onCreate$8$DashboardActivity(view));
+        try {
+            helloNorman.setText(AppSingle.getInstance().getComp_name());
+        } catch (Exception e) {
+        }
     }
 
     public void hideKeyboard() {

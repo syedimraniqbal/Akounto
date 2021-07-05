@@ -4,16 +4,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@drawable/rounded_corner_white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corner_white"
         android:layout_marginLeft="@dimen/_17sdp"
         android:layout_marginRight="@dimen/_17sdp"
+        android:background="@drawable/rounded_corner_white"
         android:padding="@dimen/_10sdp">
+
         <LinearLayout
             android:id="@+id/back"
             android:layout_width="wrap_content"
@@ -30,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/abc_ic_ab_back_material"
-                app:tint="@color/black"/>
+                app:tint="@color/black" />
 
             <TextView
                 android:id="@+id/title"
@@ -43,16 +44,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </LinearLayout>
+
         <TextView
             android:id="@+id/nameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
-            android:text="Name*"
+            android:text="Name"
             android:textColor="@color/blackTextColor"
             android:textSize="@dimen/_10sdp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/back"  />
+            app:layout_constraintTop_toBottomOf="@+id/back" />
 
         <EditText
             android:id="@+id/et_fname"
@@ -73,7 +75,7 @@
             android:fontFamily="@font/poppins_regular"
             android:text="Please enter first name"
             android:textColor="@color/red_btn_bg_pressed_color"
-            android:textSize="@dimen/_10sdp"
+            android:textSize="12sp"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="@+id/et_fname"
             app:layout_constraintTop_toBottomOf="@+id/et_fname" />
@@ -82,7 +84,7 @@
             android:id="@+id/et_lname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_16sdp"
             android:background="@drawable/corner_tale_white_holo"
             android:hint="Enter last name"
             android:padding="@dimen/_8sdp"
@@ -97,12 +99,40 @@
             android:fontFamily="@font/poppins_regular"
             android:text="Please enter last name"
             android:textColor="@color/red_btn_bg_pressed_color"
-            android:textSize="@dimen/_10sdp"
+            android:textSize="12sp"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="@+id/et_lname"
             app:layout_constraintTop_toBottomOf="@+id/et_lname" />
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/idfg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lNameErrorTv">
+
+            <TextView
+                android:id="@+id/emailText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Email"
+                android:textColor="@color/blackTextColor"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="*"
+                android:textColor="#ff2a2a"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+<!--        <TextView
             android:id="@+id/emailText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -112,7 +142,7 @@
             android:textColor="@color/blackTextColor"
             android:textSize="@dimen/_10sdp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lNameErrorTv" />
+            app:layout_constraintTop_toBottomOf="@+id/lNameErrorTv" />-->
 
         <EditText
             android:id="@+id/et_email"
@@ -125,7 +155,7 @@
             android:padding="@dimen/_8sdp"
             android:textColor="@color/text_color"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailText" />
+            app:layout_constraintTop_toBottomOf="@+id/idfg" />
 
         <TextView
             android:id="@+id/emailErrorTv"
@@ -134,7 +164,7 @@
             android:fontFamily="@font/poppins_regular"
             android:text="Please enter an email"
             android:textColor="@color/red_btn_bg_pressed_color"
-            android:textSize="@dimen/_10sdp"
+            android:textSize="12sp"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="@+id/et_email"
             app:layout_constraintTop_toBottomOf="@+id/et_email" />
@@ -213,10 +243,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_2sdp"
             android:fontFamily="@font/poppins_regular"
-            android:visibility="gone"
             android:text="Able to send invoices from owner’s"
             android:textColor="@color/blackTextColor"
             android:textSize="@dimen/_10sdp"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sendInvoicesText1" />
 
@@ -237,10 +267,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_12sdp"
+            android:alpha="0.4"
             android:fontFamily="@font/poppins_regular"
             android:text="Send Invoices"
             android:textColor="#333333"
-            android:alpha="0.4"
             android:textSize="@dimen/_14sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/connectEmailAccountsTv" />
@@ -260,10 +290,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_2sdp"
+            android:alpha="0.4"
             android:fontFamily="@font/poppins_regular"
             android:text="Sent via owner's connected email account"
             android:textColor="#333333"
-            android:alpha="0.4"
             android:textSize="@dimen/_10sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sendInvoicesText2" />
@@ -275,13 +305,13 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginBottom="@dimen/_12sdp"
-            android:background="@drawable/rounded_corner_green_button"
+            android:background="@drawable/rounded_corner_button"
             android:fontFamily="@font/poppins_regular"
             android:paddingLeft="@dimen/_30sdp"
             android:paddingTop="@dimen/_6sdp"
             android:paddingRight="@dimen/_30sdp"
             android:paddingBottom="@dimen/_6sdp"
-            android:text="Save"
+            android:text="Invite user"
             android:textColor="@color/white"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintEnd_toEndOf="parent"

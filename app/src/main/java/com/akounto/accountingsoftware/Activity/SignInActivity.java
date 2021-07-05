@@ -18,7 +18,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,12 +25,11 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-
 import com.akounto.accountingsoftware.Repository.LoginRepo;
 import com.akounto.accountingsoftware.network.CustomCallBack;
 import com.akounto.accountingsoftware.network.RestClient;
-import com.akounto.accountingsoftware.response.CustomeResponse;
 import com.akounto.accountingsoftware.response.UpdateResponse;
+import com.akounto.accountingsoftware.util.AppSingle;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -46,7 +44,6 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-import com.google.gson.internal.LinkedTreeMap;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.Data.CheckEmailData;
 import com.akounto.accountingsoftware.Data.ErrorData;
@@ -58,15 +55,7 @@ import com.akounto.accountingsoftware.Services.ApiUtils;
 import com.akounto.accountingsoftware.ViewModel.LoginViewModel;
 import com.akounto.accountingsoftware.util.UiUtil;
 import com.google.gson.Gson;
-import com.karumi.dexter.Dexter;
-import com.karumi.dexter.MultiplePermissionsReport;
-import com.karumi.dexter.PermissionToken;
-import com.karumi.dexter.listener.PermissionRequest;
-import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.subhrajyoti.passwordview.PasswordView;
-
-import java.util.List;
-
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -78,8 +67,8 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
     private PasswordView passwordET;
     private TextView signup;
     private TextView forgot_password;
-    LinearLayout password_ll;
-    RelativeLayout email_ll;
+    private LinearLayout password_ll;
+    private RelativeLayout email_ll;
     private Context mContext;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
@@ -90,18 +79,16 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
     private String idToken;
     private LoginViewModel model;
     private LifecycleOwner owner;
-    LinearLayout back;
-    ImageView mail_ckeck;
-    TextView tv_error, password_error;
+    private LinearLayout back;
+    private ImageView mail_ckeck;
+    private TextView tv_error, password_error;
 
-    /* access modifiers changed from: protected */
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         try {
             setContentView(R.layout.layout_signin);
-            //getWindow().setFlags(1024, 1024);
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            //SplashScreenActivity.mFirebaseAnalytics.logEvent();
             mContext = this;
             owner = this;
             getUpdateDilog();
@@ -112,6 +99,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
             this.emailET = findViewById(R.id.emailET);
             mail_ckeck = findViewById(R.id.mail_ckeck);
             back = findViewById(R.id.back);
+            firebaseAuth = com.google.firebase.auth.FirebaseAuth.getInstance();
             back.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -170,11 +158,8 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
             authStateListener = firebaseAuth -> {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
             };
-            GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            GoogleSignInOptions gso =  new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                     .requestIdToken(getString(R.string.web_client_id2))//you can also use R.string.default_web_client_id
-                    .requestEmail()
-                    .requestScopes(new Scope(Scopes.DRIVE_APPFOLDER))
-                    .requestServerAuthCode(getString(R.string.web_client_id2))
                     .requestEmail()
                     .build();
             googleApiClient = new GoogleApiClient.Builder(this)
@@ -188,7 +173,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                 @Override
                 public void onClick(View view) {
                     //UiUtil.showToast(mContext,"signInButton");
-                    UiUtil.showProgressDialogue(mContext, "", "Loding..");
+                    UiUtil.showProgressDialogue(mContext, "", "Loading..");
                     Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
                     SignInActivity.this.startActivityForResult(intent, RC_SIGN_IN);
                 }
@@ -209,20 +194,8 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
         try {
             String user = this.emailET.getText().toString();
             String pass = this.passwordET.getText().toString();
-            if (!UiUtil.isValidEmail(this.emailET.getText().toString())) {
-                if (!pass.equalsIgnoreCase("")) {
-                    loadLogin(mContext, user, pass);
-                } else {
-                    passwordET.requestFocus();
-                    password_error.setText("Please enter valid password");
-                    password_error.setVisibility(View.VISIBLE);
-                    password_ll.setBackgroundResource(R.drawable.error);
-                }
-            } else {
-                emailET.requestFocus();
-                tv_error.setText("Please enter valid email id");
-                tv_error.setVisibility(View.VISIBLE);
-                email_ll.setBackgroundResource(R.drawable.error);
+            if (isValid()) {
+                loadLogin(mContext, user, pass);
             }
         } catch (Exception e) {
             emailET.requestFocus();
@@ -234,8 +207,8 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
     }
 
     public void loadLogin(Context mContext, String username, String pass) {
-        UiUtil.showProgressDialogue(mContext, "", "Please wait..");
 
+        UiUtil.showProgressDialogue(mContext, "", "Please wait..");
         Api api = ApiUtils.getAPIService();
         api.loginRequest(Constant.X_SIGNATURE, username, pass, Constant.GRANT_TYPE).enqueue(new Callback<LoginData>() {
             @Override
@@ -249,13 +222,14 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                         Intent intent = new Intent(SignInActivity.this, DashboardActivity.class);
                         SignInActivity.this.startActivity(intent);
                         SignInActivity.this.finish();
+                        AppSingle.getInstance().setComp_name(new Gson().fromJson(loginData.getUserDetails(), UserDetails.class).getActiveBusiness().getName());
                         Bundle b = new Bundle();
                         b.putString(Constant.CATEGORY, "profile");
                         b.putString(Constant.ACTION, "signin");
                         SplashScreenActivity.sendEvent("profile_signin", b);
                     } else {
                         ErrorData error = new Gson().fromJson(response.errorBody().string(), ErrorData.class);
-                        Toast.makeText(mContext, error.getError_description(), Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(mContext, error.getError_description(), Toast.LENGTH_SHORT).show();
                         emailET.requestFocus();
                         if (!error.getError_description().equalsIgnoreCase(""))
                             tv_error.setText(error.getError_description());
@@ -263,7 +237,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                         email_ll.setBackgroundResource(R.drawable.error);
                     }
                 } catch (Exception e) {
-                    Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_SHORT).show();
                     emailET.requestFocus();
                     tv_error.setText(e.getMessage());
                     tv_error.setVisibility(View.VISIBLE);
@@ -274,7 +248,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
 
             @Override
             public void onFailure(Call<LoginData> call, Throwable t) {
-                Toast.makeText(mContext, "Something went wrong", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(mContext, "Something went wrong", Toast.LENGTH_SHORT).show();
                 emailET.requestFocus();
                 tv_error.setText(t.getMessage());
                 tv_error.setVisibility(View.VISIBLE);
@@ -284,7 +258,6 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
         });
     }
 
-    /* access modifiers changed from: private */
     public void showErrorDialogue() {
         new SweetAlertDialog(this, 1).setTitleText("Oops...").setContentText("Fail to signin.Please try again with proper id and password").setConfirmText("OK").setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
             public void onClick(SweetAlertDialog sDialog) {
@@ -318,11 +291,6 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
             if (requestCode == RC_SIGN_IN) {
                 GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
                 GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
-                try {
-                    acct.getServerAuthCode();
-                } catch (Exception e) {
-                }
-                //Log.d("Server Auth :: ",acct.getServerAuthCode());
                 handleSignInResult(result);
             }
         } catch (Exception e) {
@@ -386,6 +354,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                                                 SplashScreenActivity.sendEvent("profile_signin_social", b);
                                                 UiUtil.addLoginToSharedPref(SignInActivity.this, true);
                                                 UiUtil.addUserDetails(SignInActivity.this, userDetails);
+                                                AppSingle.getInstance().setComp_name(new Gson().fromJson(userDetails.getData().getUserDetails(), UserDetails.class).getActiveBusiness().getName());
                                                 Intent mainIntent = new Intent(SignInActivity.this, DashboardActivity.class);
                                                 SignInActivity.this.startActivity(mainIntent);
                                             } catch (Exception e) {
@@ -520,6 +489,33 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         i.addCategory(Intent.CATEGORY_HOME);
         startActivity(i);
+    }
+
+    private boolean isValid() {
+        if (UiUtil.isValidEmail(this.emailET.getText().toString().trim())) {
+            //UiUtil.showToast(this, "Please enter valid email");
+            emailET.requestFocus();
+            tv_error.setText("Please enter valid email");
+            tv_error.setVisibility(View.VISIBLE);
+            email_ll.setBackgroundResource(R.drawable.error);
+            return false;
+        } else if (this.passwordET.getText().toString().length() == 0) {
+            //UiUtil.showToast(this, "Please enter valid password");
+            passwordET.requestFocus();
+            password_error.setText("Please enter valid password.");
+            password_error.setVisibility(View.VISIBLE);
+            password_ll.setBackgroundResource(R.drawable.error);
+            return false;
+        } else if (this.passwordET.getText().toString().length() < 6) {
+            //UiUtil.showToast(this, "Password must be more the six characters");
+            passwordET.requestFocus();
+            password_error.setText("Password must be more the 6 characters.");
+            password_error.setVisibility(View.VISIBLE);
+            password_ll.setBackgroundResource(R.drawable.error);
+            return false;
+        } else {
+            return true;
+        }
     }
 
     private void reset() {

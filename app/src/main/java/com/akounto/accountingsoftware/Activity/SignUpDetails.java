@@ -1,39 +1,61 @@
 package com.akounto.accountingsoftware.Activity;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.InputFilter;
+import android.text.Spanned;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.akounto.accountingsoftware.Constants.Constant;
+import com.akounto.accountingsoftware.Data.CountryData;
+import com.akounto.accountingsoftware.Data.UserDetails;
+import com.akounto.accountingsoftware.Listner.IDialogListClickListener;
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.Repository.LoginRepo;
 import com.akounto.accountingsoftware.Services.Api;
 import com.akounto.accountingsoftware.Services.ApiUtils;
+import com.akounto.accountingsoftware.adapter.AdapterDialogListItem;
 import com.akounto.accountingsoftware.request.RegisterBusiness;
 import com.akounto.accountingsoftware.request.User;
 import com.akounto.accountingsoftware.response.SignUp.SignUpResponse;
+import com.akounto.accountingsoftware.util.AppSingle;
 import com.akounto.accountingsoftware.util.JsonUtils;
 import com.akounto.accountingsoftware.util.LocalManager;
 import com.akounto.accountingsoftware.util.UiUtil;
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.internal.LinkedTreeMap;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,25 +66,30 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class SignUpDetails extends AppCompatActivity {
-
+    int selectedPos = 0;
     private EditText f_n, l_n, p_n, b_name;
-    TextView f_n_error, l_n_error, p_n_error, b_name_error, c_care,deals_with_business_error,type_business_error;
+    TextView edt_phone_number_tooltip,f_n_error, l_n_error, p_n_error, b_name_error, c_care, deals_with_business_error, type_business_error, phone_code_tv;
     private LinearLayout next, aboutUs, aboutBusiness, nxt_back, back, f_n_ll, l_n_ll, p_n_ll, b_name_ll, dealsWithBusiness_error, typeBusiness_error;
     private String fist = "", last = "", phone = "", businessType = "", dealsWith = "", business_name;
     private int businessTypeId = 0, dealsWithId = 0;
     RegisterBusiness registerBusiness;
-    Spinner businessCurrencySpinner;
-    Spinner countrySpinner;
     int selectedCountry = 0;
+    String countryCode = "US";
     String selectedCurrencyId = "USD";
+    Spinner countrySpinner;
+    Spinner businessCurrencySpinner;
+    ImageView couFlagSpinner;
     List<String> countryListForSpinner = new ArrayList();
+    List<String> countryListFoCurrency = new ArrayList();
+    List<String> currencyListForSpinner = new ArrayList();
+    Map<String, String> currencyMap = new HashMap();
     Map<Integer, String> countryMap = new HashMap();
     Map<Integer, String> dealsMap = new HashMap();
     List<String> dealsinForSpinner = new ArrayList();
     Map<Integer, String> typeBusnisMap = new HashMap();
     List<String> typeBusniSpinner = new ArrayList();
-    List<String> currencyListForSpinner = new ArrayList();
-    Map<String, String> currencyMap = new HashMap();
+    ArrayList<CountryData> countryData = new ArrayList<>();
+
     private Spinner typeBusinessSpinner;
     private Spinner dealsWithBusinessSpinner;
     Context mContext;
@@ -71,7 +98,10 @@ public class SignUpDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_signup1);
         try {
+
             mContext = this;
+
+
             registerBusiness = LocalManager.getInstance().getRegisterBusiness();
             //
             Bundle b = new Bundle();
@@ -82,16 +112,19 @@ public class SignUpDetails extends AppCompatActivity {
             next = findViewById(R.id.nxt_done);
             nxt_back = findViewById(R.id.nxt_back);
             aboutUs = findViewById(R.id.about_us);
+            edt_phone_number_tooltip = findViewById(R.id.edt_phone_number_tooltip);
             back = findViewById(R.id.back);
             aboutBusiness = findViewById(R.id.about_business);
-            this.countrySpinner = findViewById(R.id.countrySpinner);
-            this.businessCurrencySpinner = findViewById(R.id.businessCurrencySpinner);
+            countrySpinner = findViewById(R.id.countrySpinner);
+            businessCurrencySpinner = findViewById(R.id.businessCurrencySpinner);
+            couFlagSpinner = findViewById(R.id.phone_code_spiner);
             f_n = findViewById(R.id.first_name);
             l_n = findViewById(R.id.last_name);
             p_n = findViewById(R.id.edt_phone_number);
             b_name = findViewById(R.id.business_name);
             c_care = findViewById(R.id.cusmoter_care);
             f_n_error = findViewById(R.id.first_name_error);
+            phone_code_tv = findViewById(R.id.phone_code_tv);
             l_n_error = findViewById(R.id.last_name_error);
             p_n_error = findViewById(R.id.edt_phone_number_error);
             b_name_error = findViewById(R.id.business_name_error);
@@ -114,10 +147,9 @@ public class SignUpDetails extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     try {
-                        Intent call = new Intent();
-                        call.setAction(android.content.Intent.ACTION_CALL);
-                        call.setData(Uri.parse("tel: +18332568686"));
-                        startActivity(call);
+                        Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                        callIntent.setData(Uri.parse("tel:+18332568686"));
+                        startActivity(callIntent);
                     } catch (Exception e) {
                     }
                 }
@@ -163,6 +195,7 @@ public class SignUpDetails extends AppCompatActivity {
                     registerBusiness.setPhone(phone);
                     registerBusiness.setCountry(selectedCountry);
                     registerBusiness.setBusinessCurrency(selectedCurrencyId);
+                    registerBusiness.setPhoneCode(phone_code_tv.getText().toString());
                     business_name = b_name.getText().toString();
                     Bundle b = new Bundle();
                     b.putString(Constant.CATEGORY, "sign_up");
@@ -184,6 +217,7 @@ public class SignUpDetails extends AppCompatActivity {
                                         UiUtil.showToast(mContext, "Register successfully");
                                         UiUtil.addLoginToSharedPref(mContext, true);
                                         UiUtil.addUserDetails(mContext, responsed);
+                                        AppSingle.getInstance().setComp_name(new Gson().fromJson(responsed.getData().getUserDetails(), UserDetails.class).getActiveBusiness().getName());
                                         Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
                                         startActivity(intent);
                                         finish();
@@ -238,6 +272,22 @@ public class SignUpDetails extends AppCompatActivity {
             SplashScreenActivity.sendEvent("sign_up_Exception", b);
             LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "Sign up");
         }
+        setfilter(countryCode);
+        Picasso.with(mContext).load(Constant.IMG_URL+"US.png").into(couFlagSpinner);
+        couFlagSpinner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openListDialog("Select Country", selectedPos, countryData, new IDialogListClickListener() {
+                    @Override
+                    public void onClick(CountryData data, int selectedPos) {
+                        countryCode = data.getCountryCode().trim();
+                        phone_code_tv.setText("+" + data.getPhoneCode());
+                        Picasso.with(mContext).load(Constant.IMG_URL + data.getCountryCode() + ".png").into(couFlagSpinner);
+                        setfilter(countryCode);
+                    }
+                });
+            }
+        });
     }
 
     private void settypeBusinessSpinner() throws JSONException {
@@ -291,12 +341,20 @@ public class SignUpDetails extends AppCompatActivity {
         String loadJSONFromAsset = JsonUtils.loadJSONFromAsset("country.json", getApplicationContext());
         Objects.requireNonNull(loadJSONFromAsset);
         JSONArray jsonArray = new JSONArray(loadJSONFromAsset);
+        CountryData data;
         for (int i = 0; i < jsonArray.length(); i++) {
+            data = new CountryData();
             JSONObject jsonObject = jsonArray.getJSONObject(i);
             this.countryMap.put((Integer) jsonObject.get("Id"), jsonObject.getString("Name"));
             this.countryListForSpinner.add(jsonObject.getString("Name"));
+            this.countryListFoCurrency.add(jsonObject.getString("Currency"));
+            data.setId(jsonObject.get("Id").toString());
+            data.setName(jsonObject.getString("Name"));
+            data.setCurrency(jsonObject.getString("Currency"));
+            data.setPhoneCode(jsonObject.getString("PhoneCode"));
+            data.setCountryCode(jsonObject.getString("CountryCode"));
+            countryData.add(data);
         }
-        ////Collections.sort(countryListForSpinner);
         ArrayAdapter<String> dataAdaptercountry = new ArrayAdapter<>(getApplicationContext(), R.layout.dropdown_text, countryListForSpinner);
         dataAdaptercountry.setDropDownViewResource(R.layout.dropdown_text);
         countrySpinner.setAdapter(dataAdaptercountry);
@@ -304,7 +362,8 @@ public class SignUpDetails extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 selectedCountry = getCountryId(countryListForSpinner.get(i));
-                businessCurrencySpinner.setSelection(i);
+                Log.e("Country ::", countryListFoCurrency.get(i));
+                businessCurrencySpinner.setSelection(searchIndexCur(countryListFoCurrency.get(i)));
             }
 
             @Override
@@ -323,7 +382,7 @@ public class SignUpDetails extends AppCompatActivity {
         return 0;
     }
 
-    /*private void fetchCurrencies() throws JSONException {
+    private void fetchCurrencies() throws JSONException {
         String loadJSONFromAsset = JsonUtils.loadJSONFromAsset("currency.json", getApplicationContext());
         Objects.requireNonNull(loadJSONFromAsset);
         JSONArray jsonArray = new JSONArray(loadJSONFromAsset);
@@ -331,18 +390,6 @@ public class SignUpDetails extends AppCompatActivity {
             JSONObject jsonObject = jsonArray.getJSONObject(i);
             String currency = jsonObject.getString("Id") + " (" + jsonObject.getString("Symbol") + ")- " + jsonObject.getString("Name");
             this.currencyMap.put((String) jsonObject.get("Id"), currency);
-            this.currencyListForSpinner.add(currency);
-        }
-        setCurrencySpinner(this.currencyListForSpinner);
-    }*/
-    private void fetchCurrencies() throws JSONException {
-        String loadJSONFromAsset = JsonUtils.loadJSONFromAsset("country.json", getApplicationContext());
-        Objects.requireNonNull(loadJSONFromAsset);
-        JSONArray jsonArray = new JSONArray(loadJSONFromAsset);
-        for (int i = 0; i < jsonArray.length(); i++) {
-            JSONObject jsonObject = jsonArray.getJSONObject(i);
-            String currency = jsonObject.getString("Currency") + "-" + jsonObject.getString("Name");
-            this.currencyMap.put((String) jsonObject.get("Currency"), currency);
             this.currencyListForSpinner.add(currency);
         }
         setCurrencySpinner(this.currencyListForSpinner);
@@ -365,6 +412,16 @@ public class SignUpDetails extends AppCompatActivity {
         });
     }
 
+    private int searchIndexCur(String cur_id) {
+        int i = 0;
+        for (int c = 0; c < currencyListForSpinner.size(); c++) {
+            if (currencyListForSpinner.get(c).contains(cur_id)) {
+                i = c;
+            }
+        }
+        return i;
+    }
+
     private boolean isValidAbout() {
         boolean response = true;
         String focusfield = "";
@@ -379,7 +436,7 @@ public class SignUpDetails extends AppCompatActivity {
         } else if (f_n.getText().toString().trim().length() < 2) {
             //UiUtil.showToast(this, "Please enter first name min two character");
             f_n_error.setVisibility(View.VISIBLE);
-            f_n_error.setText("Please enter first name min two character");
+            f_n_error.setText("Please enter first name min 2 character");
             f_n_ll.setBackgroundResource(R.drawable.error);
             if (focusfield.equalsIgnoreCase("")) {
                 f_n.requestFocus();
@@ -400,7 +457,7 @@ public class SignUpDetails extends AppCompatActivity {
         } else if (l_n.getText().toString().trim().length() < 2) {
             //UiUtil.showToast(this, "Please enter last name min two character");
             l_n_error.setVisibility(View.VISIBLE);
-            l_n_error.setText("Please enter last name min two character");
+            l_n_error.setText("Please enter last name min 2 character");
             l_n_ll.setBackgroundResource(R.drawable.error);
             if (focusfield.equalsIgnoreCase("")) {
                 l_n.requestFocus();
@@ -409,7 +466,8 @@ public class SignUpDetails extends AppCompatActivity {
             response = false;
         }
 
-        if (p_n.getText().toString().trim().length() == 0) {
+        String phoneNumber = p_n.getText().toString().trim();
+        if (phoneNumber.length() == 0) {
             //UiUtil.showToast(this, "Please enter valid phone number");
             p_n_error.setVisibility(View.VISIBLE);
             p_n_ll.setBackgroundResource(R.drawable.error);
@@ -418,8 +476,8 @@ public class SignUpDetails extends AppCompatActivity {
                 focusfield = "1";
             }
             response = false;
-        } else if (p_n.getText().toString().trim().length() < 10) {
-            //UiUtil.showToast(this, "Please enter valid phone number");
+        } else if (((countryCode.equalsIgnoreCase("US") || countryCode.equalsIgnoreCase("CA")) && phoneNumber.length() != 10)
+                || (!countryCode.equalsIgnoreCase("US") && !countryCode.equalsIgnoreCase("CA") && (phoneNumber.length() < 10 || phoneNumber.length() > 12))) {
             p_n_error.setVisibility(View.VISIBLE);
             p_n_ll.setBackgroundResource(R.drawable.error);
             if (focusfield.equalsIgnoreCase("")) {
@@ -428,6 +486,7 @@ public class SignUpDetails extends AppCompatActivity {
             }
             response = false;
         }
+
         if (b_name.getText().toString().trim().length() == 0) {
             response = false;
             b_name_error.setVisibility(View.VISIBLE);
@@ -438,7 +497,7 @@ public class SignUpDetails extends AppCompatActivity {
             }
         } else if (b_name.getText().toString().trim().length() < 2) {
             b_name_error.setVisibility(View.VISIBLE);
-            b_name_error.setText("Please enter business name min two character");
+            b_name_error.setText("Please enter business name min 2 character");
             b_name_ll.setBackgroundResource(R.drawable.error);
             response = false;
             if (focusfield.equalsIgnoreCase("")) {
@@ -493,5 +552,91 @@ public class SignUpDetails extends AppCompatActivity {
         } catch (Exception e) {
             LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "Sign up");
         }
+    }
+
+    protected void openListDialog(String title, int selectedPos, final List<CountryData> listData, final IDialogListClickListener listener) {
+        com.akounto.accountingsoftware.databinding.MobileCodeDilogBinding binding = DataBindingUtil.inflate(LayoutInflater.from(mContext), R.layout.mobile_code_dilog, null, false);
+        final Dialog dialog = new Dialog(mContext);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(binding.getRoot());
+        binding.txtViewTitle.setText(title);
+        dialog.setCancelable(true);
+        dialog.setCanceledOnTouchOutside(true);
+        LinearLayoutManager lLayout = new LinearLayoutManager(mContext);
+        RecyclerView rView = binding.rvList;
+        rView.setHasFixedSize(true);
+        rView.setLayoutManager(lLayout);
+        AdapterDialogListItem adapter = new AdapterDialogListItem(mContext, listData, selectedPos);
+        rView.setAdapter(adapter);
+        adapter.registerOnItemClickListener(new AdapterDialogListItem.IonItemSelect() {
+            @Override
+            public void onItemSelect(int position) {
+                if (listener != null)
+                    listener.onClick(listData.get(position), position);
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
+    }
+
+    public void setfilter(String cd) {
+        p_n.setText("");
+     /*   p_n.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+                    edt_phone_number_tooltip.setVisibility(View.VISIBLE);
+                }else{
+                    edt_phone_number_tooltip.setVisibility(View.GONE);
+                }
+            }
+        });*/
+        if (countryCode.equals("US") || countryCode.equals("CA")) {
+            p_n_error.setText("Contact number should be 10 digit number.");
+            edt_phone_number_tooltip.setText("** Number must contain 10 digit without prefixing 0 & 1.\n" +
+                    "** Landline number need area code.");
+            UiUtil.removeAll(p_n);
+            p_n.setFilters(new InputFilter[]{new InputFilter.LengthFilter(10)});
+            p_n.addTextChangedListener(new TextWatcher() {
+                public void afterTextChanged(Editable s) {
+                    String x = s.toString();
+                    if (x.startsWith("0") || x.startsWith("1")) {
+                        p_n.setText("");
+                    }
+                }
+
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                }
+            });
+        } else {
+            p_n_error.setText("Contact number should be 10 to 12 digit number.");
+            edt_phone_number_tooltip.setText("** Contact number without prefixing 0.\n" +
+                    "** Landline number need area code.");
+            UiUtil.removeAll(p_n);
+            p_n.setFilters(new InputFilter[]{new InputFilter.LengthFilter(12)});
+            p_n.addTextChangedListener(new TextWatcher() {
+                public void afterTextChanged(Editable s) {
+                    String x = s.toString();
+                    if (x.startsWith("0")) {
+                        p_n.setText("");
+                    }
+                }
+
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                }
+            });
+        }
+
     }
 }

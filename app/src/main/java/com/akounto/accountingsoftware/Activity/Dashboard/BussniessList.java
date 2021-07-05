@@ -11,6 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.akounto.accountingsoftware.util.AppSingle;
 import com.google.gson.Gson;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.Data.Business;
@@ -100,6 +102,8 @@ public class BussniessList extends Fragment {
             public void onItemClick(Business cust, int position) {
                 userDetails.setActiveBusiness(cust);
                 signInResponse.setUserDetails(new Gson().toJson(userDetails));
+                AppSingle.getInstance().setComp_name(cust.getName());
+                AddFragments.changgeName(getContext(),cust.getName());
                 LoginData loginData = new Gson().fromJson(new Gson().toJson(signInResponse), LoginData.class);
                 loginData.setExpires(signInResponse.getExpires());
                 UiUtil.addUserDetails(mContext, signInResponse);
