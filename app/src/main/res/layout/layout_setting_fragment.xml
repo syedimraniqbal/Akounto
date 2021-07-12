@@ -58,7 +58,7 @@
                     android:layout_marginTop="@dimen/_16ssp"
                     android:layout_marginBottom="@dimen/_16ssp"
                     android:fontFamily="@font/poppins_medium"
-                    android:text="Customize Invoice"
+                    android:text="Invoice Customization"
                     android:textColor="#333333"
                     android:textSize="14sp" />
 
@@ -152,7 +152,7 @@
                     android:layout_marginTop="@dimen/_16ssp"
                     android:layout_marginBottom="@dimen/_16ssp"
                     android:fontFamily="@font/poppins_medium"
-                    android:text="Account Basis"
+                    android:text="Accounting Basis"
                     android:textColor="#333333"
                     android:textSize="14sp" />
 
@@ -184,7 +184,7 @@
                     android:layout_marginTop="@dimen/_16ssp"
                     android:layout_marginBottom="@dimen/_16ssp"
                     android:fontFamily="@font/poppins_medium"
-                    android:text="Sales Tax"
+                    android:text="Sales Taxes"
                     android:textColor="#333333"
                     android:textSize="14sp" />
 

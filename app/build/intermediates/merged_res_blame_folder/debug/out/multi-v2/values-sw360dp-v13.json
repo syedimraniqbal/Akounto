@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+            "outputFile": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw360dp-v13\\values-sw360dp-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Imran\\.gradle\\caches\\transforms-2\\files-2.1\\303e565ef7c0fb45af7c2e763cec5c83\\preference-1.1.1\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",

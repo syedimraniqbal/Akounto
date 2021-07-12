@@ -34,6 +34,8 @@ import com.akounto.accountingsoftware.request.Setting;
 import com.akounto.accountingsoftware.request.TransectionRequest;
 import com.akounto.accountingsoftware.request.TrialBalanceRequest;
 import com.akounto.accountingsoftware.request.UpdateStatus;
+import com.akounto.accountingsoftware.request.User;
+import com.akounto.accountingsoftware.request.UserDelete;
 import com.akounto.accountingsoftware.request.ViewReportRequest;
 import com.akounto.accountingsoftware.response.AddBusinessResponse;
 import com.akounto.accountingsoftware.response.AddSchedulerResponse;
@@ -361,5 +363,8 @@ public interface APIServices {
 
     @POST("api/profile/adnroid-log-error")
     Call<ResponseBody> addErrorLog(@Header("X-Signature") String signature, @Field("message") String message, @Field("level") int level, @Field("filename") String filename);
+
+    @POST("api/profile/disassociate-user")
+    Call<CustomeResponse> disassociateUser(@Header("X-Signature") String signature, @Header("Authorization") String authHeader, @Header("X-Company") String company, @Body UserDelete user_delete);
 
 }

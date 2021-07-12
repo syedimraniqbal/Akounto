@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.akounto.accountingsoftware">
 
+
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission
@@ -32,6 +34,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.akounto.accountingsoftware.Activity.Invoice.CustomerList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.akounto.accountingsoftware.Activity.Accounting.TransactionsActivity"
+            android:noHistory="true"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.akounto.accountingsoftware.Activity.Invoice.AddCustomers"
@@ -235,6 +241,7 @@
                 android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
         </service>
+
         <service
             android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
             android:exported="false">
@@ -242,28 +249,6 @@
                 android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
                 android:value="cct" />
         </service>
-        <!--  <service
-            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-            android:exported="false"
-            android:permission="android.permission.BIND_JOB_SERVICE" />
-
-        <receiver
-            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-            android:exported="false" />
-        <receiver
-            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-            android:enabled="true"
-            android:exported="false" />
-
-      <service
-            android:name="com.google.android.gms.measurement.AppMeasurementService"
-            android:enabled="true"
-            android:exported="false" />
-        <service
-            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-            android:enabled="true"
-            android:exported="false"
-            android:permission="android.permission.BIND_JOB_SERVICE" />-->
 
         <meta-data
             android:name="com.google.android.gms.version"

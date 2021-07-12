@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import com.akounto.accountingsoftware.Activity.SplashScreenActivity;
+import com.akounto.accountingsoftware.Activity.fragment.HomeDashboardFragment;
 import com.google.gson.Gson;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.Data.UserDetails;
@@ -31,9 +32,10 @@ public class AccountBasisFragment extends Fragment {
 
     private LayoutSettingAccountingBinding binding;
     private Context mContext;
-    RadioButton cash, accrual;
-    int type = 0;
-    UserDetails user;
+    private RadioButton cash, accrual;
+    private int type = 0;
+    private UserDetails user;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -79,6 +81,7 @@ public class AccountBasisFragment extends Fragment {
                     SignInResponse signInResponse=UiUtil.getUserDetails(mContext);
                     signInResponse.setUserDetails(new Gson().toJson(user));
                     UiUtil.addUserDetails(mContext, signInResponse);
+                    AddFragments.addFragmentToDrawerActivity(mContext, null, HomeDashboardFragment.class);
                 } else {
                     Bundle b=new Bundle();
                     b.putString(Constant.CATEGORY,"setting");

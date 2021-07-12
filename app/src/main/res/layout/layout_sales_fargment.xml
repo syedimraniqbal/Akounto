@@ -82,6 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_7sdp"
+                android:visibility="gone"
                 android:background="@drawable/menu_bg">
 
                 <TextView
@@ -114,6 +115,7 @@
                 android:id="@+id/btn_recurring_invoices"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:layout_marginTop="@dimen/_7sdp"
                 android:background="@drawable/menu_bg">
 

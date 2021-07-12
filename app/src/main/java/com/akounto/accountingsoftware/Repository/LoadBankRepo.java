@@ -3,7 +3,12 @@ package com.akounto.accountingsoftware.Repository;
 import android.content.Context;
 import android.util.Log;
 import androidx.lifecycle.MutableLiveData;
+
+import com.akounto.accountingsoftware.Data.RegisterBank.BankAccountData2;
+import com.akounto.accountingsoftware.request.RegisterBankRequest;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.google.gson.internal.LinkedTreeMap;
 import com.akounto.accountingsoftware.Services.Api;
 import com.akounto.accountingsoftware.Services.ApiUtils;
@@ -23,20 +28,21 @@ public class LoadBankRepo {
 
     //this is the data that we will fetch asynchronously
     private MutableLiveData<BankAccountData> bankData;
+    private MutableLiveData<BankAccountData2> bankDataOption;
     private MutableLiveData<AutoSynData> autoSyncData;
     private MutableLiveData<BankLinkData> linkBankData;
     //This method is using Retrofit to get the JSON data from URL
     public void loadRegister(Context mContext, String x_comp, String access_token, String public_token, String institution_id, String institution_name) {
         UiUtil.showProgressDialogue(mContext,"","Please wait..");
-        if (bankData == null) {
-            bankData = new MutableLiveData<>();
+        if (bankDataOption == null) {
+            bankDataOption = new MutableLiveData<>();
         }
         Api api = ApiUtils.getAPIService();
-        api.registerBankRequest(Constant.X_SIGNATURE, x_comp, "Bearer " + access_token, public_token, institution_id, institution_name).enqueue(new Callback<BankAccountData>()   {
+        api.registerBankRequest(Constant.X_SIGNATURE, x_comp, "Bearer " + access_token, public_token, institution_id, institution_name).enqueue(new Callback<BankAccountData2>()   {
             @Override
-            public void onResponse(Call<BankAccountData> call, Response<BankAccountData> response) {
+            public void onResponse(Call<BankAccountData2> call, Response<BankAccountData2> response) {
                 UiUtil.cancelProgressDialogue();
-                BankAccountData ud = new BankAccountData();
+                BankAccountData2 ud = new BankAccountData2();
                 ud.setStatus(response.code());
                 try {
                     if (response.code() == 200) {
@@ -58,6 +64,49 @@ public class LoadBankRepo {
                     ud.setStatus(444);
                     ud.setStatusMessage("Something went wrong");
                 }
+                bankDataOption.postValue(ud);
+            }
+
+            @Override
+            public void onFailure(Call<BankAccountData2> call, Throwable t) {
+                UiUtil.cancelProgressDialogue();
+                Log.d("TEG :: ", t.getLocalizedMessage());
+                BankAccountData2 ud = new BankAccountData2();
+                ud.setStatus(444);
+                ud.setStatusMessage("Something went wrong");
+                bankDataOption.postValue(ud);
+            }
+        });
+    }
+    public void loadRegisterBank(Context mContext, String x_company, String access_token, RegisterBankRequest req) {
+        UiUtil.showProgressDialogue(mContext,"","Please wait..");
+        if (bankData == null) {
+            bankData = new MutableLiveData<>();
+        }
+        Api api = ApiUtils.getAPIService();
+        api.registerBank(Constant.X_SIGNATURE, x_company, "Bearer " + access_token, req).enqueue(new Callback<BankAccountData>()  {
+            @Override
+            public void onResponse(@NotNull Call<BankAccountData> call, @NotNull Response<BankAccountData> response) {
+                UiUtil.cancelProgressDialogue();
+                BankAccountData ud = new BankAccountData();
+                ud.setStatus(response.code());
+                try {
+                    if (response.code() == 200) {
+                        if (response.body().getTransactionStatus().getIsSuccess()) {
+                            ud = response.body();
+                        } else {
+                            ud.setStatus(444);
+                            ud.setStatusMessage(((LinkedTreeMap) (response.body().getTransactionStatus().getError())).get("Description").toString());
+                        }
+                    } else {
+                        ErrorData error = new Gson().fromJson(response.errorBody().string(), ErrorData.class);
+                        ud.setStatusMessage(error.getError_description());
+                        Log.d("ERROR :: ", error.getError_description());
+                    }
+                } catch (Exception e) {
+                    ud.setStatus(444);
+                    ud.setStatusMessage("Something went wrong");
+                }
                 bankData.postValue(ud);
             }
 
@@ -65,10 +114,10 @@ public class LoadBankRepo {
             public void onFailure(Call<BankAccountData> call, Throwable t) {
                 UiUtil.cancelProgressDialogue();
                 Log.d("TEG :: ", t.getLocalizedMessage());
-                BankAccountData ud = new BankAccountData();
-                ud.setStatus(444);
-                ud.setStatusMessage("Something went wrong");
-                bankData.postValue(ud);
+                BankAccountData bld = new BankAccountData();
+                bld.setStatus(444);
+                bld.setStatusMessage("Something went wrong");
+                bankData.postValue(bld);
             }
         });
     }
@@ -260,5 +309,7 @@ public class LoadBankRepo {
     public MutableLiveData<AutoSynData> getAutoSynData() {
         return autoSyncData;
     }
-
+    public MutableLiveData<BankAccountData2> getBankDataOption() {
+        return bankDataOption;
+    }
 }

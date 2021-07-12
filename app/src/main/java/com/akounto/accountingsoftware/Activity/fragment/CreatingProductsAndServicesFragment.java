@@ -37,6 +37,7 @@ import com.akounto.accountingsoftware.response.ProductServiceTaxesItem;
 import com.akounto.accountingsoftware.response.SaleTax;
 import com.akounto.accountingsoftware.response.SalesProductResponse;
 import com.akounto.accountingsoftware.response.SalesTaxResponse;
+import com.akounto.accountingsoftware.util.AddFragments;
 import com.akounto.accountingsoftware.util.UiUtil;
 import com.google.gson.Gson;
 import com.skydoves.powerspinner.OnSpinnerItemSelectedListener;
@@ -87,7 +88,7 @@ public class CreatingProductsAndServicesFragment extends Fragment implements Del
         binding.backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //finish();
+                AddFragments.addFragmentToDrawerActivity(getActivity(), null, ProductsAndServicesFragment.class);
             }
         });
         initUI();

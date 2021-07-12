@@ -57,13 +57,6 @@ public class ProductsAndServicesFragment extends Fragment implements View.OnClic
             }
         });
         this.noDataLayout = view.findViewById(R.id.noDataLayout);
-    /*    btn_create_new.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AddFragments.addFragmentToDrawerActivity(getActivity(), null, CreatingProductsAndServicesFragment.class);
-            }
-        });*/
-
         inItUi();
         return this.view;
     }

@@ -1,16 +1,22 @@
 package com.akounto.accountingsoftware.Activity.fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.akounto.accountingsoftware.Activity.Invoice.InvoiceMenu;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.Activity.Bill.BillMenu;
@@ -26,49 +32,52 @@ import com.akounto.accountingsoftware.response.SalesProductResponse;
 import com.google.gson.Gson;
 import com.akounto.accountingsoftware.util.AddFragments;
 import com.akounto.accountingsoftware.util.UiUtil;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Response;
 
 public class ProductsAndServicesPurchaseFragment extends Fragment implements View.OnClickListener, UpdateProduct, UpdatePurchaseProduct {
 
-    ProductAndServicesPurchseAdapter adapter;
-    TextView goButton;
+    private ProductAndServicesPurchseAdapter adapter;
+    private TextView goButton;
+    Button btn_create_new;
     ConstraintLayout noDataLayout;
+    RelativeLayout withDataLayout;
     public List<Product> productList = new ArrayList();
-    View view;
-
+    private View view;
+    Context mContext;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        this.view = inflater.inflate(R.layout.products_and_services_fragment, container, false);
+        View inflate = inflater.inflate(R.layout.fragment_p_n_s, container, false);
+        this.view = inflate;
+        mContext=this.getContext();
+        btn_create_new=view.findViewById(R.id.btn_create_new);
+        goButton=view.findViewById(R.id.goButton);
+        withDataLayout=view.findViewById(R.id.withDataLayout);
         view.findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AddFragments.addFragmentToDrawerActivity(getActivity(), null, BillMenu.class);
+                AddFragments.addFragmentToDrawerActivity(mContext, null, BillsFragment.class,true);
             }
         });
-
-        view.findViewById(R.id.btn_create_new).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent =new Intent(getContext(), CreateProductsAndServicesPurchase.class);
-                intent.putExtra("IS_PURCHASECALL", true);
-                startActivity(intent);
-            }
-        });
+        this.noDataLayout = view.findViewById(R.id.noDataLayout);
         inItUi();
         return this.view;
     }
 
     private void inItUi() {
-        this.noDataLayout = this.view.findViewById(R.id.noDataLayout);
-        TextView textView = this.view.findViewById(R.id.goButton);
-        this.goButton = textView;
-        textView.setOnClickListener(this);
+        try {
+            goButton.setOnClickListener(this);
+            btn_create_new.setOnClickListener(this);
+            noDataLayout.setOnClickListener(this);
+        } catch (Exception e) {
+        }
     }
 
     private void getSalesProductList() {
@@ -88,8 +97,14 @@ public class ProductsAndServicesPurchaseFragment extends Fragment implements Vie
         });
     }
 
-    /* access modifiers changed from: private */
     public void populateData(List<Product> productList2) {
+        if (productList2 == null || productList2.size() == 0) {
+            this.noDataLayout.setVisibility(View.VISIBLE);
+            withDataLayout.setVisibility(View.GONE);
+        } else {
+            this.noDataLayout.setVisibility(View.GONE);
+            withDataLayout.setVisibility(View.VISIBLE);
+        }
         RecyclerView product_rv = this.view.findViewById(R.id.prodAndServicesRecyclerView);
         ProductAndServicesAdapter productAndServicesAdapter = new ProductAndServicesAdapter(getContext(), productList2, this);
         product_rv.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -98,6 +113,11 @@ public class ProductsAndServicesPurchaseFragment extends Fragment implements Vie
 
     public void onClick(View v) {
         if (v.getId() == R.id.goButton) {
+            Intent intent = new Intent(getActivity(), CreateProductsAndServicesPurchase.class);
+            intent.putExtra("IS_PURCHASECALL", true);
+            startActivity(intent);
+            // CreateProductsAndServicesPurchase.buildIntentNo(getContext(),"PURCHASE");
+        } else if (v.getId() == R.id.btn_create_new) {
             Intent intent = new Intent(getActivity(), CreateProductsAndServicesPurchase.class);
             intent.putExtra("IS_PURCHASECALL", true);
             startActivity(intent);
@@ -132,10 +152,12 @@ public class ProductsAndServicesPurchaseFragment extends Fragment implements Vie
 
     /* access modifiers changed from: private */
     public void updateProductAndServicesPurchseAdapter(List<PurchaseItem> data) {
-        if (data == null) {
+        if (data == null || data.size() == 0) {
             this.noDataLayout.setVisibility(View.VISIBLE);
+            withDataLayout.setVisibility(View.GONE);
         } else {
             this.noDataLayout.setVisibility(View.GONE);
+            withDataLayout.setVisibility(View.VISIBLE);
         }
         this.adapter = new ProductAndServicesPurchseAdapter(getActivity(), data, this);
         RecyclerView product_rv = this.view.findViewById(R.id.prodAndServicesRecyclerView);

@@ -49,6 +49,7 @@ import retrofit2.Call;
 import retrofit2.Response;
 
 public class CreateProductsAndServicesPurchase extends AppCompatActivity implements DeleteTaxClick {
+
     public static String PRODUCT_DETAIL = "productDetail";
     private static boolean isEdit;
     String data;

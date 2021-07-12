@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh\\values-zh.xml",
+            "outputFile": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh\\values-zh.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Imran\\.gradle\\caches\\transforms-2\\files-2.1\\c01a28e1ccaee9bd127561f97f86451b\\jetified-ucrop-2.2.2\\res\\values-zh\\values-zh.xml",

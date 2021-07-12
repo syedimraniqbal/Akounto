@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -26,6 +27,8 @@ import com.akounto.accountingsoftware.adapter.UserManagementAdminItemClick;
 import com.akounto.accountingsoftware.network.CustomCallBack;
 import com.akounto.accountingsoftware.network.RestClient;
 import com.akounto.accountingsoftware.request.AddUserRequest;
+import com.akounto.accountingsoftware.request.UserDelete;
+import com.akounto.accountingsoftware.response.CustomeResponse;
 import com.akounto.accountingsoftware.response.UserManagementResponse;
 import com.akounto.accountingsoftware.response.Users;
 import com.akounto.accountingsoftware.util.AddFragments;
@@ -38,9 +41,8 @@ import retrofit2.Call;
 import retrofit2.Response;
 
 public class UserManagementFragment extends Fragment implements UserManagementAdminItemClick {
-    Dialog dialog;
 
-    /* renamed from: id */
+    Dialog dialog;
     String f90id = "0";
     String mode = "create-user";
     RadioButton roleButton;
@@ -79,7 +81,6 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
         getUsers();
     }
 
-    /* access modifiers changed from: private */
     public void getUsers() {
         RestClient.getInstance(getActivity()).getUsers(Constant.X_SIGNATURE, "Bearer " + UiUtil.getAcccessToken(getContext()), UiUtil.getComp_Id(getContext())).enqueue(new CustomCallBack<UserManagementResponse>(getContext(), null) {
             public void onResponse(Call<UserManagementResponse> call, Response<UserManagementResponse> response) {
@@ -96,7 +97,6 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
         });
     }
 
-    /* access modifiers changed from: private */
     public void setUpAdminList(List<Users> data) {
         RecyclerView recyclerView = this.view.findViewById(R.id.adminsRv);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -107,10 +107,33 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
         editAdminDialog(users);
     }
 
+    @Override
+    public void deleteAdmin(Users users) {
+        RestClient.getInstance(getContext()).disassociateUser(Constant.X_SIGNATURE, "Bearer " + UiUtil.getAcccessToken(getContext()), UiUtil.getComp_Id(getContext()), new UserDelete(users.getId())).enqueue(new CustomCallBack<CustomeResponse>(getContext(), "Deleting...") {
+            @Override
+            public void onResponse(Call<CustomeResponse> call, Response<CustomeResponse> response) {
+                super.onResponse(call, response);
+
+                if (response.body().getTransactionStatus().isIsSuccess()) {
+                    Toast.makeText(getContext(), "User disassociate successfully.", Toast.LENGTH_LONG).show();
+                    getUsers();
+                } else {
+                    Toast.makeText(getContext(), "User disassociate fail.", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CustomeResponse> call, Throwable t) {
+                super.onFailure(call, t);
+                Toast.makeText(getContext(), "User disassociate fail.", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
     private void editAdminDialog(Users users) {
         Dialog dialog2 = new Dialog(getContext(), android.R.style.Theme_Black_NoTitleBar_Fullscreen);
         dialog2.requestWindowFeature(1);
-        this.dialog=dialog2;
+        this.dialog = dialog2;
         this.dialog.setContentView(R.layout.user_mgmt_edit_admin_layout);
         this.dialog.setCancelable(true);
         this.dialog.setCanceledOnTouchOutside(true);
@@ -119,6 +142,7 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
         TextView title = this.dialog.findViewById(R.id.title);
         if (users != null) {
             title.setText(" Edit User");
+            this.mode = "edit-user";
         } else {
             title.setText(" Invite User");
         }
@@ -126,6 +150,8 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
         EditText lnameEt = this.dialog.findViewById(R.id.et_lname);
         EditText emailEt = this.dialog.findViewById(R.id.et_email);
         RadioGroup roleGroup = this.dialog.findViewById(R.id.radioGroup);
+        RadioButton selectedRadioButton = this.dialog.findViewById(roleGroup.getCheckedRadioButtonId());
+        Toast.makeText(getContext(), selectedRadioButton.getText().toString(), Toast.LENGTH_LONG).show();
         TextView fnameErrorTv = this.dialog.findViewById(R.id.fNameErrorTv);
         TextView lnameErrorTv = this.dialog.findViewById(R.id.lNameErrorTv);
         TextView emailErrorTv = this.dialog.findViewById(R.id.emailErrorTv);
@@ -138,7 +164,6 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
             } else {
                 roleGroup.check(R.id.userRB);
             }
-            this.mode = "edit-user";
             this.f90id = users.getId();
         }
         TextView save = this.dialog.findViewById(R.id.saveButton);
@@ -227,7 +252,7 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
 
     }
 
-    public void lambda$editAdminDialog$1$UserManagementFragment(RadioGroup roleGroup, EditText fnameEt, TextView fnameErrorTv, EditText lnameEt, TextView lnameErrorTv, EditText emailEt, TextView emailErrorTv, View v) {
+   /* public void lambda$editAdminDialog$1$UserManagementFragment(RadioGroup roleGroup, EditText fnameEt, TextView fnameErrorTv, EditText lnameEt, TextView lnameErrorTv, EditText emailEt, TextView emailErrorTv, View v) {
         TextView textView = fnameErrorTv;
         TextView textView2 = lnameErrorTv;
         TextView textView3 = emailErrorTv;
@@ -259,7 +284,7 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
                 addUser(new AddUserRequest(this.roleButton.getText().toString(), email, firstName, this.f90id, lastName), this.mode);
             }
         }
-    }
+    }*/
 
     private void addUser(AddUserRequest addUserRequest, String mode2) {
         RestClient.getInstance(getContext()).createUser(Constant.X_SIGNATURE, "Bearer " + UiUtil.getAcccessToken(getContext()), UiUtil.getComp_Id(getContext()), addUserRequest, mode2).enqueue(new CustomCallBack<ResponseBody>(getContext(), null) {

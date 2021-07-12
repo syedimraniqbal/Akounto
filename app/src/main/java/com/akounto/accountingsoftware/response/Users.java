@@ -23,6 +23,8 @@ public class Users {
     private Object postCode;
     @SerializedName("Role")
     private String role;
+    @SerializedName("IsOwner")
+    private boolean isOwner;
 
     public String getRole() {
         return this.role;
@@ -58,5 +60,13 @@ public class Users {
 
     public Object getPostCode() {
         return this.postCode;
+    }
+
+    public boolean isOwner() {
+        return isOwner;
+    }
+
+    public void setOwner(boolean owner) {
+        isOwner = owner;
     }
 }

@@ -81,7 +81,7 @@ public class SignUpStep3 extends AppCompatActivity {
                 String publicToken = linkSuccess.getPublicToken();
                 String institutionId = metadata.getInstitution().getId();
                 String institutionName = metadata.getInstitution().getName();
-
+/*
                 model.registerBank(mContext, publicToken, institutionId, institutionName).observe(this, new Observer<BankAccountData>() {
                     @Override
                     public void onChanged(BankAccountData bankAccountData) {
@@ -97,7 +97,7 @@ public class SignUpStep3 extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), bankAccountData.getStatusMessage(), Toast.LENGTH_LONG).show();
                         }
                     }
-                });
+                });*/
                 return Unit.INSTANCE;
             },
             linkExit -> {

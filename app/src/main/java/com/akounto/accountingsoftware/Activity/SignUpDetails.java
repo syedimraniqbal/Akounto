@@ -98,12 +98,8 @@ public class SignUpDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_signup1);
         try {
-
             mContext = this;
-
-
             registerBusiness = LocalManager.getInstance().getRegisterBusiness();
-            //
             Bundle b = new Bundle();
             b.putString(Constant.CATEGORY, "sign_up");
             b.putString(Constant.ACTION, "screen_view");

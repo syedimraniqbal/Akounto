@@ -1,18 +1,25 @@
 package com.akounto.accountingsoftware.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.response.Users;
+import com.akounto.accountingsoftware.util.UiUtil;
+
 import java.util.List;
 
 public class UserManagementAdminAdapter extends RecyclerView.Adapter<UserManagementAdminAdapter.MyViewHolder> {
-    Context context;
-    UserManagementAdminItemClick onClickListener;
+
+    private Context context;
+    private UserManagementAdminItemClick onClickListener;
     private final List<Users> usersList;
 
     public UserManagementAdminAdapter(Context context2, List<Users> users, UserManagementAdminItemClick onClickListener2) {
@@ -32,15 +39,29 @@ public class UserManagementAdminAdapter extends RecyclerView.Adapter<UserManagem
         textView.setText(user.getFirstName() + " " + user.getLastName());
         vh.email.setText(user.getEmail());
         vh.role.setText(user.getRole());
+        Log.e("User Email ::", UiUtil.getUserName(context));
+        if (user.isOwner() || user.getEmail().equalsIgnoreCase(UiUtil.getUserName(context))) {
+            vh.edit.setEnabled(false);
+            vh.edit.setAlpha(128);
+            vh.delete.setEnabled(false);
+            vh.delete.setAlpha(.5f);
+        } else {
+            vh.edit.setEnabled(true);
+            vh.edit.setAlpha(255);
+            vh.delete.setEnabled(true);
+            vh.delete.setAlpha(255);
+        }
         vh.edit.setOnClickListener(new View.OnClickListener() {
             public final void onClick(View view) {
-                UserManagementAdminAdapter.this.lambda$onBindViewHolder$0$UserManagementAdminAdapter(user, view);
+                onClickListener.editAdmin(user);;
             }
         });
-    }
 
-    public /* synthetic */ void lambda$onBindViewHolder$0$UserManagementAdminAdapter(Users user, View v) {
-        this.onClickListener.editAdmin(user);
+        vh.delete.setOnClickListener(new View.OnClickListener() {
+            public final void onClick(View view) {
+                onClickListener.deleteAdmin(user);;
+            }
+        });
     }
 
     public int getItemCount() {
@@ -48,7 +69,8 @@ public class UserManagementAdminAdapter extends RecyclerView.Adapter<UserManagem
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView edit;
+        ImageView edit;
+        ImageView delete;
         TextView email;
         TextView name;
         TextView role;
@@ -58,6 +80,7 @@ public class UserManagementAdminAdapter extends RecyclerView.Adapter<UserManagem
             this.name = itemView.findViewById(R.id.name);
             this.email = itemView.findViewById(R.id.email);
             this.role = itemView.findViewById(R.id.role);
+            this.delete = itemView.findViewById(R.id.iv_delete);
             this.edit = itemView.findViewById(R.id.editButton);
         }
     }

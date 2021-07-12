@@ -191,9 +191,9 @@
 
                 <ImageView
                     android:id="@+id/auto_sync"
-                    android:layout_width="35dp"
-                    android:layout_height="18dp"
-                    app:srcCompat="@drawable/toggle_on" />
+                    android:layout_width="22dp"
+                    android:layout_height="19dp"
+                    android:src="@drawable/on_toggle" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

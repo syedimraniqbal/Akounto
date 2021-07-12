@@ -5,11 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.Activity.Dashboard.MoreFragment;
 import com.akounto.accountingsoftware.Activity.Invoice.CustomizeInvoice;

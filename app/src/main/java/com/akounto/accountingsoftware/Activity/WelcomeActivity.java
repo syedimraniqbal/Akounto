@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.RemoteException;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -19,8 +21,13 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.R;
+import com.akounto.accountingsoftware.Repository.LoginRepo;
 import com.akounto.accountingsoftware.adapter.SliderPagerAdapter;
+import com.akounto.accountingsoftware.util.LogsPrint;
 import com.akounto.accountingsoftware.util.UiUtil;
+import com.android.installreferrer.api.InstallReferrerClient;
+import com.android.installreferrer.api.InstallReferrerStateListener;
+import com.android.installreferrer.api.ReferrerDetails;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -33,6 +40,8 @@ import java.util.TimerTask;
 
 public class WelcomeActivity extends AppCompatActivity {
 
+    ReferrerDetails response = null;
+    InstallReferrerClient referrerClient;
     private ViewPager viewPager;
     private SliderPagerAdapter myViewPagerAdapter;
     private com.google.android.material.tabs.TabLayout dotsLayout;
@@ -114,6 +123,55 @@ public class WelcomeActivity extends AppCompatActivity {
                     handler.post(Update);
                 }
             }, DELAY_MS, PERIOD_MS);
+
+            referrerClient = InstallReferrerClient.newBuilder(this).build();
+            referrerClient.startConnection(new InstallReferrerStateListener() {
+                @Override
+                public void onInstallReferrerSetupFinished(int responseCode) {
+                    switch (responseCode) {
+                        case InstallReferrerClient.InstallReferrerResponse.OK:
+                            // Connection established.
+                            try {
+                                response = referrerClient.getInstallReferrer();
+                            } catch (RemoteException e) {
+                                e.printStackTrace();
+                            }
+                            String referrerUrl = response.getInstallReferrer();
+                            long referrerClickTime = response.getReferrerClickTimestampSeconds();
+                            long appInstallTime = response.getInstallBeginTimestampSeconds();
+                            boolean instantExperienceLaunched = response.getGooglePlayInstantParam();
+                            LoginRepo.prinLogs(referrerUrl,4,"referrer_OK");
+                            break;
+                        case InstallReferrerClient.InstallReferrerResponse.FEATURE_NOT_SUPPORTED:
+                            // API not available on the current Play Store app.
+                            try {
+                                response = referrerClient.getInstallReferrer();
+                            } catch (RemoteException e) {
+                                e.printStackTrace();
+                            }
+                            String referrerUrl2 = response.getInstallReferrer();
+                            LoginRepo.prinLogs(referrerUrl2,4,"referrer_FEATURE_NOT_SUPPORTED");
+                            break;
+                        case InstallReferrerClient.InstallReferrerResponse.SERVICE_UNAVAILABLE:
+                            // Connection couldn't be established.
+                            try {
+                                response = referrerClient.getInstallReferrer();
+                            } catch (RemoteException e) {
+                                e.printStackTrace();
+                            }
+                            String referrerUrl3 = response.getInstallReferrer();
+                            LoginRepo.prinLogs(referrerUrl3,4,"SERVICE_UNAVAILABLE");
+                            break;
+                    }
+                }
+
+                @Override
+                public void onInstallReferrerServiceDisconnected() {
+                    // Try to restart the connection on the next request to
+                    // Google Play by calling the startConnection() method.
+                }
+            });
+
         } catch (Exception e) {
         }
     }

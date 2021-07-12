@@ -245,9 +245,9 @@ public class EditItem extends AppCompatActivity {
         try {
             Dialog dialog = new Dialog(this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
             dialog.requestWindowFeature(1);
-            dialog.setContentView(R.layout.dilog_tax_display);
             dialog.setCancelable(true);
             dialog.setCanceledOnTouchOutside(true);
+            dialog.setContentView(R.layout.dilog_tax_display);
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
             RecyclerView rc = (RecyclerView) dialog.findViewById(R.id.rc_tax);
             rc.setHasFixedSize(true);

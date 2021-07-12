@@ -1,86 +1,94 @@
 [
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_customize_invoice.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_customize_invoice.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_create_bill.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\layout_create_bill.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_bussniess_list.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_bussniess_list.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\send_estimate_home_fragment.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\send_estimate_home_fragment.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_setting_accounting.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_setting_accounting.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_customize_invoice_style.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\layout_customize_invoice_style.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_bview_bill.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_bview_bill.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_setting_accounting.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\layout_setting_accounting.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_web_view.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\fragment_web_view.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_bank_import_lis.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\layout_bank_import_lis.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\mobile_code_dilog.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\mobile_code_dilog.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_addtransection.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\activity_addtransection.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_purchase_fragment.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_purchase_fragment.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_web_view.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\fragment_web_view.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_setting_fragment.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_setting_fragment.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_bview_bill.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\layout_bview_bill.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_more.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_more.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_customize_invoice.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\layout_customize_invoice.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_creating_products_and_services.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\activity_creating_products_and_services.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_bank_import_lis_item.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\layout_bank_import_lis_item.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\send_estimate_home_fragment.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\send_estimate_home_fragment.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_test2.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\layout_test2.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_accounting_fragment.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_accounting_fragment.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_bussniess_list.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\layout_bussniess_list.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_menu_fragment.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_menu_fragment.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_creating_products_and_services.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\activity_creating_products_and_services.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_test2.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_test2.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_sales_fargment.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\layout_sales_fargment.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_bank_list.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\activity_bank_list.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_purchase_fragment.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\layout_purchase_fragment.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\mobile_code_item.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\mobile_code_item.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_menu_fragment.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\layout_menu_fragment.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_test3.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_test3.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_more.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\layout_more.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_customize_invoice_style.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_customize_invoice_style.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_bank_list.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\activity_bank_list.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_create_bill.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_create_bill.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\mobile_code_dilog.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\mobile_code_dilog.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_addtransection.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\activity_addtransection.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\mobile_code_item.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\mobile_code_item.xml"
     },
     {
-        "merged": "E:\\Android Code\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_sales_fargment.xml",
-        "source": "E:\\Android Code\\Akounto\\app\\src\\main\\res\\layout\\layout_sales_fargment.xml"
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_accounting_fragment.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\layout_accounting_fragment.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_test3.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\layout_test3.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_setting_fragment.xml",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\layout_setting_fragment.xml"
     }
 ]

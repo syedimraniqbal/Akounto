@@ -3688,6 +3688,7 @@ id availableBalanceText
 id back
 id backButton
 id background_progress
+id balance
 id balanceAmount
 id balanceSheetRL
 id bankName
@@ -3723,6 +3724,7 @@ id billsRecycler
 id blocking
 id body
 id bottom
+id bottom_ll
 id bottom_to_top
 id bounce
 id btnSpinAndWinRedeem
@@ -3824,6 +3826,7 @@ id chains
 id chapterName
 id chartExpandable
 id chatNew
+id checkBox
 id checkBox_select
 id checkBox_tnc
 id checkbox
@@ -3929,6 +3932,7 @@ id dateSelection
 id dateTV
 id dateText
 id dateTo
+id date_ll
 id date_picker_actions
 id datesAndCurrencyTv
 id datesSpinner
@@ -4204,6 +4208,8 @@ id header
 id headerAssetCaption
 id headerLayout
 id header_bank
+id header_dilog
+id header_dilog2
 id header_title
 id headtext
 id hedar
@@ -4282,6 +4288,7 @@ id invoicesRecyclerView
 id inward
 id isCompoundTax
 id isRecoverableTax
+id is_connected
 id is_selected
 id italic
 id itemListLayout
@@ -4361,6 +4368,7 @@ id linearLayout2
 id linearLayout3
 id linearLayout6
 id linearLayoutUp
+id list
 id listItemRecycler
 id listMode
 id listView
@@ -4380,6 +4388,7 @@ id lytCameraPick
 id lytGalleryPick
 id mail_ckeck
 id mainLayout
+id main_ll
 id main_title
 id marquee
 id mask_left
@@ -4741,6 +4750,7 @@ id right_side
 id right_to_left
 id role
 id roleText
+id role_ll
 id rollbackToDraft
 id root
 id root_progress_bar
@@ -5104,7 +5114,9 @@ id tv9
 id tvTV
 id tv_amount
 id tv_amountDue
+id tv_bank_account
 id tv_bank_list
+id tv_bank_name
 id tv_category
 id tv_categoryLL
 id tv_char_name
@@ -5486,6 +5498,8 @@ layout ittem_tax_list
 layout layount_add_customer
 layout layount_create_invoice
 layout layout_accounting_fragment
+layout layout_bank_import_lis
+layout layout_bank_import_lis_item
 layout layout_billaddress
 layout layout_billlist
 layout layout_billsinfo

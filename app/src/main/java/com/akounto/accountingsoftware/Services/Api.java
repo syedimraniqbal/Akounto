@@ -8,8 +8,11 @@ import com.akounto.accountingsoftware.Data.LoginData;
 import com.akounto.accountingsoftware.Data.Profile.UserRegister;
 import com.akounto.accountingsoftware.Data.RegisterBank.AutoSynData;
 import com.akounto.accountingsoftware.Data.RegisterBank.BankAccountData;
+import com.akounto.accountingsoftware.Data.RegisterBank.BankAccountData2;
 import com.akounto.accountingsoftware.Data.SoclData;
 import com.akounto.accountingsoftware.model.ForgotPasswordData;
+import com.akounto.accountingsoftware.request.EditCompanyRequest;
+import com.akounto.accountingsoftware.request.RegisterBankRequest;
 import com.akounto.accountingsoftware.response.SignUp.SignUpResponse;
 import com.google.gson.JsonObject;
 
@@ -38,9 +41,13 @@ public interface Api {
     @FormUrlEncoded
     Call<BankLinkData> bankLinkRequest(@Header("X-Signature") String signature, @Header("X-Company") String header, @Header("Authorization") String authHeader, @Field("") String dummy);
 
-    @POST("api/bank/register-bank")
+    @POST("api/bank/register-bank-with-options")
     @FormUrlEncoded
-    Call<BankAccountData> registerBankRequest(@Header("X-Signature") String signature, @Header("X-Company") String company, @Header("Authorization") String authHeader, @Field("PublicToken") String public_token, @Field("InstitutionId") String institution_id, @Field("InstitutionName") String institution_name);
+    Call<BankAccountData2> registerBankRequest(@Header("X-Signature") String signature, @Header("X-Company") String company, @Header("Authorization") String authHeader, @Field("PublicToken") String public_token, @Field("InstitutionId") String institution_id, @Field("InstitutionName") String institution_name);
+
+    @POST("api/bank/register-selected-bank-account")
+    Call<BankAccountData> registerBank(@Header("X-Signature") String signature, @Header("X-Company") String company, @Header("Authorization") String authHeader, @Body RegisterBankRequest request);
+
 
     @GET("api/bank/get")
     Call<BankAccountData> getBankRequest(@Header("X-Signature") String signature, @Header("X-Company") String header, @Header("Authorization") String authHeader, @Query("") String dummy);
