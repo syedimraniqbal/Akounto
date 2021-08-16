@@ -16,6 +16,7 @@
         android:text="Are you sure ?"/>
 
     <TextView
+        android:id="@+id/descp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10sdp"

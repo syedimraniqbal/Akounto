@@ -66,9 +66,9 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         }
         TextView textView2 = vh.invoiceAmount;
         if (TextUtils.isEmpty(String.valueOf(this.recurringInvoicesItems.get(position).getAmount()))) {
-            str2 = str3;
+            str2 = String.format("%.2f", str3);
         } else {
-            str2 = "$" + this.recurringInvoicesItems.get(position).getAmount();
+            str2 = "$" + String.format("%.2f", this.recurringInvoicesItems.get(position).getAmount());
         }
         textView2.setText(str2);
         if (this.recurringInvoicesItems.get(position).getTransactionType() == 3) {

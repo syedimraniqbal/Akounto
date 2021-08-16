@@ -14,28 +14,30 @@ public class MobileCodeItemBindingImpl extends MobileCodeItemBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.img_flag, 1);
-        sViewsWithIds.put(R.id.country, 2);
-        sViewsWithIds.put(R.id.country_code, 3);
+        sViewsWithIds.put(R.id.relCountyList, 1);
+        sViewsWithIds.put(R.id.img_flag, 2);
+        sViewsWithIds.put(R.id.country, 3);
+        sViewsWithIds.put(R.id.country_code, 4);
     }
     // views
     @NonNull
-    private final android.widget.LinearLayout mboundView0;
+    private final android.widget.RelativeLayout mboundView0;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public MobileCodeItemBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
     }
     private MobileCodeItemBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.TextView) bindings[2]
             , (android.widget.TextView) bindings[3]
-            , (android.widget.ImageView) bindings[1]
+            , (android.widget.TextView) bindings[4]
+            , (android.widget.ImageView) bindings[2]
+            , (android.widget.RelativeLayout) bindings[1]
             );
-        this.mboundView0 = (android.widget.LinearLayout) bindings[0];
+        this.mboundView0 = (android.widget.RelativeLayout) bindings[0];
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners

@@ -33,6 +33,9 @@
             android:name="com.akounto.accountingsoftware.Activity.Invoice.CreateInvoice"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.akounto.accountingsoftware.Activity.Invoice.EditInvoice"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.akounto.accountingsoftware.Activity.Invoice.CustomerList"
             android:screenOrientation="portrait" />
         <activity
@@ -118,7 +121,13 @@
             android:screenOrientation="portrait"/>
         <activity android:name="com.akounto.accountingsoftware.Activity.SignUpStep3"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.akounto.accountingsoftware.Activity.Invoice.EditInvoice"
+        <activity android:name="com.akounto.accountingsoftware.Activity.SocialSignUp1"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.akounto.accountingsoftware.Activity.SocialSignUp2"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.akounto.accountingsoftware.Activity.SocialSignUp3"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.akounto.accountingsoftware.Activity.SignupOptions"
             android:screenOrientation="portrait"/>
         <activity android:name="com.akounto.accountingsoftware.Activity.UploadBankStatementActivity"
             android:screenOrientation="portrait"/>
@@ -187,13 +196,6 @@
             android:screenOrientation="portrait"
             android:launchMode="singleInstance" />
 
-        <activity android:name="com.akounto.accountingsoftware.Activity.VideoAfterSplashActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-
-        </activity>
         <activity android:name="com.akounto.accountingsoftware.Activity.SplashScreenActivity"
             android:screenOrientation="portrait">
             <intent-filter>

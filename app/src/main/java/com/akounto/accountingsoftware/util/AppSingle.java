@@ -11,7 +11,7 @@ import com.akounto.accountingsoftware.Activity.DashboardActivity;
 public class AppSingle extends Application {
     private DashboardActivity activity;
     private static AppSingle _app;
-    private String comp_id,access_token,comp_name,currency,cur_code;
+    private String comp_id,access_token,comp_name,currency,cur_code,email;
 
     public static AppSingle getInstance() {
         return _app;
@@ -69,5 +69,13 @@ public class AppSingle extends Application {
 
     public void setActivity(DashboardActivity activity) {
         this.activity = activity;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

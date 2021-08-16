@@ -71,7 +71,7 @@ public class BankListAdapter extends RecyclerView.Adapter<BankListAdapter.ViewHo
         final Bank myListData = item_list.get(position);
         holder.tv_bank_name.setText(myListData.getInstitutionName());
         holder.tv_bank_Account_name.setText(myListData.getBankAccounts().getName());
-        holder.tv_last_update.setText("Last updated " + converttodays(myListData.getBankAccounts().getLastTransactionFetchedOn().split("T")[0]));
+        holder.tv_last_update.setText("Last updated " + converttodays(myListData.getBankAccounts().getLastTransactionFetchedOn().split("T")[0]) + " ago");
         if (myListData.getBankAccounts().getCurrency() == null) {
             holder.tv_currency.setText(getcurrencyData(myListData.getBankAccounts().getCurrency()) + " " + String.format("%.2f", myListData.getBankAccounts().getAvailableBalance()) + " USD");
         } else {
@@ -135,11 +135,19 @@ public class BankListAdapter extends RecyclerView.Adapter<BankListAdapter.ViewHo
             m = r / 30;
             d = r % 30;
             if (m == 0) {
-                result = d + " days";
+                if (d == 1) {
+                    result = d + " day";
+                } else {
+                    result = d + " days";
+                }
             } else if (d == 0) {
-                result = m + " months";
+                if (m == 1) {
+                    result = m + " months";
+                } else {
+                    result = m + " months";
+                }
             } else {
-                result = m + " months " + d + " days";
+                result = m + " month " + d + " day";
             }
 
         } catch (ParseException e) {

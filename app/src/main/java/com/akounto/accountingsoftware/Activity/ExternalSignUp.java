@@ -90,6 +90,11 @@ public class ExternalSignUp extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.layout_extlogin);
         try {
             mContext = this;
+            Bundle b = new Bundle();
+            b.putString(Constant.CATEGORY, "sign_up");
+            b.putString(Constant.ACTION, "screenview");
+            b.putString(Constant.EMAIL, email);
+            SplashScreenActivity.sendEvent("social_signup_screenview", b);
             typeBusinessSpinner = findViewById(R.id.typeBusinessSpinner);
             dealsWithBusinessSpinner = findViewById(R.id.dealsWithBusinessSpinner);
             m_number = findViewById(R.id.ed_mobile);
@@ -300,28 +305,45 @@ public class ExternalSignUp extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
+        Bundle b = new Bundle();
+        b.putString(Constant.CATEGORY, "sign_up");
+        b.putString(Constant.ACTION, "onClick");
+        b.putString(Constant.EMAIL, email);
+        SplashScreenActivity.sendEvent("social_signup_onClick", b);
         String bn = b_name.getText().toString();
         reset();
         if (isValidAbout()) {
+
            // LoginRepo.prinLogs("" +JsonUtils.getExtRegRequst(m_number.getText().toString(), first,last, email, bn, id_token, String.valueOf(ExternalSignUp.this.dealsWithId), ExternalSignUp.this.dealsWith, String.valueOf(ExternalSignUp.this.businessTypeId), ExternalSignUp.this.businessType, "" + selectedCountry, "" + selectedCurrencyId), 5, "Sign up Socel");
             model.extReg(mContext, JsonUtils.getExtRegRequst(m_number.getText().toString(), first,last, email, bn, id_token, String.valueOf(ExternalSignUp.this.dealsWithId), ExternalSignUp.this.dealsWith, String.valueOf(ExternalSignUp.this.businessTypeId), ExternalSignUp.this.businessType, "" + selectedCountry, "" + selectedCurrencyId,phone_code_tv.getText().toString())).observe(this, userDetails -> {
                 if (userDetails.getStatus() == 0) {
                     try {
-                        Bundle b = new Bundle();
-                        b.putString(Constant.CATEGORY, "sign_up");
-                        b.putString(Constant.ACTION, "social");
-                        b.putString(Constant.EMAIL, email);
-                        SplashScreenActivity.sendEvent("sign_up_social", b);
+                        Bundle b11 = new Bundle();
+                        b11.putString(Constant.CATEGORY, "sign_up");
+                        b11.putString(Constant.ACTION, "social");
+                        b11.putString(Constant.EMAIL, email);
+                        SplashScreenActivity.sendEvent("sign_up_social", b11);
                         UiUtil.addLoginToSharedPref(ExternalSignUp.this, true);
                         UiUtil.addUserDetails(ExternalSignUp.this, userDetails);
                         AppSingle.getInstance().setComp_name(new Gson().fromJson(userDetails.getData().getUserDetails(), UserDetails.class).getActiveBusiness().getName());
+                        AppSingle.getInstance().setEmail(email);
                         Intent mainIntent = new Intent(ExternalSignUp.this, DashboardActivity.class);
                         ExternalSignUp.this.startActivity(mainIntent);
                     } catch (Exception e) {
                         LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "Sign up Socel");
+                        Bundle b11 = new Bundle();
+                        b11.putString(Constant.CATEGORY, "sign_up");
+                        b11.putString(Constant.ACTION, "social");
+                        b11.putString(Constant.EMAIL, email);
+                        SplashScreenActivity.sendEvent("sign_up_social_fail", b11);
                     }
                 } else {
                     Toast.makeText(ExternalSignUp.this, userDetails.getStatusMessage(), Toast.LENGTH_SHORT).show();
+                    Bundle b11 = new Bundle();
+                    b11.putString(Constant.CATEGORY, "sign_up");
+                    b11.putString(Constant.ACTION, "social");
+                    b11.putString(Constant.EMAIL, email);
+                    SplashScreenActivity.sendEvent("sign_up_social_fail", b11);
                 }
             });
         }

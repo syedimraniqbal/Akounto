@@ -29,13 +29,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.akounto.accountingsoftware.Activity.AddJournalTransactionActivity;
+import com.akounto.accountingsoftware.Activity.AddTransactionActivity;
 import com.akounto.accountingsoftware.Activity.Bank.BankListActivity;
 import com.akounto.accountingsoftware.Activity.SplashScreenActivity;
 import com.akounto.accountingsoftware.Activity.TransactionCategoryClick;
 import com.akounto.accountingsoftware.Activity.UploadBankStatementActivity;
 import com.akounto.accountingsoftware.Activity.fragment.AddTransactionFragment;
 import com.akounto.accountingsoftware.Activity.fragment.TransactionAddFragment;
+import com.akounto.accountingsoftware.Activity.fragment.TransactionsFragment;
 import com.akounto.accountingsoftware.Constants.Constant;
+import com.akounto.accountingsoftware.Data.Currency;
+import com.akounto.accountingsoftware.Data.CurrencyData;
+import com.akounto.accountingsoftware.Data.RegisterBank.Account;
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.adapter.AddWithdrawalCategoryAdapter;
 import com.akounto.accountingsoftware.adapter.TransactionAdapter;
@@ -58,7 +63,9 @@ import com.akounto.accountingsoftware.response.chartaccount.HeadSubType;
 import com.akounto.accountingsoftware.response.chartaccount.HeadTransactions;
 import com.akounto.accountingsoftware.response.chartaccount.HeadType;
 import com.akounto.accountingsoftware.util.AddFragments;
+import com.akounto.accountingsoftware.util.JsonUtils;
 import com.akounto.accountingsoftware.util.UiUtil;
+import com.google.gson.Gson;
 import com.skydoves.powerspinner.OnSpinnerItemSelectedListener;
 import com.skydoves.powerspinner.PowerSpinnerView;
 
@@ -76,6 +83,7 @@ import retrofit2.Response;
 
 
 public class TransactionsActivity  extends AppCompatActivity implements View.OnClickListener, TransactionCategoryClick, TransactionItemClick, TransactionIconClick {
+
     int RecordsPerPage = 10;
     Spinner accountSpinner;
     TransactionAdapter adapter;
@@ -90,6 +98,7 @@ public class TransactionsActivity  extends AppCompatActivity implements View.OnC
     TextView fromDateTv;
     List<AddWithdrawalCategorySpinnerItem> list = new ArrayList();
     LinearLayout ll_upload_bankstmt;
+    private CurrencyData currencyData;
     private int mDay;
     private int mMonth;
     private int mYear;
@@ -108,21 +117,47 @@ public class TransactionsActivity  extends AppCompatActivity implements View.OnC
     ImageView toDate;
     TextView toDateTv;
     RecyclerView transectionRecycler;
-    LinearLayout noData;
+    LinearLayout noData,more_top;
     int type = 0;
     View view;
     boolean start = false;
-    Context mContext;
-
+    Context mContext;String bank_id;
+    public String getcurrencyData(String curreCode) {
+        Currency result = null;
+        try {
+            if (curreCode != null) {
+                for (int i = 0; i < currencyData.getCurrency().size(); i++) {
+                    if (currencyData.getCurrency().get(i).getId().endsWith(curreCode)) {
+                        result = currencyData.getCurrency().get(i);
+                    }
+                }
+            } else {
+                result = currencyData.getCurrency().get(0);
+            }
+        } catch (Exception e) {
+            result = currencyData.getCurrency().get(0);
+        }
+        return result.getSymbol();
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.transactions_fragment);
+        //setHasOptionsMenu(true);
         mContext=this;
+        String loadJSONFromAsset = JsonUtils.loadJSONFromAsset("test.json", mContext);
+        currencyData = new Gson().fromJson(loadJSONFromAsset, CurrencyData.class);
+        bank_id = getIntent().getExtras().getString(Constant.BANK_ID);
         findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(mContext, BankListActivity.class));
+                finish();
+            }
+        });
+       more_top=findViewById(R.id.more_top);
+        more_top.setOnClickListener(new View.OnClickListener() {
+            public final void onClick(View view) {
+                more_top.showContextMenu();
             }
         });
         inItUi();
@@ -165,7 +200,7 @@ public class TransactionsActivity  extends AppCompatActivity implements View.OnC
         this.moreButton = findViewById(R.id.moreButton);
         this.priceTotal = findViewById(R.id.priceTotal);
         //findViewById(R.id.addAccount).setOnClickListener($$Lambda$TransactionsActivity$Uh_qoYxkW8remCENv5Z00Ak58.INSTANCE);
-        registerForContextMenu(this.moreButton);
+        registerForContextMenu(this.more_top);
         this.moreButton.setOnClickListener(new View.OnClickListener() {
             public final void onClick(View view) {
                 moreButton.showContextMenu();
@@ -417,7 +452,8 @@ public class TransactionsActivity  extends AppCompatActivity implements View.OnC
 
     private void getTransectionList() {
         TransectionRequest request = new TransectionRequest();
-        request.setBankId(0);
+        try{
+        request.setBankId(Integer.parseInt(bank_id));}catch (Exception e){}
         request.setTransactionType(0);
         request.setPageNumber(this.pageNum);
         request.setRecordsPerPage(this.RecordsPerPage);
@@ -577,12 +613,14 @@ public class TransactionsActivity  extends AppCompatActivity implements View.OnC
         ArrayList<String> accounts = new ArrayList<>();
 
         if (bankResponse != null) {
+            String cur="USD";
             for (BanksItem innerBanksItem : bankResponse) {
                 accounts.add(innerBanksItem.getInstitutionName());
                 this.balance += innerBanksItem.getBankAccounts().getAvailableBalance();
+                cur=innerBanksItem.getBankAccounts().getCurrency();
             }
             try {
-                this.priceTotal.setText(this.balance + " USD");
+                this.priceTotal.setText(getcurrencyData(cur)+" "+this.balance);
                 ArrayAdapter dataAdapter = new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_item, accounts);
                 dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 accountSpinner.setAdapter(dataAdapter);
@@ -607,10 +645,15 @@ public class TransactionsActivity  extends AppCompatActivity implements View.OnC
         start = true;
         TransectionRequest transectionRequest = new TransectionRequest(((BanksItem) bankResponse.get(selectedIndex)).getBankAccounts().getId(), ((BanksItem) bankResponse.get(selectedIndex)).getBankAccounts().getBankId(), 0);
         TextView textView = this.priceTotal;
-        textView.setText(((BanksItem) bankResponse.get(selectedIndex)).getBankAccounts().getAvailableBalance() + " USD");
+        textView.setText(getcurrencyData(((BanksItem) bankResponse.get(selectedIndex)).getBankAccounts().getCurrency())+" "+((BanksItem) bankResponse.get(selectedIndex)).getBankAccounts().getAvailableBalance());
         getTrasList(transectionRequest);
     }
-
+   /* public void featchTars(int id, int bank_id) {
+        start = true;
+        TransectionRequest transectionRequest = new TransectionRequest(id, bank_id, 0);
+        //this.priceTotal.setText(((BanksItem) bankResponse.get(selectedIndex)).getBankAccounts().getAvailableBalance() + " USD");
+        getTrasList(transectionRequest);
+    }*/
     public void onClick(View v) {
         int id = v.getId();
         if (id == R.id.addDeposit) {
@@ -621,9 +664,9 @@ public class TransactionsActivity  extends AppCompatActivity implements View.OnC
             b.putString(Constant.CATEGORY,"accounting");
             b.putString(Constant.ACTION,"add_deposit");
             SplashScreenActivity.sendEvent("accounting_add_deposit",b);
-            AddTransactionFragment f = new AddTransactionFragment();
-            f.setData("Deposit");
-            AddFragments.addFragmentToDrawerActivity(mContext, null, f.getClass());
+            Intent intent1 = new Intent(mContext, AddTransactionActivity.class);
+            intent1.putExtra("depositOrWithdrawal", "Deposit");
+            startActivity(intent1);
         } else if (id == R.id.addWithDrawal) {
             /*Intent intent = new Intent(mContext, AddTransactionActivity.class);
             intent.putExtra("depositOrWithdrawal", "Withdrawal");
@@ -632,9 +675,9 @@ public class TransactionsActivity  extends AppCompatActivity implements View.OnC
             b.putString(Constant.CATEGORY,"accounting");
             b.putString(Constant.ACTION,"add_with_drawal");
             SplashScreenActivity.sendEvent("accounting_add_with_drawal",b);
-            AddTransactionFragment f = new AddTransactionFragment();
-            f.setData("Deposit");
-            AddFragments.addFragmentToDrawerActivity(mContext, null, f.getClass());
+            Intent intent = new Intent(mContext, AddTransactionActivity.class);
+            intent.putExtra("depositOrWithdrawal", "Withdrawal");
+            startActivity(intent);
         } else if (id == R.id.ll_upload_bankstmt) {
             Intent intent2 = new Intent(mContext, UploadBankStatementActivity.class);
             intent2.putExtra("bankAccounts", (ArrayList) this.banksItems);
@@ -695,12 +738,12 @@ public class TransactionsActivity  extends AppCompatActivity implements View.OnC
                         return;
                     }
                     if (response.body() != null) {
-                        //TransactionsActivity TransactionsActivity = TransactionsActivity.this;
-                        //TransactionsActivity.startActivity(AddTransactionActivity.buildIntent(TransactionsActivity.mContext, response.body().getData()));
-                        TransactionAddFragment fragment = new TransactionAddFragment();
+                        TransactionsActivity TransactionsActivity = TransactionsActivity.this;
+                        TransactionsActivity.startActivity(AddTransactionActivity.buildIntent(TransactionsActivity.mContext, response.body().getData()));
+                       /* TransactionAddFragment fragment = new TransactionAddFragment();
                         TransactionAddFragment.receivedData = response.body().getData();
                         fragment.setData(response.body().getData());
-                        AddFragments.addFragmentToDrawerActivity(mContext, null, fragment.getClass());
+                        AddFragments.addFragmentToDrawerActivity(mContext, null, fragment.getClass());*/
                         return;
                     }
                     throw new AssertionError();

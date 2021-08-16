@@ -93,7 +93,7 @@ public class WelcomeActivity extends AppCompatActivity {
                     b.putString(Constant.CATEGORY, "welcome");
                     b.putString(Constant.ACTION, "click_sign_up");
                     SplashScreenActivity.sendEvent("welcome_click_sign_up", b);
-                    startActivity(new Intent(WelcomeActivity.this, SIgnUpStep0.class));
+                    startActivity(new Intent(WelcomeActivity.this, SignupOptions.class));
                 }
             });
             // layouts of welcome sliders

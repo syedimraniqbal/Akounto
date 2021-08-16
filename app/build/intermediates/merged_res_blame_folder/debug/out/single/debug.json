@@ -104,6 +104,10 @@
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\text_view_with_line_height_from_style.xml"
     },
     {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_logo_primary.xml.flat",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\ic_logo_primary.xml"
+    },
+    {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_view.xml.flat",
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\view.xml"
     },
@@ -150,6 +154,10 @@
     {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item_separator.xml.flat",
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_success_alert.xml.flat",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\success_alert.xml"
     },
     {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_snackbar_background.xml.flat",
@@ -206,6 +214,10 @@
     {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_menu.xml.flat",
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\design_navigation_menu.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_back_black.xml.flat",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\ic_back_black.xml"
     },
     {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_mtrl_alert_dialog_actions.xml.flat",
@@ -294,6 +306,10 @@
     {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_report.xml.flat",
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\report.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_success_gr.xml.flat",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\ic_success_gr.xml"
     },
     {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\anim_fragment_open_exit.xml.flat",
@@ -536,6 +552,10 @@
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\abc_btn_check_material_anim.xml"
     },
     {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_action_primary_btn.xml.flat",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\action_primary_btn.xml"
+    },
+    {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_preference_widget_seekbar.xml.flat",
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\preference_widget_seekbar.xml"
     },
@@ -692,6 +712,10 @@
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\item_sales_estimate.xml"
     },
     {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_plaid_logo.xml.flat",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\ic_plaid_logo.xml"
+    },
+    {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_mtrl_alert_select_dialog_singlechoice.xml.flat",
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\mtrl_alert_select_dialog_singlechoice.xml"
     },
@@ -786,6 +810,10 @@
     {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_colored_material.xml.flat",
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_slide135.png.flat",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\slide135.png"
     },
     {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_search_dropdown_item_icons_2line.xml.flat",
@@ -1128,6 +1156,10 @@
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\preference_dropdown.xml"
     },
     {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_google.png.flat",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\google.png"
+    },
+    {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_close_24.xml.flat",
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\ic_baseline_close_24.xml"
     },
@@ -1146,6 +1178,10 @@
     {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_dashboard_activities_item.xml.flat",
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\dashboard_activities_item.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_call.xml.flat",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\ic_call.xml"
     },
     {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bg_color.xml.flat",
@@ -1896,6 +1932,10 @@
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\preference_recyclerview.xml"
     },
     {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_us_flag.xml.flat",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\ic_us_flag.xml"
+    },
+    {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_dates_and_currency_fragment.xml.flat",
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\dates_and_currency_fragment.xml"
     },
@@ -2038,6 +2078,10 @@
     {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_chip_ripple_color.xml.flat",
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\color\\mtrl_chip_ripple_color.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_slide136.png.flat",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\slide136.png"
     },
     {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_preference_widget_switch_compat.xml.flat",
@@ -2352,6 +2396,10 @@
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\xml\\provider_paths.xml"
     },
     {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_tab_right.xml.flat",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\ic_tab_right.xml"
+    },
+    {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_mtrl_picker_header_toggle.xml.flat",
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\mtrl_picker_header_toggle.xml"
     },
@@ -2542,6 +2590,10 @@
     {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_up_arrow__circular.xml.flat",
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\ic_up_arrow__circular.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_social_btn_bg.xml.flat",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\social_btn_bg.xml"
     },
     {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_upload_bank_statement.xml.flat",
@@ -2744,6 +2796,10 @@
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\home_dashboard_fragment.xml"
     },
     {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_action_secondary_btn.xml.flat",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\action_secondary_btn.xml"
+    },
+    {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_default_scroll_handle_right.xml.flat",
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\default_scroll_handle_right.xml"
     },
@@ -2754,6 +2810,10 @@
     {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_minimal_5.png.flat",
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\minimal_5.png"
+    },
+    {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_slide137.png.flat",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\slide137.png"
     },
     {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_slide1.xml.flat",
@@ -3220,6 +3280,10 @@
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\ic_mtrl_chip_checked_circle.xml"
     },
     {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_sign_in_input.xml.flat",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\drawable\\sign_in_input.xml"
+    },
+    {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_mobile_code_dilog.xml.flat",
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\mobile_code_dilog.xml"
     },
@@ -3550,6 +3614,10 @@
     {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_invoice_no_setting.xml.flat",
         "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\invoice_no_setting.xml"
+    },
+    {
+        "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_option_signup.xml.flat",
+        "source": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\src\\main\\res\\layout\\layout_option_signup.xml"
     },
     {
         "merged": "E:\\Android Code\\Staging Akounto\\Akounto\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_tooltip_enter.xml.flat",

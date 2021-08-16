@@ -1,14 +1,17 @@
 package com.akounto.accountingsoftware.Activity;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Process;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -22,8 +25,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.akounto.accountingsoftware.Activity.Accounting.TransactionsActivity;
 import com.akounto.accountingsoftware.Activity.Invoice.InvoiceList;
 import com.akounto.accountingsoftware.Constants.Constant;
+import com.akounto.accountingsoftware.Data.RegisterBank.Bank;
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.Activity.Dashboard.MainMenu;
 import com.akounto.accountingsoftware.Activity.Dashboard.MoreFragment;
@@ -75,7 +80,7 @@ public class DashboardActivity extends AppCompatActivity {
         findViewById(R.id.footer_more).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addFragmentNotToStack(new MoreFragment());
+                AddFragments.addFragmentToDrawerActivity(mContext, null,MoreFragment.class);
             }
         });
     }
@@ -126,14 +131,30 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
 
-    public void onBackPressed() {
-        if (getSupportFragmentManager().getBackStackEntryCount() == 1) {
-            finish();
-        } else {
-            super.onBackPressed();
+
+    public void showDialog() {
+
+        Dialog dialog = new Dialog(mContext);
+        if (!dialog.isShowing()) {
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setCancelable(false);
+            dialog.setContentView(R.layout.dilog_bank_import);
+            Button btn_import = dialog.findViewById(R.id.btn_import);
+            Button btn_cancle = dialog.findViewById(R.id.btn_cancel);
+            TextView descp=dialog.findViewById(R.id.descp);
+            descp.setText("Do you really want to Exit!");
+            btn_import.setText("Ok");
+            btn_import.setOnClickListener(v -> {
+                dialog.dismiss();
+                close();
+                finish();
+            });
+            btn_cancle.setOnClickListener(v -> {
+                dialog.dismiss();
+            });
+            dialog.show();
         }
     }
-
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         if (getCurrentFocus() != null) {
@@ -175,8 +196,8 @@ public class DashboardActivity extends AppCompatActivity {
             ft.add(fl.getId(), fragment, fragment.getClass().getName());
             if (false)
                 ft.addToBackStack(fragment.getClass().getName());
-            else
-                clearBackStack();
+            //else
+                //clearBackStack();
             ft.commit();
         } catch (Exception e) {
         }
@@ -200,13 +221,33 @@ public class DashboardActivity extends AppCompatActivity {
         }
     }
 
+
+    public void onBackPressed() {
+        if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
+            clearBackStack();
+            showDialog();
+        } else {
+            super.onBackPressed();
+        }
+    }
     public void clearBackStack() {
-       /* try {
+        try {
             FragmentManager fm = AppSingle.getInstance().getActivity().getSupportFragmentManager();
             for (int i = 0; i < fm.getBackStackEntryCount(); ++i) {
                 fm.popBackStack();
             }
         } catch (Exception e) {
-        }*/
+        }
+    }
+    private void close() {
+        Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+        homeIntent.addCategory(Intent.CATEGORY_HOME);
+        homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(homeIntent);
+    }
+    @Override
+    protected void onDestroy(){
+        Process.killProcess(Process.myPid());
+        super.onDestroy();
     }
 }

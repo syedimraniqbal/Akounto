@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.ContextMenu;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +24,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -109,7 +112,7 @@ public class TransactionsFragment extends Fragment implements View.OnClickListen
     ImageView toDate;
     TextView toDateTv;
     RecyclerView transectionRecycler;
-    LinearLayout noData;
+    LinearLayout noData,more_top;
     int type = 0;
     View view;
     boolean start = false;
@@ -133,6 +136,12 @@ public class TransactionsFragment extends Fragment implements View.OnClickListen
 
     private void inItUi() {
         this.nextPrevLL = this.view.findViewById(R.id.nextPrevLL);
+        this.more_top=this.view.findViewById(R.id.more_top);
+        this.more_top.setOnClickListener(new View.OnClickListener() {
+            public final void onClick(View view) {
+                TransactionsFragment.this.lambda$inItUi$3$TransactionsFragment(view);
+            }
+        });
         TextView textView = this.view.findViewById(R.id.prevTv);
         this.prevTv = textView;
         textView.setOnClickListener(new View.OnClickListener() {
@@ -198,7 +207,7 @@ public class TransactionsFragment extends Fragment implements View.OnClickListen
     }
 
     public void lambda$inItUi$3$TransactionsFragment(View v) {
-        this.moreButton.showContextMenu();
+        this.more_top.showContextMenu();
     }
 
     public boolean lambda$inItUi$4$TransactionsFragment(EditText searchEt, TextView v, int actionId, KeyEvent event) {
@@ -336,6 +345,11 @@ public class TransactionsFragment extends Fragment implements View.OnClickListen
             num2 = Integer.valueOf(i3);
         }
         getTrasList(new TransectionRequest(i, num, str3, str4, num2));
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
     private void selectCategoryDialog() {

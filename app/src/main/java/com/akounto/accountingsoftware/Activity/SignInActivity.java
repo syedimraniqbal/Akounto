@@ -7,6 +7,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +28,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+
 import com.akounto.accountingsoftware.Repository.LoginRepo;
 import com.akounto.accountingsoftware.network.CustomCallBack;
 import com.akounto.accountingsoftware.network.RestClient;
@@ -56,6 +60,7 @@ import com.akounto.accountingsoftware.ViewModel.LoginViewModel;
 import com.akounto.accountingsoftware.util.UiUtil;
 import com.google.gson.Gson;
 import com.subhrajyoti.passwordview.PasswordView;
+
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -64,11 +69,10 @@ import retrofit2.Response;
 public class SignInActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     private EditText emailET;
-    private PasswordView passwordET;
-    private TextView signup;
+    private EditText passwordET;
+    RelativeLayout password_ll;
+    private TextView signup, pass_show_hide;
     private TextView forgot_password;
-    private LinearLayout password_ll;
-    private RelativeLayout email_ll;
     private Context mContext;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
@@ -80,8 +84,8 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
     private LoginViewModel model;
     private LifecycleOwner owner;
     private LinearLayout back;
-    private ImageView mail_ckeck;
     private TextView tv_error, password_error;
+    private LinearLayout googlesign_dummy;
 
     public void onCreate(Bundle savedInstanceState) {
 
@@ -91,22 +95,20 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             mContext = this;
             owner = this;
-            getUpdateDilog();
+            try {
+                getUpdateDilog();
+            } catch (Exception e) {
+            }
             tv_error = findViewById(R.id.tv_error);
-            password_error = findViewById(R.id.password_error);
-            email_ll = findViewById(R.id.email_ll);
+            googlesign_dummy = findViewById(R.id.sign_in_button1);
             password_ll = findViewById(R.id.password_ll);
+            password_error = findViewById(R.id.password_error);
             this.emailET = findViewById(R.id.emailET);
-            mail_ckeck = findViewById(R.id.mail_ckeck);
-            back = findViewById(R.id.back);
-            firebaseAuth = com.google.firebase.auth.FirebaseAuth.getInstance();
-            back.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    UiUtil.SetFirstLogin(getApplicationContext(), false);
-                    startActivity(new Intent(SignInActivity.this, WelcomeActivity.class));
-                }
-            });
+            back = findViewById(R.id.sign_in_header);
+            pass_show_hide = findViewById(R.id.tvShow);
+            passwordET = findViewById(R.id.passwordET);
+            signup = findViewById(R.id.text_signup);
+            forgot_password = findViewById(R.id.txt_forgot_password);
             emailET.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -121,17 +123,37 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                 @Override
                 public void afterTextChanged(Editable s) {
                     if (!UiUtil.isValidEmail(emailET.getText().toString())) {
-                        mail_ckeck.setVisibility(View.VISIBLE);
-                        Log.e("Checked ::", "true" + s);
+                        emailET.setBackgroundResource(R.drawable.sign_in_input);
+                        tv_error.setVisibility(View.GONE);
                     } else {
-                        mail_ckeck.setVisibility(View.GONE);
-                        Log.e("Checked ::", "false" + s);
+                        emailET.setBackgroundResource(R.drawable.error);
+                        tv_error.setVisibility(View.VISIBLE);
                     }
                 }
             });
-            this.passwordET = findViewById(R.id.passwordET);
-            signup = findViewById(R.id.text_signup);
-            forgot_password = findViewById(R.id.txt_forgot_password);
+            pass_show_hide.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    if (pass_show_hide.getText().toString().equals("Show")) {
+                        passwordET.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        pass_show_hide.setText("Hide");
+                    } else {
+                        passwordET.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                        pass_show_hide.setText("Show");
+                    }
+
+                }
+            });
+            firebaseAuth = com.google.firebase.auth.FirebaseAuth.getInstance();
+            back.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    UiUtil.SetFirstLogin(getApplicationContext(), false);
+                    startActivity(new Intent(SignInActivity.this, WelcomeActivity.class));
+                }
+            });
+
             firebaseAuth = com.google.firebase.auth.FirebaseAuth.getInstance();
             findViewById(R.id.signUpButton).setOnClickListener(new View.OnClickListener() {
                 public final void onClick(View view) {
@@ -143,7 +165,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
             signup.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    SignInActivity.this.startActivity(new Intent(SignInActivity.this, SIgnUpStep0.class));
+                    SignInActivity.this.startActivity(new Intent(SignInActivity.this, SignupOptions.class));
                 }
             });
 
@@ -158,7 +180,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
             authStateListener = firebaseAuth -> {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
             };
-            GoogleSignInOptions gso =  new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                     .requestIdToken(getString(R.string.web_client_id2))//you can also use R.string.default_web_client_id
                     .requestEmail()
                     .build();
@@ -178,6 +200,14 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                     SignInActivity.this.startActivityForResult(intent, RC_SIGN_IN);
                 }
             });
+            googlesign_dummy.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    UiUtil.showProgressDialogue(mContext, "", "Loading..");
+                    Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+                    SignInActivity.this.startActivityForResult(intent, RC_SIGN_IN);
+                }
+            });
         } catch (Exception e) {
             LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "Sign in");
         }
@@ -186,8 +216,12 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
     @Override
     protected void onResume() {
         super.onResume();
-        emailET.setText("");
-        passwordET.setText("");
+        try {
+            emailET.setText("");
+            passwordET.setText("");
+            tv_error.setVisibility(View.GONE);
+        } catch (Exception e) {
+        }
     }
 
     public void login() {
@@ -201,7 +235,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
             emailET.requestFocus();
             tv_error.setText(e.getMessage());
             tv_error.setVisibility(View.VISIBLE);
-            email_ll.setBackgroundResource(R.drawable.error);
+            emailET.setBackgroundResource(R.drawable.error);
             LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "Sign in");
         }
     }
@@ -227,32 +261,33 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                         b.putString(Constant.CATEGORY, "profile");
                         b.putString(Constant.ACTION, "signin");
                         SplashScreenActivity.sendEvent("profile_signin", b);
+                        AppSingle.getInstance().setEmail(username);
                     } else {
                         ErrorData error = new Gson().fromJson(response.errorBody().string(), ErrorData.class);
-                       // Toast.makeText(mContext, error.getError_description(), Toast.LENGTH_SHORT).show();
+                        // Toast.makeText(mContext, error.getError_description(), Toast.LENGTH_SHORT).show();
                         emailET.requestFocus();
                         if (!error.getError_description().equalsIgnoreCase(""))
                             tv_error.setText(error.getError_description());
                         tv_error.setVisibility(View.VISIBLE);
-                        email_ll.setBackgroundResource(R.drawable.error);
+                        emailET.setBackgroundResource(R.drawable.error);
                     }
                 } catch (Exception e) {
                     //Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_SHORT).show();
                     emailET.requestFocus();
                     tv_error.setText(e.getMessage());
                     tv_error.setVisibility(View.VISIBLE);
-                    email_ll.setBackgroundResource(R.drawable.error);
+                    emailET.setBackgroundResource(R.drawable.error);
                     LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "Sign in");
                 }
             }
 
             @Override
             public void onFailure(Call<LoginData> call, Throwable t) {
-               // Toast.makeText(mContext, "Something went wrong", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(mContext, "Something went wrong", Toast.LENGTH_SHORT).show();
                 emailET.requestFocus();
                 tv_error.setText(t.getMessage());
                 tv_error.setVisibility(View.VISIBLE);
-                email_ll.setBackgroundResource(R.drawable.error);
+                emailET.setBackgroundResource(R.drawable.error);
                 LoginRepo.prinLogs("" + Log.getStackTraceString(t), 5, "Sign in");
             }
         });
@@ -303,10 +338,13 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
             UiUtil.cancelProgressDialogue();
             if (result.isSuccess()) {
                 GoogleSignInAccount account = result.getSignInAccount();
-                idToken = account.getIdToken();
-                name = account.getDisplayName();
-                email = account.getEmail();
+                try {
+                    idToken = account.getIdToken();
+                    name = account.getDisplayName();
+                    email = account.getEmail();
+                } catch (Exception e) {
 
+                }
                 try {
                     //Toast.makeText(this, result.getSignInAccount().getServerAuthCode(), Toast.LENGTH_SHORT).show();
                     Log.w("Token :: ", result.getSignInAccount().getServerAuthCode());
@@ -338,7 +376,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                         try {
                             if (checkEmailData.getStatus() == 0) {
                                 if (!checkEmailData.isData()) {
-                                    Intent mainIntent = new Intent(SignInActivity.this, ExternalSignUp.class);
+                                    Intent mainIntent = new Intent(SignInActivity.this, SocialSignUp1.class);
                                     mainIntent.putExtra(Constant.FIRST_NAME, task.getResult().getUser().getDisplayName());
                                     mainIntent.putExtra(Constant.EMAIL, task.getResult().getUser().getEmail());
                                     mainIntent.putExtra(Constant.ID_TOKEN, account.getIdToken());
@@ -348,15 +386,20 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                                         UserDetails ud;
                                         if (userDetails.getStatus() == 0) {
                                             try {
-                                                Bundle b = new Bundle();
-                                                b.putString(Constant.CATEGORY, "profile");
-                                                b.putString(Constant.ACTION, "signin_social");
-                                                SplashScreenActivity.sendEvent("profile_signin_social", b);
-                                                UiUtil.addLoginToSharedPref(SignInActivity.this, true);
-                                                UiUtil.addUserDetails(SignInActivity.this, userDetails);
-                                                AppSingle.getInstance().setComp_name(new Gson().fromJson(userDetails.getData().getUserDetails(), UserDetails.class).getActiveBusiness().getName());
-                                                Intent mainIntent = new Intent(SignInActivity.this, DashboardActivity.class);
-                                                SignInActivity.this.startActivity(mainIntent);
+                                                if (userDetails.getData() != null) {
+                                                    AppSingle.getInstance().setEmail(task.getResult().getUser().getEmail());
+                                                    Bundle b = new Bundle();
+                                                    b.putString(Constant.CATEGORY, "profile");
+                                                    b.putString(Constant.ACTION, "signin_social");
+                                                    SplashScreenActivity.sendEvent("profile_signin_social", b);
+                                                    UiUtil.addLoginToSharedPref(SignInActivity.this, true);
+                                                    UiUtil.addUserDetails(SignInActivity.this, userDetails);
+                                                    AppSingle.getInstance().setComp_name(new Gson().fromJson(userDetails.getData().getUserDetails(), UserDetails.class).getActiveBusiness().getName());
+                                                    Intent mainIntent = new Intent(SignInActivity.this, DashboardActivity.class);
+                                                    SignInActivity.this.startActivity(mainIntent);
+                                                } else {
+                                                    Toast.makeText(mContext, "Login data error", Toast.LENGTH_LONG).show();
+                                                }
                                             } catch (Exception e) {
                                                 Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_LONG).show();
                                             }
@@ -366,7 +409,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                                     });
                                 }
                             } else {
-                                Toast.makeText(SignInActivity.this, checkEmailData.getStatusMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignInActivity.this, "Fail to get response", Toast.LENGTH_SHORT).show();
                             }
                         } catch (Exception e) {
                             LoginRepo.prinLogs("" + Log.getStackTraceString(e), 5, "Sign in");
@@ -497,7 +540,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
             emailET.requestFocus();
             tv_error.setText("Please enter valid email");
             tv_error.setVisibility(View.VISIBLE);
-            email_ll.setBackgroundResource(R.drawable.error);
+            emailET.setBackgroundResource(R.drawable.error);
             return false;
         } else if (this.passwordET.getText().toString().length() == 0) {
             //UiUtil.showToast(this, "Please enter valid password");
@@ -519,8 +562,8 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
     }
 
     private void reset() {
-        email_ll.setBackgroundResource(R.drawable.new_light_blue);
-        password_ll.setBackgroundResource(R.drawable.new_light_blue);
+        emailET.setBackgroundResource(R.drawable.sign_in_input);
+        password_ll.setBackgroundResource(R.drawable.sign_in_input);
 
         tv_error.setVisibility(View.GONE);
         password_error.setVisibility(View.GONE);

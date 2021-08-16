@@ -19,7 +19,7 @@ public class MobileCodeDilogBindingImpl extends MobileCodeDilogBinding  {
     }
     // views
     @NonNull
-    private final android.widget.LinearLayout mboundView0;
+    private final android.widget.RelativeLayout mboundView0;
     // variables
     // values
     // listeners
@@ -33,7 +33,7 @@ public class MobileCodeDilogBindingImpl extends MobileCodeDilogBinding  {
             , (androidx.recyclerview.widget.RecyclerView) bindings[2]
             , (android.widget.TextView) bindings[1]
             );
-        this.mboundView0 = (android.widget.LinearLayout) bindings[0];
+        this.mboundView0 = (android.widget.RelativeLayout) bindings[0];
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners

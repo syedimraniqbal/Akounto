@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/background_color"
@@ -48,6 +49,20 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
+                <LinearLayout
+                    android:id="@+id/more_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|right"
+                    android:orientation="horizontal"
+                    tools:ignore="RtlHardcoded">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:src="@drawable/more" />
+                </LinearLayout>
             </LinearLayout>
 
             <androidx.cardview.widget.CardView
@@ -82,7 +97,7 @@
                             android:paddingTop="@dimen/_6sdp"
                             android:paddingRight="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_6sdp"
-                            android:text="Add Deposit"
+                            android:text="Add Income"
                             android:textColor="#ffffff"
                             android:textSize="@dimen/_16sdp" />
 
@@ -97,7 +112,7 @@
                             android:paddingTop="@dimen/_6sdp"
                             android:paddingRight="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_6sdp"
-                            android:text="Add Withdrawal"
+                            android:text="Add Expense"
                             android:textColor="#565af4"
                             android:textSize="@dimen/_16sdp" />
                     </LinearLayout>
@@ -106,6 +121,7 @@
                         android:id="@+id/ll_upload_bankstmt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:visibility="gone"
                         android:background="?attr/selectableItemBackground"
                         android:orientation="horizontal">
 
@@ -159,6 +175,7 @@
                             android:layout_gravity="center"
                             android:layout_marginEnd="@dimen/_10sdp"
                             android:drawablePadding="@dimen/_8sdp"
+                            android:visibility="gone"
                             android:fontFamily="@font/poppins_regular"
                             android:text="More"
                             android:textColor="@color/dark_grey"
@@ -352,16 +369,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_17sdp"
+                    android:layout_marginRight="@dimen/_12sdp"
                     android:fontFamily="@font/poppins_regular"
                     android:gravity="center"
-                    android:layout_marginLeft="@dimen/_12sdp"
-                    android:layout_marginRight="@dimen/_12sdp"
                     android:text="Transaction data unavailable (Add income/expenses or journal transactions to view data.)"
                     android:textColor="#d06969"
-                    android:layout_marginTop="@dimen/_17sdp"
                     android:textSize="@dimen/_14sdp" />
             </LinearLayout>
 

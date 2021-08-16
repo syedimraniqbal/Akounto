@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.response.Users;
+import com.akounto.accountingsoftware.util.AppSingle;
 import com.akounto.accountingsoftware.util.UiUtil;
 
 import java.util.List;
@@ -40,7 +41,7 @@ public class UserManagementAdminAdapter extends RecyclerView.Adapter<UserManagem
         vh.email.setText(user.getEmail());
         vh.role.setText(user.getRole());
         Log.e("User Email ::", UiUtil.getUserName(context));
-        if (user.isOwner() || user.getEmail().equalsIgnoreCase(UiUtil.getUserName(context))) {
+        if (user.isOwner() || user.getEmail().equalsIgnoreCase(AppSingle.getInstance().getEmail())) {
             vh.edit.setEnabled(false);
             vh.edit.setAlpha(128);
             vh.delete.setEnabled(false);

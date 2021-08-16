@@ -28,16 +28,18 @@ public class LayoutTest3BindingImpl extends LayoutTest3Binding  {
         sViewsWithIds.put(R.id.customer_email, 12);
         sViewsWithIds.put(R.id.rc_item, 13);
         sViewsWithIds.put(R.id.subtotal, 14);
-        sViewsWithIds.put(R.id.taxs_name_list, 15);
-        sViewsWithIds.put(R.id.taxs_amount_list, 16);
-        sViewsWithIds.put(R.id.tax_total, 17);
-        sViewsWithIds.put(R.id.currency, 18);
-        sViewsWithIds.put(R.id.grant_total, 19);
-        sViewsWithIds.put(R.id.cacncelInvoice, 20);
-        sViewsWithIds.put(R.id.convertToInvoice, 21);
-        sViewsWithIds.put(R.id.sendEstimate, 22);
-        sViewsWithIds.put(R.id.editDraft, 23);
-        sViewsWithIds.put(R.id.approveTv, 24);
+        sViewsWithIds.put(R.id.discount_ll_view, 15);
+        sViewsWithIds.put(R.id.tv_dicount, 16);
+        sViewsWithIds.put(R.id.taxs_name_list, 17);
+        sViewsWithIds.put(R.id.taxs_amount_list, 18);
+        sViewsWithIds.put(R.id.tax_total, 19);
+        sViewsWithIds.put(R.id.currency, 20);
+        sViewsWithIds.put(R.id.grant_total, 21);
+        sViewsWithIds.put(R.id.cacncelInvoice, 22);
+        sViewsWithIds.put(R.id.convertToInvoice, 23);
+        sViewsWithIds.put(R.id.sendEstimate, 24);
+        sViewsWithIds.put(R.id.editDraft, 25);
+        sViewsWithIds.put(R.id.approveTv, 26);
     }
     // views
     @NonNull
@@ -48,34 +50,36 @@ public class LayoutTest3BindingImpl extends LayoutTest3Binding  {
     // Inverse Binding Event Handlers
 
     public LayoutTest3BindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 25, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 27, sIncludes, sViewsWithIds));
     }
     private LayoutTest3BindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.Button) bindings[24]
+            , (android.widget.Button) bindings[26]
             , (android.widget.TextView) bindings[4]
-            , (android.widget.Button) bindings[20]
-            , (android.widget.Button) bindings[21]
-            , (android.widget.TextView) bindings[18]
+            , (android.widget.Button) bindings[22]
+            , (android.widget.Button) bindings[23]
+            , (android.widget.TextView) bindings[20]
             , (android.widget.TextView) bindings[11]
             , (android.widget.TextView) bindings[10]
             , (android.widget.RelativeLayout) bindings[9]
             , (android.widget.TextView) bindings[12]
+            , (android.widget.LinearLayout) bindings[15]
             , (android.widget.TextView) bindings[7]
             , (android.widget.TextView) bindings[8]
-            , (android.widget.Button) bindings[23]
-            , (android.widget.TextView) bindings[19]
+            , (android.widget.Button) bindings[25]
+            , (android.widget.TextView) bindings[21]
             , (android.widget.LinearLayout) bindings[3]
             , (android.widget.LinearLayout) bindings[5]
             , (android.widget.LinearLayout) bindings[2]
             , (android.widget.LinearLayout) bindings[1]
             , (android.widget.TextView) bindings[6]
             , (androidx.recyclerview.widget.RecyclerView) bindings[13]
-            , (android.widget.Button) bindings[22]
+            , (android.widget.Button) bindings[24]
             , (android.widget.TextView) bindings[14]
-            , (android.widget.TextView) bindings[17]
-            , (android.widget.LinearLayout) bindings[16]
-            , (android.widget.LinearLayout) bindings[15]
+            , (android.widget.TextView) bindings[19]
+            , (android.widget.LinearLayout) bindings[18]
+            , (android.widget.LinearLayout) bindings[17]
+            , (android.widget.TextView) bindings[16]
             );
         this.mboundView0 = (android.widget.LinearLayout) bindings[0];
         this.mboundView0.setTag(null);

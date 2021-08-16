@@ -32,7 +32,7 @@ public class AccountList extends RecyclerView.Adapter<AccountList.RecyclerViewHo
     public AccountList(List<Account> itemList, Context mContext) {
         this.itemList = itemList;
         this.mContext = mContext;
-        selectCheck=new ArrayList<>();
+        selectCheck = new ArrayList<>();
         setChecked();
     }
 
@@ -87,10 +87,12 @@ public class AccountList extends RecyclerView.Adapter<AccountList.RecyclerViewHo
             } else {
                 holder.binding.isConnected.setVisibility(View.VISIBLE);
             }
-            /*holder.binding.isConnected.setAlpha(0.5f);
-            holder.binding.tvBankName.setAlpha(0.5f);
-            holder.binding.tvBankAccount.setAlpha(0.5f);
-            holder.binding.balance.setAlpha(0.5f);*/
+           /* if (itemList.get(position).getIsDisable()) {
+                holder.binding.isConnected.setAlpha(0.5f);
+                holder.binding.tvBankName.setAlpha(0.5f);
+                holder.binding.tvBankAccount.setAlpha(0.5f);
+                holder.binding.balance.setAlpha(0.5f);
+            }*/
         }
 
         if (selectCheck.get(position) == 1) {
@@ -102,12 +104,12 @@ public class AccountList extends RecyclerView.Adapter<AccountList.RecyclerViewHo
         holder.binding.checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for(int k=0; k<selectCheck.size(); k++) {
-                    if(k==position) {
-                        selectCheck.set(k,1);
+                for (int k = 0; k < selectCheck.size(); k++) {
+                    if (k == position) {
+                        selectCheck.set(k, 1);
                         itemList.get(k).setChecked(true);
                     } else {
-                        selectCheck.set(k,0);
+                        selectCheck.set(k, 0);
                         itemList.get(k).setChecked(false);
                     }
                 }
@@ -140,8 +142,8 @@ public class AccountList extends RecyclerView.Adapter<AccountList.RecyclerViewHo
         return account;
     }
 
-    private void setChecked(){
-        for (int i=0;i<itemList.size();i++){
+    private void setChecked() {
+        for (int i = 0; i < itemList.size(); i++) {
             itemList.get(i).setChecked(false);
             selectCheck.add(0);
         }

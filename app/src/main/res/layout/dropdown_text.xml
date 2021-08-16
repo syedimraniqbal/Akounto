@@ -5,8 +5,8 @@
     android:fontFamily="@font/poppins_regular"
     android:textStyle="normal"
     android:textSize="14sp"
-    android:textColor="#3a3a3a"
+    android:textColor="@color/heading_color"
     android:ellipsize="end"
     android:maxLines="1"
-    android:padding="7dp"
+    android:paddingLeft="7dp"
     android:lineSpacingExtra="6sp" />

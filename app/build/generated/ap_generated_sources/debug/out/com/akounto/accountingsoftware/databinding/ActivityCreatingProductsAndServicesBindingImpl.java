@@ -20,25 +20,28 @@ public class ActivityCreatingProductsAndServicesBindingImpl extends ActivityCrea
         sViewsWithIds.put(R.id.rightTextView, 4);
         sViewsWithIds.put(R.id.parent, 5);
         sViewsWithIds.put(R.id.relativeLayoutName, 6);
-        sViewsWithIds.put(R.id.textViewName, 7);
-        sViewsWithIds.put(R.id.et_name, 8);
-        sViewsWithIds.put(R.id.relativeLayoutDescription, 9);
-        sViewsWithIds.put(R.id.textViewDescription, 10);
-        sViewsWithIds.put(R.id.et_desc, 11);
-        sViewsWithIds.put(R.id.relativeLayoutPrice, 12);
-        sViewsWithIds.put(R.id.textViewPrice, 13);
-        sViewsWithIds.put(R.id.et_price, 14);
-        sViewsWithIds.put(R.id.relativeLayoutIncomeAccount, 15);
-        sViewsWithIds.put(R.id.textViewIncomeAccount, 16);
-        sViewsWithIds.put(R.id.expenseRL, 17);
-        sViewsWithIds.put(R.id.incomeAccountSpinner, 18);
-        sViewsWithIds.put(R.id.selectExpenbseError, 19);
-        sViewsWithIds.put(R.id.relativeLayoutSalesTax, 20);
-        sViewsWithIds.put(R.id.textViewSalesTax, 21);
-        sViewsWithIds.put(R.id.salesTaxSpinner, 22);
-        sViewsWithIds.put(R.id.taxRecycler, 23);
-        sViewsWithIds.put(R.id.addSalesTax, 24);
-        sViewsWithIds.put(R.id.saveProductButton, 25);
+        sViewsWithIds.put(R.id.llViewName, 7);
+        sViewsWithIds.put(R.id.textViewName, 8);
+        sViewsWithIds.put(R.id.et_name, 9);
+        sViewsWithIds.put(R.id.relativeLayoutDescription, 10);
+        sViewsWithIds.put(R.id.textViewDescription, 11);
+        sViewsWithIds.put(R.id.et_desc, 12);
+        sViewsWithIds.put(R.id.relativeLayoutPrice, 13);
+        sViewsWithIds.put(R.id.llViewPrice, 14);
+        sViewsWithIds.put(R.id.textViewPrice, 15);
+        sViewsWithIds.put(R.id.et_price, 16);
+        sViewsWithIds.put(R.id.relativeLayoutIncomeAccount, 17);
+        sViewsWithIds.put(R.id.llViewIncomeAccount, 18);
+        sViewsWithIds.put(R.id.textViewIncomeAccount, 19);
+        sViewsWithIds.put(R.id.expenseRL, 20);
+        sViewsWithIds.put(R.id.incomeAccountSpinner, 21);
+        sViewsWithIds.put(R.id.selectExpenbseError, 22);
+        sViewsWithIds.put(R.id.relativeLayoutSalesTax, 23);
+        sViewsWithIds.put(R.id.textViewSalesTax, 24);
+        sViewsWithIds.put(R.id.salesTaxSpinner, 25);
+        sViewsWithIds.put(R.id.taxRecycler, 26);
+        sViewsWithIds.put(R.id.addSalesTax, 27);
+        sViewsWithIds.put(R.id.saveProductButton, 28);
     }
     // views
     @NonNull
@@ -49,34 +52,37 @@ public class ActivityCreatingProductsAndServicesBindingImpl extends ActivityCrea
     // Inverse Binding Event Handlers
 
     public ActivityCreatingProductsAndServicesBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 26, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 29, sIncludes, sViewsWithIds));
     }
     private ActivityCreatingProductsAndServicesBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.ImageView) bindings[24]
+            , (android.widget.ImageView) bindings[27]
             , (android.widget.ImageView) bindings[2]
-            , (android.widget.EditText) bindings[11]
-            , (android.widget.EditText) bindings[8]
-            , (android.widget.EditText) bindings[14]
-            , (android.widget.RelativeLayout) bindings[17]
-            , (com.skydoves.powerspinner.PowerSpinnerView) bindings[18]
+            , (android.widget.EditText) bindings[12]
+            , (android.widget.EditText) bindings[9]
+            , (android.widget.EditText) bindings[16]
+            , (android.widget.RelativeLayout) bindings[20]
+            , (com.skydoves.powerspinner.PowerSpinnerView) bindings[21]
+            , (android.widget.LinearLayout) bindings[18]
+            , (android.widget.LinearLayout) bindings[7]
+            , (android.widget.LinearLayout) bindings[14]
             , (android.widget.TextView) bindings[3]
             , (android.widget.ScrollView) bindings[5]
-            , (android.widget.RelativeLayout) bindings[9]
-            , (android.widget.RelativeLayout) bindings[15]
+            , (android.widget.RelativeLayout) bindings[10]
+            , (android.widget.RelativeLayout) bindings[17]
             , (android.widget.RelativeLayout) bindings[6]
-            , (android.widget.RelativeLayout) bindings[12]
-            , (android.widget.RelativeLayout) bindings[20]
+            , (android.widget.RelativeLayout) bindings[13]
+            , (android.widget.RelativeLayout) bindings[23]
             , (android.widget.TextView) bindings[4]
-            , (com.skydoves.powerspinner.PowerSpinnerView) bindings[22]
-            , (android.widget.TextView) bindings[25]
+            , (com.skydoves.powerspinner.PowerSpinnerView) bindings[25]
+            , (android.widget.TextView) bindings[28]
+            , (android.widget.TextView) bindings[22]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[26]
+            , (android.widget.TextView) bindings[11]
             , (android.widget.TextView) bindings[19]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[23]
-            , (android.widget.TextView) bindings[10]
-            , (android.widget.TextView) bindings[16]
-            , (android.widget.TextView) bindings[7]
-            , (android.widget.TextView) bindings[13]
-            , (android.widget.TextView) bindings[21]
+            , (android.widget.TextView) bindings[8]
+            , (android.widget.TextView) bindings[15]
+            , (android.widget.TextView) bindings[24]
             , (android.widget.RelativeLayout) bindings[1]
             );
         this.mboundView0 = (android.widget.RelativeLayout) bindings[0];

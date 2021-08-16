@@ -1,12 +1,24 @@
 package com.akounto.accountingsoftware.Activity.fragment;
 
+import android.annotation.TargetApi;
 import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
+import android.view.ActionMode;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.autofill.AutofillManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -14,12 +26,15 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.akounto.accountingsoftware.Activity.Accounting.TransactionsActivity;
 import com.akounto.accountingsoftware.Activity.SplashScreenActivity;
 import com.akounto.accountingsoftware.Constants.Constant;
+import com.akounto.accountingsoftware.Data.RegisterBank.Bank;
 import com.akounto.accountingsoftware.R;
 import com.akounto.accountingsoftware.Activity.Setting.SettingMenu;
 import com.akounto.accountingsoftware.adapter.UserManagementAdminAdapter;
@@ -27,6 +42,7 @@ import com.akounto.accountingsoftware.adapter.UserManagementAdminItemClick;
 import com.akounto.accountingsoftware.network.CustomCallBack;
 import com.akounto.accountingsoftware.network.RestClient;
 import com.akounto.accountingsoftware.request.AddUserRequest;
+import com.akounto.accountingsoftware.request.User;
 import com.akounto.accountingsoftware.request.UserDelete;
 import com.akounto.accountingsoftware.response.CustomeResponse;
 import com.akounto.accountingsoftware.response.UserManagementResponse;
@@ -47,6 +63,7 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
     String mode = "create-user";
     RadioButton roleButton;
     View view;
+    public static List<Users> data;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +71,7 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         this.view = inflater.inflate(R.layout.user_management_fragment, container, false);
+        disableAutofill();
         view.findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,15 +83,21 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
     }
 
     private void init() {
+        getUsers();
         this.view.findViewById(R.id.inviteUserButton).setOnClickListener(new View.OnClickListener() {
             public final void onClick(View view) {
+                InviteUser.isEdit = false;
+                InviteUser.users = null;
                 UserManagementFragment.this.lambda$init$0$UserManagementFragment(view);
             }
         });
     }
 
     public void lambda$init$0$UserManagementFragment(View v) {
-        editAdminDialog(null);
+        try {
+            AddFragments.addFragmentToDrawerActivity(getContext(), null, InviteUser.class);
+        } catch (Exception e) {
+        }
     }
 
     public void onResume() {
@@ -87,7 +111,8 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
                 super.onResponse(call, response);
                 if (response.isSuccessful()) {
                     Log.d("response", response.body().getData().toString());
-                    UserManagementFragment.this.setUpAdminList(response.body().getData());
+                    data = response.body().getData();
+                    UserManagementFragment.this.setUpAdminList(data);
                 }
             }
 
@@ -104,90 +129,142 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
     }
 
     public void editAdmin(Users users) {
-        editAdminDialog(users);
+        InviteUser f = new InviteUser();
+        f.setUser(users);
+        InviteUser.users = users;
+        InviteUser.isEdit = true;
+        AddFragments.addFragmentToDrawerActivity(getContext(), null, f.getClass());
+    }
+
+    private boolean isUser(String email) {
+        boolean result = false;
+        for (int i = 0; i < data.size(); i++) {
+            if (data.get(i).getEmail().equalsIgnoreCase(email))
+                result = true;
+        }
+        return result;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        try {
+            dialog.dismiss();
+        } catch (Exception e) {
+        }
+    }
+
+    public void showDialog(Context activity, Users users) {
+
+        dialog = new Dialog(activity);
+        if (!dialog.isShowing()) {
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setCancelable(false);
+            dialog.setContentView(R.layout.dilog_bank_import);
+            TextView descp = dialog.findViewById(R.id.descp);
+            descp.setText("You want to disassociate user.");
+            Button btn_import = dialog.findViewById(R.id.btn_import);
+            btn_import.setText("Yes");
+            Button btn_cancle = dialog.findViewById(R.id.btn_cancel);
+            btn_cancle.setText("No");
+            btn_import.setOnClickListener(v -> {
+                dialog.dismiss();
+                RestClient.getInstance(getContext()).disassociateUser(Constant.X_SIGNATURE, "Bearer " + UiUtil.getAcccessToken(getContext()), UiUtil.getComp_Id(getContext()), new UserDelete(users.getId())).enqueue(new CustomCallBack<CustomeResponse>(getContext(), "Deleting...") {
+                    @Override
+                    public void onResponse(Call<CustomeResponse> call, Response<CustomeResponse> response) {
+                        super.onResponse(call, response);
+
+                        if (response.body().getTransactionStatus().isIsSuccess()) {
+                            Toast.makeText(getContext(), "User disassociate successfully.", Toast.LENGTH_LONG).show();
+                            getUsers();
+                        } else {
+                            Toast.makeText(getContext(), "User disassociate fail.", Toast.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<CustomeResponse> call, Throwable t) {
+                        super.onFailure(call, t);
+                        Toast.makeText(getContext(), "User disassociate fail.", Toast.LENGTH_LONG).show();
+                    }
+                });
+
+            });
+            btn_cancle.setOnClickListener(v -> {
+                dialog.dismiss();
+
+            });
+            dialog.show();
+        }
     }
 
     @Override
     public void deleteAdmin(Users users) {
-        RestClient.getInstance(getContext()).disassociateUser(Constant.X_SIGNATURE, "Bearer " + UiUtil.getAcccessToken(getContext()), UiUtil.getComp_Id(getContext()), new UserDelete(users.getId())).enqueue(new CustomCallBack<CustomeResponse>(getContext(), "Deleting...") {
-            @Override
-            public void onResponse(Call<CustomeResponse> call, Response<CustomeResponse> response) {
-                super.onResponse(call, response);
-
-                if (response.body().getTransactionStatus().isIsSuccess()) {
-                    Toast.makeText(getContext(), "User disassociate successfully.", Toast.LENGTH_LONG).show();
-                    getUsers();
-                } else {
-                    Toast.makeText(getContext(), "User disassociate fail.", Toast.LENGTH_LONG).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<CustomeResponse> call, Throwable t) {
-                super.onFailure(call, t);
-                Toast.makeText(getContext(), "User disassociate fail.", Toast.LENGTH_LONG).show();
-            }
-        });
+        showDialog(getActivity(), users);
     }
 
     private void editAdminDialog(Users users) {
         Dialog dialog2 = new Dialog(getContext(), android.R.style.Theme_Black_NoTitleBar_Fullscreen);
         dialog2.requestWindowFeature(1);
-        this.dialog = dialog2;
-        this.dialog.setContentView(R.layout.user_mgmt_edit_admin_layout);
-        this.dialog.setCancelable(true);
-        this.dialog.setCanceledOnTouchOutside(true);
-        this.dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-        LinearLayout back = this.dialog.findViewById(R.id.back);
-        TextView title = this.dialog.findViewById(R.id.title);
-        if (users != null) {
-            title.setText(" Edit User");
-            this.mode = "edit-user";
-        } else {
-            title.setText(" Invite User");
-        }
-        EditText fnameEt = this.dialog.findViewById(R.id.et_fname);
-        EditText lnameEt = this.dialog.findViewById(R.id.et_lname);
-        EditText emailEt = this.dialog.findViewById(R.id.et_email);
-        RadioGroup roleGroup = this.dialog.findViewById(R.id.radioGroup);
-        RadioButton selectedRadioButton = this.dialog.findViewById(roleGroup.getCheckedRadioButtonId());
-        Toast.makeText(getContext(), selectedRadioButton.getText().toString(), Toast.LENGTH_LONG).show();
-        TextView fnameErrorTv = this.dialog.findViewById(R.id.fNameErrorTv);
-        TextView lnameErrorTv = this.dialog.findViewById(R.id.lNameErrorTv);
-        TextView emailErrorTv = this.dialog.findViewById(R.id.emailErrorTv);
-        if (users != null) {
-            fnameEt.setText(users.getFirstName());
-            lnameEt.setText(users.getLastName());
-            emailEt.setText(users.getEmail());
-            if (users.getRole().equals("Admin")) {
-                roleGroup.check(R.id.adminRB);
+        try {
+            this.dialog = dialog2;
+            this.dialog.setContentView(R.layout.user_mgmt_edit_admin_layout);
+            this.dialog.setCancelable(true);
+            this.dialog.setCanceledOnTouchOutside(true);
+            this.dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+            LinearLayout back = this.dialog.findViewById(R.id.back);
+            TextView title = this.dialog.findViewById(R.id.title);
+            if (users != null) {
+                title.setText(" Edit User");
+                this.mode = "edit-user";
             } else {
-                roleGroup.check(R.id.userRB);
+                title.setText(" Invite User");
             }
-            this.f90id = users.getId();
-        }
-        TextView save = this.dialog.findViewById(R.id.saveButton);
-
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                reset(fnameErrorTv, lnameErrorTv, emailErrorTv);
-                if (isValidAbout(roleGroup, fnameEt, lnameEt, emailEt, fnameErrorTv, lnameErrorTv, emailErrorTv)) {
-                    addUser(new AddUserRequest(roleButton.getText().toString(), emailEt.getText().toString(), fnameEt.getText().toString(), f90id, lnameEt.getText().toString()), mode);
+            EditText fnameEt = this.dialog.findViewById(R.id.et_fname);
+            EditText lnameEt = this.dialog.findViewById(R.id.et_lname);
+            EditText emailEt = this.dialog.findViewById(R.id.et_email);
+            RadioGroup roleGroup = this.dialog.findViewById(R.id.radioGroup);
+            RadioButton selectedRadioButton = this.dialog.findViewById(roleGroup.getCheckedRadioButtonId());
+            //Toast.makeText(getContext(), selectedRadioButton.getText().toString(), Toast.LENGTH_LONG).show();
+            TextView fnameErrorTv = this.dialog.findViewById(R.id.fNameErrorTv);
+            TextView lnameErrorTv = this.dialog.findViewById(R.id.lNameErrorTv);
+            TextView emailErrorTv = this.dialog.findViewById(R.id.emailErrorTv);
+            if (users != null) {
+                fnameEt.setText(users.getFirstName());
+                lnameEt.setText(users.getLastName());
+                emailEt.setText(users.getEmail());
+                if (users.getRole().equals("Admin")) {
+                    roleGroup.check(R.id.adminRB);
+                } else {
+                    roleGroup.check(R.id.userRB);
                 }
+                this.f90id = users.getId();
             }
-        });
-        this.dialog.findViewById(R.id.cancelButton).setOnClickListener(new View.OnClickListener() {
-            public final void onClick(View view) {
-                dialog.dismiss();
-            }
-        });
-        back.setOnClickListener(new View.OnClickListener() {
-            public final void onClick(View view) {
-                dialog.dismiss();
-            }
-        });
-        this.dialog.show();
+            TextView save = this.dialog.findViewById(R.id.saveButton);
+
+            save.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    reset(fnameErrorTv, lnameErrorTv, emailErrorTv);
+                    if (isValidAbout(roleGroup, fnameEt, lnameEt, emailEt, fnameErrorTv, lnameErrorTv, emailErrorTv)) {
+                        addUser(new AddUserRequest(roleButton.getText().toString(), emailEt.getText().toString(), fnameEt.getText().toString(), f90id, lnameEt.getText().toString()), mode);
+                    }
+                }
+            });
+            this.dialog.findViewById(R.id.cancelButton).setOnClickListener(new View.OnClickListener() {
+                public final void onClick(View view) {
+                    dialog.dismiss();
+                }
+            });
+            back.setOnClickListener(new View.OnClickListener() {
+                public final void onClick(View view) {
+                    dialog.dismiss();
+                }
+            });
+            this.dialog.show();
+
+        } catch (Exception e) {
+        }
     }
 
     private boolean isValidAbout(RadioGroup roleGroup, EditText fnameEt, EditText lnameEt, EditText emailEt, TextView fnameErrorTv, TextView lnameErrorTv, TextView emailErrorTv) {
@@ -240,9 +317,22 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
                 emailEt.requestFocus();
                 focusfield = false;
             }
+        } else if (isUser(email)) {
+            emailErrorTv.setVisibility(View.VISIBLE);
+            emailErrorTv.setText("This user already associated with the business!");
+            response = false;
+            if (focusfield) {
+                emailEt.requestFocus();
+                focusfield = false;
+            }
         }
 
         return response;
+    }
+
+    @TargetApi(Build.VERSION_CODES.O)
+    private void disableAutofill() {
+        getActivity().getWindow().getDecorView().setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_NO_EXCLUDE_DESCENDANTS);
     }
 
     public void reset(TextView fnameErrorTv, TextView lnameErrorTv, TextView emailErrorTv) {
@@ -251,40 +341,6 @@ public class UserManagementFragment extends Fragment implements UserManagementAd
         emailErrorTv.setVisibility(View.GONE);
 
     }
-
-   /* public void lambda$editAdminDialog$1$UserManagementFragment(RadioGroup roleGroup, EditText fnameEt, TextView fnameErrorTv, EditText lnameEt, TextView lnameErrorTv, EditText emailEt, TextView emailErrorTv, View v) {
-        TextView textView = fnameErrorTv;
-        TextView textView2 = lnameErrorTv;
-        TextView textView3 = emailErrorTv;
-        this.roleButton = this.dialog.findViewById(roleGroup.getCheckedRadioButtonId());
-        String firstName = fnameEt.getText().toString();
-        if (firstName.isEmpty()) {
-            textView.setText("Please enter first name");
-            textView.setVisibility(View.VISIBLE);
-        } else if (firstName.length() < 3) {
-            textView.setText("First name is too small. (min 3 chars)");
-            textView.setVisibility(View.VISIBLE);
-        } else {
-            textView.setVisibility(View.GONE);
-            String lastName = lnameEt.getText().toString();
-            if (lastName.isEmpty()) {
-                textView2.setText("Please enter last name");
-                textView2.setVisibility(View.VISIBLE);
-            } else if (lastName.length() < 3) {
-                textView2.setText("Last name is too small. (min 3 chars)");
-                textView2.setVisibility(View.VISIBLE);
-            } else {
-                textView2.setVisibility(View.GONE);
-                String email = emailEt.getText().toString();
-                if (UiUtil.isValidEmail(email)) {
-                    textView3.setVisibility(View.VISIBLE);
-                    return;
-                }
-                textView3.setVisibility(View.GONE);
-                addUser(new AddUserRequest(this.roleButton.getText().toString(), email, firstName, this.f90id, lastName), this.mode);
-            }
-        }
-    }*/
 
     private void addUser(AddUserRequest addUserRequest, String mode2) {
         RestClient.getInstance(getContext()).createUser(Constant.X_SIGNATURE, "Bearer " + UiUtil.getAcccessToken(getContext()), UiUtil.getComp_Id(getContext()), addUserRequest, mode2).enqueue(new CustomCallBack<ResponseBody>(getContext(), null) {

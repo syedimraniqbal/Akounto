@@ -12,6 +12,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.akounto.accountingsoftware.Activity.Accounting.TransactionsActivity;
+import com.akounto.accountingsoftware.Activity.fragment.TransactionsFragment;
 import com.akounto.accountingsoftware.Constants.Constant;
 import com.akounto.accountingsoftware.Data.Currency;
 import com.akounto.accountingsoftware.Data.CurrencyData;
@@ -79,7 +81,7 @@ public class BankListActivity extends AppCompatActivity implements BankListAdapt
     private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     private Account account = null;
     private boolean isRegister = true;
-
+    private LinearLayout more_top;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -88,6 +90,7 @@ public class BankListActivity extends AppCompatActivity implements BankListAdapt
 
         btn_coonect_bank = findViewById(R.id.btn_connect_bank);
         bck = findViewById(R.id.iv_back);
+
         bck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -244,7 +247,9 @@ public class BankListActivity extends AppCompatActivity implements BankListAdapt
                 dialog.dismiss();
                 model.import_trans(mContext, UiUtil.getComp_Id(mContext), UiUtil.getAcccessToken(mContext), bank.getId().toString()).observe(this, bankAccountData -> {
                     if (bankAccountData.getStatus() == 0) {
-                        startActivity(new Intent(mContext, TransactionsActivity.class));
+                        Intent i=new Intent(mContext, TransactionsActivity.class);
+                        i.putExtra(Constant.BANK_ID,bank.getId().toString());
+                        startActivity(i);
                         //setAdapter(bankAccountData.getData().getBanks());
                     } else {
                         Toast.makeText(getApplicationContext(), bankAccountData.getStatusMessage(), Toast.LENGTH_LONG).show();
@@ -271,6 +276,7 @@ public class BankListActivity extends AppCompatActivity implements BankListAdapt
             mBinding.tvBankName.setText(data.getData().getBankName());
             Calendar calendar = Calendar.getInstance();
             calendar.add(Calendar.YEAR, -1);
+            calendar.add(Calendar.MONTH, -1);
             Date date = calendar.getTime();
             String dateString = sdf.format(date);
             mBinding.tvDate.setText(dateString);

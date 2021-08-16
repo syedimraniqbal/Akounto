@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -50,7 +51,7 @@ import retrofit2.Call;
 import retrofit2.Response;
 
 public class InvoiceList extends AppCompatActivity implements InvoiceItemClick {
-    
+
     ConstraintLayout noDataLayout;
     LinearLayout withDataLayout;
     EditText searchEt;
@@ -75,46 +76,51 @@ public class InvoiceList extends AppCompatActivity implements InvoiceItemClick {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.invoices_fragment);
-        mContext=this;
-        EditText editText = findViewById(R.id.searchET);
-        withDataLayout = findViewById(R.id.withDataLayout);
-        findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(InvoiceList.this, DashboardActivity.class));
-            }
-        });
-        this.searchEt = editText;
-        filter = this.findViewById(R.id.filter);
-        this.noDataLayout = findViewById(R.id.noDataLayout);
-        this.searchLayout = findViewById(R.id.searchLayout);
-        salesInvoicesRV = findViewById(R.id.invoicesRecyclerView);
-        this.simpleDateFormat = new SimpleDateFormat(this.isoDatePattern);
-        
-        filter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openFilterDilog();
-            }
-        });
-       findViewById(R.id.goButton).setOnClickListener(new View.OnClickListener() {
-            public final void onClick(View view) {
-                startActivity(new Intent(mContext, CreateInvoice.class)/*CommonInvoiceActivity.buildIntent(mContext, Type.INVOICES.name())*/);
-            }
-        });
-        findViewById(R.id.btn_create_new).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(mContext, CreateInvoice.class)/*CommonInvoiceActivity.buildIntent(mContext, Type.INVOICES.name())*/);
-            }
-        });
-        findViewById(R.id.searchIcon).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                performSearch(searchEt.getText().toString().trim());
-            }
-        });
+        mContext = this;
+        try {
+            EditText editText = findViewById(R.id.searchET);
+            withDataLayout = findViewById(R.id.withDataLayout);
+            findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(InvoiceList.this, DashboardActivity.class));
+                }
+            });
+            this.searchEt = editText;
+            filter = this.findViewById(R.id.filter);
+            this.noDataLayout = findViewById(R.id.noDataLayout);
+            this.searchLayout = findViewById(R.id.searchLayout);
+            salesInvoicesRV = findViewById(R.id.invoicesRecyclerView);
+            this.simpleDateFormat = new SimpleDateFormat(this.isoDatePattern);
+
+            filter.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openFilterDilog();
+                }
+            });
+            findViewById(R.id.goButton).setOnClickListener(new View.OnClickListener() {
+                public final void onClick(View view) {
+                    startActivity(new Intent(mContext, CreateInvoice.class)/*CommonInvoiceActivity.buildIntent(mContext, Type.INVOICES.name())*/);
+                }
+            });
+            findViewById(R.id.btn_create_new).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(mContext, CreateInvoice.class)/*CommonInvoiceActivity.buildIntent(mContext, Type.INVOICES.name())*/);
+                }
+            });
+            findViewById(R.id.searchIcon).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    performSearch(searchEt.getText().toString().trim());
+                }
+            });
+        } catch (Exception e) {
+            Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
+
     private void performSearch(String searchText) {
         GetRecurringInvoiceRequest inv_request = new GetRecurringInvoiceRequest(searchText);
         getInvoiceList(inv_request);
@@ -137,7 +143,7 @@ public class InvoiceList extends AppCompatActivity implements InvoiceItemClick {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
         PowerSpinnerView status = dialog.findViewById(R.id.typeStatus);
         PowerSpinnerView client = dialog.findViewById(R.id.typeClient);
-        ImageView close=dialog.findViewById(R.id.close);
+        ImageView close = dialog.findViewById(R.id.close);
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

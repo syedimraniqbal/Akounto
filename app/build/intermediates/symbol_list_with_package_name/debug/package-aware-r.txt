@@ -583,6 +583,7 @@ attr indicatorSize
 attr initialActivityCount
 attr initialExpandedChildrenCount
 attr insetForeground
+attr isDarkTheme
 attr isLightTheme
 attr isMaterialTheme
 attr isPreferenceVisible
@@ -1326,6 +1327,7 @@ color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
 color custom_float_bg
+color dark_blue
 color dark_grey
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
@@ -1381,6 +1383,10 @@ color foreground_material_dark
 color foreground_material_light
 color gray_btn_bg_color
 color gray_btn_bg_pressed_color
+color grey04
+color grey_20
+color grey_text
+color heading_color
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color ic_logo_background
@@ -1541,6 +1547,7 @@ color plaid_yellow_600
 color plaid_yellow_800
 color plaid_yellow_900
 color preference_fallback_accent_color
+color primary_color
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -1562,6 +1569,7 @@ color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
 color selectedTabColor
+color sign_bg
 color success_stroke_color
 color sweet_dialog_bg_color
 color sweet_dialog_bg_color_dark
@@ -1579,6 +1587,7 @@ color text_blue
 color text_clor
 color text_color
 color text_color_blue
+color text_color_dark
 color text_color_deposite
 color text_color_journal
 color text_color_withdrawl
@@ -2978,6 +2987,8 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable about_icon
 drawable accounting
+drawable action_primary_btn
+drawable action_secondary_btn
 drawable activitie
 drawable add_customer
 drawable add_item
@@ -3000,6 +3011,22 @@ drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
 drawable btn_checkbox_unchecked_to_checked_mtrl_animation
+drawable btn_google_dark_disabled
+drawable btn_google_dark_focus
+drawable btn_google_dark_normal
+drawable btn_google_dark_pressed
+drawable btn_google_light_disabled
+drawable btn_google_light_focus
+drawable btn_google_light_normal
+drawable btn_google_light_pressed
+drawable btn_google_signin_dark_disabled
+drawable btn_google_signin_dark_focus
+drawable btn_google_signin_dark_normal
+drawable btn_google_signin_dark_pressed
+drawable btn_google_signin_light_disabled
+drawable btn_google_signin_light_focus
+drawable btn_google_signin_light_normal
+drawable btn_google_signin_light_pressed
 drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
@@ -3050,6 +3077,7 @@ drawable create_customers
 drawable create_estimate
 drawable create_invoice_img
 drawable create_product_service
+drawable dark_theme_google_icon_selector
 drawable default_1
 drawable default_2
 drawable default_3
@@ -3084,6 +3112,7 @@ drawable fedded_button
 drawable footer_bg
 drawable general
 drawable general2
+drawable google
 drawable google_play_logo_svg
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -3100,6 +3129,7 @@ drawable ic_account_icon
 drawable ic_accounting_icon
 drawable ic_akounto_only_logo
 drawable ic_arrow_down_24dp
+drawable ic_back_black
 drawable ic_baseline_arrow_drop_down
 drawable ic_baseline_arrow_forward
 drawable ic_baseline_black
@@ -3111,6 +3141,7 @@ drawable ic_bell_icon
 drawable ic_blls_logo
 drawable ic_calendar_black_24dp
 drawable ic_calendar_icon
+drawable ic_call
 drawable ic_clear_black_24dp
 drawable ic_clock_black_24dp
 drawable ic_dashboard
@@ -3149,6 +3180,7 @@ drawable ic_launcher_foreground
 drawable ic_linkedin_icon
 drawable ic_logo
 drawable ic_logo_foreground
+drawable ic_logo_primary
 drawable ic_menu_arrow_down_black_24dp
 drawable ic_menu_arrow_up_black_24dp
 drawable ic_menu_bar
@@ -3164,6 +3196,7 @@ drawable ic_only_plus_icon
 drawable ic_pen_edit
 drawable ic_photo_black_48dp
 drawable ic_photo_camera_black_48dp
+drawable ic_plaid_logo
 drawable ic_plus_symbol
 drawable ic_plus_symbol_upload
 drawable ic_products_and_services
@@ -3180,12 +3213,15 @@ drawable ic_search_icon
 drawable ic_send_arrow
 drawable ic_settings_icon
 drawable ic_shopping_cart
+drawable ic_success_gr
+drawable ic_tab_right
 drawable ic_tick_categorised
 drawable ic_tick_round
 drawable ic_tiles
 drawable ic_up_arrow
 drawable ic_up_arrow__circular
 drawable ic_upload_statement
+drawable ic_us_flag
 drawable ic_vendors_logo
 drawable ic_visibility_black_24dp
 drawable ic_visibility_off_black_24dp
@@ -3337,6 +3373,7 @@ drawable invoice_name_bg
 drawable left_rounded_approved
 drawable left_rounded_converted
 drawable left_rounded_draft
+drawable light_theme_google_icon_selector
 drawable loading_dots
 drawable logo
 drawable logo2
@@ -3462,9 +3499,15 @@ drawable save
 drawable selected_busns
 drawable selected_dot
 drawable settings_selector
+drawable sign_in_input
 drawable slide1
+drawable slide135
+drawable slide136
+drawable slide137
+drawable social_btn_bg
 drawable splash
 drawable split_this_deposit_bg
+drawable success_alert
 drawable success_bow
 drawable success_circle
 drawable tab_indicator_default
@@ -3645,6 +3688,7 @@ id addTaxIV
 id addVendorButton
 id addWithDrawal
 id add_customer
+id add_discount
 id add_file
 id add_items
 id add_vendor
@@ -3657,6 +3701,7 @@ id adminPermission
 id adminPermissionDesc
 id adminRB
 id adminsRv
+id after_discount_price
 id akountoLogo
 id alertTitle
 id aligned
@@ -3672,6 +3717,7 @@ id animateToEnd
 id animateToStart
 id app_logo
 id applyButton
+id apply_discount
 id approve
 id approveTv
 id approvedLL
@@ -3828,7 +3874,6 @@ id chartExpandable
 id chatNew
 id checkBox
 id checkBox_select
-id checkBox_tnc
 id checkbox
 id checked
 id chevron
@@ -3860,6 +3905,9 @@ id confirmNewPasswordText
 id confirm_button
 id connectEmailAccountsTv
 id connectYourBank
+id constraintLayout2
+id constraintLayout3
+id constraintLayout4
 id container
 id content
 id content11
@@ -3957,10 +4005,12 @@ id deleteItem
 id deleteProduct
 id deleteTax
 id delete_account
+id delete_discount
 id deltaRelative
 id dependency_ordering
 id depositOrWithdrawalSpinner
 id desc
+id descp
 id description
 id descriptionEDTV
 id descriptionText
@@ -3980,6 +4030,12 @@ id direct
 id disableHome
 id disablePostScroll
 id disableScroll
+id discount
+id discount_edit_ll
+id discount_error
+id discount_ll
+id discount_ll_view
+id discount_type
 id disjoint
 id divider
 id divider2
@@ -4024,6 +4080,7 @@ id editDraft
 id editIcon
 id editQuantity
 id editText
+id edit_discount
 id edit_item_name
 id edit_item_price
 id edit_query
@@ -4039,7 +4096,6 @@ id emailErrorTv
 id emailText
 id email_error
 id email_forget
-id email_ll
 id end
 id endToStart
 id end_padder
@@ -4170,6 +4226,7 @@ id footer_invoice
 id footer_more
 id forever
 id forgotButton
+id form_id
 id fragment_container
 id fragment_container_view_tag
 id from
@@ -4190,6 +4247,7 @@ id goButton2
 id goButton3
 id goButtonImg
 id goHome
+id go_back
 id gone
 id gotoDashboardButton
 id grant_total
@@ -4220,6 +4278,8 @@ id home
 id homeAsUp
 id home_tabs
 id honorRequest
+id horizontalScrollView
+id ic_back
 id icon
 id icon_frame
 id icon_group
@@ -4238,13 +4298,16 @@ id imageProfile
 id imageSetting
 id imageView
 id imageView1
-id imageView2
+id imageView10
+id imageView11
+id imageView12
 id imageView3
 id imageView4
 id imageView5
 id imageView6
 id imageView7
 id imageView8
+id imageView9
 id imageViewArrow
 id imageViewDelete
 id imageViewInfo
@@ -4305,7 +4368,6 @@ id item_rv
 id item_touch_helper_previous_elevation
 id itemdesc
 id itemquanc
-id iv
 id ivSave
 id iv_back
 id iv_close
@@ -4329,7 +4391,6 @@ id label
 id labelGroup
 id labeled
 id largeLabel
-id lastNameIsTV
 id last_name
 id last_name_error
 id last_name_ll
@@ -4355,6 +4416,8 @@ id leftToRight
 id left_to_right
 id legacy_table_view
 id light
+id linSignIn
+id linSignUp
 id line1
 id line3
 id linear
@@ -4373,6 +4436,10 @@ id listItemRecycler
 id listMode
 id listView
 id list_item
+id llViewIncomeAccount
+id llViewName
+id llViewPrice
+id llViewSalesTax
 id ll_date
 id ll_upload_bankstmt
 id ll_weview
@@ -4386,7 +4453,6 @@ id logoUpload
 id logo_upload
 id lytCameraPick
 id lytGalleryPick
-id mail_ckeck
 id mainLayout
 id main_ll
 id main_title
@@ -4435,6 +4501,7 @@ id month_navigation_previous
 id month_title
 id monthsSpinner
 id moreButton
+id more_top
 id motion_base
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
@@ -4511,6 +4578,7 @@ id onTheDaySpinner
 id on_the_day_text
 id one
 id optionButton
+id optional
 id orConnectUsingText
 id ordered_list_button
 id ordered_list_content
@@ -4547,9 +4615,9 @@ id peiChartNoData
 id percent
 id perosonal_info
 id personalinfo
-id phoneNumber
 id phoneText
 id phone_code_spiner
+id phone_code_spiner1
 id phone_code_tv
 id phone_number_ll
 id pin
@@ -4614,7 +4682,6 @@ id posoEDTV
 id postCodeText
 id postLayout
 id powerSpinner_preference
-id pp
 id preference_title
 id prevInvoice
 id prevTv
@@ -4674,7 +4741,7 @@ id rectangles
 id recyclerView
 id recycler_view
 id relCountry
-id relLastNameIs
+id relCountyList
 id relMainLayout
 id relMyNameIs
 id relName
@@ -4685,6 +4752,7 @@ id relativeLayout12
 id relativeLayout2
 id relativeLayout3
 id relativeLayout33
+id relativeLayout4
 id relativeLayoutAmount
 id relativeLayoutBusiness
 id relativeLayoutCurrency
@@ -4781,6 +4849,7 @@ id scrollIndicatorUp
 id scrollView
 id scrollable
 id scrollable_content
+id scroller
 id searchET
 id searchIcon
 id searchLayout
@@ -4832,9 +4901,13 @@ id showCustom
 id showHome
 id showTitle
 id signUpButton
+id sign_in
 id sign_in_button
+id sign_in_button1
+id sign_in_header
 id sign_out
-id sign_up_button
+id sign_title
+id sign_up
 id sin
 id skipButton
 id skipCollapsed
@@ -4905,6 +4978,8 @@ id subtitle
 id subtotal
 id subtotalAmountInDolar
 id subtotalText
+id success_alert
+id success_check
 id success_frame
 id success_tick
 id success_tick1
@@ -4968,9 +5043,13 @@ id textView
 id textView01
 id textView1
 id textView11
+id textView17
+id textView18
 id textView2
+id textView21
 id textView22
 id textView3
+id textView4
 id textView5
 id textViewAddress
 id textViewAddressDiff
@@ -5018,6 +5097,7 @@ id textViewTitleBDOther
 id textViewsales
 id textViewt1
 id textWatcher
+id text_account
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -5111,6 +5191,7 @@ id tv6
 id tv7
 id tv8
 id tv9
+id tvShow
 id tvTV
 id tv_amount
 id tv_amountDue
@@ -5128,6 +5209,8 @@ id tv_customeraddres
 id tv_customeraddres2
 id tv_date
 id tv_desc
+id tv_dicount
+id tv_discount
 id tv_dueDate
 id tv_due_date
 id tv_error
@@ -5146,7 +5229,6 @@ id tv_net_profit_value
 id tv_nextInvoice
 id tv_no_tax
 id tv_note
-id tv_phone_number
 id tv_prevInvoice
 id tv_price
 id tv_productDesc
@@ -5155,6 +5237,7 @@ id tv_productPrice
 id tv_qty
 id tv_quantity
 id tv_subTotal
+id tv_success
 id tv_taxList
 id tv_taxt_name
 id tv_title
@@ -5518,6 +5601,7 @@ layout layout_invoice_details
 layout layout_list_vendor
 layout layout_menu_fragment
 layout layout_more
+layout layout_option_signup
 layout layout_preference_power_spinner_library
 layout layout_purchase_fragment
 layout layout_sales_fargment
@@ -5790,9 +5874,12 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string conditions
 string content_cancel
 string content_exit
 string copy
+string create
+string create_sub
 string currency_sign
 string customer_care
 string default_progressbar
@@ -5803,6 +5890,7 @@ string dialog_default_title
 string dialog_ok
 string dont_see_your_bank
 string email_address
+string emailid
 string empty_string
 string error_failed_pick_gallery_image
 string error_failed_to_compress_image
@@ -5831,17 +5919,28 @@ string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string fcm_fallback_notification_channel_label
+string forget_pass
 string forgot_pass
 string forgot_password
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
+string google_sign_in
+string google_sign_up
 string google_storage_bucket
 string here
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string image_picker_provider_authority_suffix
+string info
+string info2
+string info3
+string info4
+string info5
+string info_sub
+string info_sub2
+string info_sub5
 string information_icon
 string institution_logo
 string invoices
@@ -5916,6 +6015,7 @@ string navigation_drawer_close
 string navigation_drawer_open
 string new_user
 string not_set
+string password
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -5932,6 +6032,7 @@ string plaid_exit
 string please_upgrade_your_sdk_version
 string preference_copied
 string project_id
+string promo
 string report_2018
 string report_2019
 string report_2020
@@ -5951,14 +6052,18 @@ string search
 string search_menu_title
 string select_your_bank
 string sentry_api_key
+string sign_in
+string sign_in_f
 string sign_up
 string sign_up_it_s_free
+string skip
 string status_bar_notification_info_overflow
 string submit
 string summary_collapsed_preference_list
 string tagmanager_preview_dialog_button
 string tagmanager_preview_dialog_message
 string tagmanager_preview_dialog_title
+string terms
 string this_is_adraft
 string this_is_adraft_estimate
 string this_is_adraft_estimate_approved
@@ -5979,6 +6084,7 @@ string v7_preference_off
 string v7_preference_on
 string web_client_id2
 string web_client_secret2
+string welcome_to
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
@@ -6817,6 +6923,7 @@ styleable BottomAppBar backgroundTint elevation fabAlignmentMode fabAnimationMod
 styleable BottomNavigationView backgroundTint elevation itemBackground itemHorizontalTranslationEnabled itemIconSize itemIconTint itemRippleColor itemTextAppearanceActive itemTextAppearanceInactive itemTextColor labelVisibilityMode menu
 styleable BottomSheetBehavior_Layout android_elevation backgroundTint behavior_draggable behavior_expandedOffset behavior_fitToContents behavior_halfExpandedRatio behavior_hideable behavior_peekHeight behavior_saveFlags behavior_skipCollapsed gestureInsetBottomIgnored shapeAppearance shapeAppearanceOverlay
 styleable ButtonBarLayout allowStacking
+styleable ButtonStyleable android_text isDarkTheme
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable CheckBoxPreference android_summaryOn android_summaryOff android_disableDependentsState disableDependentsState summaryOff summaryOn
 styleable Chip android_textAppearance android_textSize android_textColor android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconTint checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipMinTouchTargetSize chipStartPadding chipStrokeColor chipStrokeWidth chipSurfaceColor closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible ensureMinTouchTargetSize hideMotionSpec iconEndPadding iconStartPadding rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec textEndPadding textStartPadding

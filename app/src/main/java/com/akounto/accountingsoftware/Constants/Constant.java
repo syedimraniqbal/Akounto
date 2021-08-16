@@ -11,16 +11,16 @@ public final class Constant {
     public static final String WebURL = "http://staging.akounto.com";
 
     //Pre Production
-    /*    public static final boolean ANALATICS_ON = false;
+/*        public static final boolean ANALATICS_ON = false;
     public static final String BASE_URL = "https://api.akounto.com/";
     public static final String X_SIGNATURE = "F1EF64264FF54BA581FC0296825DA82B";
     public static final String WebURL = "https://app.akounto.com";*/
 
     //Production
-/*    public static final boolean ANALATICS_ON = true;
-    public static final String BASE_URL = "https://api.akounto.com/";
-    public static final String X_SIGNATURE = "F1EF64264FF54BA581FC0296825DA82B";
-    public static final String WebURL = "https://app.akounto.com";*/
+//    public static final boolean ANALATICS_ON = true;
+//    public static final String BASE_URL = "https://api.akounto.com/";
+//    public static final String X_SIGNATURE = "F1EF64264FF54BA581FC0296825DA82B";
+//    public static final String WebURL = "https://app.akounto.com";
 
     public static final String IMG_URL = "https://app.akounto.com/assets/flags/";
     public static final String GRANT_TYPE = "password";
@@ -28,6 +28,7 @@ public final class Constant {
     public static final String ID_TOKEN = "id_token";
     public static final String EMAIL = "email";
     public static final String LAUNCH_TYPE = "launch_type";
+    public static final String BANK_ID = "bank_id";
     public static final String PREF_EMAIL = "email";
     public static final String PREF_PASWORD = "password";
     public static final int due_val[] = {15, 30, 45, 60, 90};
